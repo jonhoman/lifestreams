@@ -10,6 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20101219001821) do
+
+  create_table "destinations", :force => true do |t|
+    t.string   "name"
+    t.integer  "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sources", :force => true do |t|
+    t.string   "name"
+    t.string   "feed_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "stream_id"
+  end
+
+  create_table "streams", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
