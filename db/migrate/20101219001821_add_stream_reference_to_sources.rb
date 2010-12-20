@@ -4,6 +4,6 @@ class AddStreamReferenceToSources < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :sources, :stream_id, :integer
+    remove_column :sources, :stream_id
   end
 end

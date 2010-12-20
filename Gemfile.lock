@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.6)
+    awesome_print (0.3.1)
     builder (2.1.2)
     cucumber (0.10.0)
       builder (>= 2.1.2)
@@ -101,6 +102,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   cucumber-rails
   pg
   rails (= 3.0.3)

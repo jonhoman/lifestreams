@@ -1,5 +1,8 @@
 <h1>Create a new Stream</h1>
 
 <%= form_for(@stream) do |stream_form| %>
+  <%= stream_form.label :name, "Stream Name" %>
+  <%= stream_form.text_field :name %>
 
+  <%= stream_form.submit %>
 <% end %>
