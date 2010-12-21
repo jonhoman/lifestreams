@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101220010301) do
+ActiveRecord::Schema.define(:version => 20101219001821) do
 
   create_table "destinations", :force => true do |t|
     t.string   "name"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(:version => 20101220010301) do
     t.string   "feed_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stream_id"
   end
 
   create_table "streams", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "source_id"
   end
 
 end
