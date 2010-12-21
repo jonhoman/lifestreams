@@ -10,4 +10,5 @@ group :development, :test do
   gem "rspec-rails"
   gem "cucumber-rails"
   gem "webrat"
+  gem "dehumanize"
 end

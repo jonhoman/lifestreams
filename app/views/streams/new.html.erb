@@ -1,8 +1,16 @@
 <h1>Create a new Stream</h1>
 
+<% @stream.build_source %>
 <%= form_for(@stream) do |stream_form| %>
   <%= stream_form.label :name, "Stream Name" %>
   <%= stream_form.text_field :name %>
 
+  <%= stream_form.fields_for :source do |src_form| %>
+    <%= src_form.label :name, "Source Name" %>
+    <%= src_form.text_field :name %>
+    
+    <%= src_form.label :feed_url, "Source URL" %>
+    <%= src_form.text_field :feed_url %>
+  <% end %>
   <%= stream_form.submit %>
 <% end %>

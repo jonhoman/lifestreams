@@ -20,7 +20,8 @@ describe StreamsController do
     end
     
     it "should create a new stream" do
-      post :create, "stream" => {"name" => "Test2"}
+      # TODO figure out how to test creation of source
+      post :create, "stream" => {"name" => "Test2" }
       assigns(:stream).should_not be_nil
       assigns(:stream).name.should == "Test2"
     end
