@@ -8,6 +8,10 @@ class StreamsController < ApplicationController
   def create
     @stream = Stream.new(params[:stream])
     @stream.save
-    redirect_to streams_path
+    redirect_to :action => "index"
+  end
+
+  def index
+    @streams = Stream.all
   end
 end
