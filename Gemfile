@@ -11,4 +11,5 @@ group :development, :test do
   gem "cucumber-rails"
   gem "webrat"
   gem "dehumanize"
+  gem "heroku"
 end
