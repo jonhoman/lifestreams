@@ -1,8 +1,8 @@
 class StreamsController < ApplicationController
   def new
-    @destination = Destination.new
-    @source = Source.new
     @stream = Stream.new
+    source = @stream.build_source
+    source.destinations.build
   end
 
   def create

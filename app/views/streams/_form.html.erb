@@ -1,0 +1,9 @@
+<%= form_for(@stream) do |f| %>
+  <%= f.label :name, "Stream Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.fields_for :source do |builder| %>
+    <%= render 'source_fields', :f => builder %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

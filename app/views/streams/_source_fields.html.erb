@@ -1,0 +1,9 @@
+<%= f.label :name, "Source Name" %>
+<%= f.text_field :name %>
+
+<%= f.label :feed_url, "Source URL" %>
+<%= f.text_field :feed_url %>
+
+<%= f.fields_for :destinations do |builder| %>
+  <%= render 'destination_fields', :f => builder %>
+<% end %>
