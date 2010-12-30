@@ -1,0 +1,128 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>JonHoman.com</title>
+	
+	<link>http://blog.jonhoman.com</link>
+	<description>Walking the Long Road</description>
+	<lastBuildDate>Sun, 19 Dec 2010 16:35:26 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.3</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/JonHoman" /><feedburner:info uri="jonhoman" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+		<title>Tracking Progress</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/NBnsx3NCfuY/</link>
+		<comments>http://blog.jonhoman.com/tracking-progress/#comments</comments>
+		<pubDate>Tue, 14 Dec 2010 13:00:10 +0000</pubDate>
+		<dc:creator>Jon</dc:creator>
+				<category><![CDATA[apprenticeship]]></category>
+		<category><![CDATA[mercuryapp]]></category>
+		<category><![CDATA[obtiva]]></category>
+
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=256</guid>
+		<description><![CDATA[At the beginning of my apprenticeship, I asked for some general advice during a meeting on my first day. Dave Hoover pointed out that the apprenticeship goes by very quickly so it&#8217;s a good idea to have short-term goals in &#8230; <a href="http://blog.jonhoman.com/tracking-progress/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>At the beginning of my apprenticeship, I asked for some general advice during a meeting on my first day. <a href="http://twitter.com/redsquirrel/">Dave Hoover</a> pointed out that the apprenticeship goes by very quickly so it&#8217;s a good idea to have short-term goals in mind.</p> 
+<p>As Dave mentioned that, I thought a tool that would be perfect for capturing my thoughts on a daily basis and hopefully facilitate retrospection on my progress and growth. And that tool is <a href="http://mercuryapp.com/">MercuryApp</a>.</p> 
+<p>I had previously used MercuryApp off and on to track variously things, but with no real goal in sight. With my apprenticeship, I want to be able to look back at a certain day or week and remember how I was feeling. What bugged me that day? What went great? Did I have any breakthroughs? Or perhaps a major headache? I hope MercuryApp helps me think back on my apprenticeship and make sure I am heading in the right direction. I&#8217;ve already found MercuryApp for my weekly checkin meetings.</p> 
+<p>I am using another means to keep track of various technical revelations that come to me on a daily basis. Some of my most frustrating experiences are times when I know I&#8217;ve solved some problem in the past but cannot remember how I did it. My only real solution is to try to remember what day I figured this out in the past so I can review my browser history that day, because more than likely I found the answer online.</p> 
+<p>To try to stop that from happening, I&#8217;ve started <a href="http://wiki.jonhoman.com/">a wiki</a> where I&#8217;m posting <a href="http://wiki.jonhoman.com/index.php?title=Learning_Notes">&#8220;Learning Notes&#8221;</a> so I can keep track of information that solved a problem or an article that I found particular interesting. I&#8217;m also writing down quotes or interesting tidbits from books I read, starting with <a href="http://www.pragprog.com/titles/achbd/the-rspec-book">The RSpec Book</a>.</p> 
+<p>Here&#8217;s to using technology to bolster my memory!</p> 
+]]></content:encoded>
+			<wfw:commentRss>http://blog.jonhoman.com/tracking-progress/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/tracking-progress/</feedburner:origLink></item>
+		<item>
+		<title>Why Apprenticeship?</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/VbE7ryHwks4/</link>
+		<comments>http://blog.jonhoman.com/why-apprenticeship/#comments</comments>
+		<pubDate>Fri, 03 Dec 2010 01:00:33 +0000</pubDate>
+		<dc:creator>Jon</dc:creator>
+				<category><![CDATA[apprenticeship]]></category>
+
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=248</guid>
+		<description><![CDATA[I thought it would be a good idea to write down some of the reasons why I looked into becoming an apprentice. Kind of a &#8220;can&#8217;t move forward without knowing where you&#8217;ve been&#8221; idea. First, and probably least important, was &#8230; <a href="http://blog.jonhoman.com/why-apprenticeship/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>I thought it would be a good idea to write down some of the reasons why I looked into becoming an apprentice. Kind of a &#8220;can&#8217;t move forward without knowing where you&#8217;ve been&#8221; idea.</p> 
+<p>First, and probably least important, was a general lack of fulfillment at my previous job. I enjoyed working with all of my coworkers, but the work really wasn&#8217;t something I was enjoying. Looking back on it, I think that lack of fulfillment dampened my enthusiasm towards personal projects and learning.</p> 
+<p>Second, the apprenticeship is a great learning and growth opportunity. Apprentices at Obtiva are in a position to gain so much knowledge from their coworkers. By the end of my first day, I&#8217;m already humbled and inspired by the skill level around me. Quite a learning curve and learning opportunity.</p> 
+<p>Third, and most importantly, I became an apprentice because of my wife, which is a strange thought since we&#8217;ll be living 400 miles away for the duration of the apprenticeship. But on my first evening alone in Chicago, I realized Tanya is the main reason I became an apprentice. As I was settling in that night, I thought about hanging the photo collage Tanya made me on the wall above my desk so that I could remember why I&#8217;m doing this. To have a ton of fun at work and even more fun sight-seeing and adventuring around Chicago with Tanya (when she moves here, of course).</p> 
+]]></content:encoded>
+			<wfw:commentRss>http://blog.jonhoman.com/why-apprenticeship/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/why-apprenticeship/</feedburner:origLink></item>
+		<item>
+		<title>Newest Obtiva Apprentice</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/IT8Ub6UHs5Y/</link>
+		<comments>http://blog.jonhoman.com/newest-obtiva-apprentice/#comments</comments>
+		<pubDate>Mon, 08 Nov 2010 17:04:28 +0000</pubDate>
+		<dc:creator>Jon</dc:creator>
+				<category><![CDATA[apprenticeship]]></category>
+		<category><![CDATA[obtiva]]></category>
+
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=232</guid>
+		<description><![CDATA[My Journey So Far Almost two years ago, I started an internship at a small software company in Mankato, MN. My internship landed me a full-time gig where I&#8217;ve mainly been creating custom proposal templates and some custom integration applications. &#8230; <a href="http://blog.jonhoman.com/newest-obtiva-apprentice/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><strong>My Journey So Far<br /> 
+</strong>Almost two years ago, I started an internship at a small software company in Mankato, MN. My internship landed me a full-time gig where I&#8217;ve mainly been creating custom proposal templates and some custom integration applications. After awhile, I started to long for more challenging work. Combined with a want to relocate closer to family and recent experiences with Ruby and Rails, I began to ponder options.</p> 
+<p>Thanks to <em>someone</em> on Twitter, I was linked to <a href="http://twitter.com/trptcolin">Colin Jones</a>&#8216; apprenticeship at <a href="http://8thlight.com">8th Light</a> shortly after he started in March 2009. Colin did a great job of blogging his experiences throughout his time as an apprentice and I began thinking that an apprenticeship could be a great way to break into professional software development.</p> 
+<p>Over the last 20 months or so, I followed several other 8th Light apprentices, <a href="http://twitter.com/JustinMartinM">Justin Martin</a>, <a href="http://twitter.com/Li_Hsuan">Li-Hsuan Lung</a>, <a href="http://twitter.com/skim">Steve Kim</a> and <a href="http://twitter.com/sdegutis">Steve Degutis</a>, as well as <a href="http://obtiva.com">Obtiva</a> apprentices, <a href="http://twitter.com/ethangunderson">Ethan Gunderson</a>, <a href="http://twitter.com/michaelphines">Michael Hines</a> and <a href="http://twitter.com/jenlindner">Jen Linder</a>. I really enjoyed reading about all their opportunities and the amount of growth they made as developers. Their willingness to share their experiences enabled me to make the decision to look into an apprenticeship more seriously.</p> 
+<p>In July, my wife and I stopped in Chicago for a few days on vacation. I was able to visit both Obtiva and 8th Light and gather more information about their apprenticeship programs. I enjoyed meeting with folks at both companies and pairing with a few of them. I especially had a great time pairing with <a href="http://twitter.com/citizenparker">Scott Parker</a> from Obtiva. He went out of his way to make me feel welcome for an afternoon and was patient with me as we worked on adding a new feature to a Rails application. I really felt like Obtiva would be a great fit, both culturally and professional, and I came away from that visit knowing that I wanted to pursue this opportunity.</p> 
+<p><strong>The Future<br /> 
+</strong>A <a href="https://github.com/jonhoman/tictactoe">code example</a> and an interview process later, I received word that I was accepted into Obtiva&#8217;s apprenticeship program. My wife says she&#8217;s never heard me laugh so hard or so long when I was sharing the news with her. It took a few minutes to sink in; <strong>I&#8217;m the next apprentice at Obtiva</strong>. I am really looking forward to starting at Obtiva in 3 weeks and continuing to share my journey.</p> 
+]]></content:encoded>
+			<wfw:commentRss>http://blog.jonhoman.com/newest-obtiva-apprentice/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/newest-obtiva-apprentice/</feedburner:origLink></item>
+		<item>
+		<title>Twin Cities Code Camp 9 Recap</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/aeGneAolof8/</link>
+		<comments>http://blog.jonhoman.com/twin-cities-code-camp-9-recap/#comments</comments>
+		<pubDate>Mon, 11 Oct 2010 06:00:01 +0000</pubDate>
+		<dc:creator>Jon</dc:creator>
+				<category><![CDATA[tech]]></category>
+		<category><![CDATA[mongodb]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[twin cities code camp]]></category>
+
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=222</guid>
+		<description><![CDATA[Yesterday I attended Twin Cities Code Camp 9. This free developer conference is a great way to socialize with your fellow developers in the Twin Cities area and come away motivated to continue the learning had at the conference. My &#8230; <a href="http://blog.jonhoman.com/twin-cities-code-camp-9-recap/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Yesterday I attended <a href="http://twincitiescodecamp.com/">Twin Cities Code Camp 9</a>. This free developer conference is a great way to socialize with your fellow developers in the Twin Cities area and come away motivated to continue the learning had at the conference.</p> 
+<p>My morning was filled with two Ruby talks. I was looking forward to the talks by <a href="http://twitter.com/ryanbriones">Ryan Briones</a> and <a href="http://twitter.com/bphogan/">Brian Hogan</a> from the time the schedule was announced. I was not disappointed.</p> 
+<p>Ryan&#8217;s Learning Ruby for the Web talk highlighted <a href="http://ryanbriones.com/blog/nerd/2010/08/27/rails-not-ruby-for-beginners.html">his argument</a> Rails isn&#8217;t the best starting place for new Ruby developers. The main thrust I took away was that Rails is full of abstractions and for beginners they abstract away too much. He looked at lower level Ruby web application development options like Sinatra. This talk has me thinking about framework options other than Rails for any future projects.</p> 
+<p>Next up was Brian&#8217;s talk on Ruby tools in the web developers toolbox. Brian looked at using Haml and Sass as alternatives to writing straight up HTML and CSS, generating static websites with StaticMatic, writing tests using Cucumber, and a brief look at Sinatra. I especially liked Brian&#8217;s stance that although these tools come from the Ruby community, that doesn&#8217;t forbid .NET or Java developers from using them.</p> 
+<p>The final talk I was able to attend was <a href="http://twitter.com/ethangunderson">Ethan Gunderson&#8217;s</a> talk on MongoDB. While I have played around with Mongo in the past, I definitely came away from Ethan&#8217;s talk with an increased knowledge of Mongo, especially its write path. Using the default insert options, the Mongo driver returns a success response as soon the the insert is start, without knowing if the data was actually written. But there are options to perform the writes in a &#8220;safe mode&#8221;. Definitely something to consider when evaluating or working with MongoDB.</p> 
+<p>Overall I had a great time at Twin Cities Code Camp. It&#8217;s a great conference that I look forward to every time it&#8217;s on my calendar.</p> 
+<p><strong>Update:</strong> Here are links to <a href="http://www.slideshare.net/napcs/web-development-with-ruby-from-simple-to-complex">Brian&#8217;s</a> and <a href="http://www.slideshare.net/ethangunderson/mongodb-awesomely-dangerous">Ethan&#8217;s</a> slides.</p> 
+]]></content:encoded>
+			<wfw:commentRss>http://blog.jonhoman.com/twin-cities-code-camp-9-recap/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/twin-cities-code-camp-9-recap/</feedburner:origLink></item>
+		<item>
+		<title>Walking the Long Road</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/-gIhVkGVb-w/</link>
+		<comments>http://blog.jonhoman.com/walking-the-long-road/#comments</comments>
+		<pubDate>Wed, 22 Sep 2010 11:00:26 +0000</pubDate>
+		<dc:creator>Jon</dc:creator>
+				<category><![CDATA[personal]]></category>
+		<category><![CDATA[tech]]></category>
+		<category><![CDATA[apprenticeship]]></category>
+		<category><![CDATA[apprenticeship patterns]]></category>
+		<category><![CDATA[mastery]]></category>
+		<category><![CDATA[walking the long road]]></category>
+
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=217</guid>
+		<description><![CDATA[The astute observer will have noticed that I changed the appearance of this site several weeks ago. When I picked this theme, it dropped in a very appropriate header image. (For those reading via RSS, it&#8217;s a picture of a &#8230; <a href="http://blog.jonhoman.com/walking-the-long-road/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>The astute observer will have noticed that I changed the appearance of this site several weeks ago. When I picked this theme, it dropped in a very appropriate header image. (For those reading via RSS, it&#8217;s a picture of a country road/path that curves off into the distance.) This image depicts the story of <a href="http://apprenticeship-patterns.labs.oreilly.com/ch03.html">Walking the Long Road</a>.</p> 
+<p>Walking the Long Road is about the journey of a lifetime of learning. As I seek to improve as a software developer, I will be travelling along a long path of mastery. A quote from <a href="http://www.amazon.com/Apprenticeship-Patterns-Guidance-Aspiring-Craftsman/dp/0596518382/">Apprenticeship Patterns</a> best describes this journey.</p> 
+<blockquote><p>For every step you take toward mastery, your destination moves two steps further away. Embrace mastery as a lifelong endeavor. Learn to love the journey.</p> 
+<p>&#8211;George Leonard, <a title="Mastery: The Keys to Success and Long-Term Fulfillment" href="http://www.amazon.com/Mastery-Keys-Success-Long-Term-Fulfillment/dp/0452267560"><em>Mastery</em></a></p></blockquote> 
+<p>One step forward and two steps back. For each insight I grasp, I uncover two other insights that are just out of reach. But through dedicated and disciplined practiced, the apprentice can achieve mastery.</p> 
+<p>Whether with a formal apprenticeship or without, I intend to walk the long road.</p> 
+]]></content:encoded>
+			<wfw:commentRss>http://blog.jonhoman.com/walking-the-long-road/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/walking-the-long-road/</feedburner:origLink></item>
+	</channel>
+</rss><!-- Dynamic page generated in 0.257 seconds. --><!-- Cached page generated by WP-Super-Cache on 2010-12-19 11:35:28 -->
+

@@ -1,0 +1,3 @@
+Feed.all.each do |f|
+  Resque.enqueue(FeedWorker, f.id)
+end
