@@ -14,7 +14,7 @@ class FeedsController < ApplicationController
   # GET /feeds/1.xml
   def show
     @feed = Feed.find(params[:id])
-    @first_item = @feed.parse_first_item
+    #@first_item = @feed.parse_first_item
 
     respond_to do |format|
       format.html # show.html.erb
