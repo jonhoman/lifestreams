@@ -1,5 +1,5 @@
-class FeedWorker
-  @queue = :feed
+class FeedCreatorWorker
+  @queue = :feed_creation
  
   class << self
     def perform(feed_id)
