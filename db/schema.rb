@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101231200703) do
+ActiveRecord::Schema.define(:version => 20101231231441) do
 
   create_table "destinations", :force => true do |t|
     t.string   "name"
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(:version => 20101231200703) do
     t.integer  "feed_id"
     t.string   "title"
     t.text     "body"
-    t.boolean  "shared",     :default => false
+    t.boolean  "shared",         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "published_date"
+    t.string   "link"
   end
 
   create_table "sources", :force => true do |t|

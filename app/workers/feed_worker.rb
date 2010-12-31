@@ -15,6 +15,8 @@ class FeedWorker
       rss = RSS::Parser.parse(content, false)
       name = rss.channel.title
 
+      create_items(feed.id, rss)
+
       feed.update_attributes!(:name => name, :last_build_date => get_updated_date(rss).to_s )
     end
 
@@ -23,6 +25,18 @@ class FeedWorker
     def get_updated_date(rss)
       # some feeds don't have LastBuildDate, use the first items pubDate instead
       (rss.channel.lastBuildDate) || (rss.items.first.pubDate)
+    end
+
+    def create_items(feed_id, rss)
+      rss.items.each do |item|
+        Item.create!(
+          :title => item.title, 
+          :body => item.description, 
+          :published_date => item.pubDate.to_s,
+          :link => item.link,
+          :feed_id => feed_id
+        )
+      end
     end
   end
 

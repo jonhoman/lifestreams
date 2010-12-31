@@ -15,11 +15,11 @@ describe FeedWorker do
     feed.reload.last_build_date.should == Time.parse("Sun, 19 Dec 2010 16:35:26 UTC +00:00")
   end
 
-  xit "creates Items for every item in the feed" do
+  it "creates Items for every item in the feed" do
     feed = Feed.create!(:url => (Rails.root.to_s + "/spec/data/feed.rss"))
 
     FeedWorker.perform(feed.id)
-    feed.reload.items.count.should_not be_zero
+    feed.reload.items.count.should == 5
   end
   it "retries if it cannot connect to URL" do
     feed = Feed.create!(:url => (Rails.root.to_s + "/spec/data/feed.rss"))
