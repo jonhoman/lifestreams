@@ -81,4 +81,11 @@ class FeedsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def enqueue
+    Feed.all.each do |f|
+      Resque.enqueue(FeedWorker, f.id)
+    end
+    redirect_to feeds_path
+  end
 end
