@@ -84,7 +84,7 @@ class FeedsController < ApplicationController
 
   def enqueue
     Feed.all.each do |f|
-      Resque.enqueue(FeedWorker, f.id)
+      Resque.enqueue(FeedCreatorWorker, f.id)
     end
     redirect_to feeds_path
   end
