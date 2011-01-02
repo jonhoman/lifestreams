@@ -10,6 +10,7 @@ gem 'twitter'
 gem 'yajl-ruby'
 gem 'resque'
 gem 'SystemTimer'
+gem 'devise'
 
 group :development, :test do
   gem "rspec-rails"
