@@ -17,7 +17,7 @@ class FeedUpdaterWorker
           Resque.enqueue(TwitterUpdaterWorker, item.id)
         end
       end
-      feed.update_attributes(:new_items => (unknown_count > 0))
+      feed.update_attributes!(:new_items => (unknown_count > 0))
     end
   end
 end
