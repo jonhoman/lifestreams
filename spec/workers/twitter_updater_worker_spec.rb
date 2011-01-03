@@ -15,4 +15,13 @@ describe TwitterUpdaterWorker do
     
     TwitterUpdaterWorker.perform(item.id)
   end
+
+  xit "should have updated the user's timeline" do
+    item = Item.create!(:title => "Hello, World!", :body => "My First Post")
+   
+    # check timeline before and after update???
+    
+    TwitterUpdaterWorker.perform(item.id)
+
+  end
 end
