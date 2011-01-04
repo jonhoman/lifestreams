@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110103030324) do
+ActiveRecord::Schema.define(:version => 20110104030301) do
 
   create_table "destinations", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110103030324) do
     t.datetime "updated_at"
     t.datetime "published_date"
     t.string   "link"
+    t.string   "status_id"
   end
 
   create_table "sources", :force => true do |t|

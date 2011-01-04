@@ -11,7 +11,8 @@ class TwitterUpdaterWorker
       config.oauth_token_secret = ENV['DEFAULT_OAUTH_TOKEN_SECRET']
     end
 
-    Twitter.update("Blog Post: #{item.title}") 
-    item.update_attributes!(:shared => true)
+    result = Twitter.update("Blog Post: #{item.title}") 
+    
+    item.update_attributes!(:shared => true, :status_id => result.id_str)
   end
 end

@@ -1,27 +1,54 @@
 require 'spec_helper'
 
 describe TwitterUpdaterWorker do
+  before(:each) do
+    @item = Item.create!(:title => "Hello, World!", :body => "My First Post")
+  end
+  
   it "shares the new item" do
-    item = Item.create!(:title => "Hello, World!", :body => "My First Post")
-    Twitter.should_receive(:configure) 
-    Twitter.should_receive(:update).with("Blog Post: #{item.title}")
+    TwitterUpdaterWorker.perform(@item.id)
 
-    TwitterUpdaterWorker.perform(item.id)
-    item.reload.shared.should be_true
+    @item.reload.shared.should be_true
   end
 
-  it "should update twitter with item info" do
-    item = Item.create!(:title => "Hello, World!", :body => "My First Post")
-    
-    TwitterUpdaterWorker.perform(item.id)
+  it "updates the user's timeline" do
+    TwitterUpdaterWorker.perform(@item.id)
+
+    TwitterHelper.user_status.should == "Blog Post: #{@item.title}"
   end
 
-  xit "should have updated the user's timeline" do
-    item = Item.create!(:title => "Hello, World!", :body => "My First Post")
-   
-    # check timeline before and after update???
-    
-    TwitterUpdaterWorker.perform(item.id)
+  it "store the status id on the item" do
+    TwitterUpdaterWorker.perform(@item.id)
 
+    @item.reload.status_id.should_not be_nil
+  end
+
+  after(:each) do
+    TwitterHelper.cleanup(@item.reload.status_id)
+  end
+end
+
+class TwitterHelper
+  def self.user_status
+    Twitter.configure do |config|
+      config.consumer_key       = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret    = ENV['TWITTER_CONSUMER_SECRET']
+      config.oauth_token        = ENV['DEFAULT_OAUTH_TOKEN']
+      config.oauth_token_secret = ENV['DEFAULT_OAUTH_TOKEN_SECRET']
+    end
+
+    #TODO create twitter username from user
+    Twitter.user_timeline("life_streams").first.text
+  end
+
+  def self.cleanup(status_id)
+    Twitter.configure do |config|
+      config.consumer_key       = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret    = ENV['TWITTER_CONSUMER_SECRET']
+      config.oauth_token        = ENV['DEFAULT_OAUTH_TOKEN']
+      config.oauth_token_secret = ENV['DEFAULT_OAUTH_TOKEN_SECRET']
+    end
+
+    Twitter.client.status_destroy(status_id)
   end
 end
