@@ -9,7 +9,7 @@ Feature: Create a new stream
     And I fill in "Source Name" with "Test Source" 
     And I fill in "Source URL" with "Test URL"
     And I press "Create Stream"
-    Then I should be on the home page
+    Then I should be on the streams page
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
