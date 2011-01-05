@@ -1,4 +1,6 @@
 class StreamsController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @stream = Stream.new
     source = @stream.build_source

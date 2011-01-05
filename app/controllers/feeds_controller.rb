@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
-  # GET /feeds
-  # GET /feeds.xml
+  before_filter :authenticate_user!
+
   def index
     @feeds = Feed.all
 
@@ -10,8 +10,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # GET /feeds/1
-  # GET /feeds/1.xml
   def show
     @feed = Feed.find(params[:id])
     #@first_item = @feed.parse_first_item
@@ -22,8 +20,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # GET /feeds/new
-  # GET /feeds/new.xml
   def new
     @feed = Feed.new
 
@@ -33,13 +29,10 @@ class FeedsController < ApplicationController
     end
   end
 
-  # GET /feeds/1/edit
   def edit
     @feed = Feed.find(params[:id])
   end
 
-  # POST /feeds
-  # POST /feeds.xml
   def create
     @feed = Feed.new(params[:feed])
 
@@ -54,8 +47,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # PUT /feeds/1
-  # PUT /feeds/1.xml
   def update
     @feed = Feed.find(params[:id])
 
@@ -70,8 +61,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # DELETE /feeds/1
-  # DELETE /feeds/1.xml
   def destroy
     @feed = Feed.find(params[:id])
     @feed.destroy

@@ -42,3 +42,13 @@ Feature: Authentication and Authorization
   Scenario: Sign in/sign up link visible on home page if not signed in
     Given I am on the home page
     Then I should see "Sign up or sign in"
+
+  Scenario: Must be logged in to view streams page
+    Given I am on the home page
+    When I go to the streams page
+    Then I should be on the new user session page
+
+  Scenario: Must be logged in to view feeds page
+    Given I am on the home page
+    When I go to the feeds page
+    Then I should be on the new user session page
