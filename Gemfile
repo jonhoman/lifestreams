@@ -15,7 +15,7 @@ gem 'devise'
 group :development, :test do
   gem "rspec-rails"
   gem "cucumber-rails"
-  gem "webrat"
   gem "dehumanize"
   gem "heroku"
+  gem "capybara"
 end

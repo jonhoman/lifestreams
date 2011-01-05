@@ -6,5 +6,5 @@ Feature: Authentication and Authorization
   Scenario: Sign out link visible on stream index page 
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
-    Then I should see "Sign out"
+    Then I should be on the home page
     
