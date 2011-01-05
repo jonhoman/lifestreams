@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe FeedsController do
+  before(:each) do
+    @user = User.create!(:email => "test@example.com",
+                         :password => "password",
+                         :password_confirmation => "password")
+    sign_in @user
+  end
 
   def mock_feed(stubs={})
     (@mock_feed ||= mock_model(Feed).as_null_object).tap do |feed|

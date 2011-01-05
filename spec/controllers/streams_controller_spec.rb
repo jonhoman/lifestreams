@@ -1,5 +1,14 @@
 require 'spec_helper.rb'
+
 describe StreamsController do
+  before(:each) do
+    @user = User.create!(:email => "test@example.com",
+                         :password => "password",
+                         :password_confirmation => "password")
+    sign_in @user
+  end
+
+
   describe "#new" do
     before do
       get :new

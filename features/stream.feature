@@ -4,7 +4,9 @@ Feature: Create a new stream
   I want to create a new stream
 
   Scenario: Stream created with a blog feed as the source and a twitter account as the destination
-    Given I am on the new stream page
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    And I am on the new stream page
     When I fill in "Stream Name" with "Test Stream"
     And I fill in "Source Name" with "Test Source" 
     And I fill in "Source URL" with "Test URL"
