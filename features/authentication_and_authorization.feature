@@ -15,12 +15,30 @@ Feature: Authentication and Authorization
     Then I should be on the home page
     And I should see "Sign out"
 
-  Scenario: Sign in/sign up link visible on home page if not signed in
-    Given I am on the home page
-    Then I should see "Sign up or sign in"
-
   Scenario: Signing out should redirect the user to the home page
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
     When I follow "Sign out"
     Then I should be on the home page
+
+  Scenario: Signing in with bad username should still be on the sign in page 
+    Given I am a user with email "jon@example.com" and password "password"
+    And I am on the new user session page
+    And I fill in "Email" with "jon@"
+    And I fill in "Password" with "password"
+    And I press "Sign in"
+    Then I should be on the new user session page
+    And I should see "Invalid email or password."
+     
+  Scenario: Signing in with bad password should still be on the sign in page 
+    Given I am a user with email "jon@example.com" and password "password"
+    And I am on the new user session page
+    And I fill in "Email" with "jon@example.com"
+    And I fill in "Password" with "pass"
+    And I press "Sign in"
+    Then I should be on the new user session page
+    And I should see "Invalid email or password."
+
+  Scenario: Sign in/sign up link visible on home page if not signed in
+    Given I am on the home page
+    Then I should see "Sign up or sign in"
