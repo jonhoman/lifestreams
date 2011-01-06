@@ -6,3 +6,4 @@ Feature: User authorizes Twitter
   Scenario: Add new Twitter account 
     Given I am signed in 
     And I follow "Add new Twitter Account"
+    Then I should be on the twitter authorization page 

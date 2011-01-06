@@ -26,15 +26,15 @@ describe TwitterUpdaterWorker do
     it "updates the user's timeline" do
       TwitterUpdaterWorker.perform(@item.id)
 
-      TwitterHelper.user_status.should == "Blog Post: #{@item.title}"
+      TwitterUpdaterWorkerHelper.user_status.should == "Blog Post: #{@item.title}"
 
       # delete status update so subsquent tests don't fail
-      TwitterHelper.cleanup(@item.reload.status_id)
+      TwitterUpdaterWorkerHelper.cleanup(@item.reload.status_id)
     end
   end
 end
 
-class TwitterHelper
+class TwitterUpdaterWorkerHelper
   class << self
     def user_status
       #TODO create twitter username from user

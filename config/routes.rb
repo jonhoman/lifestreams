@@ -10,4 +10,6 @@ Lifestreams::Application.routes.draw do
   resources :streams
 
   match "/enqueue" => "feeds#enqueue"
+
+  match "/twitter/connect" => "twitter#connect"
 end
