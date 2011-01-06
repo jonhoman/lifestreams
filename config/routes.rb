@@ -2,6 +2,8 @@ Lifestreams::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index" 
+ 
+  match 'dashboard' => 'home#dashboard', :as => 'user_root'
   
   resources :feeds
 
