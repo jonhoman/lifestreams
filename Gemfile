@@ -18,4 +18,5 @@ group :development, :test do
   gem "dehumanize"
   gem "heroku"
   gem "capybara"
+  gem "hashie"
 end

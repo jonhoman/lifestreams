@@ -182,6 +182,7 @@ DEPENDENCIES
   cucumber-rails
   dehumanize
   devise
+  hashie
   heroku
   launchy
   oauth
