@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  #has_many :streams
+  #has_many :feeds
+  has_many :twitter_accounts
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

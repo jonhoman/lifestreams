@@ -1,0 +1,19 @@
+todo list:
+
+$ack TODO
+app/controllers/twitter_controller.rb
+18:    #TODO catch unauthorized request token
+21:    #TODO only create/authorize an account once
+
+app/models/feed.rb
+6:    #TODO: get the first item in the feed and determine if the feed has been updated
+
+features/step_definitions/web_steps.rb
+59:# TODO: Add support for checkbox, select og option
+
+public/javascripts/controls.js
+784:        if (!/^\[.*\]$/.test(js)) // TODO: improve sanity check
+
+spec/workers/twitter_updater_worker_spec.rb
+40:      #TODO create twitter username from user
+

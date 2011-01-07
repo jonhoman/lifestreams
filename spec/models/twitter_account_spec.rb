@@ -1,16 +1,21 @@
 require 'spec_helper'
 
 describe TwitterAccount do
+  let :user do
+    User.create! :email => "test@example.org", :password => "testtest", :password_confirmation => "testtest"
+  end
+
   let :valid_params do
     { 
       :handle => "test", 
       :access_token => "asdf", 
-      :access_token_secret => "asdf"
+      :access_token_secret => "asdf",
+      :user_id => user.id
     }
   end
 
   let :account do
-    TwitterAccount.new(valid_params)
+    TwitterAccount.create!(valid_params)
   end
 
   it "is valid with valid attributes" do
@@ -29,5 +34,9 @@ describe TwitterAccount do
   it "is not valid without a twitter handle" do
     account.handle = nil
     account.should_not be_valid
+  end
+
+  it "has a reference to a user" do
+    account.user_id.should == user.id
   end
 end
