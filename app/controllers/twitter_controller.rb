@@ -1,7 +1,8 @@
 class TwitterController < ApplicationController
   def connect
     @consumer = TwitterController.consumer
-    @request_token = @consumer.get_request_token(:oauth_callback => 'http://127.0.0.1:3000/twitter/callback')
+    
+    @request_token = @consumer.get_request_token(:oauth_callback => ENV['TWITTER_CALLBACK_URL'])
     
     session[:request_token] = @request_token.token
     session[:request_token_secret] = @request_token.secret
@@ -14,12 +15,21 @@ class TwitterController < ApplicationController
     @request_token = OAuth::RequestToken.new(TwitterController.consumer,
                                              session[:request_token],
                                              session[:request_token_secret])
+    #TODO catch unauthorized request token
     @access_token = @request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
 
-    logger.debug @access_token.token
-    logger.debug @access_token.secret
+    #TODO only create/authorize an account once
+    @account = TwitterAccount.new(
+      :access_token => @access_token.token, 
+      :access_token_secret => @access_token.secret, 
+      :handle => @access_token.params[:screen_name])
 
-    redirect_to user_root_path
+    if @account.save
+      redirect_to user_root_path, :notice => 'You successfully authorized your Twitter account.'
+    else 
+      redirect_to user_root_path, :notice => 'There was an issue authorizing your Twitter account. Please try again.'
+    end
+
   end
 
   def self.consumer

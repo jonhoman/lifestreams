@@ -1,8 +1,11 @@
-<h1>Home#dasboard</h1>
+<h1>Home#dashboard</h1>
 <p>Find me in app/views/home/dashboard.html.erb</p>
 
 <div>
   Configured Accounts
+  <% @twitter_accounts.each do |account| %>
+    <div><%= link_to account.handle, "http://twitter.com/#{account.handle}" %></div>
+  <% end %>
 
   <div><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
 </div>
