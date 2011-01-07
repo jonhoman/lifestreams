@@ -10,8 +10,6 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /the twitter authorization page/
-      '/oauth/authorize'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
