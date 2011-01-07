@@ -19,4 +19,5 @@ group :development, :test do
   gem "heroku"
   gem "capybara"
   gem "hashie"
+  gem "fakeweb"
 end
