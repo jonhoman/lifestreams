@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   let :user do
-    User.create! :email => "test@example.org", :password => "testtest", :password_confirmation => "testtest"
+    Factory.create(:user)
   end
 
   it "has a reference to twitter accounts" do

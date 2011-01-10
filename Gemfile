@@ -18,6 +18,5 @@ group :development, :test do
   gem "dehumanize"
   gem "heroku"
   gem "capybara"
-  gem "hashie"
-  gem "fakeweb"
+  gem "factory_girl_rails", "1.1.beta1"
 end
