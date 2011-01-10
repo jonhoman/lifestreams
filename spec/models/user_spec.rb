@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   let :user do
-    Factory.create(:user)
+    Factory(:user)
   end
 
   it "has a reference to twitter accounts" do

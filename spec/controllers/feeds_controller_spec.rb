@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe FeedsController do
   before(:each) do
-    @user = User.create!(:email => "test@example.com",
-                         :password => "password",
-                         :password_confirmation => "password")
+    @user = Factory(:user)
     sign_in @user
   end
 

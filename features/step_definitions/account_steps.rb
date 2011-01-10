@@ -1,7 +1,5 @@
 Given /^I am a user with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
-  @user = User.create!(:email => email,
-                       :password => password,
-                       :password_confirmation => password)
+  @user = Factory(:user, :email => email, :password => password, :password_confirmation => password)
 end
 
 Given /^I sign in$/ do

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe TwitterAccount do
   let :user do
-    User.create! :email => "test@example.org", :password => "testtest", :password_confirmation => "testtest"
+    Factory(:user)
   end
 
   let :valid_params do
