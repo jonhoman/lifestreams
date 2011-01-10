@@ -5,17 +5,9 @@ describe TwitterAccount do
     Factory(:user)
   end
 
-  let :valid_params do
-    { 
-      :handle => "test", 
-      :access_token => "asdf", 
-      :access_token_secret => "asdf",
-      :user_id => user.id
-    }
-  end
-
   let :account do
-    TwitterAccount.create!(valid_params)
+    Factory(:twitter_account, :user_id => user.id)
+    #TwitterAccount.create!(valid_params)
   end
 
   it "is valid with valid attributes" do
