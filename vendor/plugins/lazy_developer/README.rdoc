@@ -1,0 +1,231 @@
+=LazyDeveloper
+Copyright (C) 2007-2011 Brian P. Hogan and Kevin Gisi
+
+Developers are lazy. I know I am. If I have to do things over and over, I want
+them to be automated. Maybe that's efficient and not lazy. However, lazy is a 
+shorter word and it's funnier to call this plugin LazyDeveloper.
+
+This plugin provides some useful Rake tasks that will make your life a little
+easier. I use them in many of my projects and I invite you to do the same.
+
+= Installation
+
+This plugin supports Rails 2 and Rails 3.
+
+== Rails 3 installation
+
+ rails plugin install git@github.com:napcs/lazy_developer.git
+ 
+== Rails 2 installation
+
+Rails 2 support is in the rails2 branch. Install it like this:
+
+ ruby script/plugin install  git@github.com:napcs/lazy_developer.git -r rails2
+ 
+ 
+
+= Usage
+
+== Databases
+
+=== rake db:migrate
+
+Everyone I know forgets to clone the test database when they make changes, so I decided to override rake:db:migrate so that when you run it, it automatically clones the
+test database, which is really useful if you run tests individually via TextMate
+or through the command line.
+
+  rake db:migrate
+  rake db:migrate:up
+  rake db:migrate:down
+
+are all supported. This task calls rake db:test:prepare whenever invoked.
+
+=== rake db:migrate:compact
+Uses schema.rb to construct a brand new clean migration and moves all of your existing migrations out of the way. This might at first seem to violate the spirit of migrations, but honestly sometimes large projects have a LOT of migrations and it can get difficult to manage these files.
+
+=== rake db:remigrate
+
+Sometimes you just need to wipe out your database tables and start over. This
+task drops your tables and starts over by dropping the tables directly and then
+re-running your migrations. This provides a great way to test to make sure you
+haven't broken migrations at some point, which *will* happen to you at some point.
+
+=== rake db:to_yaml
+
+Dump your database to fixtures. Stores them in RAILS_ROOT/production_data. You can then use this to load the data back into another database, even one of a different type. We've used this to move
+data from SQL Server to MySQL and back again.
+
+Optionally you can specify only the models you want to dump data for by passing a list of model names as a comma delimited list to the MODELS environment variable.
+  
+For example, if I wanted to dump data for the User, Role, and RoleUsers models and not the rest of the models in my app, any of the following would work:
+    
+  rake db:to_yaml MODELS=User,Role,RoleUser  #Model names
+  rake db:to_yaml MODELS=user.rb,role.rb,role_user.rb  #File names
+  rake db:to_yaml MODELS=user,role,role_user  #File names minus their extension
+  rake db:to_yaml MODELS=users,roles,role_users #DB table names
+
+=== rake db:from_yaml
+Load fixtures from RAILS_ROOT/production_data into your database. Loads fixtures dumped by using rake db:export
+
+
+== Cleaning Up Files
+
+===Nuke
+The Nuke tasks make cleaning up your project a breeze.
+
+Let's say a previous developer generated some controllers, models, helpers, and views using scaffolding and a healthy mix of broken Test::Unit test cases. You've already generated a nice RESTful controller, correctly pluralized while the original ones are not. When you look in your controllers folder, you see this:
+
+  account_controller.rb
+  accounts_controller.rb
+  
+If you want to clean this up, you'd have to delete these files like so:
+
+  rm -rf app/controllers/account_controller.rb
+  rm -rf app/helpers/account_helper.rb
+  rm -rf app/views/account
+  rm -rf test/functionals/account_controller_test.rb
+  
+Well, with the Nuke tasks, you can do this easily:
+
+  rake nuke:vc:account
+  
+The 'vc' is for view and controller. It'll take out the whole controller and view combination, including the helper too.  It'll blow away any specs or tests associated, and it'll detect if you're using svn or git, so instead of deleting the files directly, it will schedule them for deletion via your source control system.
+
+The nuke tasks can be quite granular.
+
+ * rake nuke:model:user / rake nuke:m:user
+ * rake nuke:controller:user / rake nuke:c:user
+ * rake nuke:views:user / rake nuke:v:user
+ * rake nuke:helper:user
+ * rake nuke:vc:user
+ * rake nuke:mvc:user
+ 
+The only thing these tasks won't do is remove migrations, and that's cos I think that's dangerous
+
+=== Nuking Empty Helpers
+
+When you create controllers, Rails insists on creating a helper to go with them, and most of the time those files are empty. You can get rid of those with
+
+   rake nuke:empty_helpers
+   
+It'll take care of the tests for you too.
+
+
+== Subversion
+
+=== rake svn:root
+Displays the root of your repository
+
+=== rake svn:tags
+Displays all the tags. Assumes you use a tags/ folder and a /trunk folder
+
+=== rake svn:tags:last
+Displays the last tag.
+
+=== rake svn:tag TAG=rel_1-0-0
+Creates a new tag from the trunk.
+
+== Rcov
+We're fans of RCov and we've included some ways to make it easier to use RCov in your projects.
+
+=== Test::Unit
+
+In order to use the Test::Unit coverage tasks, you'll need to install the Rails_rcov plugin
+
+  ruby script/plugin install http://svn.codahale.com/rails_rcov/
+
+This is not needed if your project uses Rspec.
+
+==== rake test:models:rcov
+
+Runs coverage on your models
+
+=== rake test:controllers:rcov
+
+Runs coverage on your controllers
+
+==== rake test:rcov:full
+
+Runs coverage on models and controllers
+
+=== RSpec
+
+Rspec already includes the ability to get code coverage, but we made it just as focused and granular as we made the tasks for Test::Unit
+
+==== rake spec:models:rcov
+
+Coverage for models
+
+==== rake spec:controllers:rcov
+
+Coverage for controllers
+
+==== rake spec:views:rcov
+
+Coverage for views
+
+==== rake spec:helpers:rcov
+
+Coverage for helpers
+
+==== rake spec:lib:rcov
+
+Coverage for files in lib/
+
+== Test::Unit
+
+=== Running individual tests
+
+Based on an idea from Geoffrey Grosenbach, you can run all tests in units\user_test.rb by doing
+
+  rake test:units:user:all
+
+Or run a specific test by specifying all or part of a name. For example, if I 
+wanted to run the "test_create"  test case, I would use
+
+  rake test:units:user:create
+
+The same rules apply to functional tests
+
+  rake test:functionals:users:list
+
+== RSpec
+
+RSpec gets some love here. If you need nice output for your specs, we overrode 
+some of the built-in specs.
+
+=== rake spec:models
+
+Runs all model specs
+
+=== rake spec:controllers
+  
+Runs all controller specs
+
+=== Running a specific model or controller spec
+
+  rake spec:model:user
+  rake spec:controller:sessions
+
+== Plugins
+
+Create a file in your Home folder called .plugins and you can have all of your
+favorite plugins easily installed by doing
+
+   rake rails:install:plugins
+
+Just put each plugin name or repository on its own line.
+
+Windows users need to set the HOME environment variable.
+
+== Cleaning Up
+
+Run
+
+  rake rails:clear
+
+to clean up tmp, logs, and docs in one easy command.
+
+
+
+Copyright (c) 2007-2009 Brian Hogan and Kevin Gisi. Released under the MIT license
