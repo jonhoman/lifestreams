@@ -22,7 +22,8 @@ class TwitterController < ApplicationController
     @account = TwitterAccount.new(
       :access_token => @access_token.token, 
       :access_token_secret => @access_token.secret, 
-      :handle => @access_token.params[:screen_name])
+      :handle => @access_token.params[:screen_name],
+      :user_id => current_user.id)
 
     if @account.save
       redirect_to user_root_path, :notice => 'You successfully authorized your Twitter account.'
