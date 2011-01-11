@@ -26,5 +26,4 @@ Feature: Dashboard interface
     And another user configures a twitter account
     When I go to the user root page
     Then I should see my configured twitter account
-    And show me the page
     And I should not see the other user's twitter account
