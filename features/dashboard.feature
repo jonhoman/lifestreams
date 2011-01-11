@@ -27,3 +27,9 @@ Feature: Dashboard interface
     When I go to the user root page
     Then I should see my configured twitter account
     And I should not see the other user's twitter account
+
+  Scenario: User should be able to add a new twitter account
+    Then I should see "Add new Twitter Account"
+
+  Scenario: User should be able to add a feed 
+    Then I should see "Add new feed"

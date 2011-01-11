@@ -56,7 +56,7 @@ describe FeedsController do
       it "redirects to the created feed" do
         Feed.stub(:new) { mock_feed(:save => true) }
         post :create, :feed => {}
-        response.should redirect_to(feed_url(mock_feed))
+        response.should redirect_to(user_root_path)
       end
     end
 

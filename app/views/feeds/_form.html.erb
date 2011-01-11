@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.label :name, "Feed Name" %><br />
+    <%= f.text_field :name %><br />
+    <%= f.label :url, "Feed URL" %><br />
+    <%= f.text_field :url %><br />
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -16,3 +16,11 @@ When /^I should have the following fields stored for the source:$/ do |table|
   end
 end
 
+When /^I should have the following fields stored for the feed:$/ do |table|
+  feed = Feed.last
+  table.hashes.each do |row|
+    row.keys.each do |header|
+      feed.send(header.dehumanize).to_s.should == row[header]
+    end
+  end
+end

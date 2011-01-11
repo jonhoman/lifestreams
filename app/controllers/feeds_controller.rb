@@ -38,7 +38,7 @@ class FeedsController < ApplicationController
 
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to(@feed, :notice => 'Feed was successfully created.') }
+        format.html { redirect_to(user_root_path, :notice => 'Feed was successfully created.') }
         format.xml  { render :xml => @feed, :status => :created, :location => @feed }
       else
         format.html { render :action => "new" }
