@@ -6,5 +6,6 @@ class HomeController < ApplicationController
 
   def dashboard
     @twitter_accounts = TwitterAccount.user(current_user)
+    @feeds = Feed.user(current_user)
   end
 end

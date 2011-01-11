@@ -6,6 +6,14 @@ Given /^another user configures a twitter account$/ do
   @twitter_account2 = Factory(:twitter_account, :handle => "different_handle", :user_id => @user.id + 1)
 end
 
+Given /^I add a feed$/ do
+  @feed = Factory(:feed, :user_id => @user.id)
+end
+
+Then /^I should see my feed$/ do
+  Then 'I should see "example feed"'
+end
+
 Then /^I should see my configured twitter account$/ do
   Then 'I should see "test"'
 end

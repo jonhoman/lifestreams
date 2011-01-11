@@ -10,4 +10,9 @@ FactoryGirl.define do
     access_token        "asdf" 
     access_token_secret "asdf"
   end
+
+  factory :feed do
+    name "example feed"
+    url "http://example.org/feed"
+  end
 end

@@ -11,6 +11,8 @@
 
 <div class="dashboard">
   Feeds 
-
+  <% @feeds.each do |feed| %>
+    <div><%= link_to feed.name, feed.url %></div>
+  <% end %>
   <div><%= link_to "Add new feed", new_feed_path %></div>
 </div

@@ -33,3 +33,8 @@ Feature: Dashboard interface
 
   Scenario: User should be able to add a feed 
     Then I should see "Add new feed"
+
+  Scenario: User should see their feeds 
+    Given I add a feed 
+    When I go to the user root page
+    Then I should see my feed 
