@@ -7,7 +7,6 @@ describe TwitterAccount do
 
   let :account do
     Factory(:twitter_account, :user_id => user.id)
-    #TwitterAccount.create!(valid_params)
   end
 
   it "is valid with valid attributes" do
@@ -23,6 +22,7 @@ describe TwitterAccount do
     account.access_token_secret = nil
     account.should_not be_valid
   end
+
   it "is not valid without a twitter handle" do
     account.handle = nil
     account.should_not be_valid
@@ -30,5 +30,11 @@ describe TwitterAccount do
 
   it "has a reference to a user" do
     account.user_id.should == user.id
+  end
+
+  it "returns all accounts associated with a user" do
+    account2 = Factory(:twitter_account, :user_id => account.user_id + 1) 
+
+    TwitterAccount.user(user.id).count.should == 1
   end
 end

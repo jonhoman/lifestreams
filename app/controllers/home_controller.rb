@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @twitter_accounts = TwitterAccount.all
+    @twitter_accounts = TwitterAccount.user(current_user)
   end
 end

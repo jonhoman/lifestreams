@@ -1,7 +1,5 @@
 Lifestreams::Application.routes.draw do
   devise_for :users
-
-  root :to => "home#index" 
  
   match 'dashboard' => 'home#dashboard', :as => 'user_root'
   
@@ -13,4 +11,6 @@ Lifestreams::Application.routes.draw do
 
   match "/twitter/connect" => "twitter#connect"
   match "/twitter/callback" => "twitter#callback"
+  
+  root :to => "home#index" 
 end
