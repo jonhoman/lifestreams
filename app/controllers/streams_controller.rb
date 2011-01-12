@@ -3,8 +3,7 @@ class StreamsController < ApplicationController
 
   def new
     @stream = Stream.new
-    source = @stream.build_source
-    source.destinations.build
+    @feeds = Feed.user(current_user)
   end
 
   def create

@@ -2,8 +2,6 @@
   <%= f.label :name, "Stream Name" %>
   <%= f.text_field :name %>
 
-  <%= f.fields_for :source do |builder| %>
-    <%= render 'source_fields', :f => builder %>
-  <% end %>
+  <%= render 'dependents' %>
   <%= f.submit %>
 <% end %>

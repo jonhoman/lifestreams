@@ -1,4 +1,4 @@
 class Stream < ActiveRecord::Base
-  has_one :source
-  accepts_nested_attributes_for :source
+  has_and_belongs_to_many :feeds
+  has_and_belongs_to_many :twitter_accounts
 end
