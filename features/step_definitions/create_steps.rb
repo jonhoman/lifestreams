@@ -27,7 +27,6 @@ end
 
 Then /^my stream should have a reference to the feed I choose$/ do
   stream = Stream.last
-  ap stream
   stream.feed_id.should_not be_nil
 end
 
