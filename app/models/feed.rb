@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  scope :user, lambda { |*args| {:conditions => ["user_id = ?", args.first] } }
+  scope :user, lambda { |user_id| where("user_id = ?", user_id) }
 
   has_many :items
 
