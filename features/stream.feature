@@ -10,11 +10,12 @@ Feature: Create a new stream
     And I configure my twitter account
     And I follow "Add New Stream"
     When I fill in "Stream Name" with "Test Stream"
-    And show me the page
-    And I select "example feed" from "feed_id" 
-    And I select "Test Account" from "Twitter Accounts" 
+    And I select "example feed" from "Choose a Feed" 
+    And I select "test" from "Choose a Twitter Account" 
     And I press "Create Stream"
     Then I should be on the streams page
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
+    And my stream should have a reference to the feed I choose
+    And my stream should have a reference to the twitter account I choose

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112050235) do
+ActiveRecord::Schema.define(:version => 20110111163854) do
 
   create_table "destinations", :force => true do |t|
     t.string   "name"
@@ -27,13 +27,6 @@ ActiveRecord::Schema.define(:version => 20110112050235) do
     t.datetime "last_build_date"
     t.boolean  "new_items"
     t.integer  "user_id"
-  end
-
-  create_table "feeds_streams", :id => false, :force => true do |t|
-    t.integer  "feed_id"
-    t.integer  "os_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "items", :force => true do |t|
@@ -58,13 +51,6 @@ ActiveRecord::Schema.define(:version => 20110112050235) do
 
   create_table "streams", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "streams_twitter_accounts", :id => false, :force => true do |t|
-    t.integer  "stream_id"
-    t.integer  "twitter_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

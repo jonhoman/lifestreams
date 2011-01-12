@@ -3,15 +3,9 @@
 <table>
   <tr>
     <th>Stream Name</th>
-    <th>Source Name</th>
-    <th>Feed URL</th>
-    <th>Destination Name</th>
   </tr>
   <% @streams.each do |stream| %>
-    <td><%= stream.name %></td>
-    <td><%= stream.source.name %> </td>
-    <td><%= stream.source.feed_url %></td>
-    <td><%= stream.source.destinations.first.name %></td>
+    <tr><td><%= stream.name %></td></tr>
   <% end %>
 </table>
 

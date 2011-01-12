@@ -4,6 +4,7 @@ class StreamsController < ApplicationController
   def new
     @stream = Stream.new
     @feeds = Feed.user(current_user)
+    @twitter_accounts = TwitterAccount.user(current_user)
   end
 
   def create
