@@ -3,6 +3,5 @@ class Feed < ActiveRecord::Base
 
   has_many :items
 
-  validates_presence_of :name
-  validates_presence_of :url
+  validates_presence_of :name, :url
 end
