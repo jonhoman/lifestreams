@@ -1,4 +1,6 @@
 class Stream < ActiveRecord::Base
-  has_and_belongs_to_many :feeds
-  has_and_belongs_to_many :twitter_accounts
+  belongs_to :feed 
+  belongs_to :twitter_account
+
+  validates_presence_of :name
 end

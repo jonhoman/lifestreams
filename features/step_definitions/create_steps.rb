@@ -24,3 +24,13 @@ When /^I should have the following fields stored for the feed:$/ do |table|
     end
   end
 end
+
+Then /^my stream should have a reference to the feed I choose$/ do
+  stream = Stream.last
+  ap stream
+  stream.feed_id.should_not be_nil
+end
+
+Then /^my stream should have a reference to the twitter account I choose$/ do
+end
+

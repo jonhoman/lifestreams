@@ -2,6 +2,11 @@
   <%= f.label :name, "Stream Name" %>
   <%= f.text_field :name %>
 
-  <%= render 'dependents' %>
+  <%= f.label :feed_id, "Choose a Feed" %>
+  <%= select 'stream', 'feed_id', options_from_collection_for_select(@feeds, 'id', 'name') %>
+
+  <%= f.label :twitter_account_id, "Choose a Twitter Account" %>
+  <%= select 'stream', 'twitter_account_id', options_from_collection_for_select(@twitter_accounts, 'id', 'handle') %>
+
   <%= f.submit %>
 <% end %>

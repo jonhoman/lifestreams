@@ -9,6 +9,7 @@ class StreamsController < ApplicationController
 
   def create
     @stream = Stream.new(params[:stream])
+    @stream.user_id = current_user.id
     @stream.save
     redirect_to :action => "index"
   end
