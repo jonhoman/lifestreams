@@ -38,3 +38,9 @@ Feature: Dashboard interface
     Given I add a feed 
     When I go to the user root page
     Then I should see my feed 
+
+  Scenario: User should see their streams 
+    Given I add a stream 
+    When I go to the user root page
+    Then I should see my stream
+

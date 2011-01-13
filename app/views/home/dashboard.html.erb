@@ -15,9 +15,12 @@
     <div><%= link_to feed.name, feed.url %></div>
   <% end %>
   <div><%= link_to "Add new feed", new_feed_path %></div>
-</div
+</div>
 
 <div class="dashboard">
   Streams 
+  <% @streams.each do |stream| %>
+    <div><%= link_to stream.name %></div>
+  <% end %>
   <div><%= link_to "Add New Stream", new_stream_path %></div>
 </div

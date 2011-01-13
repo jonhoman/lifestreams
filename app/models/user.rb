@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #has_many :streams
+  has_many :streams
   has_many :feeds
   has_many :twitter_accounts
   
