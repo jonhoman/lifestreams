@@ -4,7 +4,6 @@ div.dashboard {
 }
 
 div#session_actions {
-  width: 10%;
   float: right;
 }
 
@@ -22,3 +21,16 @@ div#container {
   background-color: #FFF;
 }
 
+li.help_info {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+#small_note {
+  font-size: 80%;
+}
