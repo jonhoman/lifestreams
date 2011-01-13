@@ -1,24 +1,31 @@
-div.dashboard {
+.dashboard {
   width: 30%;
   float: left;
 }
 
-div#session_actions {
+#session_actions {
   float: right;
 }
 
-div#tagline {
-  width: 500px;
-  margin: auto;
-  text-align: center;
+#title {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}  
+
+#tagline {
   color: #6F3;
 }
 
-div#container {
+#container {
   width: 900px;
   margin: 20px auto;
   padding: 20px;
   background-color: #FFF;
+}
+
+#help_info_container {
+  margin-top: 20px;
 }
 
 li.help_info {
