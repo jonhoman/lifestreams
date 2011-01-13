@@ -2,3 +2,23 @@ div.dashboard {
   width: 30%;
   float: left;
 }
+
+div#session_actions {
+  width: 10%;
+  float: right;
+}
+
+div#tagline {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  color: #6F3;
+}
+
+div#container {
+  width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFF;
+}
+
