@@ -2,21 +2,21 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-gem 'pg'
-gem 'awesome_print'
-gem 'launchy'
-gem 'oauth'
-gem 'twitter'
-gem 'yajl-ruby'
-gem 'resque'
-gem 'SystemTimer'
-gem 'devise'
+gem 'pg', '0.10.0'
+gem 'awesome_print', '0.3.1'
+gem 'oauth', '0.4.4'
+gem 'twitter', '1.0.0'
+gem 'yajl-ruby', '0.7.8'
+gem 'resque', '1.10.0'
+gem 'SystemTimer', '1.2.1'
+gem 'devise', '1.1.5'
+gem 'feedzirra', '0.0.24'
 
 group :development, :test do
-  gem "rspec-rails"
-  gem "cucumber-rails"
-  gem "dehumanize"
-  gem "heroku"
-  gem "capybara"
+  gem "rspec-rails", '2.3.1'
+  gem "cucumber-rails", '0.3.2'
+  gem "dehumanize", '1.0.0'
+  gem "heroku", '1.15.0'
+  gem "capybara", '0.4.0'
   gem "factory_girl_rails", "1.1.beta1"
 end
