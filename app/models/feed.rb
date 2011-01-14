@@ -4,4 +4,12 @@ class Feed < ActiveRecord::Base
   has_many :items
 
   validates_presence_of :name, :url
+
+  after_create :populate_items
+
+  private
+
+  def populate_items
+    Resque.enqueue(FeedCreatorWorker, id)
+  end
 end

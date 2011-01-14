@@ -12,6 +12,7 @@ class FeedCreatorWorker
         retry unless retries > 1
         raise MaxRetriesError.new(e.message)
       end
+      #TODO switch to a better parser that will also parse atom
       rss = RSS::Parser.parse(content, false)
       name = rss.channel.title
 
