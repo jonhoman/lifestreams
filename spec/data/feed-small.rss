@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
 
@@ -7,34 +6,33 @@
 	
 	<link>http://blog.jonhoman.com</link>
 	<description>Walking the Long Road</description>
-	<lastBuildDate>Sun, 19 Dec 2010 16:35:26 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 10 Jan 2011 19:00:48 +0000</lastBuildDate>
 	<language>en</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=3.0.3</generator>
 		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/JonHoman" /><feedburner:info uri="jonhoman" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
-		<title>Tracking Progress</title>
-		<link>http://feedproxy.google.com/~r/JonHoman/~3/NBnsx3NCfuY/</link>
-		<comments>http://blog.jonhoman.com/tracking-progress/#comments</comments>
-		<pubDate>Tue, 14 Dec 2010 13:00:10 +0000</pubDate>
+		<title>The Internet and the Human Brain</title>
+		<link>http://feedproxy.google.com/~r/JonHoman/~3/u2_V3Dh3OZk/</link>
+		<comments>http://blog.jonhoman.com/the-internet-and-the-human-brain/#comments</comments>
+		<pubDate>Mon, 10 Jan 2011 19:00:48 +0000</pubDate>
 		<dc:creator>Jon</dc:creator>
-				<category><![CDATA[apprenticeship]]></category>
-		<category><![CDATA[mercuryapp]]></category>
-		<category><![CDATA[obtiva]]></category>
+				<category><![CDATA[personal]]></category>
+		<category><![CDATA[tech]]></category>
 
-		<guid isPermaLink="false">http://blog.jonhoman.com/?p=256</guid>
-		<description><![CDATA[At the beginning of my apprenticeship, I asked for some general advice during a meeting on my first day. Dave Hoover pointed out that the apprenticeship goes by very quickly so it&#8217;s a good idea to have short-term goals in &#8230; <a href="http://blog.jonhoman.com/tracking-progress/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-			<content:encoded><![CDATA[<p>At the beginning of my apprenticeship, I asked for some general advice during a meeting on my first day. <a href="http://twitter.com/redsquirrel/">Dave Hoover</a> pointed out that the apprenticeship goes by very quickly so it&#8217;s a good idea to have short-term goals in mind.</p> 
-<p>As Dave mentioned that, I thought a tool that would be perfect for capturing my thoughts on a daily basis and hopefully facilitate retrospection on my progress and growth. And that tool is <a href="http://mercuryapp.com/">MercuryApp</a>.</p> 
-<p>I had previously used MercuryApp off and on to track variously things, but with no real goal in sight. With my apprenticeship, I want to be able to look back at a certain day or week and remember how I was feeling. What bugged me that day? What went great? Did I have any breakthroughs? Or perhaps a major headache? I hope MercuryApp helps me think back on my apprenticeship and make sure I am heading in the right direction. I&#8217;ve already found MercuryApp for my weekly checkin meetings.</p> 
-<p>I am using another means to keep track of various technical revelations that come to me on a daily basis. Some of my most frustrating experiences are times when I know I&#8217;ve solved some problem in the past but cannot remember how I did it. My only real solution is to try to remember what day I figured this out in the past so I can review my browser history that day, because more than likely I found the answer online.</p> 
-<p>To try to stop that from happening, I&#8217;ve started <a href="http://wiki.jonhoman.com/">a wiki</a> where I&#8217;m posting <a href="http://wiki.jonhoman.com/index.php?title=Learning_Notes">&#8220;Learning Notes&#8221;</a> so I can keep track of information that solved a problem or an article that I found particular interesting. I&#8217;m also writing down quotes or interesting tidbits from books I read, starting with <a href="http://www.pragprog.com/titles/achbd/the-rspec-book">The RSpec Book</a>.</p> 
-<p>Here&#8217;s to using technology to bolster my memory!</p> 
+		<guid isPermaLink="false">http://blog.jonhoman.com/?p=219</guid>
+		<description><![CDATA[Last fall, my dad spent a few days with me while he was in town (then Mankato, MN) for meetings. We ended up having some really interesting conversations one evenings. I&#8217;d like to share some of that discussion, only a &#8230; <a href="http://blog.jonhoman.com/the-internet-and-the-human-brain/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Last fall, my dad spent a few days with me while he was in town (then Mankato, MN) for meetings. We ended up having some really interesting conversations one evenings. I&#8217;d like to share some of that discussion, only a few months late.</p>
+<p>A little background: my dad is non-techie. He is pretty limited to reading and writing emails, and even that was a stretch at first. So that makes his observation a little more interesting, at least to me.</p>
+<p>But on that evening, we somehow got on a few technical topics. After awhile, my dad made an interesting observation, comparing the internet to the human brain.</p>
+<p>A little more background, a few years my dad had brain surgery to remove a tumor. So that explains some of his interest in the brain.</p>
+<p>Anyways, we went on to other topics, including finding his former college roommate on LinkedIn. But I returned to his comment about the brain and the internet as I trying to fall asleep that night. And I realized he had a good point. The internet shares behavior with the human brain.</p>
+<p>When a route on the internet gets really slow or fails all together, traffic will adjust its flow to use faster paths to their destination. This could be called self-healing.</p>
+<p>In a similar fashion, the brain also self-heals. If a pathway is blocked because a neuron has died, then the other neurons will try to find another pathway. Or in the extreme case of brain surgery, entire sections of the brain will re-wire themselves.</p>
+<p>While technological advances are amazing, it&#8217;s more amazing to think about similar processes that have always been a part of us.</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://blog.jonhoman.com/tracking-progress/feed/</wfw:commentRss>
-		<slash:comments>1</slash:comments>
-		<feedburner:origLink>http://blog.jonhoman.com/tracking-progress/</feedburner:origLink></item>
-		
+			<wfw:commentRss>http://blog.jonhoman.com/the-internet-and-the-human-brain/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jonhoman.com/the-internet-and-the-human-brain/</feedburner:origLink></item>
 	</channel>
-</rss><!-- Dynamic page generated in 0.257 seconds. --><!-- Cached page generated by WP-Super-Cache on 2010-12-19 11:35:28 -->
-
+</rss><!-- Dynamic page generated in 0.303 seconds. --><!-- Cached page generated by WP-Super-Cache on 2011-01-10 14:35:02 -->

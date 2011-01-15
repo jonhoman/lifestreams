@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe FeedUpdaterWorker do
   let :feed do
-    Factory(:feed, :url => Rails.root.to_s + "/spec/data/feed-small.rss")
+    Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed.rss")
   end
 
   it "checks for updates to feeds" do
-    rss = RSS::Parser.parse(open(feed.url), false)
     Resque.should_receive(:enqueue)
     
     FeedUpdaterWorker.perform(feed.id)
