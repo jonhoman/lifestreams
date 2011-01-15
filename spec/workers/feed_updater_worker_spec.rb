@@ -13,7 +13,6 @@ describe FeedUpdaterWorker do
   end
 
   it "knows when a feed has no updates" do
-    #rss = RSS::Parser.parse(open(feed.url), false)
     rss = Feedzirra::Feed.fetch_and_parse(feed.url)
     rss.entries.each do |rss_item|
       item = Item.create!(:feed_id => feed.id, :title => rss_item.title, :body => rss_item.content, :published_date => rss_item.published, :link => rss_item.url)
