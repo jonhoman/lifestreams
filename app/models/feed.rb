@@ -10,6 +10,8 @@ class Feed < ActiveRecord::Base
   private
 
   def populate_items
-    Resque.enqueue(FeedCreatorWorker, id)
+    if ::Rails.env != "test"
+      Resque.enqueue(FeedCreatorWorker, id)
+    end
   end
 end

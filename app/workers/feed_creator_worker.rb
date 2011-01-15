@@ -6,35 +6,32 @@ class FeedCreatorWorker
       feed = Feed.find(feed_id)
       retries = 0
       begin
-        content = open(feed.url)
+        parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
       rescue => e
         retries += 1
         retry unless retries > 1
         raise MaxRetriesError.new(e.message)
       end
-      #TODO switch to a better parser that will also parse atom
-      rss = RSS::Parser.parse(content, false)
-      name = rss.channel.title
 
-      create_items(feed.id, rss)
+      create_items(feed.id, parsed_feed)
 
-      feed.update_attributes!(:name => name, :last_build_date => get_updated_date(rss).to_s )
+      name = parsed_feed.title
+      feed.update_attributes!(:name => name, :last_build_date => get_updated_date(parsed_feed).to_s )
     end
 
     private
 
-    def get_updated_date(rss)
-      # some feeds don't have LastBuildDate, use the first items pubDate instead
-      (rss.channel.lastBuildDate) || (rss.items.first.pubDate)
+    def get_updated_date(parsed_feed)
+      parsed_feed.entries.first.published
     end
 
-    def create_items(feed_id, rss)
-      rss.items.each do |item|
+    def create_items(feed_id, parsed_feed)
+      parsed_feed.entries.each do |item|
         Item.create!(
           :title => item.title, 
-          :body => item.description, 
-          :published_date => item.pubDate.to_s,
-          :link => item.link,
+          :body => item.content, 
+          :published_date => item.published,
+          :link => item.url,
           :feed_id => feed_id
         )
       end
