@@ -12,6 +12,7 @@ describe Stream do
   let :twitter_account do
     Factory(:twitter_account)
   end
+
   let :stream do
     Factory(:stream, :user_id => user.id, :feed_id => feed.id, :twitter_account_id => twitter_account.id)
   end

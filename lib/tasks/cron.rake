@@ -6,6 +6,6 @@ task :cron => :environment do
   # Check for feed updates for each stream
   streams.each do |stream|
     puts "Queuing up an update for #{stream.name}"
-    Resque.enqueue(FeedUpdaterWorker, stream.feed_id)
+    Resque.enqueue(FeedUpdaterWorker, stream.feed_id, stream.twitter_account_id)
   end
 end

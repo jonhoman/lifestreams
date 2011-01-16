@@ -6,7 +6,6 @@ describe StreamsController do
     sign_in @user
   end
 
-
   describe "#new" do
     before do
       get :new

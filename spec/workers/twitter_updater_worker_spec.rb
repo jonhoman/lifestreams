@@ -6,10 +6,14 @@ describe TwitterUpdaterWorker do
     @mash.id_str = "1234"
     @item = Item.create!(:title => "Hello, World!", :body => "My First Post")
   end
+
+  let :twitter_account do
+    Factory(:twitter_account)
+  end
   
   it "shares the new item" do
     Twitter.should_receive(:update).and_return { @mash }
-    TwitterUpdaterWorker.perform(@item.id)
+    TwitterUpdaterWorker.perform(@item.id, twitter_account.id)
 
     @item.reload.shared.should be_true
   end
@@ -17,14 +21,14 @@ describe TwitterUpdaterWorker do
 
   it "store the status id on the item" do
     Twitter.should_receive(:update).and_return { @mash }
-    TwitterUpdaterWorker.perform(@item.id)
+    TwitterUpdaterWorker.perform(@item.id, twitter_account.id)
 
     @item.reload.status_id.should == "1234"
   end
 
   context "hit twitter" do
-    it "updates the user's timeline" do
-      TwitterUpdaterWorker.perform(@item.id)
+    xit "updates the user's timeline" do
+      TwitterUpdaterWorker.perform(@item.id, twitter_account.id)
 
       TwitterUpdaterWorkerHelper.user_status.should == "Blog Post: #{@item.title}"
 
