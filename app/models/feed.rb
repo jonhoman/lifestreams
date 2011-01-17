@@ -4,7 +4,7 @@ class Feed < ActiveRecord::Base
   has_many :items
 
   validates_presence_of :name, :url
-  validates_format_of :url, :with => URI::regexp(%w(http https))
+  validates_format_of :url, :with => URI::regexp(%w(http https file))
 
   after_create :populate_items
 
