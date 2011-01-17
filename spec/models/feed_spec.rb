@@ -23,6 +23,10 @@ describe Feed do
     feed.should_not be_valid
   end
 
+  it "is not valid with a bad url" do
+    feed.url = "asdf"
+    feed.should_not be_valid
+  end
   it "has a reference to a user" do
     feed.user_id.should == user.id
   end
