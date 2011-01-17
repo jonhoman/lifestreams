@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110112200448) do
 
-  create_table "destinations", :force => true do |t|
-    t.string   "name"
-    t.integer  "source_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "feeds", :force => true do |t|
     t.string   "url"
     t.datetime "created_at"
@@ -39,14 +32,6 @@ ActiveRecord::Schema.define(:version => 20110112200448) do
     t.datetime "published_date"
     t.string   "link"
     t.string   "status_id"
-  end
-
-  create_table "sources", :force => true do |t|
-    t.string   "name"
-    t.string   "feed_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "stream_id"
   end
 
   create_table "streams", :force => true do |t|

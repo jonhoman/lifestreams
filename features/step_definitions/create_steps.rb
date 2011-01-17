@@ -7,15 +7,6 @@ When /^I should have the following fields stored for the stream:$/ do |table|
   end
 end
 
-When /^I should have the following fields stored for the source:$/ do |table|
-  source = Source.last
-  table.hashes.each do |row|
-    row.keys.each do |header|
-      source.send(header.dehumanize).to_s.should == row[header]
-    end
-  end
-end
-
 When /^I should have the following fields stored for the feed:$/ do |table|
   feed = Feed.last
   table.hashes.each do |row|
