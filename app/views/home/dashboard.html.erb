@@ -1,7 +1,18 @@
 <h1>Dashboard</h1>
 
 <div class="dashboard">
-  Configured Accounts
+  <img class="icon" src="images/rss.jpg">
+  <span class=dashboard-sections>Feeds</span>
+  <% @feeds.each do |feed| %>
+    <div><%= link_to feed.name, feed.url %></div>
+  <% end %>
+
+  <div><%= link_to "Add new feed", new_feed_path %></div>
+</div>
+
+<div class="dashboard">
+  <img class="icon" src="images/twitter.gif">
+  <span class=dashboard-sections>Configured Accounts</span>
   <% @twitter_accounts.each do |account| %>
     <div><%= link_to account.handle, "http://twitter.com/#{account.handle}" %></div>
   <% end %>
@@ -10,15 +21,7 @@
 </div>
 
 <div class="dashboard">
-  Feeds 
-  <% @feeds.each do |feed| %>
-    <div><%= link_to feed.name, feed.url %></div>
-  <% end %>
-  <div><%= link_to "Add new feed", new_feed_path %></div>
-</div>
-
-<div class="dashboard">
-  Streams 
+  <span class=dashboard-sections>Streams</span>
   <% @streams.each do |stream| %>
     <div><%= link_to stream.name %></div>
   <% end %>

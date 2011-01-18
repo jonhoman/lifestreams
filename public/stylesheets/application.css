@@ -5,6 +5,7 @@
 
 #session_actions {
   float: right;
+  padding-top: 60px;
 }
 
 #title {
@@ -33,11 +34,43 @@ li.help_info {
   padding-bottom: 10px;
 }
 
-em {
-  font-style: normal;
-  font-weight: bold;
-}
-
 #small_note {
   font-size: 80%;
+}
+
+#logo {
+  width: 30%;
+  border: 0 none;
+}
+
+img {
+  border: 0 none;
+}
+img#blue-stream {
+  width: 900px;
+  margin-top: 20px;
+}
+
+img.icon {
+  width: 10%;
+}
+
+a.image-border {
+  text-decoration: none;
+  border: 0 none;
+}
+
+a { 
+  color: #000; 
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000; 
+  text-decoration: underline;
+}
+
+.dashboard-sections {
+  font-size: 16px;
+  vertical-align: 7px;
 }
