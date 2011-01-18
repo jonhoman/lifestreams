@@ -94,7 +94,7 @@ describe FeedsController do
       it "redirects to the feed" do
         Feed.stub(:find) { mock_feed(:update_attributes => true) }
         put :update, :id => "1"
-        response.should redirect_to(feed_url(mock_feed))
+        response.should redirect_to(user_root_path)
       end
     end
 
@@ -124,7 +124,7 @@ describe FeedsController do
     it "redirects to the feeds list" do
       Feed.stub(:find) { mock_feed }
       delete :destroy, :id => "1"
-      response.should redirect_to(feeds_url)
+      response.should redirect_to(user_root_path)
     end
   end
 
