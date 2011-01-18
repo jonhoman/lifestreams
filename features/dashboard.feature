@@ -34,6 +34,9 @@ Feature: Dashboard interface
   Scenario: User should be able to add a feed 
     Then I should see "Add new feed"
 
+  Scenario: User should be able to add a stream
+    Then I should see "Add new Stream"
+
   Scenario: User should see their feeds 
     Given I add a feed 
     When I go to the user root page

@@ -8,7 +8,7 @@ Feature: Create a new stream
     And I sign in
     And I add a feed
     And I configure my twitter account
-    And I follow "Add New Stream"
+    And I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
     And I select "test" from "Choose a Twitter Account" 
