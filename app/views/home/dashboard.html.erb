@@ -27,7 +27,11 @@
 <div class="dashboard">
   <span class=dashboard-sections>Streams</span>
   <% @streams.each do |stream| %>
-    <div><%= link_to stream.name %></div>
+    <div>
+      <%= link_to stream.name, edit_stream_path(stream) %>
+      <%= link_to image_tag("/images/delete-icon.jpg", :class => "icon", :alt => "Delete Stream"), 
+        stream, :confirm => "Are you sure you want to delete #{stream.name}", :method => :delete %>
+    </div>
   <% end %>
   <div><%= link_to "Add new Stream", new_stream_path %></div>
 </div

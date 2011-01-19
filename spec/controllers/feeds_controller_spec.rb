@@ -121,7 +121,7 @@ describe FeedsController do
       delete :destroy, :id => "37"
     end
 
-    it "redirects to the feeds list" do
+    it "redirects to the dashboard" do
       Feed.stub(:find) { mock_feed }
       delete :destroy, :id => "1"
       response.should redirect_to(user_root_path)
