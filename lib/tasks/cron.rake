@@ -1,5 +1,5 @@
 desc "This task is called by the Heroku cron add-on"
-task :cron => "jobs:work" do
+task :cron => :environment do
   # Get all streams
   streams = Stream.all_active
 
