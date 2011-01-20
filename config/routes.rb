@@ -4,8 +4,8 @@ Lifestreams::Application.routes.draw do
   match 'dashboard' => 'home#dashboard', :as => 'user_root'
   
   resources :feeds
-  resources :streams
   resources :twitter_accounts
+  resources :streams
 
   match "/twitter/connect" => "twitter#connect"
   match "/twitter/callback" => "twitter#callback"

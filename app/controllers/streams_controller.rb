@@ -14,10 +14,6 @@ class StreamsController < ApplicationController
     redirect_to(user_root_path, :notice => 'Your stream was successfully created.')
   end
 
-  def index
-    @streams = Stream.all
-  end
-
   def edit
     @feeds = Feed.user(current_user)
     @twitter_accounts = TwitterAccount.user(current_user)
@@ -39,5 +35,8 @@ class StreamsController < ApplicationController
     @stream.destroy
 
     redirect_to(user_root_path, :notice => 'Stream was successfully deleted.')
+  end
+
+  def show
   end
 end

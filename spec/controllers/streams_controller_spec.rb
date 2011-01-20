@@ -38,18 +38,6 @@ describe StreamsController do
     end
   end
 
-  describe "#index" do
-    it "should be successful" do
-      get :index
-      response.should be_success
-    end
-
-    it "should have a list of streams" do
-      get :index
-      assigns(:streams).should_not be_nil
-    end
-  end
-
   describe "#edit" do
     it "assign the requested stream as @stream" do
       Stream.stub(:find).with("1") { mock_stream }
