@@ -21,6 +21,7 @@ Feature: Create a new feed
     Given I have a feed I want to edit
     And I am on the user root page
     When I follow "Jon's Feed"
+    And I follow "Edit"
     And change the feed name to "Jon's Real Feed"
     And press "Update Feed"
     Then I should see "Jon's Real Feed"

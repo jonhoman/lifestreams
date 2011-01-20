@@ -26,6 +26,7 @@ Feature: Create a new stream
     Given I have a stream I want to edit
     And I am on the user root page
     When I follow "example stream"
+    And I follow "Edit"
     And I change the stream name to "Real Stream"
     And I press "Update Stream"
     Then I should see "Real Stream"

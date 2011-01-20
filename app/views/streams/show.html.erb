@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @stream.name %></h3>
+<%= render :partial => 'stream_info' %>
+
+<%= link_to 'Edit', edit_stream_path(@stream) %> |
+<%= link_to 'Back', user_root_path %>

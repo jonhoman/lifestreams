@@ -1,0 +1,13 @@
+<% if @stream.feed %>
+<p>
+  <b>Feed:</b>
+  <%= @stream.feed.name %>
+</p>
+<% end %>
+
+<% if @stream.twitter_account %>
+<p>
+  <b>Twitter Account:</b>
+  <%= @stream.twitter_account.handle %>
+</p>
+<% end %>
