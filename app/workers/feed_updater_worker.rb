@@ -5,7 +5,6 @@ class FeedUpdaterWorker
     def perform(feed_id, twitter_account_id)
       feed = Feed.find(feed_id)
 
-      #TODO: consider passing in all feed url's here
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
 
       items = parsed_feed.entries
