@@ -2,7 +2,10 @@
 <p>
   <b>Feed:</b>
   <%= @stream.feed.name %>
-</p>
+  </p>
+
+<% elsif %>
+  <em>There is no feed associated with your stream. Please choose a feed you wish track.</em>
 <% end %>
 
 <% if @stream.twitter_account %>
@@ -10,4 +13,6 @@
   <b>Twitter Account:</b>
   <%= @stream.twitter_account.handle %>
 </p>
+<% elsif %>
+  <em>There is no twitter account associated with your stream. Please choose a twitter account you wish track.</em>
 <% end %>
