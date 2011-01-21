@@ -1,18 +1,26 @@
-<% if @stream.feed %>
-<p>
+<div>
   <b>Feed:</b>
-  <%= @stream.feed.name %>
-  </p>
+  <% if @stream.feed %>
+    <%= @stream.feed.name %>
+  <% elsif %>
+    <em>There is no feed associated with your stream. Please click edit to choose a feed you wish track.</em>
+  <% end %>
+</div>
 
-<% elsif %>
-  <em>There is no feed associated with your stream. Please choose a feed you wish track.</em>
-<% end %>
-
-<% if @stream.twitter_account %>
-<p>
+<div>
   <b>Twitter Account:</b>
-  <%= @stream.twitter_account.handle %>
-</p>
-<% elsif %>
-  <em>There is no twitter account associated with your stream. Please choose a twitter account you wish track.</em>
+  <% if @stream.twitter_account %>
+    <%= @stream.twitter_account.handle %>
+  <% elsif %>
+    <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
+  <% end %>
+</div>
+
+<% if @stream.feed && @stream.feed.items.count > 0 %>
+  <div>
+    <b>Recent Items:</b>
+    <% @stream.feed.items.each do |item| %>
+      <p><%= link_to item.title, item.link %></p>
+    <% end %>
+  </div>
 <% end %>
