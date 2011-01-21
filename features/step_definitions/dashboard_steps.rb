@@ -30,6 +30,10 @@ Given /^I create a stream with a feed and a twitter account$/ do
   And 'I add my feed and my twitter account to my stream'
 end
 
+Given /^I remove the feed from the stream$/ do
+  @stream.update_attributes! :feed => nil
+end
+
 Then /^I should see my feed$/ do
   Then 'I should see "example feed"'
 end

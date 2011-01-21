@@ -5,7 +5,7 @@ describe Feed do
     Factory(:user)
   end
 
-  let(:feed) do
+  let!(:feed) do
     Factory(:feed, :user_id => user.id)
   end
 
@@ -31,9 +31,16 @@ describe Feed do
     feed.user_id.should == user.id
   end
 
-  it "returns all accounts associated with a user" do
-    feed2 = Factory(:feed, :user_id => feed.user_id + 1) 
+  describe ".user" do
 
-    Feed.user(user.id).count.should == 1
+    it "returns all accounts associated with a user" do
+      Feed.user(user.id).count.should == 1
+    end
+
+    it "does not return other users' feeds" do
+      feed2 = Factory(:feed, :user_id => feed.user_id + 1) 
+
+      Feed.user(user.id).count.should == 1
+    end
   end
 end

@@ -3,7 +3,7 @@ Feature: Show stream information
   As a user
   I want to view my stream's details
 
-  Scenario: View stream details show
+  Scenario: View stream show page
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
     And I create a stream with a feed and a twitter account
@@ -14,3 +14,12 @@ Feature: Show stream information
     And I should see "example feed"
     And I should see "test"
     And I should see "Recent Items"
+
+  Scenario: View stream show page without a feed
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    And I create a stream with a feed and a twitter account
+    And I remove the feed from the stream
+    And I am on the user root page
+    When I follow "example stream"
+    Then I should see "no feed"
