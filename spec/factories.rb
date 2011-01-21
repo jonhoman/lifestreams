@@ -19,4 +19,8 @@ FactoryGirl.define do
   factory :stream do
     name "example stream"
   end
+
+  factory :item do
+    title "example item"
+  end
 end

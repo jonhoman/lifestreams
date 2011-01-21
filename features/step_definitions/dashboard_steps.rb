@@ -10,12 +10,24 @@ Given /^I add a feed$/ do
   @feed = Factory(:feed, :user_id => @user.id)
 end
 
+Given /^I add a feed that has items$/ do
+  Given 'I add a feed'
+  @feed.items << Factory(:item)
+end
+
 Given /^I add a stream$/ do
   @stream = Factory(:stream, :user_id => @user.id)
 end
 
 Given /^I add my feed and my twitter account to my stream$/ do
   @stream.update_attributes! :feed => @feed, :twitter_account => @twitter_account
+end
+
+Given /^I create a stream with a feed and a twitter account$/ do
+  And 'I add a feed that has items'
+  And 'I configure my twitter account'
+  And 'I add a stream'
+  And 'I add my feed and my twitter account to my stream'
 end
 
 Then /^I should see my feed$/ do
