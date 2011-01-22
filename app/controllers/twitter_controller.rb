@@ -8,7 +8,6 @@ class TwitterController < ApplicationController
     session[:request_token_secret] = @request_token.secret
 
     redirect_to @request_token.authorize_url
-    return
   end
 
   def callback
@@ -25,12 +24,10 @@ class TwitterController < ApplicationController
       :handle => @access_token.params[:screen_name],
       :user_id => current_user.id)
 
-    if @account.save
-      redirect_to user_root_path, :notice => 'You successfully authorized your Twitter account.'
-    else 
-      redirect_to user_root_path, :notice => 'There was an issue authorizing your Twitter account. Please try again.'
-    end
+    notice = @account.save ? 'You successfully authorized your Twitter account.' : 
+                             'There was an issue authorizing your Twitter account. Please try again.'
 
+    redirect_to user_root_path, :notice => notice
   end
 
   def self.consumer
