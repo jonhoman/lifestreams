@@ -16,7 +16,7 @@ group :development, :test do
   gem "rspec-rails", '2.3.1'
   gem "cucumber-rails", '0.3.2'
   gem "dehumanize", '1.0.0'
-  gem "heroku", '1.15.0'
+  gem "heroku" 
   gem "capybara", '0.4.0'
   gem "factory_girl_rails", "1.1.beta1"
 end
