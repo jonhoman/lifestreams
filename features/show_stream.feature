@@ -23,3 +23,12 @@ Feature: Show stream information
     And I am on the user root page
     When I follow "example stream"
     Then I should see "no feed"
+
+  Scenario: View stream show page without a twitter account
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    And I create a stream with a feed and a twitter account
+    And I remove the twitter account from the stream
+    And I am on the user root page
+    When I follow "example stream"
+    Then I should see "no twitter account"

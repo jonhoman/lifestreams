@@ -32,7 +32,6 @@ describe Feed do
   end
 
   describe ".user" do
-
     it "returns all accounts associated with a user" do
       Feed.user(user.id).count.should == 1
     end

@@ -34,6 +34,9 @@ Given /^I remove the feed from the stream$/ do
   @stream.update_attributes! :feed => nil
 end
 
+Given /^I remove the twitter account from the stream$/ do
+  @stream.update_attributes! :twitter_account => nil
+end
 Then /^I should see my feed$/ do
   Then 'I should see "example feed"'
 end
