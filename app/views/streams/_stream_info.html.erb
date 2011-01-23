@@ -19,9 +19,9 @@
 <% if @stream.feed && @stream.feed.items.count > 0 %>
   <div>
     <b>Recent Items:</b>
-    <ul>
+    <ul id="item_list">
     <% @stream.feed.recent_items.each do |item| %>
-      <li class=item><%= link_to item.title, item.link %></li>
+      <li><%= link_to item.title, item.link %></li>
     <% end %>
   </ul>
   </div>

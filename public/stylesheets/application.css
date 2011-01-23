@@ -34,6 +34,12 @@ li.help_info {
   padding-bottom: 10px;
 }
 
+ul#item_list {
+  padding: 0px;
+  margin-left: 0px;
+  list-style-type: none;
+}
+
 #small_note {
   font-size: 80%;
 }
