@@ -43,6 +43,16 @@ Feature: Authentication and Authorization
     Given I am on the home page
     Then I should see "Sign up or sign in"
 
+  Scenario: Dashboard and account settings links not visible on home page if not signed in
+    Given I am on the home page
+    Then I should see "Sign up or sign in"
+    
+  Scenario: Dashboard and account settings links visible on home page if not signed in
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    Then I should see "Dashboard" within "#session_actions"
+    Then I should see "Account Settings"
+
   Scenario: Must be logged in to view streams page
     Given I am on the home page
     When I go to the streams page
