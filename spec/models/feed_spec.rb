@@ -8,6 +8,10 @@ describe Feed do
   let!(:feed) do
     Factory(:feed, :user_id => user.id)
   end
+  
+  let(:item) do
+    Factory(:item)
+  end
 
   it "is valid with valid attributes" do
     feed.should be_valid
@@ -40,6 +44,20 @@ describe Feed do
       feed2 = Factory(:feed, :user_id => feed.user_id + 1) 
 
       Feed.user(user.id).count.should == 1
+    end
+  end
+
+  describe "#recent_items" do
+    it "returns items" do
+      feed.items << item
+      feed.recent_items.first.class.should == Item
+    end
+
+    it "returns at most 3 items" do
+      items = []
+      5.times { |n| items << Factory(:item, :title => n, :published_date => DateTime.now - n.days) }
+      feed.update_attributes! :items => items
+      feed.recent_items.count.should == 3
     end
   end
 end

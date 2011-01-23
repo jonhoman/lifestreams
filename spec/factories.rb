@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :feed do
     name "example feed"
-    url "http://example.org/feed"
+    url  "http://example.org/feed"
   end
 
   factory :stream do
@@ -21,6 +21,7 @@ FactoryGirl.define do
   end
 
   factory :item do
-    title "example item"
+    title          "example item"
+    published_date DateTime.now
   end
 end

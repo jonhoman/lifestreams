@@ -8,6 +8,15 @@ class Feed < ActiveRecord::Base
 
   after_create :populate_items
 
+  def recent_items
+    item_list = items.sort! { |x,y| y <=> x }
+
+    if item_list.count > 3
+      item_list = item_list.take(3)
+    end
+    item_list
+  end
+
   private
 
   def populate_items

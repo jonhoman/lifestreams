@@ -24,6 +24,25 @@ Feature: Show stream information
     And I follow "example feed"
     Then I should be on the feed page
 
+  Scenario: Show stream page contains feed items
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    And I create a stream with a feed and a twitter account
+    And I am on the user root page
+    When I follow "example stream"
+    Then I should see "Recent Items"
+    And I should see items
+
+  Scenario: Show stream page displays a maximum of 3 feed items
+    Given I am a user with email "jon@example.com" and password "password"
+    And I sign in
+    And I create a stream with a feed and a twitter account
+    And I add 3 items to my feed
+    And I am on the user root page
+    When I follow "example stream"
+    Then I should see "Recent Items"
+    And I should see at most 3 items
+
   Scenario: View stream show page without a feed
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in

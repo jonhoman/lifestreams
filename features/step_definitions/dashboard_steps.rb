@@ -15,6 +15,12 @@ Given /^I add a feed that has items$/ do
   @feed.items << Factory(:item)
 end
 
+Given /^I add (\d+) items to my feed$/ do |item_count|
+  item_count.to_i.times do |n|
+    @feed.items << Factory(:item, :title => "example item #{n + 1}") 
+  end
+end
+
 Given /^I add a stream$/ do
   @stream = Factory(:stream, :user_id => @user.id)
 end
@@ -53,3 +59,10 @@ Then /^I should see my stream$/ do
   Then 'I should see "example stream"'
 end
 
+Then /^I should see items$/ do 
+  page.should have_selector('ul li.item')
+end
+
+Then /^I should see at most (\d+) items$/ do |item_count|
+  page.should have_selector('ul li.item', :maximum => item_count)
+end
