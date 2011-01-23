@@ -1,7 +1,7 @@
 <div>
   <b>Feed:</b>
   <% if @stream.feed %>
-    <%= @stream.feed.name %>
+    <%= link_to @stream.feed.name, feed_path(@stream.feed) %>
   <% elsif %>
     <em>There is no feed associated with your stream. Please click edit to choose a feed you wish track.</em>
   <% end %>
@@ -10,7 +10,7 @@
 <div>
   <b>Twitter Account:</b>
   <% if @stream.twitter_account %>
-    <%= @stream.twitter_account.handle %>
+    <%= link_to @stream.twitter_account.handle, "http://twitter.com/#{@stream.twitter_account.handle}" %>
   <% elsif %>
     <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
   <% end %>

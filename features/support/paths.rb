@@ -14,6 +14,8 @@ module NavigationHelpers
       edit_feed_path @feed
     when /the stream page/
       stream_path @stream
+    when /the feed page/
+      feed_path @feed
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
