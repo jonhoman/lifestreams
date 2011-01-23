@@ -61,6 +61,10 @@ img.icon {
   width: 10%;
 }
 
+img.delete-icon {
+  width: 7%;
+}
+
 a.image-border {
   text-decoration: none;
   border: 0 none;

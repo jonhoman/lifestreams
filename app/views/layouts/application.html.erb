@@ -9,11 +9,11 @@
 </head>
 <body>
   <div id="container">
-    <a class="image-border" href="/"><img src="/images/logo-beta.png" id="logo"></a>
+    <%= link_to image_tag("/images/logo-beta.png", :id => "logo", :alt => "Lifestreams"), "/" %>
 
     <%= render 'layouts/user_nav' %>
 
-    <img id="blue-stream" src="/images/Blue-Stream.gif">
+    <%= image_tag "/images/Blue-Stream.gif", :id => "blue-stream", :alt => "Blue Stream" %>
       
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
