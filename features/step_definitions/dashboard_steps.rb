@@ -60,9 +60,9 @@ Then /^I should see my stream$/ do
 end
 
 Then /^I should see items$/ do 
-  page.should have_selector('ul li.item')
+  page.should have_selector('ul#item_list li')
 end
 
 Then /^I should see at most (\d+) items$/ do |item_count|
-  page.should have_selector('ul li.item', :maximum => item_count)
+  page.should have_selector('ul#item_list li', :maximum => item_count)
 end
