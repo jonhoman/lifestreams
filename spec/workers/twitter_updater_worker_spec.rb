@@ -4,7 +4,7 @@ describe TwitterUpdaterWorker do
   before(:each) do
     @mash = Hashie::Mash.new
     @mash.id_str = "1234"
-    @item = Item.create!(:title => "Hello, World!", :body => "My First Post")
+    @item = Item.create!(:title => "Hello, World!", :body => "My First Post", :link => "http://google.com")
   end
 
   let :twitter_account do
