@@ -63,6 +63,7 @@ img.icon {
 
 img.delete-icon {
   width: 7%;
+  vertical-align: bottom;
 }
 
 a.image-border {

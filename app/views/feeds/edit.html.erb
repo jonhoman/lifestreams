@@ -1,6 +1,6 @@
-<h1>Editing feed</h1>
+<h1>Editing <%= @feed.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @feed %> |
-<%= link_to 'Back', feeds_path %>
+<%= link_to 'Show', @feed %><br /> 
+<%= link_to 'Back to Dasboard', user_root_path %>
