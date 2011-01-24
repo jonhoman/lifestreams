@@ -7,13 +7,13 @@
   <p>
     <%= f.label :feed_id, "Choose a Feed" %>
     <%= select 'stream', 'feed_id', 
-      options_from_collection_for_select(@feeds, 'id', 'name', @stream.feed.id) %>
+      options_from_collection_for_select(@feeds, 'id', 'name', determine_selected_feed) %>
   </p>
 
   <p>
     <%= f.label :twitter_account_id, "Choose a Twitter Account" %>
     <%= select 'stream', 'twitter_account_id', 
-      options_from_collection_for_select(@twitter_accounts, 'id', 'handle', @stream.twitter_account.id) %>
+      options_from_collection_for_select(@twitter_accounts, 'id', 'handle', determine_selected_twitter_account) %>
   </p>
 
   <%= f.submit %>

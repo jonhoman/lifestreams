@@ -25,16 +25,4 @@ describe Stream do
     stream.name = nil
     stream.should_not be_valid
   end
-
-  it "has a reference to a user" do
-    stream.user_id.should == user.id
-  end
-
-  it "has a reference to a feed" do
-    stream.feed_id.should == feed.id
-  end
-
-  it "has a reference to a twitter account" do
-    stream.twitter_account_id.should == twitter_account.id
-  end
 end
