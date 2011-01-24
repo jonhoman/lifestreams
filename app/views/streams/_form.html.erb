@@ -1,12 +1,20 @@
 <%= form_for(@stream) do |f| %>
-  <%= f.label :name, "Stream Name" %>
-  <%= f.text_field :name %>
+  <p>
+    <%= f.label :name, "Stream Name" %>
+    <%= f.text_field :name %>
+  </p>
 
-  <%= f.label :feed_id, "Choose a Feed" %>
-  <%= select 'stream', 'feed_id', options_from_collection_for_select(@feeds, 'id', 'name') %>
+  <p>
+    <%= f.label :feed_id, "Choose a Feed" %>
+    <%= select 'stream', 'feed_id', options_from_collection_for_select(@feeds, 'id', 'name') %>
+  </p>
 
-  <%= f.label :twitter_account_id, "Choose a Twitter Account" %>
-  <%= select 'stream', 'twitter_account_id', options_from_collection_for_select(@twitter_accounts, 'id', 'handle') %>
+  <p>
+    <%= f.label :twitter_account_id, "Choose a Twitter Account" %>
+    <%= select 'stream', 'twitter_account_id', options_from_collection_for_select(@twitter_accounts, 'id', 'handle') %>
+  </p>
 
   <%= f.submit %>
 <% end %>
+
+<p><%= link_to 'Back to Dashboard', user_root_path %></p>
