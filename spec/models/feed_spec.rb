@@ -13,6 +13,10 @@ describe Feed do
     Factory(:item)
   end
 
+  let!(:stream) do
+    Factory(:stream, :user_id => user.id, :feed_id => feed.id)
+  end
+
   it "is valid with valid attributes" do
     feed.should be_valid
   end
@@ -47,6 +51,19 @@ describe Feed do
     end
   end
 
+  describe "#deactivate_stream" do
+    it "deactivates associated streams" do
+      feed.deactivate_stream
+
+      stream.reload.should_not be_active
+    end
+
+    it "deactivates associated streams on feed deletion" do
+      feed.destroy
+
+      stream.reload.should_not be_active
+    end
+  end
   describe "#recent_items" do
     it "returns items" do
       feed.items << item

@@ -6,3 +6,6 @@ When /^I change the stream name to "([^"]*)"$/ do |name|
   fill_in("Stream Name", :with => name)
 end
 
+Then /^the stream should not be active$/ do
+  @stream.reload.should_not be_active
+end

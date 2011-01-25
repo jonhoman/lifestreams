@@ -31,3 +31,12 @@ Feature: Create a new feed
     And I go to the user root page
     When I follow "Delete Feed"
     Then I should not see "Jon's Feed"
+
+  Scenario: Delete an existing feed deactives its associated stream
+    Given I add a feed
+    And I add a stream
+    And I add my feed to my stream
+    And I go to the user root page
+    When I follow "Delete Feed"
+    Then I should not see "Jon's Feed"
+    And the stream should not be active

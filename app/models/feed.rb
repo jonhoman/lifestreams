@@ -7,6 +7,7 @@ class Feed < ActiveRecord::Base
   validates_format_of :url, :with => URI::regexp(%w(http https file))
 
   after_create :populate_items
+  before_destroy :deactivate_stream
 
   def recent_items
     item_list = items.sort! { |x,y| y <=> x }
@@ -17,6 +18,11 @@ class Feed < ActiveRecord::Base
     item_list
   end
 
+  def deactivate_stream
+    streams = Stream.where(:feed_id => id)
+    streams.each { |s| s.update_attributes(:active => false) }
+  end
+
   private
 
   def populate_items
@@ -24,4 +30,5 @@ class Feed < ActiveRecord::Base
       Resque.enqueue(FeedCreatorWorker, id)
     end
   end
+
 end
