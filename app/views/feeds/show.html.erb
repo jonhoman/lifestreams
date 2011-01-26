@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @feed.name %></h3>
 <p>
-  <b>Url:</b>
+  <b>Feed URL:</b>
   <%= @feed.url %>
 </p>
 
-<div>Recent Items</div>
-
-<div>Published by:</div>
+<%= render :partial => 'streams/recent_items', :locals => { :feed => @feed } %>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %><br /> 
 <%= link_to 'Back to Dashboard', user_root_path %>
