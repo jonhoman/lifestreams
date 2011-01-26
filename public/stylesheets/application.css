@@ -1,3 +1,14 @@
+body, p, ol, ul, td {
+  font-family: helvetica, verdana, arial, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+.notice {
+  color: #7F9A3C;
+  font-size: 125%;
+}
+
 .dashboard {
   width: 30%;
   float: left;
@@ -27,7 +38,12 @@
 }
 
 #help_info_container {
+  color: #008099;
   margin-top: 20px;
+  font-size: 125%;
+  border-bottom: 1px;
+  border-color: #008099;
+  border-bottom-style: solid;
 }
 
 li.help_info {
