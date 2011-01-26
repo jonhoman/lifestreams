@@ -29,6 +29,10 @@ Given /^I add my feed to my stream$/ do
   @stream.update_attributes! :feed => @feed
 end
 
+Given /^I add my twitter account to my stream$/ do
+  @stream.update_attributes! :twitter_account => @twitter_account
+end
+
 Given /^I add my feed and my twitter account to my stream$/ do
   @stream.update_attributes! :feed => @feed, :twitter_account => @twitter_account
 end

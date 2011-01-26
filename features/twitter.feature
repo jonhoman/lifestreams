@@ -2,11 +2,22 @@ Feature: Delete a twitter account
   In order to stop using a twitter account
   A user
   Wants to be able to delete a twitter account
-
-  Scenario:
+  
+  Background:
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
-    And I have a twitter account 
+
+  Scenario: Delete an existing twitter account
+    Given I have a twitter account 
     And I go to the user root page
     When I follow "Delete Twitter Account"
     Then I should not see "test"
+
+  Scenario: Delete an existing twitter account deactivates its associated stream
+    Given I have a twitter account 
+    And I add a stream
+    And I add my twitter account to my stream
+    And I go to the user root page
+    When I follow "Delete Twitter Account"
+    Then I should not see "test"
+    And the stream should not be active

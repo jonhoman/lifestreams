@@ -9,6 +9,9 @@ describe TwitterAccount do
     Factory(:twitter_account, :user_id => user.id)
   end
 
+  let! :stream do 
+    Factory(:stream, :user_id => user.id, :twitter_account_id => account.id)
+  end
   it "is valid with valid attributes" do
     account.should be_valid
   end
@@ -36,5 +39,19 @@ describe TwitterAccount do
     account2 = Factory(:twitter_account, :user_id => account.user_id + 1) 
 
     TwitterAccount.user(user.id).count.should == 1
+  end
+
+  describe "#deactive_stream" do
+    it "deactivates associated streams" do 
+      account.deactivate_stream
+
+      stream.reload.should_not be_active
+    end
+
+    it "deactivates associated streams twitter account deletion" do 
+      account.destroy
+
+      stream.reload.should_not be_active
+    end
   end
 end
