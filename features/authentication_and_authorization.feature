@@ -53,12 +53,7 @@ Feature: Authentication and Authorization
     Then I should see "Dashboard" within "#session_actions"
     Then I should see "Account Settings"
 
-  Scenario: Must be logged in to view streams page
+  Scenario: Must be logged in to view dashboard 
     Given I am on the home page
-    When I go to the streams page
-    Then I should be on the new user session page
-
-  Scenario: Must be logged in to view feeds page
-    Given I am on the home page
-    When I go to the feeds page
+    When I go to the user root page
     Then I should be on the new user session page

@@ -12,14 +12,6 @@ describe FeedsController do
     end
   end
 
-  describe "GET index" do
-    it "assigns all feeds as @feeds" do
-      Feed.stub(:all) { [mock_feed] }
-      get :index
-      assigns(:feeds).should eq([mock_feed])
-    end
-  end
-
   describe "GET show" do
     it "assigns the requested feed as @feed" do
       Feed.stub(:find).with("37") { mock_feed }

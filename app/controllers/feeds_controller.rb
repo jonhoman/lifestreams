@@ -1,10 +1,6 @@
 class FeedsController < ApplicationController
   before_filter :authenticate_user!
 
-  def index
-    @feeds = Feed.all
-  end
-
   def show
     @feed = Feed.find(params[:id])
   end
