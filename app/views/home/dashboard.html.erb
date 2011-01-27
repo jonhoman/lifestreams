@@ -11,7 +11,8 @@
           feed, :confirm => "Are you sure you want to delete #{feed.name}", :method => :delete %>
       </div>
     <% end %>
-    <div><%= link_to "Add new feed", new_feed_path %></div>
+    <div class="create-links"><%= link_to "Add new feed", new_feed_path %></div>
+    <%= render :partial => 'feed_help' if @feeds.count == 0 %>
   </div>
 
   <div class="dashboard">
@@ -24,7 +25,8 @@
           account, :confirm => "Are you sure you want to delete #{account.handle}", :method => :delete %>
         </div>
     <% end %>
-    <div><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
+    <div class="create-links"><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
+    <%= render :partial => 'twitter_help' if @twitter_accounts.count == 0 %>
   </div>
 
   <div class="dashboard">
@@ -37,6 +39,7 @@
           stream, :confirm => "Are you sure you want to delete #{stream.name}", :method => :delete %>
       </div>
     <% end %>
-    <div><%= link_to "Add new Stream", new_stream_path %></div>
+    <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
+    <%= render :partial => 'stream_help' if @streams.count == 0 %>
   </div>
 </div>

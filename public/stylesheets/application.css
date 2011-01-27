@@ -130,3 +130,11 @@ a:hover {
   background-color: #008099;
 }
 
+.help {
+  font-size: 13px;
+  padding-right: 20px;
+}
+
+.create-links {
+  margin-top: 20px;
+}
