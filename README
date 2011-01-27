@@ -4,12 +4,6 @@ app/controllers/twitter_controller.rb
 18:    #TODO catch unauthorized request token
 21:    #TODO only create/authorize an account once
 
-app/models/stream.rb
-3:  #TODO also check for "active" stream (parse-able feed, authorized twitter account)
-
-app/workers/feed_updater_worker.rb
-8:      #TODO: consider passing in all feed url's here
-
 spec/workers/twitter_updater_worker_spec.rb
 40:      #TODO create twitter username from user
 
