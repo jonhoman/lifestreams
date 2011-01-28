@@ -6,3 +6,4 @@ config/database.yml
 config/heroku_env.rb
 webrat.log
 dump.rdb
+.redcar/

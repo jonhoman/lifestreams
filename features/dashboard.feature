@@ -47,3 +47,14 @@ Feature: Dashboard interface
     When I go to the user root page
     Then I should see my stream
 
+  Scenario: Help text should be displayed if the user hasn't added a feed
+    When I go to the user root page
+    Then I should see "What blog (or other feed) you would like to share with other people?"
+
+  Scenario: Help text should be displayed if the user hasn't added a twitter account
+    When I go to the user root page
+    Then I should see "Connect your Twitter account."
+    
+  Scenario: Help text should be displayed if the user hasn't added a stream
+    When I go to the user root page
+    Then I should see "Share a feed on your Twitter account by creating a stream."
