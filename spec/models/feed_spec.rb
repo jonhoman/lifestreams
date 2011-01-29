@@ -77,4 +77,16 @@ describe Feed do
       feed.recent_items.count.should == 3
     end
   end
+  
+  describe "#determine_feed_url" do
+    it "returns the feed url for a given url" do
+      feed.url = "http://tanyahoman.com"
+      feed.determine_feed_url.should == "http://tanyahoman.com/feed/"
+    end
+
+    it "changes the url of a feed when a feed is created" do
+      feed = Factory(:feed, :url => "http://tanyahoman.com")
+      feed.url.should == "http://tanyahoman.com/feed/"
+    end
+  end
 end

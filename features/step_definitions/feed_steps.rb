@@ -5,4 +5,3 @@ end
 When /^change the feed name to "([^"]*)"$/ do |name|
   fill_in("Feed Name", :with => name)
 end
-

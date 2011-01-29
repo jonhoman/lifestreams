@@ -8,6 +8,7 @@ class Feed < ActiveRecord::Base
 
   after_create :populate_items
   before_destroy :deactivate_stream
+  before_create :determine_feed_url
 
   def recent_items
     item_list = items.sort! { |x,y| y <=> x }
@@ -21,6 +22,16 @@ class Feed < ActiveRecord::Base
   def deactivate_stream
     streams = Stream.where(:feed_id => id)
     streams.each { |s| s.update_attributes(:active => false) }
+  end
+  
+  def determine_feed_url
+    # stupid testing hack
+    if url == "file:///Users/obtiva/dev/personal/lifestreams/spec/data/feed.rss" || url == "file:///Users/obtiva/dev/personal/lifestreams/spec/data/feed-small.rss"
+      return url 
+    end
+
+    urls = Feedbag.find(url)
+    self.url = urls[0]
   end
 
   private

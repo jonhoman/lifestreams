@@ -10,12 +10,12 @@ Feature: Create a new feed
   Scenario: New feed create 
     Given I am on the new feed page
     When I fill in "Feed Name" with "Test Feed"
-    And I fill in "Feed URL" with "http://example.org/rss"
+    And I fill in "Feed URL" with "http://tanyahoman.com/feed/"
     And I press "Create Feed"
     Then I should be on the user root page
     And I should have the following fields stored for the feed:
-      |Name      | Url                    |
-      |Test Feed | http://example.org/rss |
+      |Name      | Url                         |
+      |Test Feed | http://tanyahoman.com/feed/ |
 
   Scenario: Edit an existing feed
     Given I have a feed I want to edit
@@ -40,3 +40,13 @@ Feature: Create a new feed
     When I follow "Delete Feed"
     Then I should not see "Jon's Feed"
     And the stream should not be active
+
+  Scenario: Autodiscover the feed url from a main url
+    Given I am on the new feed page
+    When I fill in "Feed Name" with "Test Feed"
+    And I fill in "Feed URL" with "http://blog.jonhoman.com"
+    And I press "Create Feed"
+    Then I should be on the user root page
+    And I should have the following fields stored for the feed:
+      |Name      | Url                            |
+      |Test Feed | http://blog.jonhoman.com/feed/ |

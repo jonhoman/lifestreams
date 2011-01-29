@@ -10,5 +10,5 @@ Feature: Show feed information
     And I am on the user root page
     When I follow "example feed"
     Then I should see "example feed"
-    And I should see "http://example.org/feed"
+    And I should see "http://tanyahoman.com/feed"
     And I should see items

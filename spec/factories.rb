@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :feed do
     name "example feed"
-    url  "http://example.org/feed"
+    url  "http://tanyahoman.com"
   end
 
   factory :stream do
