@@ -4,6 +4,3 @@ app/controllers/twitter_controller.rb
 18:    #TODO catch unauthorized request token
 21:    #TODO only create/authorize an account once
 
-spec/workers/twitter_updater_worker_spec.rb
-40:      #TODO create twitter username from user
-
