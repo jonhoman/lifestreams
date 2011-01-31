@@ -3,12 +3,22 @@ Feature: Show feed information
   As a user
   I want to view my feed's details
 
-  Scenario: View feed show page
+  Background:
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
     And I add a feed that has items
     And I am on the user root page
+    
+  Scenario: View feed show page
     When I follow "example feed"
     Then I should see "example feed"
     And I should see "http://tanyahoman.com/feed"
     And I should see items
+
+  Scenario: Number of clicks on an item are displayed
+    Given an item has clicks
+    When I follow "example feed"
+    Then I should see "example feed"
+    And I should see "http://tanyahoman.com/feed"
+    And I should see items
+    And I should see "visited 0 times"

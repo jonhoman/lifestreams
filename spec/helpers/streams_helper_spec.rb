@@ -26,4 +26,14 @@ describe StreamsHelper do
       determine_selected_twitter_account.should_not be_nil
     end
   end
+
+  describe "get_bitly_clicks" do
+    it "returns the number of clicks for the given bitly hash" do
+      get_bitly_clicks("fXEv5E").should == 0
+    end
+
+    it "returns 0 when given a nil bitly hash" do
+      get_bitly_clicks(nil).should == 0
+    end
+  end
 end

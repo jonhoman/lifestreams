@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124225327) do
+ActiveRecord::Schema.define(:version => 20110131180536) do
 
   create_table "feeds", :force => true do |t|
     t.string   "url"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110124225327) do
     t.datetime "published_date"
     t.string   "link"
     t.string   "status_id"
+    t.string   "bitly_hash"
   end
 
   create_table "streams", :force => true do |t|

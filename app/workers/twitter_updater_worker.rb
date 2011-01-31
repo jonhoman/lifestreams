@@ -15,7 +15,7 @@ class TwitterUpdaterWorker
 
       result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
 
-      item.update_attributes!(:shared => true, :status_id => result.id_str)
+      item.update_attributes!(:shared => true, :status_id => result.id_str, :bitly_hash => url.user_hash)
     end
 
     def configure(oauth_token, oauth_token_secret)
