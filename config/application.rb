@@ -50,7 +50,8 @@ module Lifestreams
       :port  => 25,
       :user_name  => ENV["EMAIL_USERNAME"],
       :password  => ENV["EMAIL_PASSWORD"],
-      :authentication  => :login
+      :authentication  => :login,
+      :enable_starttls_auto => false
     }
     config.action_mailer.raise_delivery_errors = true
     end
