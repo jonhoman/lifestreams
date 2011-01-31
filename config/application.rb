@@ -42,5 +42,16 @@ module Lifestreams
     config.generators do |g|
       g.test_framework :rspec
     end
-  end
+
+    config.action_mailer.delivery_method = :smtp
+
+    ActionMailer::Base.smtp_settings = {
+      :address  => "mail.jonhoman.com",
+      :port  => 25,
+      :user_name  => ENV["EMAIL_USERNAME"],
+      :password  => ENV["EMAIL_PASSWORD"],
+      :authentication  => :login
+    }
+    config.action_mailer.raise_delivery_errors = true
+    end
 end
