@@ -16,7 +16,7 @@ class FeedUpdaterWorker
           Rails.logger.debug "New item #{rss_item.title} for feed #{feed.name}, id: #{feed.id}"
 
           unknown_count += 1 
-          item = Item.create!(:feed_id => feed_id, :title => rss_item.title, :body => rss_item.content, :published_date => rss_item.published, :link => rss_item.url)
+          item = Item.create!(:feed_id => feed_id, :title => rss_item.title, :body => rss_item.content, :published_date => published_date(rss_item, parsed_feed), :link => rss_item.url)
 
           Resque.enqueue(TwitterUpdaterWorker, item.id, twitter_account_id)
         elsif 
@@ -24,6 +24,12 @@ class FeedUpdaterWorker
         end
       end
       feed.update_attributes!(:new_items => (unknown_count > 0))
+    end
+
+    private
+
+    def published_date(item, feed)
+      item.published || feed.last_modified  
     end
   end
 end
