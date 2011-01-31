@@ -212,7 +212,7 @@ DEPENDENCIES
   dehumanize (= 1.0.0)
   devise (= 1.1.5)
   factory_girl_rails (= 1.1.beta1)
-  feedbag
+  feedbag (= 0.6)
   feedzirra (= 0.0.24)
   heroku
   oauth (= 0.4.4)

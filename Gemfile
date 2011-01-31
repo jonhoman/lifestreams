@@ -12,7 +12,7 @@ gem 'SystemTimer', '1.2.1'
 gem 'devise', '1.1.5'
 gem 'feedzirra', '0.0.24'
 gem 'bitly', '0.6.1'
-gem 'feedbag'
+gem 'feedbag', '0.6'
 
 group :development, :test do
   gem "rspec-rails", '2.3.1'
