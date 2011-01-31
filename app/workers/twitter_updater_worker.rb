@@ -10,9 +10,10 @@ class TwitterUpdaterWorker
 
       TwitterUpdaterWorker.configure(twitter_account.access_token, twitter_account.access_token_secret)
 
-      url = shorten_post_url(item.link)
+      url = create_bitly_link(item.link)
+      short_url = url.short_url
 
-      result = Twitter.update("New Blog Post: #{item.title} #{url}") 
+      result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
 
       item.update_attributes!(:shared => true, :status_id => result.id_str)
     end
@@ -28,11 +29,10 @@ class TwitterUpdaterWorker
 
     private
 
-    def shorten_post_url(link)
+    def create_bitly_link(link)
       Bitly.use_api_version_3
       bitly = Bitly.new(ENV['BITLY_LOGIN'], ENV['BITLY_API_KEY'])
       url = bitly.shorten(link)
-      url.short_url
     end
   end
 end
