@@ -44,7 +44,7 @@ module Lifestreams
     end
 
     config.action_mailer.delivery_method = :smtp
-
+    config.action_mailer.default_url_options = { :host => 'mail.jonhoman.com' }
     ActionMailer::Base.smtp_settings = {
       :address  => "mail.jonhoman.com",
       :port  => 25,
