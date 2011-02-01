@@ -10,8 +10,13 @@ class StreamsController < ApplicationController
   def create
     @stream = Stream.new(params[:stream])
     @stream.user_id = current_user.id
-    @stream.save
-    redirect_to(user_root_path, :notice => 'Your stream was successfully created.')
+    if @stream.save
+      redirect_to(user_root_path, :notice => 'Your stream was successfully created.')
+    else
+      @feeds = Feed.user(current_user)
+      @twitter_accounts = TwitterAccount.user(current_user)
+      render "new"
+    end
   end
 
   def edit

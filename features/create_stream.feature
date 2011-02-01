@@ -22,6 +22,11 @@ Feature: Create a new stream
     And my stream should have a reference to the feed I choose
     And my stream should have a reference to the twitter account I choose
 
+  Scenario: Stream created without a name 
+    Given I follow "Add new Stream"
+    When I press "Create Stream"
+    Then I should see "Name can't be blank"
+
   Scenario: Edit a stream created with a feed and a twitter account 
     Given I have a stream I want to edit
     And I am on the user root page
