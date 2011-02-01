@@ -1,4 +1,6 @@
 class TwitterController < ApplicationController
+  before_filter :authenticate_user!, :only => :connect
+
   def connect
     @consumer = TwitterController.consumer
     
