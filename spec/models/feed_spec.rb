@@ -40,7 +40,7 @@ describe Feed do
   end
 
   describe ".user" do
-    it "returns all accounts associated with a user" do
+    it "returns all feeds associated with a user" do
       Feed.user(user.id).count.should == 1
     end
 
@@ -60,7 +60,7 @@ describe Feed do
 
     it "deactivates associated streams on feed deletion" do
       feed.destroy
-
+      # feed.should_receive(:deactivate_stream)
       stream.reload.should_not be_active
     end
   end
@@ -79,6 +79,7 @@ describe Feed do
   end
   
   describe "#determine_feed_url" do
+    #break unit and integration
     it "returns the feed url for a given url" do
       feed.url = "http://tanyahoman.com"
       feed.determine_feed_url.should == "http://tanyahoman.com/feed/"

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe FeedCreatorWorker do
   let :feed do
+    #feed inline
     Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed.rss")
   end
 
