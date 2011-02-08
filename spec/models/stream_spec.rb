@@ -14,7 +14,7 @@ describe Stream do
   end
 
   let :stream do
-    Factory(:stream, :user_id => user.id, :feed_id => feed.id, :twitter_account_id => twitter_account.id)
+    Factory(:stream, :user_id => user.id, :feed_id => feed.id)
   end
 
   it "is valid with valid attributes" do

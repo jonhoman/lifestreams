@@ -10,8 +10,9 @@ describe TwitterAccount do
   end
 
   let! :stream do 
-    Factory(:stream, :user_id => user.id, :twitter_account_id => account.id)
+    Factory(:stream, :user_id => user.id)
   end
+
   it "is valid with valid attributes" do
     account.should be_valid
   end
@@ -42,6 +43,11 @@ describe TwitterAccount do
   end
 
   describe "#deactive_stream" do
+    before(:each) do
+      stream.twitter_accounts << account
+      account.streams << stream
+    end
+
     it "deactivates associated streams" do 
       account.deactivate_stream
 

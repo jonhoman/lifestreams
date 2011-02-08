@@ -9,9 +9,10 @@
 
 <div>
   <b>Twitter Account:</b>
-  <% if @stream.twitter_account %>
-    <%= link_to @stream.twitter_account.handle, "http://twitter.com/#{@stream.twitter_account.handle}" %>
-  <% elsif %>
+  <% @stream.twitter_accounts.each do |account| %>
+    <%= link_to account.handle, "http://twitter.com/#{account.handle}" %>
+  <% end %>
+  <% if @stream.twitter_accounts.empty? %>
     <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
   <% end %>
 </div>

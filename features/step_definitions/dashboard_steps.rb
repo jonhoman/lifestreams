@@ -30,11 +30,11 @@ Given /^I add my feed to my stream$/ do
 end
 
 Given /^I add my twitter account to my stream$/ do
-  @stream.update_attributes! :twitter_account => @twitter_account
+  @stream.update_attributes! :twitter_accounts => [@twitter_account]
 end
 
 Given /^I add my feed and my twitter account to my stream$/ do
-  @stream.update_attributes! :feed => @feed, :twitter_account => @twitter_account
+  @stream.update_attributes! :feed => @feed, :twitter_accounts => [@twitter_account]
 end
 
 Given /^I create a stream with a feed and a twitter account$/ do
@@ -49,7 +49,7 @@ Given /^I remove the feed from the stream$/ do
 end
 
 Given /^I remove the twitter account from the stream$/ do
-  @stream.update_attributes! :twitter_account => nil
+  @stream.update_attributes! :twitter_accounts => []
 end
 Then /^I should see my feed$/ do
   Then 'I should see "example feed"'

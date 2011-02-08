@@ -23,8 +23,8 @@
   </p>
 
   <p>
-    <%= f.label :twitter_account_id, "Choose a Twitter Account" %>
-    <%= select 'stream', 'twitter_account_id', 
+    <%= label_tag :twitter_account_id, "Choose a Twitter Account" %>
+    <%= select 'twitter_account', 'id', 
       options_from_collection_for_select(@twitter_accounts, 'id', 'handle', determine_selected_twitter_account) %>
   </p>
 

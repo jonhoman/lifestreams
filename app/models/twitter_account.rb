@@ -9,7 +9,6 @@ class TwitterAccount < ActiveRecord::Base
   before_destroy :deactivate_stream
 
   def deactivate_stream
-    streams = Stream.where(:twitter_account_id => id)
-    streams.each { |s| s.update_attributes(:active => false) }
+    destinations.each { |d| d.stream.update_attributes(:active => false) }
   end
 end

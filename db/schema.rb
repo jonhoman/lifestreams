@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208043552) do
+ActiveRecord::Schema.define(:version => 20110208172254) do
 
   create_table "destinations", :force => true do |t|
     t.integer  "stream_id"
@@ -48,8 +48,7 @@ ActiveRecord::Schema.define(:version => 20110208043552) do
     t.datetime "updated_at"
     t.integer  "feed_id"
     t.integer  "user_id"
-    t.integer  "twitter_account_id"
-    t.boolean  "active",             :default => true
+    t.boolean  "active",     :default => true
   end
 
   create_table "twitter_accounts", :force => true do |t|
