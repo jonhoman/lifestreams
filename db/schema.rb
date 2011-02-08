@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110131180536) do
+ActiveRecord::Schema.define(:version => 20110208043552) do
+
+  create_table "destinations", :force => true do |t|
+    t.integer  "stream_id"
+    t.integer  "twitter_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feeds", :force => true do |t|
     t.string   "url"

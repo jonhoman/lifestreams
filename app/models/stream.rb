@@ -4,7 +4,8 @@ class Stream < ActiveRecord::Base
     where("active = ?", true)
 
   belongs_to :feed 
-  belongs_to :twitter_account
+  has_many :destinations, :dependent => :destroy
+  has_many :twitter_accounts, :through => :destinations
 
   validates_presence_of :name
 end
