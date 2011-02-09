@@ -26,3 +26,7 @@ Then /^my stream should have a reference to the twitter account I choose$/ do
   stream.feed_id.should_not be_nil
 end
 
+Then /^my stream should have two twitter accounts$/ do
+  stream = Stream.last
+  stream.twitter_accounts.count.should == 2
+end

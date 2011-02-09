@@ -23,9 +23,10 @@
   </p>
 
   <p>
-    <%= label_tag :twitter_account_id, "Choose a Twitter Account" %>
-    <%= select 'twitter_account', 'id', 
-      options_from_collection_for_select(@twitter_accounts, 'id', 'handle', determine_selected_twitter_account) %>
+    <%= label_tag :twitter_account, "Choose a Twitter Account" %>
+    <%= select_tag 'twitter_account', 
+               options_from_collection_for_select(@twitter_accounts, 'id', 'handle', determine_selected_twitter_account),
+               :multiple => true, :size => 4 %>
   </p>
 
   <%= f.submit :class => "button" %>

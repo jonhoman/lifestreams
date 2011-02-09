@@ -1,3 +1,8 @@
+Given /^I configure two twitter accounts$/ do
+  @twitter_account = Factory(:twitter_account, :user_id => @user.id)
+  @twitter_account2 = Factory(:twitter_account, :handle => "different_handle", :user_id => @user.id)
+end
+
 Given /^I configure my twitter account$/ do
   @twitter_account = Factory(:twitter_account, :user_id => @user.id)
 end
@@ -74,3 +79,4 @@ end
 Then /^I should see at most (\d+) items$/ do |item_count|
   page.should have_selector('ul#item_list li', :maximum => item_count)
 end
+

@@ -7,7 +7,7 @@ Feature: Create a new stream
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
     And I add a feed
-    And I configure my twitter account
+    And I configure two twitter accounts
 
   Scenario: Stream created with a feed and a twitter account 
     Given I follow "Add new Stream"
@@ -21,6 +21,21 @@ Feature: Create a new stream
       |Test Stream|
     And my stream should have a reference to the feed I choose
     And my stream should have a reference to the twitter account I choose
+
+  @wip
+  Scenario: Stream created with a feed and 2 twitter accounts
+    Given I follow "Add new Stream"
+    When I fill in "Stream Name" with "Test Stream"
+    And I select "example feed" from "Choose a Feed" 
+    And I select "test" from "Choose a Twitter Account" 
+    And I select "different_handle" from "Choose a Twitter Account" 
+    And I press "Create Stream"
+    Then I should be on the user root page
+    And I should have the following fields stored for the stream:
+      |Name       |
+      |Test Stream|
+    And my stream should have a reference to the feed I choose
+    And my stream should have two twitter accounts
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"

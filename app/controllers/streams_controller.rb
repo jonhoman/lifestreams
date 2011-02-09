@@ -10,7 +10,8 @@ class StreamsController < ApplicationController
   def create
     @stream = Stream.new(params[:stream])
     @stream.user_id = current_user.id
-    @stream.twitter_accounts << TwitterAccount.find(params[:twitter_account][:id])
+
+    @stream.twitter_accounts << TwitterAccount.find(params[:twitter_account])
 
     if @stream.save
       redirect_to(user_root_path, :notice => 'Your stream was successfully created.')
@@ -31,10 +32,12 @@ class StreamsController < ApplicationController
     @stream = Stream.find(params[:id])
 
     if @stream.update_attributes(params[:stream])
+      @stream.twitter_accounts << TwitterAccount.find(params[:twitter_account])
+
       @stream.update_attributes(:active => true) # only activate stream if successful update
       redirect_to(user_root_path, :notice => 'Stream was successfully updated.')
     else
-      render :action => "edit"
+      render "edit"
     end
   end
 
