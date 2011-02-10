@@ -5,7 +5,7 @@ module StreamsHelper
 
   #TODO return all account ids
   def determine_selected_twitter_account
-    @stream.twitter_accounts.empty? ? nil : @stream.twitter_accounts.first.id
+    @stream.twitter_accounts.empty? ? nil : @stream.twitter_accounts.map(&:id)
   end
 
   def get_bitly_clicks(hash)
