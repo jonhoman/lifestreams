@@ -22,7 +22,6 @@ Feature: Create a new stream
     And my stream should have a reference to the feed I choose
     And my stream should have a reference to the twitter account I choose
 
-  @wip
   Scenario: Stream created with a feed and 2 twitter accounts
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
@@ -39,6 +38,7 @@ Feature: Create a new stream
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"
+    And I select "test" from "Choose a Twitter Account" 
     When I press "Create Stream"
     Then I should see "Name can't be blank"
 
