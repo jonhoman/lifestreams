@@ -2,7 +2,7 @@ class FeedUpdaterWorker
   @queue = :feed_updating
 
   class << self
-    def perform(feed_id, twitter_account_id)
+    def perform(feed_id, stream_id)
       feed = Feed.find(feed_id)
 
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
@@ -18,7 +18,8 @@ class FeedUpdaterWorker
           unknown_count += 1 
           item = Item.create!(:feed_id => feed_id, :title => rss_item.title, :body => rss_item.content, :published_date => published_date(rss_item, parsed_feed), :link => rss_item.url)
 
-          Resque.enqueue(TwitterUpdaterWorker, item.id, twitter_account_id)
+          stream = Stream.find(stream_id)
+          stream.twitter_accounts.each { |account| Resque.enqueue(TwitterUpdaterWorker, item.id, account.id) }
         elsif 
           Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
         end

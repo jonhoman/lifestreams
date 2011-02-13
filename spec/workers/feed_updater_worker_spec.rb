@@ -5,14 +5,24 @@ describe FeedUpdaterWorker do
     Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed-small.rss")
   end
 
-  let :twitter_account do
-    Factory(:twitter_account)
+  let :fake_twitter do
+    Factory(:twitter_account, :handle => "fake")
+  end
+
+  let :pretend_twitter do
+    Factory(:twitter_account, :handle => "pretend")
+  end
+
+  let :stream do
+    Factory(:stream)
   end
 
   it "checks for updates to feeds" do
     Resque.should_receive(:enqueue)
     
-    FeedUpdaterWorker.perform(feed.id, twitter_account.id)
+    stream.update_attributes(:twitter_accounts => [fake_twitter])
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+
     feed.reload.new_items?.should be_true
   end
 
@@ -22,20 +32,31 @@ describe FeedUpdaterWorker do
       item = Item.create!(:feed_id => feed.id, :title => rss_item.title, :body => rss_item.content, :published_date => rss_item.published, :link => rss_item.url)
     end
     
-    FeedUpdaterWorker.perform(feed.id, twitter_account.id)
+    FeedUpdaterWorker.perform(feed.id, stream.id)
     feed.reload.new_items?.should be_false
   end
 
   it "creates items for each new entry in the feed" do
     Resque.should_receive(:enqueue)
     
-    FeedUpdaterWorker.perform(feed.id, twitter_account.id)
+    stream.update_attributes(:twitter_accounts => [fake_twitter])
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+
     feed.reload.items.count.should == 1
   end
 
   it "adds new items to the twitter updater queue" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
 
-    FeedUpdaterWorker.perform(feed.id, twitter_account.id)
+    stream.update_attributes(:twitter_accounts => [fake_twitter])
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+  end
+
+  it "queues twitter updates for both twitter account in the stream" do
+    Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
+
+    stream.update_attributes(:twitter_accounts => [fake_twitter, pretend_twitter])
+
+    FeedUpdaterWorker.perform(feed.id, stream.id)
   end
 end
