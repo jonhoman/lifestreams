@@ -5,8 +5,8 @@ require 'rspec/rails'
 require 'rss/1.0'
 require 'rss/2.0'
 
-require 'webmock/rspec' if ENV["RAILS_ENV"] == 'test'
-
+require 'webmock/rspec'
+WebMock.disable_net_connect! :allow => "tanyahoman.com"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
