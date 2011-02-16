@@ -6,8 +6,8 @@ task :cron => :environment do
   # Check for feed updates for each stream
   streams.each do |stream|
     puts "Queuing up an update for #{stream.name}"
-    stream.twitter_accounts.each do |account|
-      Resque.enqueue(FeedUpdaterWorker, stream.feed_id, account.id)
-    end
+
+    Resque.enqueue(FeedUpdaterWorker, stream.feed_id, stream.id)
   end
+  Rake::Task["jobs:work"].invoke
 end
