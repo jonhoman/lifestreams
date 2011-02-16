@@ -17,7 +17,7 @@ Feature: Show feed information
 
   Scenario: Number of clicks on an item are displayed
     Given an item has clicks
-    When I follow "example feed"
+    When I view "example feed"
     Then I should see "example feed"
     And I should see "http://tanyahoman.com/feed"
     And I should see items

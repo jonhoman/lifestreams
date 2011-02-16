@@ -11,7 +11,7 @@ Feature: Create a new feed
     Given I am on the new feed page
     When I fill in "Feed Name" with "Test Feed"
     And I fill in "Feed URL" with "http://tanyahoman.com/feed/"
-    And I press "Create Feed"
+    And I submit the form to create the feed
     Then I should be on the user root page
     And I should have the following fields stored for the feed:
       |Name      | Url                         |
@@ -23,7 +23,7 @@ Feature: Create a new feed
     When I follow "Jon's Feed"
     And I follow "Edit"
     And change the feed name to "Jon's Real Feed"
-    And press "Update Feed"
+    And I submit the form to update the feed
     Then I should see "Jon's Real Feed"
 
   Scenario: Delete an existing feed
@@ -45,7 +45,7 @@ Feature: Create a new feed
     Given I am on the new feed page
     When I fill in "Feed Name" with "Test Feed"
     And I fill in "Feed URL" with "http://blog.jonhoman.com"
-    And I press "Create Feed"
+    And I submit the form to create the feed
     Then I should be on the user root page
     And I should have the following fields stored for the feed:
       |Name      | Url                            |
