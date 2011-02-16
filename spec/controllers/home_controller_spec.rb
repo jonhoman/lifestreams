@@ -29,7 +29,6 @@ describe HomeController do
     it "assigns all feeds as @feeds" do
       Feed.stub(:user) { [mock_feed] }
 
-      Factory(:feed, :user_id => @user.id)
       get 'dashboard'
       assigns(:feeds).should have(1).feeds
     end

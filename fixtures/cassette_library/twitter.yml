@@ -1,0 +1,26 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.bit.ly:80/v3/shorten?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&longUrl=http://google.com
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      mime-version: 
+      - "1.0"
+      content-type: 
+      - application/json; charset=utf-8
+      server: 
+      - nginx
+      date: 
+      - Wed, 16 Feb 2011 01:48:49 GMT
+      content-length: 
+      - "181"
+    body: |
+      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com", "url": "http:\/\/bit.ly\/fXEv5E", "hash": "fXEv5E", "global_hash": "heezy", "new_hash": 0 } }
+
+    http_version: "1.1"

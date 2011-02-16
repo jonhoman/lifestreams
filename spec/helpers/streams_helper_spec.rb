@@ -6,6 +6,8 @@ describe StreamsHelper do
   end
 
   describe "determine selected feed" do
+    use_vcr_cassette "feed", :record => :new_episodes
+
     it "returns nil if no feed selected for a stream" do
       determine_selected_feed.should be_nil
     end
@@ -28,6 +30,8 @@ describe StreamsHelper do
   end
 
   describe "get_bitly_clicks" do
+    use_vcr_cassette "bitly_clicks", :record => :new_episodes
+
     it "returns the number of clicks for the given bitly hash" do
       get_bitly_clicks("fXEv5E").should == 0
     end

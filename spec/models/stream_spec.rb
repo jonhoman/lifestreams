@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Stream do
+  use_vcr_cassette "stream", :record => :new_episodes
+
   let :user do
     Factory(:user)
   end

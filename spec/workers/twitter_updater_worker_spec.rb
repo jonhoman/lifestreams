@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe TwitterUpdaterWorker do
+  use_vcr_cassette "twitter", :record => :new_episodes
+
   before(:each) do
     @mash = Hashie::Mash.new
     @mash.id_str = "1234"
