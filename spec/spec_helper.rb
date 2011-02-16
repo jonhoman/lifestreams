@@ -6,7 +6,7 @@ require 'rss/1.0'
 require 'rss/2.0'
 
 require 'webmock/rspec'
-WebMock.disable_net_connect! :allow => "tanyahoman.com"
+require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -29,4 +29,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Gives you 'use_vcr_cassette' as a macro
+  config.extend VCR::RSpec::Macros
 end

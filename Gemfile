@@ -13,7 +13,6 @@ gem 'devise', '1.1.5'
 gem 'feedzirra', '0.0.24'
 gem 'bitly', '0.6.1'
 gem 'feedbag', '0.6'
-gem 'webmock'
 
 group :development, :test do
   gem "rspec-rails", '2.3.1'
@@ -22,4 +21,6 @@ group :development, :test do
   gem "heroku" 
   gem "capybara", '0.4.0'
   gem "factory_girl_rails", "1.1.beta1"
+  gem 'webmock', '1.6.2'
+  gem 'vcr', '1.6.0'
 end

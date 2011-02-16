@@ -192,6 +192,7 @@ GEM
       multi_xml (~> 0.2.0)
       simple_oauth (~> 0.1.2)
     tzinfo (0.3.24)
+    vcr (1.6.0)
     vegas (0.1.8)
       rack (>= 1.0.0)
     warden (1.0.3)
@@ -224,5 +225,6 @@ DEPENDENCIES
   resque (= 1.10.0)
   rspec-rails (= 2.3.1)
   twitter (= 1.0.0)
-  webmock
+  vcr (= 1.6.0)
+  webmock (= 1.6.2)
   yajl-ruby (= 0.7.8)
