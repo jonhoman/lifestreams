@@ -9,5 +9,4 @@ task :cron => :environment do
 
     Resque.enqueue(FeedUpdaterWorker, stream.feed_id, stream.id)
   end
-  Rake::Task["jobs:work"].invoke
 end
