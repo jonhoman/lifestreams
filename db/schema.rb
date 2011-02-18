@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208172254) do
+ActiveRecord::Schema.define(:version => 20110218175048) do
 
   create_table "destinations", :force => true do |t|
     t.integer  "stream_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20110208172254) do
     t.string   "access_token"
     t.string   "access_token_secret"
     t.integer  "user_id"
+    t.boolean  "active",              :default => true
   end
 
   create_table "users", :force => true do |t|

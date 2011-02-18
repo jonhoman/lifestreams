@@ -19,6 +19,8 @@ class FeedUpdaterWorker
           item = Item.create!(:feed_id => feed_id, :title => rss_item.title, :body => rss_item.content, :published_date => published_date(rss_item, parsed_feed), :link => rss_item.url)
 
           stream = Stream.find(stream_id)
+
+          # TODO: only grab active twitter accounts
           stream.twitter_accounts.each { |account| Resque.enqueue(TwitterUpdaterWorker, item.id, account.id) }
         elsif 
           Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"

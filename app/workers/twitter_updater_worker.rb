@@ -17,9 +17,10 @@ class TwitterUpdaterWorker
         result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
 
         item.update_attributes!(:shared => true, :status_id => result.id_str, :bitly_hash => url.user_hash)
-      rescue Twitter::Unauthorized => e
-        Rails.logger.debug e
-        #TODO: deactivate unauthorized twitter account
+      rescue => e
+        twitter_account.update_attributes(:active => false)
+
+        raise Twitter::Unauthorized.new(e.message)
       end
     end
 
