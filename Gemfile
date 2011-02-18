@@ -21,6 +21,9 @@ group :development, :test do
   gem "heroku" 
   gem "capybara", '0.4.0'
   gem "factory_girl_rails", "1.1.beta1"
+end
+
+group :test do
   gem 'webmock', '1.6.2'
   gem 'vcr', '1.6.0'
 end
