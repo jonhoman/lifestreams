@@ -13,9 +13,14 @@ class TwitterUpdaterWorker
       url = create_bitly_link(item.link)
       short_url = url.short_url
 
-      result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
+      begin
+        result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
 
-      item.update_attributes!(:shared => true, :status_id => result.id_str, :bitly_hash => url.user_hash)
+        item.update_attributes!(:shared => true, :status_id => result.id_str, :bitly_hash => url.user_hash)
+      rescue Twitter::Unauthorized => e
+        Rails.logger.debug e
+        #TODO: deactivate unauthorized twitter account
+      end
     end
 
     def configure(oauth_token, oauth_token_secret)
