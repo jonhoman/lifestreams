@@ -1,6 +1,12 @@
 $ ack TODO
 
 app/controllers/twitter_controller.rb
-18:    #TODO catch unauthorized request token
-21:    #TODO only create/authorize an account once
+18: #TODO catch unauthorized request token
+21: #TODO only create/authorize an account once
+
+app/helpers/streams_helper.rb
+6:  #TODO return all account ids
+
+app/workers/twitter_updater_worker.rb
+22: #TODO: deactivate unauthorized twitter account
 
