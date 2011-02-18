@@ -4,8 +4,14 @@ class FeedUpdaterWorker
   class << self
     def perform(feed_id, stream_id)
       feed = Feed.find(feed_id)
+      stream = Stream.find(stream_id)
 
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
+
+      if !parsed_feed
+        stream.update_attributes(:active => false)
+        raise UnparsableFeedError.new
+      end
 
       items = parsed_feed.entries
       unknown_count = 0
@@ -35,4 +41,6 @@ class FeedUpdaterWorker
       item.published || feed.last_modified  
     end
   end
+
+  class UnparsableFeedError < StandardError; end
 end

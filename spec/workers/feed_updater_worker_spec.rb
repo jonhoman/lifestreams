@@ -52,11 +52,32 @@ describe FeedUpdaterWorker do
     FeedUpdaterWorker.perform(feed.id, stream.id)
   end
 
-  it "queues twitter updates for both twitter account in the stream" do
+  it "queues twitter updates for both twitter accounts in the stream" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
 
     stream.update_attributes(:twitter_accounts => [fake_twitter, pretend_twitter])
 
     FeedUpdaterWorker.perform(feed.id, stream.id)
+  end
+
+  context "unparsable feed" do
+    before :each do
+      bad_feed_url = "http://jonhoman.com"
+      feed.update_attributes(:url => bad_feed_url)
+    end
+
+    it "throws an error if the feed url cannot be parsed" do
+      expect {
+        FeedUpdaterWorker.perform(feed.id, stream.id)
+      }.to raise_error(FeedUpdaterWorker::UnparsableFeedError)
+    end
+
+    it "deactivates the stream if the feed cannot be parsed" do
+      expect {
+        FeedUpdaterWorker.perform(feed.id, stream.id)
+      }.to raise_error(FeedUpdaterWorker::UnparsableFeedError)
+
+      stream.reload.should_not be_active
+    end
   end
 end
