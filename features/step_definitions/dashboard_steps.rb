@@ -79,6 +79,6 @@ Then /^I should see items$/ do
 end
 
 Then /^I should see at most (\d+) items$/ do |item_count|
-  page.should have_selector('ul#item_list li', :maximum => item_count)
+  page.should have_selector('ul#item_list li', :maximum => item_count.to_i)
 end
 
