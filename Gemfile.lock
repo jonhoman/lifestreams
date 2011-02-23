@@ -1,8 +1,8 @@
-GEM
-  remote: http://rubygems.org/
+GIT
+  remote: https://github.com/rails/rails.git
+  revision: 30a0e3f6d64b5d22b0778aef1a44a07205509d77
+  branch: 3-0-stable
   specs:
-    SystemTimer (1.2.2)
-    abstract (1.0.0)
     actionmailer (3.0.4)
       actionpack (= 3.0.4)
       mail (~> 2.2.15)
@@ -29,6 +29,25 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
+    rails (3.0.4)
+      actionmailer (= 3.0.4)
+      actionpack (= 3.0.4)
+      activerecord (= 3.0.4)
+      activeresource (= 3.0.4)
+      activesupport (= 3.0.4)
+      bundler (~> 1.0)
+      railties (= 3.0.4)
+    railties (3.0.4)
+      actionpack (= 3.0.4)
+      activesupport (= 3.0.4)
+      rake (>= 0.8.7)
+      thor (~> 0.14.4)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    SystemTimer (1.2.2)
+    abstract (1.0.0)
     addressable (2.2.3)
     arel (2.0.8)
     awesome_print (0.3.2)
@@ -130,19 +149,6 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.4)
-      actionmailer (= 3.0.4)
-      actionpack (= 3.0.4)
-      activerecord (= 3.0.4)
-      activeresource (= 3.0.4)
-      activesupport (= 3.0.4)
-      bundler (~> 1.0)
-      railties (= 3.0.4)
-    railties (3.0.4)
-      actionpack (= 3.0.4)
-      activesupport (= 3.0.4)
-      rake (>= 0.8.7)
-      thor (~> 0.14.4)
     rake (0.8.7)
     redis (2.1.1)
     redis-namespace (0.10.0)
@@ -221,7 +227,7 @@ DEPENDENCIES
   heroku (= 1.17.16)
   oauth (= 0.4.4)
   pg (= 0.10.0)
-  rails (= 3.0.4)
+  rails!
   resque (= 1.13.0)
   rspec-rails (= 2.5.0)
   twitter (= 1.0.0)

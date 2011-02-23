@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
+gem 'rails', :git => "https://github.com/rails/rails.git", :branch => "3-0-stable"
 gem 'pg', '0.10.0'
 gem 'awesome_print', '0.3.2'
 gem 'oauth', '0.4.4'

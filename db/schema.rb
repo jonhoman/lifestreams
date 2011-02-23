@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218175048) do
+ActiveRecord::Schema.define(:version => 20110222232454) do
 
   create_table "destinations", :force => true do |t|
     t.integer  "stream_id"
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(:version => 20110218175048) do
     t.integer  "feed_id"
     t.integer  "user_id"
     t.boolean  "active",     :default => true
+  end
+
+  create_table "streams_twitter_accounts", :id => false, :force => true do |t|
+    t.integer "stream_id"
+    t.integer "twitter_account_id"
   end
 
   create_table "twitter_accounts", :force => true do |t|

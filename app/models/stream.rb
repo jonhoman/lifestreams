@@ -1,9 +1,7 @@
 class Stream < ActiveRecord::Base
-
   belongs_to :feed 
-  has_many :destinations, :dependent => :destroy
-  has_many :twitter_accounts, :through => :destinations
-
+  has_and_belongs_to_many :twitter_accounts
+  
   validates_presence_of :name
 
   class << self

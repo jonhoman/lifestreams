@@ -8,6 +8,6 @@ class CreateTwitterAccounts < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :twitter_acconts
+    drop_table :twitter_accounts
   end
 end

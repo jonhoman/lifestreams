@@ -45,7 +45,6 @@ describe TwitterAccount do
   describe "#deactive_stream" do
     before(:each) do
       stream.twitter_accounts << account
-      account.streams << stream
     end
 
     it "deactivates associated streams" do 
