@@ -6,6 +6,7 @@ Lifestreams::Application.routes.draw do
   resources :feeds
   resources :twitter_accounts
   resources :streams
+  resources :email_lists
 
   match "/twitter/connect" => "twitter#connect"
   match "/twitter/callback" => "twitter#callback"

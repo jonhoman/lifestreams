@@ -32,6 +32,10 @@ Given /^I add a stream$/ do
   @stream = Factory(:stream, :user_id => @user.id)
 end
 
+Given /^I add an email list$/ do
+  @email_list = Factory(:email_list, :user_id => @user.id)
+end
+
 Given /^I add my feed to my stream$/ do
   @stream.update_attributes! :feed => @feed
 end
@@ -72,6 +76,10 @@ end
 
 Then /^I should see my stream$/ do
   Then 'I should see "example stream"'
+end
+
+Then /^I should see my email list$/ do
+  Then 'I should see "example email list"'
 end
 
 Then /^I should see items$/ do 

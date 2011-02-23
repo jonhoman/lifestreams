@@ -7,15 +7,15 @@ describe Feed do
     Factory(:user)
   end
 
-  let!(:feed) do
+  let! :feed do
     Factory(:feed, :user_id => user.id)
   end
   
-  let(:item) do
+  let :item do
     Factory(:item)
   end
 
-  let!(:stream) do
+  let! :stream do
     Factory(:stream, :user_id => user.id, :feed_id => feed.id)
   end
 
@@ -66,6 +66,7 @@ describe Feed do
       stream.reload.should_not be_active
     end
   end
+
   describe "#recent_items" do
     it "returns items" do
       feed.items << item

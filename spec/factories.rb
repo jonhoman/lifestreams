@@ -24,4 +24,8 @@ FactoryGirl.define do
     title          "example item"
     published_date DateTime.now
   end
+
+  factory :email_list do
+    name "example email list"
+  end
 end
