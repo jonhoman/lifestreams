@@ -1,0 +1,21 @@
+<%= form_for(@email_list) do |f| %>
+  <% if @email_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email_list.errors.count, "error") %> prohibited this feed from being saved:</h2>
+
+      <ul>
+      <% @email_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Email List Name" %><br />
+    <%= f.text_field :name, :autofocus => true %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit "New Email List", :class => "button" %>
+  </div>
+<% end %>
