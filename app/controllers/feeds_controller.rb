@@ -40,5 +40,4 @@ class FeedsController < ApplicationController
 
    redirect_to(user_root_path, :notice => 'Feed was successfully deleted.')
   end
-
 end

@@ -1,6 +1,6 @@
 Given /^I have a feed I want to edit$/ do
   VCR.use_cassette("feed", :record => :new_episodes) do
-    @feed = Feed.create!(:name => "Jon's Feed", :url => "http://example.org/feed", :user_id => @user.id)
+    @feed = Factory(:feed, :name => "Jon's Feed", :url => "http://example.org/feed", :user_id => @user.id)
   end
 end
 

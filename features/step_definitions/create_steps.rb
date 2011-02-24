@@ -16,6 +16,15 @@ When /^I should have the following fields stored for the feed:$/ do |table|
   end
 end
 
+When /^I should have the following fields stored for the email list:$/ do |table|
+  email_list = EmailList.last
+  table.hashes.each do |row|
+    row.keys.each do |header|
+      email_list.send(header.dehumanize).to_s.should == row[header]
+    end
+  end
+end
+
 Then /^my stream should have a reference to the feed I choose$/ do
   stream = Stream.last
   stream.feed_id.should_not be_nil
