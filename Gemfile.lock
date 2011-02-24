@@ -98,6 +98,8 @@ GEM
       json (~> 1.4.6)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
+    heroku_san (1.0.8)
+      heroku
     hpricot (0.8.3)
     httparty (0.7.3)
       crack (= 0.1.8)
@@ -219,6 +221,7 @@ DEPENDENCIES
   feedbag (= 0.6)
   feedzirra (= 0.0.24)
   heroku (= 1.17.16)
+  heroku_san
   oauth (= 0.4.4)
   pg (= 0.10.0)
   rails (= 3.0.5.rc1)
