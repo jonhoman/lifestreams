@@ -6,9 +6,12 @@ class EmailListsController < ApplicationController
   def create
     @email_list = EmailList.new(params[:email_list])
     @email_list.user_id = current_user.id
-    @email_list.save
-
-    redirect_to(user_root_path, :notice => 'Email list was successfully created.')
+    
+    if @email_list.save
+      redirect_to(user_root_path, :notice => 'Email list was successfully created.')
+    else
+      render :action => "new"
+    end
   end
 
   def show

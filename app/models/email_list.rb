@@ -1,4 +1,5 @@
 class EmailList < ActiveRecord::Base
+  validates_presence_of :name
   
   class << self
     def user(user_id)
