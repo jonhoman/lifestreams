@@ -8,6 +8,7 @@ Feature: Create a new stream
     And I sign in
     And I add a feed
     And I configure two twitter accounts
+    And I add an email list
 
   Scenario: Stream created with a feed and a twitter account 
     Given I follow "Add new Stream"
@@ -35,6 +36,19 @@ Feature: Create a new stream
       |Test Stream|
     And my stream should have a reference to the feed I choose
     And my stream should have two twitter accounts
+
+  Scenario: Stream created with a feed and an email list
+    Given I follow "Add new Stream"
+    When I fill in "Stream Name" with "Test Stream"
+    And I select "example feed" from "Choose a Feed" 
+    And I select "example email list" from "Choose an Email List" 
+    And I press "Create Stream"
+    Then I should be on the user root page
+    And I should have the following fields stored for the stream:
+      |Name       |
+      |Test Stream|
+    And my stream should have a reference to the feed I choose
+    And my stream should have a reference to the email list I choose
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"

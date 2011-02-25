@@ -39,3 +39,8 @@ Then /^my stream should have two twitter accounts$/ do
   stream = Stream.last
   stream.twitter_accounts.count.should == 2
 end
+
+Then /^my stream should have a reference to the email list I choose$/ do
+  stream = Stream.last
+  stream.email_lists.should_not be_empty
+end

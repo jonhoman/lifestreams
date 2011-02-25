@@ -10,13 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224234953) do
+ActiveRecord::Schema.define(:version => 20110225041400) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "email_lists_streams", :id => false, :force => true do |t|
+    t.integer "email_list_id"
+    t.integer "stream_id"
   end
 
   create_table "feeds", :force => true do |t|

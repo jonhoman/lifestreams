@@ -3,9 +3,12 @@ module StreamsHelper
     @stream.feed ? @stream.feed.id : nil
   end
 
-  #TODO return all account ids
   def determine_selected_twitter_account
     @stream.twitter_accounts.empty? ? nil : @stream.twitter_accounts.map(&:id)
+  end
+
+  def determine_selected_email_list
+    @stream.email_lists.empty? ? nil : @stream.email_lists.map(&:id)
   end
 
   def get_bitly_clicks(hash)

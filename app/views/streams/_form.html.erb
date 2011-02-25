@@ -29,6 +29,13 @@
                :multiple => true, :size => 4 %>
   </p>
 
+  <p>
+    <%= label_tag :email_list, "Choose an Email List" %>
+    <%= select_tag 'email_list', 
+               options_from_collection_for_select(@email_lists, 'id', 'name', determine_selected_email_list),
+               :multiple => true, :size => 4 %>
+  </p>
+
   <%= f.submit :class => "button" %>
 <% end %>
 

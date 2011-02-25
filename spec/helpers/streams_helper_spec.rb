@@ -18,7 +18,7 @@ describe StreamsHelper do
     end
   end
 
-  describe "determine selected stream" do
+  describe "determine selected twitter account" do
     it "returns nil if no twitter account selected for a stream" do
       determine_selected_twitter_account.should be_nil
     end
@@ -26,6 +26,17 @@ describe StreamsHelper do
     it "returns the twitter account id if a twitter account is selected for a stream" do
       @stream.twitter_accounts << Factory(:twitter_account)
       determine_selected_twitter_account.should_not be_nil
+    end
+  end
+
+  describe "determine selected email list" do
+    it "returns nil if no twitter account selected for a stream" do
+      determine_selected_email_list.should be_nil
+    end
+
+    it "returns the twitter account id if a twitter account is selected for a stream" do
+      @stream.email_lists << Factory(:email_list)
+      determine_selected_email_list.should_not be_nil
     end
   end
 
