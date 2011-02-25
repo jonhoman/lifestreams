@@ -32,7 +32,7 @@ end
 
 Then /^my stream should have a reference to the twitter account I choose$/ do
   stream = Stream.last
-  stream.feed_id.should_not be_nil
+  stream.twitter_accounts.should_not be_empty
 end
 
 Then /^my stream should have two twitter accounts$/ do
