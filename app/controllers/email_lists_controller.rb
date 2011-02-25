@@ -24,8 +24,11 @@ class EmailListsController < ApplicationController
 
   def update
     @email_list = EmailList.find(params[:id])
-    @email_list.update_attributes(params[:email_list])
     
-    redirect_to(user_root_path, :notice => 'Email list was successfully updated.')
+    if @email_list.update_attributes(params[:email_list])
+      redirect_to(user_root_path, :notice => 'Email list was successfully updated.')
+    else 
+      render :action => 'edit'
+    end
   end
 end
