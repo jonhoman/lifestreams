@@ -5,7 +5,30 @@ class FeedUpdaterWorker
     def perform(feed_id, stream_id)
       feed = Feed.find(feed_id)
       stream = Stream.find(stream_id)
+      parsed_feed = parse_feed!(feed, stream)
+      items = parsed_feed.entries
 
+      items.each do |rss_item|
+
+        if feed.new_item?(rss_item)
+          Rails.logger.debug "New item #{rss_item.title} for feed #{feed.name}, id: #{feed.id}"
+
+          item = feed.items.create_from_rss(rss_item, parsed_feed) 
+
+          # TODO: only grab active twitter accounts
+          stream.twitter_accounts.each do |account|
+            Resque.enqueue(TwitterUpdaterWorker, item.id, account.id)
+          end
+
+        elsif 
+          Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
+        end
+      end
+    end
+
+    private
+
+    def parse_feed!(feed, stream)
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
 
       if !parsed_feed
@@ -13,33 +36,9 @@ class FeedUpdaterWorker
         raise UnparsableFeedError.new
       end
 
-      items = parsed_feed.entries
-      unknown_count = 0
-
-      items.each do |rss_item|
-        i = Item.where(:feed_id => feed_id, :title => rss_item.title)
-        if i.count == 0
-          Rails.logger.debug "New item #{rss_item.title} for feed #{feed.name}, id: #{feed.id}"
-
-          unknown_count += 1 
-          item = Item.create!(:feed_id => feed_id, :title => rss_item.title, :body => rss_item.content, :published_date => published_date(rss_item, parsed_feed), :link => rss_item.url)
-
-          stream = Stream.find(stream_id)
-
-          # TODO: only grab active twitter accounts
-          stream.twitter_accounts.each { |account| Resque.enqueue(TwitterUpdaterWorker, item.id, account.id) }
-        elsif 
-          Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
-        end
-      end
-      feed.update_attributes!(:new_items => (unknown_count > 0))
+      parsed_feed
     end
 
-    private
-
-    def published_date(item, feed)
-      item.published || feed.last_modified  
-    end
   end
 
   class UnparsableFeedError < StandardError; end

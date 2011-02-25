@@ -29,9 +29,8 @@ Feature: Create a new email list
     And I press "Create Email list"
     Then I should be on the user root page
     And I should have the following fields stored for the email list:
-      |Name      |
-      |Test List |
-    And I should have a recipient for my email list
+      |Name      | Recipients       |
+      |Test List | jon@jonhoman.com |
 
   Scenario: Edit an existing email list
     Given I have an email list I want to edit

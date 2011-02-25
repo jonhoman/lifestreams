@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20110225215228) do
     t.datetime "updated_at"
     t.string   "name"
     t.datetime "last_build_date"
-    t.boolean  "new_items"
     t.integer  "user_id"
   end
 

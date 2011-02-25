@@ -14,16 +14,15 @@ describe FeedUpdaterWorker do
   end
 
   let :stream do
-    Factory(:stream)
+    Factory(:stream, :twitter_accounts => [fake_twitter])
   end
 
   it "checks for updates to feeds" do
     Resque.should_receive(:enqueue)
-    
-    stream.update_attributes(:twitter_accounts => [fake_twitter])
-    FeedUpdaterWorker.perform(feed.id, stream.id)
 
-    feed.reload.new_items?.should be_true
+    expect {
+      FeedUpdaterWorker.perform(feed.id, stream.id)
+    }.should change { feed.items.count }
   end
 
   it "knows when a feed has no updates" do
@@ -32,30 +31,21 @@ describe FeedUpdaterWorker do
       item = Item.create!(:feed_id => feed.id, :title => rss_item.title, :body => rss_item.content, :published_date => rss_item.published, :link => rss_item.url)
     end
     
-    FeedUpdaterWorker.perform(feed.id, stream.id)
-    feed.reload.new_items?.should be_false
-  end
-
-  it "creates items for each new entry in the feed" do
-    Resque.should_receive(:enqueue)
-    
-    stream.update_attributes(:twitter_accounts => [fake_twitter])
-    FeedUpdaterWorker.perform(feed.id, stream.id)
-
-    feed.reload.items.count.should == 1
+    expect {
+      FeedUpdaterWorker.perform(feed.id, stream.id)
+    }.should_not change { feed.items.count }
   end
 
   it "adds new items to the twitter updater queue" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
 
-    stream.update_attributes(:twitter_accounts => [fake_twitter])
     FeedUpdaterWorker.perform(feed.id, stream.id)
   end
 
   it "queues twitter updates for both twitter accounts in the stream" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
 
-    stream.update_attributes(:twitter_accounts => [fake_twitter, pretend_twitter])
+    stream.twitter_accounts << pretend_twitter
 
     FeedUpdaterWorker.perform(feed.id, stream.id)
   end

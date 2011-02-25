@@ -34,6 +34,10 @@ class Feed < ActiveRecord::Base
     self.url = urls[0]
   end
 
+  def new_item?(rss_item) 
+    items.where(:title => rss_item.title).count == 0
+  end
+
   private
 
   def populate_items
