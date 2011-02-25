@@ -33,7 +33,6 @@ Feature: Create a new email list
       |Test List |
     And I should have a recipient for my email list
 
-
   Scenario: Edit an existing email list
     Given I have an email list I want to edit
     And I am on the user root page
@@ -44,7 +43,7 @@ Feature: Create a new email list
     And I press "Update Email list"
     Then I should see "Jon's Real Email List"
   
-  Scenario: Edit new email list and erase the name
+  Scenario: Edit email list and erase the name
     Given I have an email list I want to edit
     And I am on the user root page
     When I follow "Jon's Email List"
@@ -53,3 +52,6 @@ Feature: Create a new email list
     When I fill in "Email List Name" with ""
     And I press "Update Email list"
     Then I should see "Name can't be blank"
+
+  @wip
+  Scenario: Delete existing email list
