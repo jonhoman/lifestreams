@@ -21,7 +21,6 @@ Feature: Create a new email list
     When I press "Create Email list"
     Then I should see "Name can't be blank"
 
-  @wip
   Scenario: Create new email list with email recipient
     Given I follow "Add new Email List"
     When I fill in "Email List Name" with "Test List"
@@ -32,6 +31,20 @@ Feature: Create a new email list
       |Name      | Recipients       |
       |Test List | jon@jonhoman.com |
 
+  Scenario: Create new email list with multiple recipients (stored as comma-separated list)
+    Given I follow "Add new Email List"
+    When I fill in "Email List Name" with "Test List"
+    And I fill in "Email Recipient" with multiple recipients
+      """
+      jon@jonhoman.com
+      jonphoman@gmail.com
+      """
+    And I press "Create Email list"
+    Then I should be on the user root page
+    And I should have the following fields stored for the email list:
+      |Name      | Recipients                           |
+      |Test List | jon@jonhoman.com,jonphoman@gmail.com |
+
   Scenario: Edit an existing email list
     Given I have an email list I want to edit
     And I am on the user root page
@@ -41,6 +54,9 @@ Feature: Create a new email list
     When I fill in "Email List Name" with "Jon's Real Email List"
     And I press "Update Email list"
     Then I should see "Jon's Real Email List"
+
+  @wip
+  Scenario: Edit an existing email list that has multiple recipients
   
   Scenario: Edit email list and erase the name
     Given I have an email list I want to edit
