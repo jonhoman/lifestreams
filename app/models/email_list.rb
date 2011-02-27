@@ -1,18 +1,22 @@
 class EmailList < ActiveRecord::Base
   validates_presence_of :name
   has_and_belongs_to_many :streams
+  has_many :recipients
 
-  before_save :parse_recipients!
-  
+  before_save :parse_recipients
+
   class << self
     def user(user_id)
       where(:user_id => user_id)
     end
   end
 
-  private
-
-  def parse_recipients!
-    recipients.gsub!(/\n/, ",") if recipients
+  def parse_recipients
+    if recipients_text
+      email_addresses = recipients_text.split(/\n/)
+      email_addresses.each do |email_address|
+        recipients << Recipient.create(:email_address => email_address)
+      end
+    end
   end
 end

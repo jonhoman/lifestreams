@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110225215228) do
+ActiveRecord::Schema.define(:version => 20110227010951) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "recipients"
+    t.text     "recipients_text"
   end
 
   create_table "email_lists_streams", :id => false, :force => true do |t|
@@ -45,6 +45,11 @@ ActiveRecord::Schema.define(:version => 20110225215228) do
     t.string   "link"
     t.string   "status_id"
     t.string   "bitly_hash"
+  end
+
+  create_table "recipients", :force => true do |t|
+    t.string  "email_address"
+    t.integer "email_list_id"
   end
 
   create_table "streams", :force => true do |t|

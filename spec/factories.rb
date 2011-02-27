@@ -28,4 +28,7 @@ FactoryGirl.define do
   factory :email_list do
     name "example email list"
   end
+  factory :recipient do
+    email_address "person@example.com"
+  end
 end
