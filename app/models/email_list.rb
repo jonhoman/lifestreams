@@ -13,8 +13,10 @@ class EmailList < ActiveRecord::Base
 
   def parse_recipients
     if recipients_text
+      recipients.destroy_all
       email_addresses = recipients_text.split(/\n/)
       email_addresses.each do |email_address|
+        email_address.strip!
         recipients << Recipient.create(:email_address => email_address)
       end
     end
