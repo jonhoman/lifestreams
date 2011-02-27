@@ -49,7 +49,7 @@
     <% @email_lists.each do |email_list| %>
       <div>
         <%= link_to email_list.name, email_list_path(email_list) %>
-        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Stream"), 
+        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Email List"), 
           email_list, :confirm => "Are you sure you want to delete #{email_list.name}", :method => :delete %>
       </div>
     <% end %>

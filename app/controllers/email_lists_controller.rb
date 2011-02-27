@@ -1,4 +1,6 @@
 class EmailListsController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @email_list = EmailList.new
   end
@@ -30,5 +32,12 @@ class EmailListsController < ApplicationController
     else 
       render :action => 'edit'
     end
+  end
+
+  def destroy
+    @email_list = EmailList.find(params[:id])
+    @email_list.destroy
+
+    redirect_to user_root_path, :notice => 'Email List was successfully updated.'
   end
 end
