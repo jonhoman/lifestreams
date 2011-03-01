@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <%= image_tag "/images/twitter.gif", :class => "icon", :alt => "Twitter icon" %>
+  <span class=dashboard-sections>Configured Accounts</span>
+  <% @twitter_accounts.each do |account| %>
+    <div>
+      <%= link_to account.handle, "http://twitter.com/#{account.handle}" %>
+      <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Twitter Account"), 
+        account, :confirm => "Are you sure you want to delete #{account.handle}", :method => :delete %>
+      </div>
+  <% end %>
+  <div class="create-links"><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
+  <%= render :partial => 'twitter_help' if @twitter_accounts.count == 0 %>
+</div>

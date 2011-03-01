@@ -1,59 +1,11 @@
 <h2>Dashboard</h2>
 
 <div id="dashboard-container">
-  <div class="dashboard">
-    <%= image_tag "/images/rss.jpg", :class => "icon", :alt => "RSS icon" %>
-    <span class=dashboard-sections>Feeds</span>
-    <% @feeds.each do |feed| %>
-      <div>
-        <%= link_to feed.name, feed_path(feed) %>
-        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Feed"), 
-          feed, :confirm => "Are you sure you want to delete #{feed.name}", :method => :delete %>
-      </div>
-    <% end %>
-    <div class="create-links"><%= link_to "Add new feed", new_feed_path %></div>
-    <%= render :partial => 'feed_help' if @feeds.count == 0 %>
-  </div>
+  <%= render :partial => 'feed_display' %>
 
-  <div class="dashboard">
-    <%= image_tag "/images/twitter.gif", :class => "icon", :alt => "Twitter icon" %>
-    <span class=dashboard-sections>Configured Accounts</span>
-    <% @twitter_accounts.each do |account| %>
-      <div>
-        <%= link_to account.handle, "http://twitter.com/#{account.handle}" %>
-        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Twitter Account"), 
-          account, :confirm => "Are you sure you want to delete #{account.handle}", :method => :delete %>
-        </div>
-    <% end %>
-    <div class="create-links"><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
-    <%= render :partial => 'twitter_help' if @twitter_accounts.count == 0 %>
-  </div>
+  <%= render :partial => 'twitter_display' %>
 
-  <div class="dashboard">
-    <%= image_tag "/images/stream.jpg", :class => "icon", :alt => "Stream icon" %>
-    <span class=dashboard-sections>Streams</span>
-    <% @streams.each do |stream| %>
-      <div>
-        <%= link_to stream.name, stream_path(stream) %>
-        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Stream"), 
-          stream, :confirm => "Are you sure you want to delete #{stream.name}", :method => :delete %>
-      </div>
-    <% end %>
-    <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
-    <%= render :partial => 'stream_help' if @streams.count == 0 %>
-  </div>
+  <%= render :partial => 'stream_display' %>
 
-  <div class="dashboard">
-    <%= image_tag "/images/stream.jpg", :class => "icon", :alt => "Stream icon" %>
-    <span class=dashboard-sections>Email Lists</span>
-    <% @email_lists.each do |email_list| %>
-      <div>
-        <%= link_to email_list.name, email_list_path(email_list) %>
-        <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Email List"), 
-          email_list, :confirm => "Are you sure you want to delete #{email_list.name}", :method => :delete %>
-      </div>
-    <% end %>
-    <div class="create-links"><%= link_to "Add new Email List", new_email_list_path %></div>
-    <%= render :partial => 'email_list_help' if @email_lists.count == 0 %>
-  </div>
+  <%= render :partial => 'email_display' %>
 </div>

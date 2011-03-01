@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <%= image_tag "/images/rss.jpg", :class => "icon", :alt => "RSS icon" %>
+  <span class=dashboard-sections>Feeds</span>
+  <% @feeds.each do |feed| %>
+    <div>
+      <%= link_to feed.name, feed_path(feed) %>
+      <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Feed"), 
+        feed, :confirm => "Are you sure you want to delete #{feed.name}", :method => :delete %>
+    </div>
+  <% end %>
+  <div class="create-links"><%= link_to "Add new feed", new_feed_path %></div>
+  <%= render :partial => 'feed_help' if @feeds.count == 0 %>
+</div>
