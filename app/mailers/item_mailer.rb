@@ -4,7 +4,7 @@ class ItemMailer < ActionMailer::Base
   def update_email(item, recipient)
     @item = item
     user = User.find item.feed.user_id
-    mail :from => user.email_address, 
+    mail :from => user.email, 
          :to => recipient.email_address, 
          :subject => "New blog post, #{item.title}"
   end
