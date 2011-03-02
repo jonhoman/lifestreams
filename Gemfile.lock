@@ -91,6 +91,13 @@ GEM
       sax-machine (>= 0.0.12)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    fuubar (0.0.3)
+      rspec (~> 2.0)
+      rspec-instafail (~> 0.1.4)
+      ruby-progressbar (~> 0.0.9)
+    fuubar-cucumber (0.0.9)
+      cucumber
+      ruby-progressbar (~> 0.0.9)
     gherkin (2.3.3)
       json (~> 1.4.6)
     hashie (0.4.0)
@@ -163,12 +170,14 @@ GEM
     rspec-core (2.5.1)
     rspec-expectations (2.5.0)
       diff-lcs (~> 1.1.2)
+    rspec-instafail (0.1.6)
     rspec-mocks (2.5.0)
     rspec-rails (2.5.0)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.5.0)
+    ruby-progressbar (0.0.9)
     rubyzip (0.9.4)
     sax-machine (0.0.15)
       nokogiri (> 0.0.0)
@@ -220,6 +229,8 @@ DEPENDENCIES
   factory_girl_rails (= 1.1.beta1)
   feedbag (= 0.6)
   feedzirra (= 0.0.24)
+  fuubar
+  fuubar-cucumber
   heroku (= 1.17.16)
   heroku_san
   oauth (= 0.4.4)

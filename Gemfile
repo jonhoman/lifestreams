@@ -19,6 +19,8 @@ group :development, :test do
   gem "dehumanize", '1.0.0'
   gem "capybara", '0.4.1.2'
   gem "factory_girl_rails", "1.1.beta1"
+  gem "fuubar"
+  gem "fuubar-cucumber"
 end
 
 group :development do
