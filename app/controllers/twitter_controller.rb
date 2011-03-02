@@ -2,34 +2,37 @@ class TwitterController < ApplicationController
   before_filter :authenticate_user!, :only => :connect
 
   def connect
-    @consumer = TwitterController.consumer
+    consumer = TwitterController.consumer
     
-    @request_token = @consumer.get_request_token(:oauth_callback => ENV['TWITTER_CALLBACK_URL'])
-    
-    session[:request_token] = @request_token.token
-    session[:request_token_secret] = @request_token.secret
+    request_token = consumer.get_request_token(:oauth_callback => ENV['TWITTER_CALLBACK_URL'])
+   
+    set_session_info(request_token)
 
-    redirect_to @request_token.authorize_url
+    redirect_to request_token.authorize_url
   end
 
   def callback
-    @request_token = OAuth::RequestToken.new(TwitterController.consumer,
+    request_token = OAuth::RequestToken.new(TwitterController.consumer,
                                              session[:request_token],
                                              session[:request_token_secret])
     #TODO catch unauthorized request token
-    @access_token = @request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
+    access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
 
-    #TODO only create/authorize an account once
     @account = TwitterAccount.new(
-      :access_token => @access_token.token, 
-      :access_token_secret => @access_token.secret, 
-      :handle => @access_token.params[:screen_name],
+      :access_token => access_token.token, 
+      :access_token_secret => access_token.secret, 
+      :handle => access_token.params[:screen_name],
       :user_id => current_user.id)
 
     notice = @account.save ? 'You successfully authorized your Twitter account.' : 
                              'There was an issue authorizing your Twitter account. Please try again.'
 
     redirect_to user_root_path, :notice => notice
+  end
+
+  def set_session_info(request_token)
+    session[:request_token] = request_token.token
+    session[:request_token_secret] = request_token.secret
   end
 
   def self.consumer
