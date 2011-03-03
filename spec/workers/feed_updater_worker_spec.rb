@@ -17,6 +17,14 @@ describe FeedUpdaterWorker do
     Factory(:stream, :twitter_accounts => [fake_twitter])
   end
 
+  let :email_list do
+    Factory(:email_list, :recipients_text => "jon@jonhoman.com")
+  end
+
+  let :another_email_list do
+    Factory(:email_list, :recipients_text => "jonphoman@gmail.com")
+  end
+
   it "checks for updates to feeds" do
     Resque.should_receive(:enqueue)
 
@@ -28,7 +36,11 @@ describe FeedUpdaterWorker do
   it "knows when a feed has no updates" do
     rss = Feedzirra::Feed.fetch_and_parse(feed.url)
     rss.entries.each do |rss_item|
-      item = Item.create!(:feed_id => feed.id, :title => rss_item.title, :body => rss_item.content, :published_date => rss_item.published, :link => rss_item.url)
+      item = Item.create! :feed_id => feed.id, 
+                          :title => rss_item.title, 
+                          :body => rss_item.content, 
+                          :published_date => rss_item.published, 
+                          :link => rss_item.url
     end
     
     expect {
@@ -36,7 +48,7 @@ describe FeedUpdaterWorker do
     }.should_not change { feed.items.count }
   end
 
-  it "adds new items to the twitter updater queue" do
+  it "adds new jobs to the twitter updater queue" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
 
     FeedUpdaterWorker.perform(feed.id, stream.id)
@@ -46,6 +58,31 @@ describe FeedUpdaterWorker do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
 
     stream.twitter_accounts << pretend_twitter
+
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+  end
+
+  it "add new jobs to the email list queue" do
+    Resque.should_receive(:enqueue).with(EmailWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
+
+    stream.update_attributes! :twitter_accounts => [], :email_lists => [email_list]
+
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+  end
+
+  it "add new jobs to the email list queue for each email list" do
+    Resque.should_receive(:enqueue).with(EmailWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
+
+    stream.update_attributes! :twitter_accounts => [], :email_lists => [email_list, another_email_list]
+
+    FeedUpdaterWorker.perform(feed.id, stream.id)
+  end
+
+  it "add new jobs to the both queues" do
+    Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
+    Resque.should_receive(:enqueue).with(EmailWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
+
+    stream.update_attributes! :email_lists => [email_list]
 
     FeedUpdaterWorker.perform(feed.id, stream.id)
   end

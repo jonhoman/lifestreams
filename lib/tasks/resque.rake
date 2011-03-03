@@ -1,7 +1,7 @@
 require "resque/tasks"
 
 task "resque:setup" => :environment do
-  ENV['QUEUE'] = 'feed_creation,feed_updating,twitter_updating'
+  ENV['QUEUE'] = 'feed_creation,feed_updating,twitter_updating,email'
 end
 
 desc "Alias for resque:work (To run workers on Heroku)"

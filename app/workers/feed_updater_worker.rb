@@ -20,6 +20,10 @@ class FeedUpdaterWorker
             Resque.enqueue(TwitterUpdaterWorker, item.id, account.id)
           end
 
+          stream.email_lists.each do |list|
+            Resque.enqueue(EmailWorker, item.id, list.id)
+          end
+
         elsif 
           Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
         end
