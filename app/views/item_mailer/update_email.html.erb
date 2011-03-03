@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- Facebook sharing information tags -->
 		<meta property="og:title" content="*|MC:SUBJECT|*" />
 		<title>
-      New Post <%= @item.title %>
+      New Post from <%= @feed.title %>
 		</title>
 		<style type="text/css">
 /*<![CDATA[*/
@@ -351,8 +351,11 @@
 														<td valign="top">
 															<div mc:edit="std_content00">
 																<h1 class="h1">
-                                  New Post <%= @item.title %>
+                                  New Post from <%= @feed.title %>
 																</h1>
+                                <h4 class="h4">
+                                  <%= link_to @item.title, @item.link %>
+                                </h4>
                                 <%= raw @item.body %>
 															</div>
 														</td>
@@ -373,7 +376,10 @@
 												<table border="0" cellpadding="10" cellspacing="0" width="100%">
 													<tr>
 														<td colspan="2" valign="middle" id="utility">
-															<div mc:edit="std_utility">
+                              <div>
+                                Email sent using <%= link_to "lifeStreams", "http://life-streams.com" %>, the website that helps you share your life and share it right.
+                              </div>
+															<div>
 																&nbsp;<a href="/unsubscribe">unsubscribe from this list</a>
 															</div>
 														</td>
