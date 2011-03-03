@@ -10,7 +10,7 @@ Feature: Create a new feed
   Scenario: New feed create 
     Given I am on the new feed page
     When I fill in "Feed Name" with "Test Feed"
-    And I fill in "Feed URL" with "http://tanyahoman.com/feed/"
+    And I fill in "URL" with "http://tanyahoman.com/feed/"
     And I submit the form to create the feed
     Then I should be on the user root page
     And I should have the following fields stored for the feed:
@@ -44,7 +44,7 @@ Feature: Create a new feed
   Scenario: Autodiscover the feed url from a main url
     Given I am on the new feed page
     When I fill in "Feed Name" with "Test Feed"
-    And I fill in "Feed URL" with "http://blog.jonhoman.com"
+    And I fill in "URL" with "http://blog.jonhoman.com"
     And I submit the form to create the feed
     Then I should be on the user root page
     And I should have the following fields stored for the feed:
