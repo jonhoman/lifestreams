@@ -23,9 +23,9 @@ describe FeedCreatorWorker do
     f
   end
 
-  it "stores the name of the feed" do
+  it "stores the title of the feed" do
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.name.should == "JonHoman.com"
+    feed.reload.title.should == "JonHoman.com"
   end
 
   it "stores the build date of the feed" do
@@ -43,7 +43,7 @@ describe FeedCreatorWorker do
     Feedzirra::Feed.should_receive(:fetch_and_parse).and_return { fake_feed }
 
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.name.should == "JonHoman.com"
+    feed.reload.title.should == "JonHoman.com"
   end
 
   it "explodes if retry fails" do

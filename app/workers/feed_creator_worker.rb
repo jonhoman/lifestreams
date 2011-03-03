@@ -15,8 +15,8 @@ class FeedCreatorWorker
 
       create_items(feed.id, parsed_feed)
 
-      name = parsed_feed.title
-      feed.update_attributes!(:name => name, 
+      title = parsed_feed.title
+      feed.update_attributes!(:title => title, 
                               :last_build_date => get_updated_date(parsed_feed).to_s )
     end
 
