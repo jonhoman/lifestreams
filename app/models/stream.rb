@@ -11,7 +11,7 @@ class Stream < ActiveRecord::Base
     end
 
     def all_active
-      where("feed_id > ?", 0).where("active = ?", true).reject { |s| s.twitter_accounts.empty? }
+      where("feed_id > ?", 0).where("active = ?", true).reject { |s| s.twitter_accounts.empty? && s.email_lists.empty?}
     end
   end
 end
