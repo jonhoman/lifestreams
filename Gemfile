@@ -25,7 +25,6 @@ end
 
 group :development do
   gem "heroku", '1.17.16' 
-  gem "heroku_san"
 end
 
 group :test do
