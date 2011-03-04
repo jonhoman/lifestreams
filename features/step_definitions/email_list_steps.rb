@@ -1,8 +1,8 @@
-Given /^I have an email list I want to edit$/ do
+Given /^I have an email list$/ do
   @email_list = Factory(:email_list, :name => "Jon's Email List", :user_id => @user.id)
 end
 
-Given /^I have an email list I want to edit that has multiple recipients$/ do
+Given /^I have an email list that has multiple recipients$/ do
   @email_list = Factory(:email_list, 
                         :name => "Jon's Email List", 
                         :user_id => @user.id, 

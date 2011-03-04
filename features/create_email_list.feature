@@ -48,7 +48,7 @@ Feature: Create a new email list
     And the email list should have two recipients
 
   Scenario: Edit an existing email list
-    Given I have an email list I want to edit
+    Given I have an email list 
     And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
@@ -58,7 +58,7 @@ Feature: Create a new email list
     Then I should see "Jon's Real Email List"
 
   Scenario: Edit an existing email list that has multiple recipients
-    Given I have an email list I want to edit that has multiple recipients
+    Given I have an email list that has multiple recipients
     And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
@@ -66,7 +66,7 @@ Feature: Create a new email list
     And I should see "jonphoman@gmail.com"
   
   Scenario: Edit email list and erase the name
-    Given I have an email list I want to edit
+    Given I have an email list 
     And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
@@ -76,7 +76,10 @@ Feature: Create a new email list
     Then I should see "Name can't be blank"
   
   Scenario: Delete existing email list
-    Given I have an email list I want to edit
+    Given I have an email list
     And I go to the dashboard
     When I follow "Delete Email List"
     Then I should not see "Jon's Email List"
+
+  Scenario: User unsubscribes from a email list
+    Given I have an email list that has multiple recipients
