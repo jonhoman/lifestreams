@@ -4,6 +4,8 @@ class ItemMailer < ActionMailer::Base
   def update_email(item, recipient)
     @item = item
     @feed = item.feed
+    @recipient = recipient
+
     user = User.find @feed.user_id
 
     mail :from => user.email, 
