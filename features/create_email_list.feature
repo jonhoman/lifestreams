@@ -81,5 +81,10 @@ Feature: Create a new email list
     When I follow "Delete Email List"
     Then I should not see "Jon's Email List"
 
+  @wip
   Scenario: User unsubscribes from a email list
     Given I have an email list that has multiple recipients
+    And I am a recipient
+    When I unsubscribe from the email list
+    Then I should see "You have been unsubscribed from the email list."
+    Then I should no longer be on the email list

@@ -1,5 +1,5 @@
 class EmailListsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => 'unsubscribe'
 
   def new
     @email_list = EmailList.new
@@ -39,5 +39,12 @@ class EmailListsController < ApplicationController
     @email_list.destroy
 
     redirect_to user_root_path, :notice => 'Email List was successfully updated.'
+  end
+
+  def unsubscribe
+    @recipient = Recipient.find(params[:id])
+    @email_list = @recipient.email_list
+    
+    @email_list.delete_recipient(@recipient)
   end
 end

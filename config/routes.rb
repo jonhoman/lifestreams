@@ -10,6 +10,7 @@ Lifestreams::Application.routes.draw do
 
   match "/twitter/connect" => "twitter#connect"
   match "/twitter/callback" => "twitter#callback"
+  match "/unsubscribe/:id" => "email_lists#unsubscribe", :as => "unsubscribe"
   
   root :to => "home#index" 
 end

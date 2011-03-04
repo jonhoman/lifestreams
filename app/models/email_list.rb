@@ -17,8 +17,13 @@ class EmailList < ActiveRecord::Base
       email_addresses = recipients_text.split(/\n/)
       email_addresses.each do |email_address|
         email_address.strip!
-        recipients << Recipient.create(:email_address => email_address)
+        recipients << Recipient.create(:email_address => email_address) unless email_address == ""
       end
     end
+  end
+
+  def delete_recipient(recipient)
+    recipients_text.gsub!(recipient.email_address, "")
+    self.save
   end
 end

@@ -16,6 +16,8 @@ module NavigationHelpers
       stream_path @stream
     when /the feed page/
       feed_path @feed
+    when /the unsubscribe page/
+      unsubscribe_path @recipient
     when /the dashboard/
       user_root_path
     # Add more mappings here.
