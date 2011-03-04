@@ -12,14 +12,14 @@ Feature: Create a new feed
     When I fill in "Feed Name" with "Test Feed"
     And I fill in "URL" with "http://tanyahoman.com/feed/"
     And I submit the form to create the feed
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the feed:
       |Name      | Url                         |
       |Test Feed | http://tanyahoman.com/feed/ |
 
   Scenario: Edit an existing feed
     Given I have a feed I want to edit
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "Jon's Feed"
     And I follow "Edit"
     And change the feed name to "Jon's Real Feed"
@@ -28,7 +28,7 @@ Feature: Create a new feed
 
   Scenario: Delete an existing feed
     Given I have a feed I want to edit
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Feed"
     Then I should not see "Jon's Feed"
 
@@ -36,7 +36,7 @@ Feature: Create a new feed
     Given I add a feed
     And I add a stream
     And I add my feed to my stream
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Feed"
     Then I should not see "Jon's Feed"
     And the stream should not be active
@@ -46,7 +46,7 @@ Feature: Create a new feed
     When I fill in "Feed Name" with "Test Feed"
     And I fill in "URL" with "http://blog.jonhoman.com"
     And I submit the form to create the feed
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the feed:
       |Name      | Url                            |
       |Test Feed | http://blog.jonhoman.com/feed/ |

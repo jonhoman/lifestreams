@@ -9,7 +9,7 @@ Feature: Delete a twitter account
 
   Scenario: Delete an existing twitter account
     Given I have a twitter account 
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Twitter Account"
     Then I should not see "test"
 
@@ -17,7 +17,7 @@ Feature: Delete a twitter account
     Given I have a twitter account 
     And I add a stream
     And I add my twitter account to my stream
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Twitter Account"
     Then I should not see "test"
     And the stream should not be active

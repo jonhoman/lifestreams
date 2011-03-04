@@ -7,7 +7,7 @@ Feature: Show feed information
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
     And I add a feed that has items
-    And I am on the user root page
+    And I am on the dashboard
     
   Scenario: View feed show page
     When I follow "example feed"

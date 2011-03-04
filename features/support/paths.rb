@@ -16,6 +16,8 @@ module NavigationHelpers
       stream_path @stream
     when /the feed page/
       feed_path @feed
+    when /the dashboard/
+      user_root_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

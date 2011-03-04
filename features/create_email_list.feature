@@ -11,7 +11,7 @@ Feature: Create a new email list
     Given I follow "Add new Email List"
     When I fill in "Email List Name" with "Test List"
     And I press "Create Email list"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the email list:
       |Name      |
       |Test List |
@@ -26,7 +26,7 @@ Feature: Create a new email list
     When I fill in "Email List Name" with "Test List"
     And I fill in "Email Recipient" with "jon@jonhoman.com"
     And I press "Create Email list"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the email list:
       |Name      | 
       |Test List |
@@ -41,7 +41,7 @@ Feature: Create a new email list
       jonphoman@gmail.com
       """
     And I press "Create Email list"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the email list:
       |Name      |
       |Test List |
@@ -49,7 +49,7 @@ Feature: Create a new email list
 
   Scenario: Edit an existing email list
     Given I have an email list I want to edit
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
     Then I should see "Jon's Email List"
@@ -59,7 +59,7 @@ Feature: Create a new email list
 
   Scenario: Edit an existing email list that has multiple recipients
     Given I have an email list I want to edit that has multiple recipients
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
     Then I should see "jon@jonhoman.com"
@@ -67,7 +67,7 @@ Feature: Create a new email list
   
   Scenario: Edit email list and erase the name
     Given I have an email list I want to edit
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "Jon's Email List"
     And I follow "Edit"
     Then I should see "Jon's Email List"
@@ -77,6 +77,6 @@ Feature: Create a new email list
   
   Scenario: Delete existing email list
     Given I have an email list I want to edit
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Email List"
     Then I should not see "Jon's Email List"

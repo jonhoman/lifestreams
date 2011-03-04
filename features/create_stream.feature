@@ -16,7 +16,7 @@ Feature: Create a new stream
     And I select "example feed" from "Choose a Feed" 
     And I select "test" from "Choose a Twitter Account" 
     And I press "Create Stream"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
@@ -30,7 +30,7 @@ Feature: Create a new stream
     And I select "test" from "Choose a Twitter Account" 
     And I select "different_handle" from "Choose a Twitter Account" 
     And I press "Create Stream"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
@@ -43,7 +43,7 @@ Feature: Create a new stream
     And I select "example feed" from "Choose a Feed" 
     And I select "example email list" from "Choose an Email List" 
     And I press "Create Stream"
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
@@ -58,14 +58,14 @@ Feature: Create a new stream
 
   Scenario: Editing a stream selects the correct twitter account 
     Given I have a stream I want to edit
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "example stream"
     And I follow "Edit"
     Then the twitter account should be selected
 
   Scenario: Edit a stream created with a feed and a twitter account 
     Given I have a stream I want to edit
-    And I am on the user root page
+    And I am on the dashboard
     When I follow "example stream"
     And I follow "Edit"
     And I change the stream name to "Real Stream"
@@ -74,6 +74,6 @@ Feature: Create a new stream
 
   Scenario: Delete an existing stream
     Given I have a stream I want to edit
-    And I go to the user root page
+    And I go to the dashboard
     When I follow "Delete Stream"
     Then I should not see "Jon's Feed"

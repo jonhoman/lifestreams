@@ -6,13 +6,13 @@ Feature: Authentication and Authorization
   Scenario: Sign in successfully 
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should see "Signed in successfully"
 
   Scenario: Sign out link visible on home page if signed in
     Given I am a user with email "jon@example.com" and password "password"
     And I sign in
-    Then I should be on the user root page
+    Then I should be on the dashboard
     And I should see "Sign out"
 
   Scenario: Signing out should redirect the user to the home page
@@ -55,5 +55,5 @@ Feature: Authentication and Authorization
 
   Scenario: Must be logged in to view dashboard 
     Given I am on the home page
-    When I go to the user root page
+    When I go to the dashboard
     Then I should be on the new user session page
