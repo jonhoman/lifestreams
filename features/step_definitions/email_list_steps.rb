@@ -23,7 +23,6 @@ end
 
 Then /^I should no longer be on the email list$/ do
   email_list = EmailList.last
-  ap email_list.recipients
   email_list.recipients.should_not include @recipient
 end
 
