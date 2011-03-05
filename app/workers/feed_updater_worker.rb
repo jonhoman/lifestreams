@@ -35,7 +35,7 @@ class FeedUpdaterWorker
     def parse_feed!(feed, stream)
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
 
-      if !parsed_feed
+      if !parsed_feed || parsed_feed == 0
         stream.update_attributes(:active => false)
         raise UnparsableFeedError.new
       end
