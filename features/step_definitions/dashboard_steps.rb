@@ -90,3 +90,7 @@ Then /^I should see at most (\d+) items$/ do |item_count|
   page.should have_selector('ul#item_list li', :maximum => item_count.to_i)
 end
 
+Then /^I should see recipients$/ do 
+  page.should have_selector('ul#recipient_list li')
+end
+

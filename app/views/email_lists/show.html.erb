@@ -2,5 +2,7 @@
 
 <h3><%= @email_list.name %></h3>
 
+<%= render :partial => 'recipients', :locals => { :email_list => @email_list } %>
+
 <%= link_to 'Edit', edit_email_list_path(@email_list) %><br /> 
 <%= link_to 'Back to Dashboard', user_root_path %>

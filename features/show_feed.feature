@@ -9,7 +9,7 @@ Feature: Show feed information
     And I add a feed that has items
     And I am on the dashboard
     
-  Scenario: View feed show page
+  Scenario: View show feed page
     When I follow "example feed"
     Then I should see "example feed"
     And I should see "http://tanyahoman.com/feed"

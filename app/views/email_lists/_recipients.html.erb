@@ -1,0 +1,10 @@
+<% if email_list && email_list.recipients.count > 0 %>
+  <div>
+    <b>Recipients:</b>
+    <ul id="recipient_list">
+    <% email_list.recipients.each do |recipient| %>
+      <li><%= recipient.email_address %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
