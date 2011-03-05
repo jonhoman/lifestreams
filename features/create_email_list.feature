@@ -50,9 +50,9 @@ Feature: Create a new email list
   Scenario: Edit an existing email list
     Given I have an email list 
     And I am on the dashboard
-    When I follow "Jon's Email List"
+    When I follow "example email list"
     And I follow "Edit"
-    Then I should see "Jon's Email List"
+    Then I should see "example email list"
     When I fill in "Email List Name" with "Jon's Real Email List"
     And I press "Update Email list"
     Then I should see "Jon's Real Email List"
@@ -60,7 +60,7 @@ Feature: Create a new email list
   Scenario: Edit an existing email list that has multiple recipients
     Given I have an email list that has multiple recipients
     And I am on the dashboard
-    When I follow "Jon's Email List"
+    When I follow "example email list"
     And I follow "Edit"
     Then I should see "jon@jonhoman.com"
     And I should see "jonphoman@gmail.com"
@@ -68,9 +68,9 @@ Feature: Create a new email list
   Scenario: Edit email list and erase the name
     Given I have an email list 
     And I am on the dashboard
-    When I follow "Jon's Email List"
+    When I follow "example email list"
     And I follow "Edit"
-    Then I should see "Jon's Email List"
+    Then I should see "example email list"
     When I fill in "Email List Name" with ""
     And I press "Update Email list"
     Then I should see "Name can't be blank"
