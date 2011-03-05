@@ -1,11 +1,14 @@
 <h2>Dashboard</h2>
 
 <div id="dashboard-container">
-  <%= render :partial => 'feed_display' %>
+  <div class="dashboard-grouping">
+    <%= render :partial => 'feed_display' %>
 
-  <%= render :partial => 'twitter_display' %>
-
-  <%= render :partial => 'email_display' %>
-  
-  <%= render :partial => 'stream_display' %>
+    <%= render :partial => 'twitter_display' %>
+  </div>
+  <div class="dashboard-grouping">
+    <%= render :partial => 'email_display' %>
+    
+    <%= render :partial => 'stream_display' %>
+  </div>
 </div>

@@ -71,7 +71,7 @@ img.icon {
 }
 
 img.delete-icon {
-  width: 6%;
+  width: 4%;
   vertical-align: bottom;
 }
 
@@ -94,11 +94,16 @@ a:hover {
   margin-left: 30px;
 }
 
+.dashboard-grouping {
+  clear: left;
+}
+
 .dashboard {
   text-align: left;
   width: 50%;
   float: left;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .dashboard-sections {
