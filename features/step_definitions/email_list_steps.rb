@@ -1,10 +1,10 @@
 Given /^I have an email list$/ do
-  @email_list = Factory(:email_list, :name => "Jon's Email List", :user_id => @user.id)
+  @email_list = Factory(:email_list, :name => "example email list", :user_id => @user.id)
 end
 
 Given /^I have an email list that has multiple recipients$/ do
   @email_list = Factory(:email_list, 
-                        :name => "Jon's Email List", 
+                        :name => "example email list", 
                         :user_id => @user.id, 
                         :recipients_text => "jon@jonhoman.com\njonphoman@gmail.com")
 end

@@ -8,7 +8,7 @@
 </div>
 
 <div>
-  <b>Twitter Account:</b>
+  <b>Twitter Account(s):</b>
   <% @stream.twitter_accounts.each do |account| %>
     <%= link_to account.handle, "http://twitter.com/#{account.handle}" %>
   <% end %>
@@ -16,5 +16,16 @@
     <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
   <% end %>
 </div>
+
+<div>
+  <b>Email List(s):</b>
+  <% @stream.email_lists.each do |list| %>
+    <%= link_to list.name, email_list_path(list) %>
+  <% end %>
+  <% if @stream.email_lists.empty? %>
+    <em>There is no email list associated with your stream. Please click edit to choose a email list you wish track.</em>
+  <% end %>
+</div>
+
 <br />
 <%= render :partial => 'recent_items', :locals => { :feed => @stream.feed } %>

@@ -16,6 +16,8 @@ module NavigationHelpers
       stream_path @stream
     when /the feed page/
       feed_path @feed
+    when /the email list page/
+      email_list_path @email_list
     when /the unsubscribe page/
       unsubscribe_path @recipient
     when /the dashboard/
