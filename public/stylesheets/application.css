@@ -67,7 +67,7 @@ img#blue-stream {
 }
 
 img.icon {
-  width: 10%;
+  width: 8%;
 }
 
 img.delete-icon {
@@ -96,7 +96,7 @@ a:hover {
 
 .dashboard {
   text-align: left;
-  width: 33%;
+  width: 50%;
   float: left;
   margin: 0 auto;
 }
