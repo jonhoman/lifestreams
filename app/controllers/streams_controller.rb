@@ -10,10 +10,14 @@ class StreamsController < ApplicationController
 
   def create
     @stream = Stream.new(params[:stream])
+    ap @stream
     @stream.user_id = current_user.id
+    ap @stream
 
     @stream.twitter_accounts = TwitterAccount.find(params[:twitter_account]) if params[:twitter_account]
+    ap @stream
     @stream.email_lists = EmailList.find(params[:email_list]) if params[:email_list]
+    ap @stream
 
     if @stream.save
       redirect_to(user_root_path, :notice => 'Your stream was successfully created.')
