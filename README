@@ -1,9 +1,6 @@
 app/controllers/twitter_controller.rb
-19:    #TODO catch unauthorized request token
+18:    #TODO catch unauthorized request token
 
 app/workers/feed_updater_worker.rb
 18:    # TODO: only grab active twitter accounts
-
-lib/tasks/cron.rake
-10:    # TODO: refactor call (only pass stream id)
 
