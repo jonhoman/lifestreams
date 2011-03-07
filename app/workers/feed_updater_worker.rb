@@ -2,9 +2,9 @@ class FeedUpdaterWorker
   @queue = :feed_updating
 
   class << self
-    def perform(feed_id, stream_id)
-      feed = Feed.find(feed_id)
+    def perform(stream_id)
       stream = Stream.find(stream_id)
+      feed = stream.feed
       parsed_feed = parse_feed!(feed, stream)
       items = parsed_feed.entries
 

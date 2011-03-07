@@ -14,7 +14,7 @@ describe FeedUpdaterWorker do
   end
 
   let :stream do
-    Factory(:stream, :twitter_accounts => [fake_twitter])
+    Factory(:stream, :feed => feed, :twitter_accounts => [fake_twitter])
   end
 
   let :email_list do
@@ -29,7 +29,7 @@ describe FeedUpdaterWorker do
     Resque.should_receive(:enqueue)
 
     expect {
-      FeedUpdaterWorker.perform(feed.id, stream.id)
+      FeedUpdaterWorker.perform(stream.id)
     }.should change { feed.items.count }
   end
 
@@ -44,14 +44,14 @@ describe FeedUpdaterWorker do
     end
     
     expect {
-      FeedUpdaterWorker.perform(feed.id, stream.id)
+      FeedUpdaterWorker.perform(stream.id)
     }.should_not change { feed.items.count }
   end
 
   it "adds new jobs to the twitter updater queue" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
 
-    FeedUpdaterWorker.perform(feed.id, stream.id)
+    FeedUpdaterWorker.perform(stream.id)
   end
 
   it "queues twitter updates for both twitter accounts in the stream" do
@@ -59,7 +59,7 @@ describe FeedUpdaterWorker do
 
     stream.twitter_accounts << pretend_twitter
 
-    FeedUpdaterWorker.perform(feed.id, stream.id)
+    FeedUpdaterWorker.perform(stream.id)
   end
 
   it "add new jobs to the email list queue" do
@@ -67,7 +67,7 @@ describe FeedUpdaterWorker do
 
     stream.update_attributes! :twitter_accounts => [], :email_lists => [email_list]
 
-    FeedUpdaterWorker.perform(feed.id, stream.id)
+    FeedUpdaterWorker.perform(stream.id)
   end
 
   it "add new jobs to the email list queue for each email list" do
@@ -75,7 +75,7 @@ describe FeedUpdaterWorker do
 
     stream.update_attributes! :twitter_accounts => [], :email_lists => [email_list, another_email_list]
 
-    FeedUpdaterWorker.perform(feed.id, stream.id)
+    FeedUpdaterWorker.perform(stream.id)
   end
 
   it "add new jobs to the both queues" do
@@ -84,7 +84,7 @@ describe FeedUpdaterWorker do
 
     stream.update_attributes! :email_lists => [email_list]
 
-    FeedUpdaterWorker.perform(feed.id, stream.id)
+    FeedUpdaterWorker.perform(stream.id)
   end
 
   context "unparsable feed" do
@@ -95,13 +95,13 @@ describe FeedUpdaterWorker do
 
     it "throws an error if the feed url cannot be parsed" do
       expect {
-        FeedUpdaterWorker.perform(feed.id, stream.id)
+        FeedUpdaterWorker.perform(stream.id)
       }.to raise_error(FeedUpdaterWorker::UnparsableFeedError)
     end
 
     it "deactivates the stream if the feed cannot be parsed" do
       expect {
-        FeedUpdaterWorker.perform(feed.id, stream.id)
+        FeedUpdaterWorker.perform(stream.id)
       }.to raise_error(FeedUpdaterWorker::UnparsableFeedError)
 
       stream.reload.should_not be_active
