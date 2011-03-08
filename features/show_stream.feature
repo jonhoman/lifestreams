@@ -24,7 +24,6 @@ Feature: Show stream information
     And I follow "example feed"
     Then I should be on the feed page
 
-  @wip
   Scenario: Show stream page contains link to email list
     Given I create a stream with a feed and an email list 
     And I am on the dashboard
