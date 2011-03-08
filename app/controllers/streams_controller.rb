@@ -36,8 +36,12 @@ class StreamsController < ApplicationController
     @stream = Stream.find(params[:id])
 
     if @stream.update_attributes(params[:stream])
-      @stream.twitter_accounts = TwitterAccount.find(params[:twitter_account])
-
+      if params[:twitter_account]
+        @stream.twitter_accounts = TwitterAccount.find(params[:twitter_account]) 
+      else 
+        @stream.twitter_accounts = []
+      end
+      
       @stream.update_attributes(:active => true) # only activate stream if successful update
       redirect_to(user_root_path, :notice => 'Stream was successfully updated.')
     else

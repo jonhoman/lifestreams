@@ -63,6 +63,15 @@ Feature: Create a new stream
     And I follow "Edit"
     Then the twitter account should be selected
 
+  Scenario: Editing a stream to have no destination 
+    Given I have a stream I want to edit
+    And I am on the dashboard
+    When I follow "example stream"
+    And I follow "Edit"
+    And I unselect "test" from "Choose a Twitter Account"
+    And I press "Update Stream"
+    Then my stream shouldn't have twitter accounts
+
   Scenario: Edit a stream created with a feed and a twitter account 
     Given I have a stream I want to edit
     And I am on the dashboard
