@@ -41,6 +41,11 @@ class StreamsController < ApplicationController
       else 
         @stream.twitter_accounts = []
       end
+      if params[:email_list]
+        @stream.email_lists = EmailList.find(params[:email_list]) 
+      else 
+        @stream.email_lists = []
+      end
       
       @stream.update_attributes(:active => true) # only activate stream if successful update
       redirect_to(user_root_path, :notice => 'Stream was successfully updated.')
