@@ -62,7 +62,7 @@ describe Feed do
 
     it "deactivates associated streams on feed deletion" do
       feed.destroy
-      # feed.should_receive(:deactivate_stream)
+
       stream.reload.should_not be_active
     end
   end
