@@ -5,9 +5,13 @@ class EmailList < ActiveRecord::Base
 
   before_save :parse_recipients
 
-  class << self
-    def user(user_id)
-      where(:user_id => user_id)
+  before_destroy :deactivate_stream
+
+  def deactivate_stream
+    streams.each do |stream| 
+      if stream.email_lists.count == 1 && stream.twitter_accounts.count == 0 
+        stream.update_attributes(:active => false)
+      end
     end
   end
 
@@ -25,5 +29,11 @@ class EmailList < ActiveRecord::Base
   def delete_recipient(recipient)
     recipients_text.gsub!(recipient.email_address, "")
     self.save
+  end
+
+  class << self
+    def user(user_id)
+      where(:user_id => user_id)
+    end
   end
 end

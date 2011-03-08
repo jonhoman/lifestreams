@@ -8,6 +8,10 @@ class TwitterAccount < ActiveRecord::Base
   before_destroy :deactivate_stream
 
   def deactivate_stream
-    streams.each { |stream| stream.update_attributes(:active => false) }
+    streams.each do |stream| 
+      if stream.twitter_accounts.count == 1 && stream.email_lists.count == 0 
+        stream.update_attributes(:active => false)
+      end
+    end
   end
 end

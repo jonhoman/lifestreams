@@ -9,6 +9,10 @@ describe TwitterAccount do
     Factory(:twitter_account, :user_id => user.id)
   end
 
+  let :list do
+    Factory(:email_list, :user_id => user.id)
+  end
+
   let! :stream do 
     Factory(:stream, :user_id => user.id)
   end
@@ -42,21 +46,59 @@ describe TwitterAccount do
     TwitterAccount.user(user.id).count.should == 1
   end
 
-  describe "#deactive_stream" do
-    before(:each) do
-      stream.twitter_accounts << account
+  describe "#deactivate_stream" do
+    context "one twitter account" do
+      before(:each) do
+        stream.twitter_accounts << account
+      end
+
+      it "deactivates associated streams" do 
+        account.deactivate_stream
+
+        stream.reload.should_not be_active
+      end
+
+      it "deactivates associated streams on twitter account deletion" do 
+        account.destroy
+
+        stream.reload.should_not be_active
+      end
     end
+    context "two twitter accounts" do
+      before(:each) do
+        stream.twitter_accounts << account
+        stream.twitter_accounts << account
+      end
 
-    it "deactivates associated streams" do 
-      account.deactivate_stream
+      it "does not deactivate associated streams" do 
+        account.deactivate_stream
 
-      stream.reload.should_not be_active
+        stream.reload.should be_active
+      end
+
+      it "does not deactivate associated streams on twitter account deletion" do 
+        account.destroy
+
+        stream.reload.should be_active
+      end
     end
+    context "one twitter account and an email list" do
+      before(:each) do
+        stream.twitter_accounts << account
+        stream.email_lists << list
+      end
 
-    it "deactivates associated streams twitter account deletion" do 
-      account.destroy
+      it "does not deactivate associated streams" do 
+        account.deactivate_stream
 
-      stream.reload.should_not be_active
+        stream.reload.should be_active
+      end
+
+      it "does not deactivate associated streams on twitter account deletion" do 
+        account.destroy
+
+        stream.reload.should be_active
+      end
     end
   end
 end
