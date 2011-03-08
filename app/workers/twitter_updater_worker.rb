@@ -10,8 +10,12 @@ class TwitterUpdaterWorker
 
       TwitterUpdaterWorker.configure(twitter_account.access_token, twitter_account.access_token_secret)
 
-      url = create_bitly_link(item.link)
-      short_url = url.short_url
+      if item.bitly_hash && item.bitly_hash.present?
+        short_url = item.bitly_hash
+      else
+        url = create_bitly_link(item.link)
+        short_url = url.short_url
+      end
 
       begin
         result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
