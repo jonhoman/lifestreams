@@ -1,0 +1,15 @@
+development:
+  database: lifeStreams_log
+  capsize: <%= 10.megabytes %> 
+
+test:
+  database: lifeStreams_test_log
+  capsize: <%= 10.megabytes %> 
+
+production:
+  username: <%= ENV['MONGOHQ_USERNAME'] %>
+  password: <%= ENV['MONGOHQ_PASSWORD'] %>
+  database: lifeStreams_log
+  capsize: <%= 12.megabytes %>  
+  host: flame.mongohq.com 
+  port: 27052
