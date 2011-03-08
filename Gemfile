@@ -12,6 +12,7 @@ gem 'devise', '1.1.7'
 gem 'feedzirra', '0.0.24'
 gem 'bitly', '0.6.1'
 gem 'feedbag', '0.6'
+gem 'central_logger'
 
 group :development, :test do
   gem "rspec-rails", '2.5.0'
