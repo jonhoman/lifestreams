@@ -12,7 +12,7 @@ gem 'devise', '1.1.7'
 gem 'feedzirra', '0.0.24'
 gem 'bitly', '0.6.1'
 gem 'feedbag', '0.6'
-gem 'central_logger'
+gem 'central_logger', :git => "git://github.com/ethangunderson/central_logger.git"
 
 group :development, :test do
   gem "rspec-rails", '2.5.0'
