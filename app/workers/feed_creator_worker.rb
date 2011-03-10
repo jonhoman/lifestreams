@@ -16,8 +16,8 @@ class FeedCreatorWorker
       create_items(feed.id, parsed_feed)
 
       title = parsed_feed.title
-      feed.update_attributes!(:title => title, 
-                              :last_build_date => get_updated_date(parsed_feed).to_s )
+      feed.update_attributes! :title => title, 
+                              :last_build_date => get_updated_date(parsed_feed).to_s
     end
 
     private
@@ -33,7 +33,8 @@ class FeedCreatorWorker
           :body => item.content, 
           :published_date => item.published,
           :link => item.url,
-          :feed_id => feed_id
+          :feed_id => feed_id, 
+          :categories => item.categories 
         )
       end
     end

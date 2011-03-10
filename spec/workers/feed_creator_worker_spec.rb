@@ -38,6 +38,13 @@ describe FeedCreatorWorker do
     feed.reload.items.count.should == 5
   end
 
+  it "adds the category(ies) of the article to the item" do
+    FeedCreatorWorker.perform(feed.id)
+
+    feed.reload.items.first.categories.should include("tech")
+    feed.reload.items.first.categories.should include("personal")
+  end
+
   it "retries if it cannot connect to URL" do
     Feedzirra::Feed.should_receive(:fetch_and_parse).and_raise(StandardError.new("Unable to connect to the internetz"))
     Feedzirra::Feed.should_receive(:fetch_and_parse).and_return { fake_feed }
