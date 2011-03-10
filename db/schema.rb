@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310011647) do
+ActiveRecord::Schema.define(:version => 20110310045805) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -60,7 +60,8 @@ ActiveRecord::Schema.define(:version => 20110310011647) do
     t.datetime "updated_at"
     t.integer  "feed_id"
     t.integer  "user_id"
-    t.boolean  "active",     :default => true
+    t.boolean  "active",              :default => true
+    t.string   "included_categories"
   end
 
   create_table "streams_twitter_accounts", :id => false, :force => true do |t|

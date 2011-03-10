@@ -50,6 +50,21 @@ Feature: Create a new stream
     And my stream should have a reference to the feed I choose
     And my stream should have a reference to the email list I choose
 
+  @wip
+  Scenario: Stream created with including categories 
+    Given I follow "Add new Stream"
+    When I fill in "Stream Name" with "Test Stream"
+    And I select "example feed" from "Choose a Feed" 
+    And I select "test" from "Choose a Twitter Account" 
+    And I fill in "Only include these categories:" with "tech"
+    And I press "Create Stream"
+    Then I should be on the dashboard
+    And I should have the following fields stored for the stream:
+      |Name       | Included Categories |
+      |Test Stream| tech                |
+    And my stream should have a reference to the feed I choose
+    And my stream should have a reference to the twitter account I choose
+
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"
     And I select "test" from "Choose a Twitter Account" 
