@@ -48,6 +48,15 @@ describe FeedUpdaterWorker do
     }.should_not change { feed.items.count }
   end
 
+  it "adds the category(ies) of the article to the item" do
+    Resque.should_receive(:enqueue)
+    
+    FeedUpdaterWorker.perform(stream.id)
+
+    feed.reload.items.first.categories.should include("tech")
+    feed.reload.items.first.categories.should include("personal")
+  end
+
   it "adds new jobs to the twitter updater queue" do
     Resque.should_receive(:enqueue).with(TwitterUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
 

@@ -28,6 +28,7 @@ class FeedCreatorWorker
 
     def create_items(feed_id, parsed_feed)
       parsed_feed.entries.each do |item|
+        #TODO: refactor this to use Item.create_from_rss
         Item.create!(
           :title => item.title, 
           :body => item.content, 
