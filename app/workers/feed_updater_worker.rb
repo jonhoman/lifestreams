@@ -15,14 +15,7 @@ class FeedUpdaterWorker
 
           item = feed.items.create_from_rss(rss_item, parsed_feed) 
 
-          # TODO: only grab active twitter accounts
-          stream.twitter_accounts.each do |account|
-            Resque.enqueue(TwitterUpdaterWorker, item.id, account.id)
-          end
-
-          stream.email_lists.each do |list|
-            Resque.enqueue(EmailWorker, item.id, list.id)
-          end
+          enqueue(stream, item)
 
         elsif 
           Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
@@ -31,6 +24,19 @@ class FeedUpdaterWorker
     end
 
     private
+    
+    def enqueue(stream, item)
+      if category_matches?(stream, item)
+        # TODO: only grab active twitter accounts
+        stream.twitter_accounts.each do |account|
+          Resque.enqueue(TwitterUpdaterWorker, item.id, account.id)
+        end
+
+        stream.email_lists.each do |list|
+          Resque.enqueue(EmailWorker, item.id, list.id)
+        end
+      end
+    end
 
     def parse_feed!(feed, stream)
       parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
@@ -41,6 +47,24 @@ class FeedUpdaterWorker
       end
 
       parsed_feed
+    end
+
+    def category_matches?(stream, item)
+      result = true # if the stream doesn't define categories to include, assume all categories
+
+      if stream.included_categories.present?
+        stream_categories = stream.included_categories.split(",").collect { |str| str.strip }
+        item_categories = item.categories
+
+        item_categories.each do |item_category|
+          if stream_categories.include?(item_category)
+            result = true
+            break;
+          end
+        result = false
+        end
+      end
+      result
     end
 
   end

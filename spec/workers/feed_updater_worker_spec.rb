@@ -95,7 +95,33 @@ describe FeedUpdaterWorker do
 
     FeedUpdaterWorker.perform(stream.id)
   end
+  
+  it "does not queue twitter updates when the item's category isn't in stream's categories" do
+    Resque.should_not_receive(:enqueue)
 
+    no_match = "fake_category"
+    stream.update_attributes! :included_categories => no_match
+
+    FeedUpdaterWorker.perform(stream.id)
+  end
+
+  it "queues twitter updates when the item's category is in stream's categories" do
+    Resque.should_receive(:enqueue)
+
+    category_match = "personal"
+    stream.update_attributes! :included_categories => category_match 
+
+    FeedUpdaterWorker.perform(stream.id)
+  end
+
+  it "queues twitter updates when the item's category is one of stream's categories" do
+    Resque.should_receive(:enqueue)
+
+    category_match = "fake_category,faker_category,personal"
+    stream.update_attributes! :included_categories => category_match 
+
+    FeedUpdaterWorker.perform(stream.id)
+  end
   context "unparsable feed" do
     before :each do
       bad_feed_url = "http://jonhoman.com"

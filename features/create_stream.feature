@@ -50,7 +50,6 @@ Feature: Create a new stream
     And my stream should have a reference to the feed I choose
     And my stream should have a reference to the email list I choose
 
-  @wip
   Scenario: Stream created with including categories 
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
