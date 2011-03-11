@@ -67,6 +67,10 @@ Given /^I create a stream with a feed and an email list$/ do
   And 'I add my feed and my email list to my stream'
 end
 
+Given /^I add categories to the stream$/ do
+  @stream.update_attributes! :included_categories => "cat1, cat2"
+end
+
 Given /^I remove the feed from the stream$/ do
   @stream.update_attributes! :feed => nil
 end

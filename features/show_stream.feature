@@ -59,3 +59,14 @@ Feature: Show stream information
     And I am on the dashboard
     When I follow "example stream"
     Then I should see "no twitter account"
+
+  @wip
+  Scenario: Add categories to stream 
+    Given I create a stream with a feed and a twitter account
+    And I add categories to the stream
+    And I am on the dashboard
+    When I follow "example stream"
+    Then I should be on the stream page
+    And show me the page
+    And I should see "cat1, cat2"
+
