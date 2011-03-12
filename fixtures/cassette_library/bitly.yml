@@ -11,14 +11,14 @@
       message: OK
     headers: 
       etag: 
-      - "\"b03c90457f4a996a8e0e92e21c11f4d8d2a7a47b\""
+      - "\"171dbbe910b582c15f59ddb96844c4ac2111ba71\""
       content-type: 
       - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Wed, 16 Feb 2011 05:00:57 GMT
+      - Sat, 12 Mar 2011 16:06:53 GMT
       content-length: 
       - "170"
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2367}]}, \"status_txt\": \"OK\"}"
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2377}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"
