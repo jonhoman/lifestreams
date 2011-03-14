@@ -169,3 +169,11 @@ body { background-color: #fff; color: #333; }
   font-size: 12px;
   list-style: square;
 }
+
+select, textarea, input {
+  display: block;
+}
+
+select {
+  width: 150px;
+}

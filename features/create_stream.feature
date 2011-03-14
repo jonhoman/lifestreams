@@ -70,18 +70,12 @@ Feature: Create a new stream
     When I press "Create Stream"
     Then I should see "Name can't be blank"
 
-  Scenario: Editing a stream selects the correct twitter account 
-    Given I have a stream I want to edit
-    And I am on the dashboard
-    When I follow "example stream"
-    And I follow "Edit"
-    Then the twitter account should be selected
-
   Scenario: Editing a stream to have no destination 
     Given I have a stream I want to edit
     And I am on the dashboard
     When I follow "example stream"
     And I follow "Edit"
+    And I select "" from "Choose a Twitter Account"
     And I unselect "test" from "Choose a Twitter Account"
     And I press "Update Stream"
     Then my stream shouldn't have twitter accounts

@@ -1,4 +1,4 @@
-<%= form_for(@stream) do |f| %>
+<%= simple_form_for(@stream) do |f| %>
   <% if @stream.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@stream.errors.count, "error") %> prohibited this stream from being saved:</h2>
@@ -11,36 +11,19 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name, "Stream Name" %>
-    <%= f.text_field :name, :autofocus => true %>
-  </p>
+  <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
-  <p>
-    <%= f.label :feed_id, "Choose a Feed" %>
-    <%= select 'stream', 'feed_id', 
-      options_from_collection_for_select(@feeds, 'id', 'name', determine_selected_feed) %>
-  </p>
+  <%= f.association :feed, :label => "Choose a Feed", 
+    :collection => Feed.user(current_user), :include_blank => true %>
 
-  <p>
-    <%= f.label :included_categories, "Only include these categories:" %>
-    <%= f.text_field :included_categories %>
-  </p>
+  <%= f.input :included_categories, :label => "Only include these categories:" %>
 
-  <p>
-    <%= label_tag :twitter_account, "Choose a Twitter Account" %>
-    <%= select_tag 'twitter_account', 
-               options_from_collection_for_select(@twitter_accounts, 'id', 'handle', determine_selected_twitter_account),
-               :multiple => true, :size => 4 %>
-  </p>
+  <%= f.association :twitter_accounts, :label => "Choose a Twitter Account",
+    :collection => TwitterAccount.user(current_user), :include_blank => true %>
 
-  <p>
-    <%= label_tag :email_list, "Choose an Email List" %>
-    <%= select_tag 'email_list', 
-               options_from_collection_for_select(@email_lists, 'id', 'name', determine_selected_email_list),
-               :multiple => true, :size => 4 %>
-  </p>
+  <%= f.association :email_lists, :label => "Choose an Email List",
+    :collection => EmailList.user(current_user), :include_blank => true %>
 
-  <%= f.submit :class => "button" %>
+  <%= f.button :submit, :class => "button" %>
 <% end %>
 

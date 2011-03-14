@@ -14,4 +14,8 @@ class TwitterAccount < ActiveRecord::Base
       end
     end
   end
+
+  def name 
+    self.handle
+  end
 end

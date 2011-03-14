@@ -1,4 +1,4 @@
-<%= form_for(@feed) do |f| %>
+<%= simple_form_for(@feed) do |f| %>
   <% if @feed.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "Feed Name" %><br />
-    <%= f.text_field :name, :autofocus => true %><br />
-    <%= f.label :url, "URL" %><br />
-    <%= f.text_field :url %><br />
+    <%= f.input :name, :label => "Feed Name", :input_html => { :autofocus => true } %>
+    <%= f.input :url, :label => "URL" %>
   </div>
   <div class="actions">
-    <%= f.submit :class => "button" %>
+    <%= f.button :submit, :class => "button" %>
   </div>
 <% end %>

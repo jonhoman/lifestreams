@@ -1,4 +1,4 @@
-<%= form_for(@email_list) do |f| %>
+<%= simple_form_for(@email_list) do |f| %>
   <% if @email_list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@email_list.errors.count, "error") %> prohibited this feed from being saved:</h2>
@@ -12,14 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "Email List Name" %><br />
-    <%= f.text_field :name, :autofocus => true %><br />
+    <%= f.input :name, :label => "Email List Name", :input_html => { :autofocus => true } %>
   </div>
   <div class="field">
-    <%= f.label :recipients_text, "Email Recipients (enter one email address per line)" %><br />
-    <%= f.text_area :recipients_text %><br />
+    <%= f.input :recipients_text, :label => "Email Recipients (enter one email address per line)" %><br />
   </div>
   <div class="actions">
-    <%= f.submit :class => "button" %>
+    <%= f.button :submit, :class => "button" %>
   </div>
 <% end %>
