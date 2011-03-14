@@ -14,7 +14,7 @@ Feature: Create a new stream
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
-    And I select "test" from "Choose a Twitter Account" 
+    And I check "test" 
     And I press "Create Stream"
     Then I should be on the dashboard
     And I should have the following fields stored for the stream:
@@ -27,8 +27,8 @@ Feature: Create a new stream
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
-    And I select "test" from "Choose a Twitter Account" 
-    And I select "different_handle" from "Choose a Twitter Account" 
+    And I check "test" 
+    And I check "different_handle" 
     And I press "Create Stream"
     Then I should be on the dashboard
     And I should have the following fields stored for the stream:
@@ -41,7 +41,7 @@ Feature: Create a new stream
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
-    And I select "example email list" from "Choose an Email List" 
+    And I check "example email list" 
     And I press "Create Stream"
     Then I should be on the dashboard
     And I should have the following fields stored for the stream:
@@ -54,7 +54,7 @@ Feature: Create a new stream
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
-    And I select "test" from "Choose a Twitter Account" 
+    And I check "test" 
     And I fill in "Only include these categories:" with "tech"
     And I press "Create Stream"
     Then I should be on the dashboard
@@ -66,7 +66,7 @@ Feature: Create a new stream
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"
-    And I select "test" from "Choose a Twitter Account" 
+    And I check "test" 
     When I press "Create Stream"
     Then I should see "Name can't be blank"
 
@@ -75,8 +75,8 @@ Feature: Create a new stream
     And I am on the dashboard
     When I follow "example stream"
     And I follow "Edit"
-    And I select "" from "Choose a Twitter Account"
-    And I unselect "test" from "Choose a Twitter Account"
+    And I check "" 
+    And I uncheck "test" 
     And I press "Update Stream"
     Then my stream shouldn't have twitter accounts
 

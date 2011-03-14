@@ -9,10 +9,12 @@
   <%= f.input :included_categories, :label => "Only include these categories:" %>
 
   <%= f.association :twitter_accounts, :label => "Choose a Twitter Account",
-    :collection => TwitterAccount.user(current_user), :include_blank => true %>
+    :collection => TwitterAccount.user(current_user), :include_blank => true, 
+    :as => :check_boxes %>
 
   <%= f.association :email_lists, :label => "Choose an Email List",
-    :collection => EmailList.user(current_user), :include_blank => true %>
+    :collection => EmailList.user(current_user), :include_blank => true,
+    :as => :check_boxes %>
 
   <%= f.button :submit, :class => "button" %>
 <% end %>

@@ -7,7 +7,8 @@ body, p, ol, ul, td {
 h2, h3 {
   color: #008099; 
 }
-div.field, div.actions {
+
+div.actions {
   margin-bottom: 10px;
 }
 
@@ -133,6 +134,7 @@ a:hover {
   text-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
   color: white;
   background-color: #008099;
+  margin: 10px 0;
 }
 
 .help {
@@ -170,7 +172,16 @@ body { background-color: #fff; color: #333; }
   list-style: square;
 }
 
-select, textarea, input {
+div.input {
+  display: block;
+  padding: 7px 0;
+}
+
+label.collection_check_boxes, label.string, label.check_boxes {
+  display: block; 
+}
+
+select, textarea {
   display: block;
 }
 
