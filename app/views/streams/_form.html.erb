@@ -1,15 +1,5 @@
 <%= simple_form_for(@stream) do |f| %>
-  <% if @stream.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@stream.errors.count, "error") %> prohibited this stream from being saved:</h2>
-
-      <ul>
-      <% @stream.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render :partial => 'shared/error_messages', :locals => { :resource => @stream } %>
 
   <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
