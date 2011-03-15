@@ -6,10 +6,17 @@ class FacebookController < ApplicationController
   end
 
   def callback
-    @access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
-    @user = JSON.parse(@access_token.get('/me'))
+    access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
+    #user = JSON.parse(access_token.get('/me'))
 
-    render :index
+    @account = FacebookAccount.new(
+      :access_token => access_token.token,
+      :user_id => current_user.id)
+
+    notice = @account.save ? 'You successfully authorized your Facebook account.' : 
+                             'There was an issue authorizing your Facebook account. Please try again.'
+
+    redirect_to user_root_path, :notice => notice
   end
 
   def client
