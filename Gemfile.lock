@@ -232,6 +232,7 @@ DEPENDENCIES
   fuubar-cucumber
   heroku (= 1.17.16)
   oauth (= 0.4.4)
+  oauth2 (= 0.1.1)
   pg (= 0.10.0)
   rails (= 3.0.5)
   resque (= 1.13.0)
