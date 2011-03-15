@@ -9,5 +9,6 @@
     </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
-  <%= render :partial => 'stream_help' if @streams.count == 0 %>
+
+  <%= render :partial => 'stream_help' %>
 </div>

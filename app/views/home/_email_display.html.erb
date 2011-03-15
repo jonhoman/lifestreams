@@ -9,5 +9,6 @@
     </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new Email List", new_email_list_path %></div>
-  <%= render :partial => 'email_list_help' if @email_lists.count == 0 %>
+
+  <%= render :partial => 'email_list_help' %>
 </div>

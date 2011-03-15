@@ -9,5 +9,6 @@
     </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new feed", new_feed_path %></div>
-  <%= render :partial => 'feed_help' if @feeds.count == 0 %>
+
+  <%= render :partial => 'feed_help' %>
 </div>

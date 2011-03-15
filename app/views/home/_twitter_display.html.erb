@@ -9,5 +9,6 @@
       </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new Twitter Account", twitter_connect_path %></div>
-  <%= render :partial => 'twitter_help' if @twitter_accounts.count == 0 %>
+
+  <%= render :partial => 'twitter_help' %>
 </div>
