@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310045805) do
+ActiveRecord::Schema.define(:version => 20110315221044) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20110310045805) do
   create_table "email_lists_streams", :id => false, :force => true do |t|
     t.integer "email_list_id"
     t.integer "stream_id"
+  end
+
+  create_table "facebook_accounts", :force => true do |t|
+    t.string   "username"
+    t.string   "access_token"
+    t.string   "access_token_secret"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "feeds", :force => true do |t|
