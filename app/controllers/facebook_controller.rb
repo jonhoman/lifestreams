@@ -8,6 +8,8 @@ class FacebookController < ApplicationController
   def callback
     access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
     @user = JSON.parse(access_token.get('/me'))
+
+    render :index
   end
 
   def client
