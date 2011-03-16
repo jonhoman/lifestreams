@@ -1,7 +1,6 @@
 class FacebookController < ApplicationController
 
   def connect
-    ap redirect_uri
     redirect_to client.web_server.authorize_url(:redirect_uri => redirect_uri, :scope => 'offline_access')
   end
 
