@@ -7,10 +7,12 @@ class FacebookController < ApplicationController
   def callback
     access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
     user = JSON.parse(access_token.get('/me'))
-    Rails.logger.warn user.inspect
 
     @account = FacebookAccount.new(
       :access_token => access_token.token,
+      :facebook_id => user.id,
+      :link => user.link,
+      :name => user.name,
       :user_id => current_user.id)
 
     notice = @account.save ? 'You successfully authorized your Facebook account.' : 
