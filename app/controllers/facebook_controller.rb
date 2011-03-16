@@ -6,7 +6,8 @@ class FacebookController < ApplicationController
 
   def callback
     access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
-    #user = JSON.parse(access_token.get('/me'))
+    user = JSON.parse(access_token.get('/me'))
+    Rails.logger.warn user.inspect
 
     @account = FacebookAccount.new(
       :access_token => access_token.token,
