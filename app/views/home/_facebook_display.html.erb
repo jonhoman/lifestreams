@@ -4,6 +4,8 @@
   <% @facebook_accounts.each do |account| %>
     <div>
       <%= link_to account.id, "http://facebook.com/" %>
+      <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Facebook Account"), 
+        account, :confirm => "Are you sure you want to delete your Facebook account?", :method => :delete %>
       </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new Facebook Account", facebook_connect_path %></div>
