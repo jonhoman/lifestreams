@@ -36,6 +36,10 @@ Given /^I add an email list$/ do
   @email_list = Factory(:email_list, :user_id => @user.id)
 end
 
+Given /^I configure my facebook account$/ do
+  @facebook_account = Factory(:facebook_account, :user_id => @user.id)
+end
+
 Given /^I add my feed to my stream$/ do
   @stream.update_attributes! :feed => @feed
 end
@@ -110,3 +114,6 @@ Then /^I should see recipients$/ do
   page.should have_selector('ul#recipient_list li')
 end
 
+Then /^I should see my configured facebook account$/ do
+  Then "I should see \"#{FacebookAccount.last.id}\""
+end

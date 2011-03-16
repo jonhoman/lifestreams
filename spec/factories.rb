@@ -28,4 +28,8 @@ FactoryGirl.define do
   factory :email_list do
     name "example email list"
   end
+
+  factory :facebook_account do
+    access_token "asdf"
+  end
 end

@@ -1,0 +1,12 @@
+<div class="dashboard">
+  <%= image_tag "/images/stream.jpg", :class => "icon", :alt => "Facebook icon" %>
+  <span class=dashboard-sections>Facebook Accounts</span>
+  <% @facebook_accounts.each do |account| %>
+    <div>
+      <%= link_to account.id, "http://facebook.com/" %>
+      </div>
+  <% end %>
+  <div class="create-links"><%= link_to "Add new Facebook Account", facebook_connect_path %></div>
+
+  <%= render :partial => 'facebook_help' %>
+</div>

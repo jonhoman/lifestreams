@@ -9,5 +9,6 @@ class HomeController < ApplicationController
     @feeds = Feed.user(current_user)
     @streams = Stream.user(current_user)
     @email_lists = EmailList.user(current_user)
+    @facebook_accounts = FacebookAccount.user(current_user)
   end
 end

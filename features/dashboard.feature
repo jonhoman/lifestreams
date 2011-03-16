@@ -24,6 +24,9 @@ Feature: Dashboard interface
   Scenario: User should be able to add an email list
     Then I should see "Add new Email List"
 
+  Scenario: User should be able to add a new facebook account
+    Then I should see "Add new Facebook Account"
+
   Scenario: User goes to their dashboard
     When I go to the dashboard
     Then I should be on the dashboard
@@ -55,18 +58,34 @@ Feature: Dashboard interface
     When I go to the dashboard
     Then I should see my email list
 
-  Scenario: Help text should be displayed if the user hasn't added a feed
+  Scenario: User should see their configured facebook account
+    Given I configure my facebook account 
+    When I go to the dashboard
+    Then I should see my configured facebook account
+
+  Scenario: User should not see other users' configured twitter accounts
+    Given I configure my twitter account
+    And another user configures a twitter account
+    When I go to the dashboard
+    Then I should see my configured twitter account
+    And I should not see the other user's twitter account
+
+  Scenario: Blog help text should be displayed
     When I go to the dashboard
     Then I should see "What blog (or other feed) you would like to share with other people?"
 
-  Scenario: Help text should be displayed if the user hasn't added a twitter account
+  Scenario: Twitter help text should be displayed
     When I go to the dashboard
     Then I should see "Connect your Twitter account."
     
-  Scenario: Help text should be displayed if the user hasn't added a stream
+  Scenario: Stream help text should be displayed
     When I go to the dashboard
     Then I should see "Share a feed by creating a stream."
 
-  Scenario: Help text should be displayed if the user hasn't added an email list
+  Scenario: Email help text should be displayed 
     When I go to the dashboard
-    Then I should see "Use email to share your feeds to your friends without Twitter."
+    Then I should see "Use email to share your feeds to your friends without Twitter or Facebook."
+
+  Scenario: Facebook help text should be displayed 
+    When I go to the dashboard
+    Then I should see "Share your blog updates with your friends on Facebook."
