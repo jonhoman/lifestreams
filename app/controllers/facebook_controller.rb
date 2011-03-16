@@ -10,9 +10,9 @@ class FacebookController < ApplicationController
 
     @account = FacebookAccount.new(
       :access_token => access_token.token,
-      :facebook_id => user.id,
-      :link => user.link,
-      :name => user.name,
+      :facebook_id => user[id],
+      :link => user[link],
+      :name => user[name],
       :user_id => current_user.id)
 
     notice = @account.save ? 'You successfully authorized your Facebook account.' : 
