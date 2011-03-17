@@ -115,5 +115,5 @@ Then /^I should see recipients$/ do
 end
 
 Then /^I should see my configured facebook account$/ do
-  Then "I should see \"#{FacebookAccount.last.id}\""
+  Then "I should see \"#{FacebookAccount.last.name}\""
 end

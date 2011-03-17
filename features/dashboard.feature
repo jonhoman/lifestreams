@@ -58,6 +58,7 @@ Feature: Dashboard interface
     When I go to the dashboard
     Then I should see my email list
 
+  @wip
   Scenario: User should see their configured facebook account
     Given I configure my facebook account 
     When I go to the dashboard
