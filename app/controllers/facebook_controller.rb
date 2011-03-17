@@ -1,4 +1,5 @@
 class FacebookController < ApplicationController
+  before_filter :authenticate_user!, :only => :connect
 
   def connect
     redirect_to client.web_server.authorize_url(:redirect_uri => redirect_uri, :scope => 'offline_access')
@@ -8,9 +9,10 @@ class FacebookController < ApplicationController
     access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)
     user = JSON.parse(access_token.get('/me'))
 
-    @account = FacebookAccount.new(
+    @account = FacebookAccount.find_or_create_by_facebook_id :facebook_id => user["id"]
+
+    @account.update_attributes(
       :access_token => access_token.token,
-      :facebook_id => user["id"],
       :link => user["link"],
       :name => user["name"],
       :user_id => current_user.id)
