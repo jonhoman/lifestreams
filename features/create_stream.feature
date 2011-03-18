@@ -9,6 +9,7 @@ Feature: Create a new stream
     And I add a feed
     And I configure two twitter accounts
     And I add an email list
+    And I configure my facebook account
 
   Scenario: Stream created with a feed and a twitter account 
     Given I follow "Add new Stream"
@@ -20,8 +21,8 @@ Feature: Create a new stream
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
-    And my stream should have a reference to the feed I choose
-    And my stream should have a reference to the twitter account I choose
+    And my stream should have a reference to the feed I chose
+    And my stream should have a reference to the twitter account I chose
 
   Scenario: Stream created with a feed and 2 twitter accounts
     Given I follow "Add new Stream"
@@ -34,7 +35,7 @@ Feature: Create a new stream
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
-    And my stream should have a reference to the feed I choose
+    And my stream should have a reference to the feed I chose
     And my stream should have two twitter accounts
 
   Scenario: Stream created with a feed and an email list
@@ -47,8 +48,22 @@ Feature: Create a new stream
     And I should have the following fields stored for the stream:
       |Name       |
       |Test Stream|
-    And my stream should have a reference to the feed I choose
-    And my stream should have a reference to the email list I choose
+    And my stream should have a reference to the feed I chose
+    And my stream should have a reference to the email list I chose
+
+  Scenario: Stream created with a feed and a facebook account
+    Given I follow "Add new Stream"
+    When I fill in "Stream Name" with "Test Stream"
+    And I select "example feed" from "Choose a Feed" 
+    And I should see "Choose a Facebook Account"
+    And I check "Jon Homan" 
+    And I press "Create Stream"
+    Then I should be on the dashboard
+    And I should have the following fields stored for the stream:
+      |Name       |
+      |Test Stream|
+    And my stream should have a reference to the feed I chose
+    And my stream should have a reference to the facebook account I chose
 
   Scenario: Stream created with including categories 
     Given I follow "Add new Stream"
@@ -61,8 +76,8 @@ Feature: Create a new stream
     And I should have the following fields stored for the stream:
       |Name       | Included Categories |
       |Test Stream| tech                |
-    And my stream should have a reference to the feed I choose
-    And my stream should have a reference to the twitter account I choose
+    And my stream should have a reference to the feed I chose
+    And my stream should have a reference to the twitter account I chose
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"

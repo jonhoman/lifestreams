@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110316230419) do
+ActiveRecord::Schema.define(:version => 20110318004455) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20110316230419) do
     t.integer  "facebook_id"
     t.string   "link"
     t.string   "name"
+  end
+
+  create_table "facebook_accounts_streams", :id => false, :force => true do |t|
+    t.integer "facebook_account_id"
+    t.integer "stream_id"
   end
 
   create_table "feeds", :force => true do |t|

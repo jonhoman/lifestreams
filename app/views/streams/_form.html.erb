@@ -12,6 +12,10 @@
     :collection => TwitterAccount.user(current_user), :include_blank => true, 
     :as => :check_boxes %>
 
+  <%= f.association :facebook_accounts, :label => "Choose a Facebook Account",
+    :collection => FacebookAccount.user(current_user), :include_blank => true, 
+    :as => :check_boxes %>
+
   <%= f.association :email_lists, :label => "Choose an Email List",
     :collection => EmailList.user(current_user), :include_blank => true,
     :as => :check_boxes %>

@@ -25,12 +25,12 @@ When /^I should have the following fields stored for the email list:$/ do |table
   end
 end
 
-Then /^my stream should have a reference to the feed I choose$/ do
+Then /^my stream should have a reference to the feed I chose$/ do
   stream = Stream.last
   stream.feed_id.should_not be_nil
 end
 
-Then /^my stream should have a reference to the twitter account I choose$/ do
+Then /^my stream should have a reference to the twitter account I chose$/ do
   stream = Stream.last
   stream.twitter_accounts.should_not be_empty
 end
@@ -40,7 +40,12 @@ Then /^my stream should have two twitter accounts$/ do
   stream.twitter_accounts.count.should == 2
 end
 
-Then /^my stream should have a reference to the email list I choose$/ do
+Then /^my stream should have a reference to the email list I chose$/ do
   stream = Stream.last
   stream.email_lists.should_not be_empty
+end
+
+Then /^my stream should have a reference to the facebook account I chose$/ do
+  stream = Stream.last
+  stream.facebook_accounts.should_not be_empty
 end
