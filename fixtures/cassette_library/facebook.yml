@@ -1,0 +1,38 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://graph.facebook.com:443/me/feed
+    body: message=New+Blog+Post%3A+http%3A%2F%2Fgoogle.com&access_token=asdf
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      authorization: 
+      - OAuth asdf
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 401
+      message: Unauthorized
+    headers: 
+      x-powered-by: 
+      - HPHP
+      expires: 
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      content-type: 
+      - text/javascript; charset=UTF-8
+      www-authenticate: 
+      - OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token."
+      date: 
+      - Fri, 18 Mar 2011 04:17:27 GMT
+      content-length: 
+      - "75"
+      cache-control: 
+      - no-store
+      x-fb-server: 
+      - 10.42.18.33
+      x-fb-rev: 
+      - "354917"
+      pragma: 
+      - no-cache
+    body: "{\"error\":{\"type\":\"OAuthException\",\"message\":\"Invalid OAuth access token.\"}}"
+    http_version: "1.1"
