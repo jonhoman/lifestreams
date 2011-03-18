@@ -2,7 +2,7 @@ class FacebookController < ApplicationController
   before_filter :authenticate_user!, :only => :connect
 
   def connect
-    redirect_to client.web_server.authorize_url(:redirect_uri => redirect_uri, :scope => 'offline_access')
+    redirect_to client.web_server.authorize_url(:redirect_uri => redirect_uri, :scope => 'offline_access, publish_stream')
   end
 
   def callback
