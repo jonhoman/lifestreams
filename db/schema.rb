@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318004455) do
+ActiveRecord::Schema.define(:version => 20110319181601) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20110318004455) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "facebook_id"
+    t.string   "facebook_id"
     t.string   "link"
     t.string   "name"
   end
