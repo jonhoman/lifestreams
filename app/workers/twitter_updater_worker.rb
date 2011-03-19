@@ -1,5 +1,4 @@
 class TwitterUpdaterWorker
-  include WorkerHelpers
 
   @queue = :twitter_updating
 
