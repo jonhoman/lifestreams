@@ -35,6 +35,10 @@ class FeedUpdaterWorker
         stream.email_lists.each do |list|
           Resque.enqueue(EmailWorker, item.id, list.id)
         end
+
+        stream.facebook_accounts.each do |account|
+          Resque.enqueue(FacebookUpdaterWorker, item.id, account.id)
+        end
       end
     end
 
