@@ -1,4 +1,6 @@
 class TwitterUpdaterWorker
+  include WorkerHelpers
+
   @queue = :twitter_updating
 
   class << self
@@ -10,17 +12,14 @@ class TwitterUpdaterWorker
 
       TwitterUpdaterWorker.configure(twitter_account.access_token, twitter_account.access_token_secret)
 
-      if item.bitly_hash && item.bitly_hash.present?
-        short_url = item.bitly_hash
-      else
-        url = create_bitly_link(item.link)
-        short_url = url.short_url
+      unless item.bitly_url && item.bitly_url.present?
+        item.update_attributes :bitly_url => create_bitly_link(item.link)
       end
 
       begin
-        result = Twitter.update("New Blog Post: #{item.title} #{short_url}") 
+        result = Twitter.update("New Blog Post: #{item.title} #{item.bitly_url}") 
 
-        item.update_attributes!(:shared => true, :status_id => result.id_str, :bitly_hash => url.user_hash)
+        item.update_attributes!(:shared => true, :status_id => result.id_str)
       rescue => e
         twitter_account.update_attributes(:active => false)
 
@@ -37,12 +36,13 @@ class TwitterUpdaterWorker
       end
     end
 
-    private
+    private 
 
     def create_bitly_link(link)
       Bitly.use_api_version_3
       bitly = Bitly.new(ENV['BITLY_LOGIN'], ENV['BITLY_API_KEY'])
       url = bitly.shorten(link)
+      url.short_url
     end
   end
 end

@@ -11,10 +11,10 @@ module StreamsHelper
     @stream.email_lists.empty? ? nil : @stream.email_lists.map(&:id)
   end
 
-  def get_bitly_clicks(hash)
+  def get_bitly_clicks(url)
     Bitly.use_api_version_3
     bitly = Bitly.new(ENV['BITLY_LOGIN'], ENV['BITLY_API_KEY'])
     
-    hash ? bitly.clicks(hash).user_clicks : 0
+    url ? bitly.clicks(url).user_clicks : 0
   end
 end

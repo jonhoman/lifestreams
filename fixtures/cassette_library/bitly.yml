@@ -14,11 +14,34 @@
       - "\"cbe28a528b53a48f0566294ae3794ecdc2dea56e\""
       content-type: 
       - application/json; charset=utf-8
-      server: 
-      - nginx
       date: 
       - Sat, 19 Mar 2011 17:01:06 GMT
+      server: 
+      - nginx
       content-length: 
       - "170"
     body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2359}]}, \"status_txt\": \"OK\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.bit.ly:80/v3/clicks?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&shortUrl=http://bit.ly/fXEv5E
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      etag: 
+      - "\"c06a6a6d59e79e77756b6d1fec76a45260998df4\""
+      content-type: 
+      - application/json; charset=utf-8
+      server: 
+      - nginx
+      date: 
+      - Sat, 19 Mar 2011 20:48:40 GMT
+      content-length: 
+      - "189"
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2359}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"

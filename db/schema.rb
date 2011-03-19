@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319181601) do
+ActiveRecord::Schema.define(:version => 20110319191526) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20110319181601) do
     t.datetime "published_date"
     t.string   "link"
     t.string   "status_id"
-    t.string   "bitly_hash"
+    t.string   "bitly_url"
     t.text     "categories"
   end
 

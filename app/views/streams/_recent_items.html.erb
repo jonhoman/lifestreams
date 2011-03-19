@@ -3,7 +3,7 @@
     <b>Recent Items:</b>
     <ul id="item_list">
     <% feed.recent_items.each do |item| %>
-      <li><%= link_to item.title, item.link %> - visited <%= get_bitly_clicks(item.bitly_hash) %> times</li>
+      <li><%= link_to item.title, item.link %> - visited <%= get_bitly_clicks(item.bitly_url) %> times</li>
     <% end %>
   </ul>
   </div>

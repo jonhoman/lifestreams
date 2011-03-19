@@ -3,36 +3,65 @@
   request: !ruby/struct:VCR::Request 
     method: :post
     uri: https://graph.facebook.com:443/me/feed
-    body: message=New+Blog+Post%3A+http%3A%2F%2Fgoogle.com&access_token=asdf
+    body: message=New+Blog+Post%3A+http%3A%2F%2Fgoogle.com&access_token=159708614082645%7Cfc02de1a1cf1b8adcde36b13-88400202%7Ck6NuSoIBi8H0GK7Ti37cFgBC6gc
     headers: 
       content-type: 
       - application/x-www-form-urlencoded
       authorization: 
-      - OAuth asdf
+      - OAuth 159708614082645|fc02de1a1cf1b8adcde36b13-88400202|k6NuSoIBi8H0GK7Ti37cFgBC6gc
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers: 
-      x-powered-by: 
-      - HPHP
+      p3p: 
+      - "CP=\"Facebook does not have a P3P policy. Learn why here: http://fb.me/p3p\""
       expires: 
       - Sat, 01 Jan 2000 00:00:00 GMT
       content-type: 
       - text/javascript; charset=UTF-8
-      www-authenticate: 
-      - OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token."
       date: 
-      - Fri, 18 Mar 2011 04:17:27 GMT
+      - Sat, 19 Mar 2011 17:57:49 GMT
       content-length: 
-      - "75"
-      cache-control: 
-      - no-store
-      x-fb-server: 
-      - 10.42.18.33
+      - "30"
+      set-cookie: 
+      - L=20; path=/; domain=.facebook.com; httponly
+      - W=1300557469; path=/; domain=.facebook.com
+      - cur_max_lag=20; path=/; domain=.facebook.com; httponly
+      - datr=ne6ETbfDdSGnTdZXnN6r1sVo; expires=Mon, 18-Mar-2013 17:57:49 GMT; path=/; domain=.facebook.com; httponly
+      - made_write_conn=1300557469; path=/; domain=.facebook.com
       x-fb-rev: 
-      - "354917"
+      - "355359"
+      x-fb-server: 
+      - 10.32.54.102
+      cache-control: 
+      - private, no-cache, no-store, must-revalidate
       pragma: 
       - no-cache
-    body: "{\"error\":{\"type\":\"OAuthException\",\"message\":\"Invalid OAuth access token.\"}}"
+    body: "{\"id\":\"88400202_515740760105\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.bit.ly:80/v3/shorten?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&longUrl=http://google.com
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      mime-version: 
+      - "1.0"
+      content-type: 
+      - application/json; charset=utf-8
+      server: 
+      - nginx
+      date: 
+      - Sat, 19 Mar 2011 20:21:16 GMT
+      content-length: 
+      - "181"
+    body: |
+      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com", "url": "http:\/\/bit.ly\/fXEv5E", "hash": "fXEv5E", "global_hash": "heezy", "new_hash": 0 } }
+
     http_version: "1.1"
