@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319191526) do
+ActiveRecord::Schema.define(:version => 20110320205850) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20110319191526) do
     t.string   "link"
     t.string   "name"
   end
+
+  add_index "facebook_accounts", ["facebook_id"], :name => "index_facebook_accounts_on_facebook_id", :unique => true
 
   create_table "facebook_accounts_streams", :id => false, :force => true do |t|
     t.integer "facebook_account_id"
