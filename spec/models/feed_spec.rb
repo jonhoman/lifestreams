@@ -54,12 +54,6 @@ describe Feed do
   end
 
   describe "#deactivate_stream" do
-    it "deactivates associated streams" do
-      feed.deactivate_stream
-
-      stream.reload.should_not be_active
-    end
-
     it "deactivates associated streams on feed deletion" do
       feed.destroy
 

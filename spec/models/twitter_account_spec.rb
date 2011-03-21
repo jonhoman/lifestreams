@@ -52,12 +52,6 @@ describe TwitterAccount do
         stream.twitter_accounts << account
       end
 
-      it "deactivates associated streams" do 
-        account.deactivate_stream
-
-        stream.reload.should_not be_active
-      end
-
       it "deactivates associated streams on twitter account deletion" do 
         account.destroy
 
@@ -70,12 +64,6 @@ describe TwitterAccount do
         stream.twitter_accounts << account
       end
 
-      it "does not deactivate associated streams" do 
-        account.deactivate_stream
-
-        stream.reload.should be_active
-      end
-
       it "does not deactivate associated streams on twitter account deletion" do 
         account.destroy
 
@@ -86,12 +74,6 @@ describe TwitterAccount do
       before(:each) do
         stream.twitter_accounts << account
         stream.email_lists << list
-      end
-
-      it "does not deactivate associated streams" do 
-        account.deactivate_stream
-
-        stream.reload.should be_active
       end
 
       it "does not deactivate associated streams on twitter account deletion" do 

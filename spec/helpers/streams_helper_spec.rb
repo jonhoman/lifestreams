@@ -5,7 +5,7 @@ describe StreamsHelper do
     @stream = Factory(:stream)
   end
 
-  describe "determine selected feed" do
+  describe "determine_selected_feed" do
     use_vcr_cassette "feed", :record => :new_episodes
 
     it "returns nil if no feed selected for a stream" do
@@ -18,7 +18,7 @@ describe StreamsHelper do
     end
   end
 
-  describe "determine selected twitter account" do
+  describe "determine_selected_twitter_account" do
     it "returns nil if no twitter account selected for a stream" do
       determine_selected_twitter_account.should be_nil
     end
@@ -29,7 +29,7 @@ describe StreamsHelper do
     end
   end
 
-  describe "determine selected email list" do
+  describe "determine_selected_email_list" do
     it "returns nil if no twitter account selected for a stream" do
       determine_selected_email_list.should be_nil
     end

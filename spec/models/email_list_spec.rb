@@ -62,12 +62,6 @@ describe EmailList do
         stream.email_lists << email_list
       end
 
-      it "does not deactivate associated streams" do 
-        email_list.deactivate_stream
-
-        stream.reload.should be_active
-      end
-
       it "does not deactivate associated streams on twitter account deletion" do 
         email_list.destroy
 
@@ -78,12 +72,6 @@ describe EmailList do
       before(:each) do
         stream.email_lists << email_list
         stream.twitter_accounts << account
-      end
-
-      it "does not deactivate associated streams" do 
-        email_list.deactivate_stream
-
-        stream.reload.should be_active
       end
 
       it "does not deactivate associated streams on twitter account deletion" do 
