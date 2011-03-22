@@ -6,6 +6,10 @@ class Stream < ActiveRecord::Base
   
   validates_presence_of :name
 
+  def total_destination_count
+    twitter_accounts.count + facebook_accounts.count + email_lists.count
+  end
+
   class << self
     def user(user_id)
       where(:user_id => user_id)

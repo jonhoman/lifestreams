@@ -9,7 +9,7 @@ class EmailList < ActiveRecord::Base
 
   def deactivate_stream
     streams.each do |stream| 
-      if stream.email_lists.count == 1 && stream.twitter_accounts.count == 0 
+      if stream.email_lists.count == 1 && stream.total_destination_count == 1 
         stream.update_attributes(:active => false)
       end
     end
