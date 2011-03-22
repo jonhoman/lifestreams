@@ -55,7 +55,6 @@ Feature: Create a new stream
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
-    And I should see "Choose a Facebook Account"
     And I check "Facebook Account" 
     And I press "Create Stream"
     Then I should be on the dashboard
