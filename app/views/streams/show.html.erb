@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @stream.name %></h3>
-<b>Included Categories:</b><%= @stream.included_categories %>
 <%= render :partial => 'stream_info' %>
 
 <%= link_to 'Edit', edit_stream_path(@stream) %><br /> 

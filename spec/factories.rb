@@ -30,7 +30,7 @@ FactoryGirl.define do
   end
 
   factory :facebook_account do
-    name "Jon Homan"
+    name "Facebook Account"
     access_token "asdf"
   end
 end

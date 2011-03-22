@@ -52,6 +52,9 @@ Given /^I add my feed and my twitter account to my stream$/ do
   @stream.update_attributes! :feed => @feed, :twitter_accounts => [@twitter_account]
 end
 
+Given /^I add my feed and my facebook account to my stream$/ do
+  @stream.update_attributes! :feed => @feed, :facebook_accounts => [@facebook_account]
+end
 
 Given /^I add my feed and my email list to my stream$/ do
   @stream.update_attributes! :feed => @feed, :email_lists => [@email_list]
@@ -65,10 +68,17 @@ Given /^I create a stream with a feed and a twitter account$/ do
 end
 
 Given /^I create a stream with a feed and an email list$/ do
+  And 'I add a feed that has items'
   And 'I have an email list that has multiple recipients'
-  And 'I configure my twitter account'
   And 'I add a stream'
   And 'I add my feed and my email list to my stream'
+end
+
+Given /^I create a stream with a feed and a facebook account$/ do
+  And 'I add a feed that has items'
+  And 'I configure my facebook account'
+  And 'I add a stream'
+  And 'I add my feed and my facebook account to my stream'
 end
 
 Given /^I add categories to the stream$/ do

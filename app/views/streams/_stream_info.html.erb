@@ -1,3 +1,6 @@
+<% if @stream.included_categories && !@stream.included_categories.empty? %>
+  <b>Included Categories:</b><%= @stream.included_categories %>
+<% end %>
 <div>
   <b>Feed:</b>
   <% if @stream.feed %>
@@ -24,6 +27,16 @@
   <% end %>
   <% if @stream.email_lists.empty? %>
     <em>There is no email list associated with your stream. Please click edit to choose a email list you wish track.</em>
+  <% end %>
+</div>
+
+<div>
+  <b>Facebook Account(s):</b>
+  <% @stream.facebook_accounts.each do |account| %>
+    <%= link_to account.name, "http://facebook.com/#{account.link}" %>
+  <% end %>
+  <% if @stream.facebook_accounts.empty? %>
+    <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
   <% end %>
 </div>
 

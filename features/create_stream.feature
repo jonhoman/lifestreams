@@ -56,7 +56,7 @@ Feature: Create a new stream
     When I fill in "Stream Name" with "Test Stream"
     And I select "example feed" from "Choose a Feed" 
     And I should see "Choose a Facebook Account"
-    And I check "Jon Homan" 
+    And I check "Facebook Account" 
     And I press "Create Stream"
     Then I should be on the dashboard
     And I should have the following fields stored for the stream:

@@ -31,6 +31,12 @@ Feature: Show stream information
     And I follow "example email list"
     Then I should be on the email list page
 
+  Scenario: Show stream page contains link to facebook account
+    Given I create a stream with a feed and a facebook account 
+    And I am on the dashboard
+    When I follow "example stream"
+    Then I should see "Facebook Account"
+
   Scenario: Show stream page contains feed items
     Given I create a stream with a feed and a twitter account
     And I am on the dashboard
