@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe FeedCreatorWorker do
   let :feed do
-    #feed inline
     Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed.rss")
   end
 
@@ -33,7 +32,7 @@ describe FeedCreatorWorker do
     feed.reload.last_build_date.should == Time.parse("Mon, 10 Jan 2011 19:00:48 UTC +00:00")
   end
 
-  it "creates Items for every item in the feed" do
+  it "creates items for every item in the feed" do
     FeedCreatorWorker.perform(feed.id)
     feed.reload.items.count.should == 5
   end
@@ -60,5 +59,4 @@ describe FeedCreatorWorker do
       FeedCreatorWorker.perform(feed.id)
     }.to raise_error(FeedCreatorWorker::MaxRetriesError)
   end
-
 end

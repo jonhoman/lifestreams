@@ -76,15 +76,11 @@ describe Feed do
   end
   
   describe "#determine_feed_url" do
-    #break unit and integration
     it "returns the feed url for a given url" do
+      expected_rss_url = "http://tanyahoman.com/feed/"
       feed.url = "http://tanyahoman.com"
-      feed.determine_feed_url.should == "http://tanyahoman.com/feed/"
-    end
 
-    it "changes the url of a feed when a feed is created" do
-      feed = Factory(:feed, :url => "http://tanyahoman.com")
-      feed.url.should == "http://tanyahoman.com/feed/"
+      feed.determine_feed_url.should == expected_rss_url
     end
   end
 end

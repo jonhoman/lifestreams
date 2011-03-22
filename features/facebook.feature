@@ -13,7 +13,6 @@ Feature: Delete a facebook account
     When I follow "Delete Facebook Account"
     Then I should not see my facebook account
 
-  @wip
   Scenario: Deleting an existing facebook account deactivates its associated stream
     Given I configure my facebook account 
     And I add a stream

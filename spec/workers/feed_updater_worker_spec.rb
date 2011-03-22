@@ -53,8 +53,9 @@ describe FeedUpdaterWorker do
     
     FeedUpdaterWorker.perform(stream.id)
 
-    feed.reload.items.first.categories.should include("tech")
-    feed.reload.items.first.categories.should include("personal")
+    ["tech", "personal"].each do |category|
+      feed.reload.items.first.categories.should include(category)
+    end
   end
 
   it "adds new jobs to the twitter updater queue" do

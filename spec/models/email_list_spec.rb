@@ -5,6 +5,10 @@ describe EmailList do
     Factory(:user)
   end
 
+  let :another_user do
+    Factory(:user, :email => "another_email@example.com")
+  end
+
   let! :email_list do
     Factory(:email_list, :user_id => user.id)
   end
@@ -32,7 +36,7 @@ describe EmailList do
     end
 
     it "does not return other users' feeds" do
-      email_list2 = Factory(:email_list, :user_id => email_list.user_id + 1) 
+      Factory(:email_list, :user_id => another_user.id) 
 
       EmailList.user(user.id).count.should == 1
     end

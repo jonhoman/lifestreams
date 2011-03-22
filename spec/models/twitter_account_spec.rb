@@ -36,10 +36,6 @@ describe TwitterAccount do
     account.should_not be_valid
   end
 
-  it "has a reference to a user" do
-    account.user_id.should == user.id
-  end
-
   it "returns all accounts associated with a user" do
     account2 = Factory(:twitter_account, :user_id => account.user_id + 1) 
 
@@ -58,6 +54,7 @@ describe TwitterAccount do
         stream.reload.should_not be_active
       end
     end
+    
     context "two twitter accounts" do
       before(:each) do
         stream.twitter_accounts << account
@@ -70,6 +67,7 @@ describe TwitterAccount do
         stream.reload.should be_active
       end
     end
+    
     context "one twitter account and an email list" do
       before(:each) do
         stream.twitter_accounts << account

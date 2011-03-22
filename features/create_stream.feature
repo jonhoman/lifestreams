@@ -75,8 +75,6 @@ Feature: Create a new stream
     And I should have the following fields stored for the stream:
       |Name       | Included Categories |
       |Test Stream| tech                |
-    And my stream should have a reference to the feed I chose
-    And my stream should have a reference to the twitter account I chose
 
   Scenario: Stream created without a name 
     Given I follow "Add new Stream"
@@ -89,7 +87,6 @@ Feature: Create a new stream
     And I am on the dashboard
     When I follow "example stream"
     And I follow "Edit"
-    And I check "" 
     And I uncheck "test" 
     And I press "Update Stream"
     Then my stream shouldn't have twitter accounts

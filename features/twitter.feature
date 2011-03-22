@@ -13,11 +13,10 @@ Feature: Delete a twitter account
     When I follow "Delete Twitter Account"
     Then I should not see "test"
 
-  Scenario: Delete an existing twitter account deactivates its associated stream
+  Scenario: Deleting an existing twitter account deactivates its associated stream
     Given I have a twitter account 
     And I add a stream
     And I add my twitter account to my stream
     And I go to the dashboard
     When I follow "Delete Twitter Account"
-    Then I should not see "test"
-    And the stream should not be active
+    Then the stream should not be active

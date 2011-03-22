@@ -5,6 +5,10 @@ describe FacebookAccount do
     Factory(:user)
   end
 
+  let :another_user do
+    Factory(:user, :email => "another_email@example.com")
+  end
+
   let! :facebook_account do
     Factory(:facebook_account, :user_id => user.id)
   end
@@ -23,7 +27,7 @@ describe FacebookAccount do
     end
 
     it "does not return other users' feeds" do
-      Factory(:facebook_account, :user_id => facebook_account.user_id + 1) 
+      Factory(:facebook_account, :user_id => another_user.id) 
 
       FacebookAccount.user(user.id).count.should == 1
     end
