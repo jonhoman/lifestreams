@@ -8,17 +8,23 @@
 
   <%= f.input :included_categories, :label => "Only include these categories:" %>
 
-  <%= f.association :twitter_accounts, :label => "Choose a Twitter Account",
-    :collection => TwitterAccount.user(current_user), :include_blank => true, 
-    :as => :check_boxes %>
+  <% unless TwitterAccount.user(current_user).empty? %>
+    <%= f.association :twitter_accounts, :label => "Choose from your Twitter Account(s)",
+      :collection => TwitterAccount.user(current_user), :include_blank => true, 
+      :as => :check_boxes %>
+  <% end %>
 
-  <%= f.association :facebook_accounts, :label => "Choose a Facebook Account",
-    :collection => FacebookAccount.user(current_user), :include_blank => true, 
-    :as => :check_boxes %>
+  <% unless FacebookAccount.user(current_user).empty? %>
+    <%= f.association :facebook_accounts, :label => "Choose from your Facebook Account(s)",
+      :collection => FacebookAccount.user(current_user), :include_blank => true, 
+      :as => :check_boxes %>
+  <% end %>
 
-  <%= f.association :email_lists, :label => "Choose an Email List",
-    :collection => EmailList.user(current_user), :include_blank => true,
-    :as => :check_boxes %>
+  <% unless EmailList.user(current_user).empty? %>
+    <%= f.association :email_lists, :label => "Choose from your Email List(s)",
+      :collection => EmailList.user(current_user), :include_blank => true,
+      :as => :check_boxes %>
+  <% end %>
 
   <%= f.button :submit, :class => "button" %>
 <% end %>
