@@ -14,6 +14,7 @@ class FeedsController < ApplicationController
   end
 
   def create
+    #current_user.feeds.build
     @feed = Feed.new(params[:feed])
     @feed.user_id = current_user.id
 
@@ -26,6 +27,7 @@ class FeedsController < ApplicationController
 
   def update
     @feed = Feed.find(params[:id])
+    #current_user.feeds.find
 
     if @feed.update_attributes(params[:feed])
       redirect_to user_root_path, :notice => 'Feed was successfully updated.'
