@@ -17,7 +17,7 @@ class FeedUpdaterWorker
 
           enqueue(stream, item)
 
-        elsif 
+        else 
           Rails.logger.debug "Item #{rss_item.title} already exists for feed #{feed.name}, id: #{feed.id}"
         end
       end

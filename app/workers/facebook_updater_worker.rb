@@ -1,4 +1,5 @@
 class FacebookUpdaterWorker
+  @queue = :facebook
 
   class << self
 
