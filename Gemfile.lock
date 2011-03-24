@@ -105,6 +105,9 @@ GEM
       json (~> 1.4.6)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
+    hoptoad_notifier (2.4.8)
+      activesupport
+      builder
     hpricot (0.8.3)
     httparty (0.7.3)
       crack (= 0.1.8)
@@ -234,6 +237,7 @@ DEPENDENCIES
   fuubar
   fuubar-cucumber
   heroku (= 1.17.16)
+  hoptoad_notifier
   jquery-rails
   oauth (= 0.4.4)
   oauth2 (= 0.1.1)
