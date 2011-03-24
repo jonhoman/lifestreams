@@ -1,29 +1,19 @@
 require 'spec_helper'
 
 describe FeedUpdaterWorker do
-  let :feed do
-    Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed-small.rss")
-  end
+  let(:feed) { Factory(:feed, :url => "file://" + Rails.root.to_s + "/spec/data/feed-small.rss") }
 
-  let :fake_twitter do
-    Factory(:twitter_account, :handle => "fake")
-  end
+  let(:fake_twitter) { Factory(:twitter_account, :handle => "fake") }
 
-  let :pretend_twitter do
-    Factory(:twitter_account, :handle => "pretend")
-  end
+  let(:pretend_twitter) { Factory(:twitter_account, :handle => "pretend") }
 
-  let :stream do
-    Factory(:stream, :feed => feed, :twitter_accounts => [fake_twitter])
-  end
+  let(:stream) { Factory(:stream, :feed => feed, :twitter_accounts => [fake_twitter]) }
 
-  let :email_list do
-    Factory(:email_list, :recipients_text => "jon@jonhoman.com")
-  end
+  let(:email_list) { Factory(:email_list, :recipients_text => "jon@jonhoman.com") }
 
-  let :another_email_list do
-    Factory(:email_list, :recipients_text => "jonphoman@gmail.com")
-  end
+  let(:another_email_list) { Factory(:email_list, :recipients_text => "jonphoman@gmail.com") }
+
+  let(:facebook_account) { Factory(:facebook_account) }
 
   it "checks for updates to feeds" do
     Resque.should_receive(:enqueue)
@@ -84,6 +74,14 @@ describe FeedUpdaterWorker do
     Resque.should_receive(:enqueue).with(EmailWorker, an_instance_of(Fixnum), an_instance_of(Fixnum)).twice
 
     stream.update_attributes! :twitter_accounts => [], :email_lists => [email_list, another_email_list]
+
+    FeedUpdaterWorker.perform(stream.id)
+  end
+
+  it "add new jobs to the facebook queue" do
+    Resque.should_receive(:enqueue).with(FacebookUpdaterWorker, an_instance_of(Fixnum), an_instance_of(Fixnum))
+
+    stream.update_attributes! :twitter_accounts => [], :facebook_accounts => [facebook_account]
 
     FeedUpdaterWorker.perform(stream.id)
   end
