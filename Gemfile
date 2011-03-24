@@ -27,6 +27,7 @@ end
 
 group :development do
   gem "heroku", '1.17.16' 
+  gem "jquery-rails"
 end
 
 group :test do
