@@ -1,0 +1,77 @@
+    .images_delete-button {
+      background: transparent url(/images/sprite.png) -1024px 0px no-repeat;
+      width:150;
+      height:150;
+      text-indent:-5000px;
+    }
+
+    .images_rss {
+      background: transparent url(/images/sprite.png) -3393px 0px no-repeat;
+      width:348;
+      height:348;
+      text-indent:-5000px;
+    }
+
+    .images_small_icon {
+      background: transparent url(/images/sprite.png) -3741px 0px no-repeat;
+      width:144;
+      height:144;
+      text-indent:-5000px;
+    }
+
+    .images_twitter {
+      background: transparent url(/images/sprite.png) -4233px 0px no-repeat;
+      width:348;
+      height:348;
+      text-indent:-5000px;
+    }
+
+    .images_stream {
+      background: transparent url(/images/sprite.png) -3885px 0px no-repeat;
+      width:348;
+      height:348;
+      text-indent:-5000px;
+    }
+
+    .images_logo-beta {
+      background: transparent url(/images/sprite.png) -2266px 0px no-repeat;
+      width:1127;
+      height:344;
+      text-indent:-5000px;
+    }
+
+    .images_fb_icon {
+      background: transparent url(/images/sprite.png) -1522px 0px no-repeat;
+      width:144;
+      height:144;
+      text-indent:-5000px;
+    }
+
+    .images_twitter_img {
+      background: transparent url(/images/sprite.png) -4581px 0px no-repeat;
+      width:79;
+      height:122;
+      text-indent:-5000px;
+    }
+
+    .images_lifeStreams {
+      background: transparent url(/images/sprite.png) -1666px 0px no-repeat;
+      width:600;
+      height:300;
+      text-indent:-5000px;
+    }
+
+    .images_email {
+      background: transparent url(/images/sprite.png) -1174px 0px no-repeat;
+      width:348;
+      height:348;
+      text-indent:-5000px;
+    }
+
+    .images_Blue-Stream {
+      background: transparent url(/images/sprite.png) 0px 0px no-repeat;
+      width:1024;
+      height:50;
+      text-indent:-5000px;
+    }
+
