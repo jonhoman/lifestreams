@@ -38,7 +38,7 @@ class EmailListsController < ApplicationController
     @email_list = EmailList.find(params[:id])
     @email_list.destroy
 
-    redirect_to user_root_path, :notice => 'Email List was successfully updated.'
+    redirect_to user_root_path, :notice => 'Email List was successfully deleted.'
   end
 
   def unsubscribe
@@ -46,5 +46,20 @@ class EmailListsController < ApplicationController
     @email_list = @recipient.email_list
     
     @email_list.delete_recipient(@recipient)
+  end
+
+  def import_recipients
+  end
+
+  def load_recipients
+    @email_list = EmailList.new :name => "Imported Email List"
+    @email_list.user_id = current_user.id
+    @email_list.recipients_text = EmailList.create_recipients_from_file(params[:recipients][:file])
+    
+    if @email_list.save 
+      redirect_to user_root_path, :notice => "Recipients were successfully imported."
+    else
+      render :action => 'new'
+    end
   end
 end

@@ -42,6 +42,14 @@ describe EmailList do
     end
   end
 
+  describe ".create_recipients_from_file" do
+    it "returns text for recipients" do
+      file = File.new(Rails.root.to_s + "/features/uploaded-files/recipients.txt")
+
+      EmailList.create_recipients_from_file(file).should_not be_nil
+    end
+  end
+
   describe "#deactivate_stream" do
     context "one email list" do
       before(:each) do

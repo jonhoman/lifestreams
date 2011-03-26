@@ -35,5 +35,9 @@ class EmailList < ActiveRecord::Base
     def user(user_id)
       where(:user_id => user_id)
     end
+
+    def create_recipients_from_file(file)
+      contents = file.read
+    end
   end
 end

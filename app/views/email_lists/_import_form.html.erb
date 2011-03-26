@@ -1,0 +1,13 @@
+<%= form_for :recipients, 
+             :url => { :controller => "email_lists", :action => "load_recipients" },
+             :html => { :multipart => true } do |f| %>
+
+  <div class="field">
+    <%= f.label :file, "Select file to import:" %>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Import", :class => "button" %>
+  </div>
+<% end %>

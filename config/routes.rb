@@ -11,9 +11,13 @@ Lifestreams::Application.routes.draw do
 
   match "/twitter/connect" => "twitter#connect"
   match "/twitter/callback" => "twitter#callback"
+
   match "/facebook/connect" => "facebook#connect"
   match "/facebook/callback" => "facebook#callback"
+
   match "/unsubscribe/:id" => "email_lists#unsubscribe", :as => "unsubscribe"
+  match "/import(/:id)" => "email_lists#import_recipients", :as => "import_email_recipients"
+  match "/load_recipients" => "email_lists#load_recipients"
   
   root :to => "home#index" 
 end

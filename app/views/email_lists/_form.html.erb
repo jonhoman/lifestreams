@@ -5,6 +5,7 @@
     <%= f.input :name, :label => "Email List Name", :input_html => { :autofocus => true } %>
   </div>
   <div class="field">
+    <%= link_to "Import email recipients from a text file", import_email_recipients_path %>
     <%= f.input :recipients_text, :label => "Email Recipients (enter one email address per line)" %><br />
   </div>
   <div class="actions">

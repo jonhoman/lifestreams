@@ -47,6 +47,14 @@ Feature: Create a new email list
       |Test List |
     And the email list should have two recipients
 
+  Scenario: Create new email list from text file
+    Given I follow "Add new Email List"
+    And I follow "Import email recipients from a text file"
+    Then I should be on the import email recipients page
+    And I should see "Select file to import:"
+    When I upload a text file with recipients
+    Then the email list should have two recipients
+
   Scenario: Edit an existing email list
     Given I have an email list 
     And I am on the dashboard

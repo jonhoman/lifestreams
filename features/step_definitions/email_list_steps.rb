@@ -21,6 +21,11 @@ When /^I unsubscribe from the email list$/ do
   When "I go to the unsubscribe page"
 end
 
+When /^I upload a text file with recipients$/ do
+  attach_file(:text_file, File.join(Rails.root.to_s, 'features', 'uploaded-files', 'recipients.txt'))
+  click_button "Import"
+end
+
 Then /^I should no longer be on the email list$/ do
   email_list = EmailList.last
   email_list.recipients.should_not include @recipient
