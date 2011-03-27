@@ -65,6 +65,13 @@ Feature: Create a new email list
     And I press "Update Email list"
     Then I should see "Jon's Real Email List"
 
+  Scenario: Editing an existing email list does not give an option to import
+    Given I have an email list 
+    And I am on the dashboard
+    When I follow "example email list"
+    And I follow "Edit"
+    And I should not see "Import email recipients from a text file"
+
   Scenario: Edit an existing email list that has multiple recipients
     Given I have an email list that has multiple recipients
     And I am on the dashboard
