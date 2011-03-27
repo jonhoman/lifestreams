@@ -16,7 +16,7 @@ Lifestreams::Application.routes.draw do
   match "/facebook/callback" => "facebook#callback"
 
   match "/unsubscribe/:id" => "email_lists#unsubscribe", :as => "unsubscribe"
-  match "/import(/:id)" => "email_lists#import_recipients", :as => "import_email_recipients"
+  match "/import" => "email_lists#import_recipients", :as => "import_email_recipients"
   match "/load_recipients" => "email_lists#load_recipients"
   
   root :to => "home#index" 
