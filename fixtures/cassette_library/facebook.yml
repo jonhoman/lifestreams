@@ -1,47 +1,6 @@
 --- 
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
-    method: :post
-    uri: https://graph.facebook.com:443/me/feed
-    body: message=New+Blog+Post%3A+http%3A%2F%2Fgoogle.com&access_token=159708614082645%7Cfc02de1a1cf1b8adcde36b13-88400202%7Ck6NuSoIBi8H0GK7Ti37cFgBC6gc
-    headers: 
-      content-type: 
-      - application/x-www-form-urlencoded
-      authorization: 
-      - OAuth 159708614082645|fc02de1a1cf1b8adcde36b13-88400202|k6NuSoIBi8H0GK7Ti37cFgBC6gc
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      p3p: 
-      - "CP=\"Facebook does not have a P3P policy. Learn why here: http://fb.me/p3p\""
-      expires: 
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      content-type: 
-      - text/javascript; charset=UTF-8
-      date: 
-      - Sat, 19 Mar 2011 17:57:49 GMT
-      content-length: 
-      - "30"
-      set-cookie: 
-      - L=20; path=/; domain=.facebook.com; httponly
-      - W=1300557469; path=/; domain=.facebook.com
-      - cur_max_lag=20; path=/; domain=.facebook.com; httponly
-      - datr=ne6ETbfDdSGnTdZXnN6r1sVo; expires=Mon, 18-Mar-2013 17:57:49 GMT; path=/; domain=.facebook.com; httponly
-      - made_write_conn=1300557469; path=/; domain=.facebook.com
-      x-fb-rev: 
-      - "355359"
-      x-fb-server: 
-      - 10.32.54.102
-      cache-control: 
-      - private, no-cache, no-store, must-revalidate
-      pragma: 
-      - no-cache
-    body: "{\"id\":\"88400202_515740760105\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://api.bit.ly:80/v3/shorten?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&longUrl=http://google.com
     body: 
@@ -58,10 +17,51 @@
       server: 
       - nginx
       date: 
-      - Sat, 19 Mar 2011 20:21:16 GMT
+      - Sat, 26 Mar 2011 23:51:05 GMT
       content-length: 
       - "181"
     body: |
       { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com", "url": "http:\/\/bit.ly\/fXEv5E", "hash": "fXEv5E", "global_hash": "heezy", "new_hash": 0 } }
 
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://graph.facebook.com:443/me/feed
+    body: message=New+Blog+Post%3A+Hello%2C+World%21+http%3A%2F%2Fgoogle.com&access_token=159708614082645%7C0f0b41318da90504409c7450-100002177187657%7CL1B6C40hS_vqS9ap-bLBnQMisJU
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      authorization: 
+      - OAuth 159708614082645|0f0b41318da90504409c7450-100002177187657|L1B6C40hS_vqS9ap-bLBnQMisJU
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      p3p: 
+      - "CP=\"Facebook does not have a P3P policy. Learn why here: http://fb.me/p3p\""
+      content-type: 
+      - text/javascript; charset=UTF-8
+      date: 
+      - Sat, 26 Mar 2011 23:51:07 GMT
+      content-length: 
+      - "40"
+      set-cookie: 
+      - L=20; path=/; domain=.facebook.com; httponly
+      - W=1301183467; path=/; domain=.facebook.com
+      - cur_max_lag=20; path=/; domain=.facebook.com; httponly
+      - datr=63uOTfpWAorvqUv_zPchDljp; expires=Mon, 25-Mar-2013 23:51:07 GMT; path=/; domain=.facebook.com; httponly
+      - made_write_conn=1301183467; path=/; domain=.facebook.com
+      cache-control: 
+      - private, no-cache, no-store, must-revalidate
+      x-fb-server: 
+      - 10.27.253.110
+      x-fb-rev: 
+      - "358385"
+      pragma: 
+      - no-cache
+    body: "{\"id\":\"100002177187657_109232509159321\"}"
     http_version: "1.1"
