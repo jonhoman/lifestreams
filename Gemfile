@@ -18,12 +18,13 @@ gem 'hoptoad_notifier'
 
 group :development, :test do
   gem "rspec-rails", '2.5.0'
-  gem "cucumber-rails", '0.3.2'
+  gem "cucumber-rails", '0.4.0'
   gem "dehumanize", '1.0.0'
   gem "capybara", '0.4.1.2'
   gem "factory_girl_rails", "1.1.beta1"
   gem "fuubar"
   gem "fuubar-cucumber"
+  gem 'database_cleaner'
 end
 
 group :development do
