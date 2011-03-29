@@ -6,7 +6,7 @@ describe StreamsHelper do
   end
 
   describe "get_bitly_clicks" do
-    use_vcr_cassette "bitly_clicks", :record => :new_episodes
+    use_vcr_cassette "bitly_clicks"
 
     it "returns the number of clicks for the given bitly hash" do
       bitly_hash = "fXEv5E"

@@ -12,7 +12,7 @@ Given /^another user configures a twitter account$/ do
 end
 
 Given /^I add a feed$/ do
-  VCR.use_cassette("feed", :record => :new_episodes) do
+  VCR.use_cassette("feed") do
     @feed = Factory(:feed, :user_id => @user.id)
   end
 end

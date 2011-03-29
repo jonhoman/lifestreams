@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FacebookUpdaterWorker do
-  use_vcr_cassette "facebook", :record => :new_episodes
+  use_vcr_cassette "facebook"
 
   let :item do
     Factory(:item, :title => "Hello, World!", :body => "My First Post", :link => "http://google.com")

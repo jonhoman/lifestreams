@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Feed do
-  use_vcr_cassette "feed", :record => :new_episodes
+  use_vcr_cassette "feed"
 
   let :user do
     Factory(:user)
