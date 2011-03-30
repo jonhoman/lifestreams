@@ -16,7 +16,7 @@ describe Feed do
   end
 
   let! :stream do
-    Factory(:stream, :user_id => user.id, :feed_id => feed.id)
+    Factory(:stream, :user_id => user.id, :feeds => [feed])
   end
 
   it "is valid with valid attributes" do

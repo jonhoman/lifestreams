@@ -3,9 +3,10 @@
 <% end %>
 <div>
   <b>Feed:</b>
-  <% if @stream.feed %>
-    <%= link_to @stream.feed.name, feed_path(@stream.feed) %>
-  <% elsif %>
+  <% @stream.feeds.each do |feed| %>
+    <%= link_to feed.name, feed_path(feed) %>
+  <% end %>
+  <% if @stream.feeds.empty? %>
     <em>There is no feed associated with your stream. Please click edit to choose a feed you wish track.</em>
   <% end %>
 </div>
@@ -41,4 +42,6 @@
 </div>
 
 <br />
-<%= render :partial => 'recent_items', :locals => { :feed => @stream.feed } %>
+<% @stream.feeds.each do |feed| %>
+  <%= render :partial => 'recent_items', :locals => { :feed => feed } %>
+<% end %>

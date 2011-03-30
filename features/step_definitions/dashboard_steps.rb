@@ -48,7 +48,7 @@ Given /^I configure my facebook account$/ do
 end
 
 Given /^I add my feed to my stream$/ do
-  @stream.update_attributes! :feed => @feed
+  @stream.update_attributes! :feeds => [@feed]
 end
 
 Given /^I add my twitter account to my stream$/ do
@@ -56,18 +56,18 @@ Given /^I add my twitter account to my stream$/ do
 end
 
 Given /^I add my feed and my twitter account to my stream$/ do
-  @stream.update_attributes! :feed => @feed, :twitter_accounts => [@twitter_account]
+  @stream.update_attributes! :feeds => [@feed], :twitter_accounts => [@twitter_account]
 end
 
 Given /^I add my facebook account to my stream$/ do
   @stream.update_attributes! :facebook_accounts => [@facebook_account]
 end
 Given /^I add my feed and my facebook account to my stream$/ do
-  @stream.update_attributes! :feed => @feed, :facebook_accounts => [@facebook_account]
+  @stream.update_attributes! :feeds => [@feed], :facebook_accounts => [@facebook_account]
 end
 
 Given /^I add my feed and my email list to my stream$/ do
-  @stream.update_attributes! :feed => @feed, :email_lists => [@email_list]
+  @stream.update_attributes! :feeds => [@feed], :email_lists => [@email_list]
 end
 
 Given /^I create a stream with a feed and a twitter account$/ do
@@ -96,7 +96,7 @@ Given /^I add categories to the stream$/ do
 end
 
 Given /^I remove the feed from the stream$/ do
-  @stream.update_attributes! :feed => nil
+  @stream.update_attributes! :feeds => []
 end
 
 Given /^I remove the twitter account from the stream$/ do

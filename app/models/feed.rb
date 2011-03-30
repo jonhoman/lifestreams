@@ -2,7 +2,7 @@ class Feed < ActiveRecord::Base
   scope :user, lambda { |user_id| where("user_id = ?", user_id) }
 
   has_many :items
-  has_many :streams
+  has_and_belongs_to_many :streams
 
   validates_presence_of :name, :url
   validates_format_of :url, :with => URI::regexp(%w(http https file))
@@ -21,7 +21,6 @@ class Feed < ActiveRecord::Base
   end
 
   def deactivate_stream
-    streams = Stream.where(:feed_id => id)
     streams.each { |s| s.update_attributes(:active => false) }
   end
   

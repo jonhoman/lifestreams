@@ -3,7 +3,7 @@
 
   <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
-  <%= f.association :feed, :label => "Choose a Feed", 
+  <%= f.association :feeds, :label => "Choose from your Feed(s)", 
     :collection => Feed.user(current_user), :include_blank => true,
     :as => :check_boxes %>
 
