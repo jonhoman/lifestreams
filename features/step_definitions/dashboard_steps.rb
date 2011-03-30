@@ -17,6 +17,13 @@ Given /^I add a feed$/ do
   end
 end
 
+Given /^I add two feeds$/ do
+  VCR.use_cassette("feed") do
+    @feed = Factory(:feed, :user_id => @user.id)
+    @feed2 = Factory(:feed, :name => "example feed 2", :user_id => @user.id)
+  end
+end
+
 Given /^I add a feed that has items$/ do
   Given 'I add a feed'
   @feed.items << Factory(:item)

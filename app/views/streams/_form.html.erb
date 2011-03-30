@@ -4,7 +4,8 @@
   <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
   <%= f.association :feed, :label => "Choose a Feed", 
-    :collection => Feed.user(current_user), :include_blank => true %>
+    :collection => Feed.user(current_user), :include_blank => true,
+    :as => :check_boxes %>
 
   <%= f.input :included_categories, :label => "Only include these categories:" %>
 
