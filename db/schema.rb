@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110330013115) do
+ActiveRecord::Schema.define(:version => 20110331003934) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20110330013115) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "feed_id"
     t.integer  "user_id"
     t.boolean  "active",              :default => true
     t.string   "included_categories"

@@ -1,5 +1,5 @@
 Given /^I have a stream I want to edit$/ do
-  @stream = Factory(:stream, :user_id => @user.id, :feed_id => @feed.id, :twitter_accounts => [@twitter_account])
+  @stream = Factory(:stream, :user_id => @user.id, :feeds => [@feed], :twitter_accounts => [@twitter_account])
 end
 
 When /^I change the stream name to "([^"]*)"$/ do |name|
