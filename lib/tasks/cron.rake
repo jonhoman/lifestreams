@@ -7,6 +7,8 @@ task :cron => :environment do
   streams.each do |stream|
     puts "Queuing up an update for #{stream.name}"
 
-    Resque.enqueue(FeedUpdaterWorker, stream.id)
+    stream.feeds.each do |feed|
+      Resque.enqueue(FeedUpdaterWorker, stream.id, feed.id)
+    end
   end
 end
