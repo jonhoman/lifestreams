@@ -1,4 +1,8 @@
+require 'resque/plugins/resque_heroku_autoscaler'
+
 class FeedUpdaterWorker
+  extend Resque::Plugins::HerokuAutoscaler
+
   @queue = :feed_updating
 
   class << self
