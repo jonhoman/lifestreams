@@ -14,10 +14,10 @@
       - "\"cbe28a528b53a48f0566294ae3794ecdc2dea56e\""
       content-type: 
       - application/json; charset=utf-8
-      server: 
-      - nginx
       date: 
       - Sat, 19 Mar 2011 17:01:06 GMT
+      server: 
+      - nginx
       content-length: 
       - "170"
     body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2359}]}, \"status_txt\": \"OK\"}"
@@ -34,14 +34,14 @@
       message: OK
     headers: 
       etag: 
-      - "\"0891e3e714ea0782ad94094ce522f2fcaa9576cb\""
+      - "\"60b280e4cd3f593b265e1f0b721cc5190ce2547b\""
       content-type: 
       - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Sat, 26 Mar 2011 23:51:42 GMT
+      - Tue, 05 Apr 2011 03:07:32 GMT
       content-length: 
       - "189"
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2386}]}, \"status_txt\": \"OK\"}"
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2396}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"
