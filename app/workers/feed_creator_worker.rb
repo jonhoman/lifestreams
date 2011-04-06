@@ -1,8 +1,4 @@
-require 'resque/plugins/resque_heroku_autoscaler'
-
 class FeedCreatorWorker
-  extend Resque::Plugins::HerokuAutoscaler
-
   @queue = :feed_creation
  
   class << self

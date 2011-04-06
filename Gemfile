@@ -15,7 +15,6 @@ gem 'feedbag', '0.6'
 gem 'simple_form', '1.3.1'
 gem 'oauth2', '0.1.1'
 gem 'hoptoad_notifier'
-gem 'resque-heroku-autoscaler'
 
 group :development, :test do
   gem "rspec-rails", '2.5.0'
