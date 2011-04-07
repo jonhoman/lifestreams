@@ -34,7 +34,7 @@
 <div>
   <b>Facebook Account(s):</b>
   <% @stream.facebook_accounts.each do |account| %>
-    <%= link_to account.name, "http://facebook.com/#{account.link}" %>
+    <%= link_to account.name, account.link %>
   <% end %>
   <% if @stream.facebook_accounts.empty? %>
     <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
