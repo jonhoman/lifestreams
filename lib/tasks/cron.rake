@@ -1,3 +1,5 @@
+require 'heroku'
+
 desc "This task is called by the Heroku cron add-on"
 task :cron => :environment do
   client = Heroku::Client.new(ENV['HEROKU_USERNAME'], ENV['HEROKU_PASSWORD'])
