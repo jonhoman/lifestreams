@@ -16,7 +16,7 @@ class Stream < ActiveRecord::Base
     end
 
     def all_active
-      where("active = ?", true).reject { |s| s.twitter_accounts.empty? && s.email_lists.empty?}
+      where("active = ?", true).reject { |s| s.total_destination_count == 0 }
     end
   end
 end
