@@ -68,11 +68,11 @@ img#blue-stream {
 }
 
 img.icon {
-  width: 8%;
+  width: 10%;
 }
 
 img.delete-icon {
-  width: 4%;
+  width: 5%;
   vertical-align: bottom;
 }
 
@@ -91,20 +91,21 @@ a:hover {
   text-decoration: underline;
 }
 
-#dashboard-container {
-  margin-left: 30px;
-}
-
 .dashboard-grouping {
   clear: left;
 }
 
 .dashboard {
-  text-align: left;
-  width: 50%;
-  float: left;
-  margin: 0 auto;
+  width: 30%;
+  margin: 0px auto;
   margin-bottom: 15px;
+  float: left;
+  margin-left: 135px;
+}
+
+.destinations {
+  width: 33%;
+  margin: 0px auto;
 }
 
 .dashboard-sections {
