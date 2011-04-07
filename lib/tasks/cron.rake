@@ -17,7 +17,12 @@ task :cron => :environment do
     end
   end
 
-  sleep 60
+  sleep 10 # wait for worker to start up
 
-  client.set_workers(ENV['HEROKU_APP_NAME'], 0)
+  if Resque.working.empty? # returns list of workers that are working
+    client.set_workers(ENV['HEROKU_APP_NAME'], 0)
+  else
+    # wait for jobs to finish
+    sleep 5
+  end
 end
