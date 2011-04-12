@@ -20,7 +20,7 @@ task :cron => :environment do
 
     sleep 10 # wait for worker to start up
 
-    while !Resque.info[:pending] # returns number of pending jobs 
+    while Resque.info[:pending] > 0# returns number of pending jobs 
       sleep 5
     end
   ensure
