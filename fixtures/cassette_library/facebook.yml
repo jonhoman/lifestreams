@@ -17,11 +17,11 @@
       server: 
       - nginx
       date: 
-      - Tue, 05 Apr 2011 03:05:23 GMT
+      - Tue, 12 Apr 2011 03:32:29 GMT
       content-length: 
-      - "181"
+      - "184"
     body: |
-      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com", "url": "http:\/\/bit.ly\/fXEv5E", "hash": "fXEv5E", "global_hash": "heezy", "new_hash": 0 } }
+      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com\/", "url": "http:\/\/bit.ly\/e7id7j", "hash": "e7id7j", "global_hash": "900913", "new_hash": 0 } }
 
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
@@ -46,22 +46,22 @@
       content-type: 
       - text/javascript; charset=UTF-8
       date: 
-      - Tue, 05 Apr 2011 03:05:25 GMT
+      - Tue, 12 Apr 2011 03:32:31 GMT
       content-length: 
       - "40"
       set-cookie: 
       - L=20; path=/; domain=.facebook.com; httponly
-      - W=1301972724; path=/; domain=.facebook.com
+      - W=1302579151; path=/; domain=.facebook.com
       - cur_max_lag=20; path=/; domain=.facebook.com; httponly
-      - datr=9IaaTc_RL2bi6NhQpHg_vJGG; expires=Thu, 04-Apr-2013 03:05:24 GMT; path=/; domain=.facebook.com; httponly
-      - made_write_conn=1301972724; path=/; domain=.facebook.com
+      - datr=zsejTffbbE3LQCRlhkg2TzXN; expires=Thu, 11-Apr-2013 03:32:30 GMT; path=/; domain=.facebook.com; httponly
+      - made_write_conn=1302579151; path=/; domain=.facebook.com
       cache-control: 
       - private, no-cache, no-store, must-revalidate
       x-fb-server: 
-      - 10.36.48.126
+      - 10.42.11.61
       x-fb-rev: 
-      - "361655"
+      - "364572"
       pragma: 
       - no-cache
-    body: "{\"id\":\"100002177187657_111430808939491\"}"
+    body: "{\"id\":\"100002177187657_113048848777687\"}"
     http_version: "1.1"

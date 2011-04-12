@@ -17,10 +17,10 @@
       server: 
       - nginx
       date: 
-      - Tue, 05 Apr 2011 03:05:31 GMT
+      - Tue, 12 Apr 2011 03:32:35 GMT
       content-length: 
-      - "181"
+      - "184"
     body: |
-      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com", "url": "http:\/\/bit.ly\/fXEv5E", "hash": "fXEv5E", "global_hash": "heezy", "new_hash": 0 } }
+      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com\/", "url": "http:\/\/bit.ly\/e7id7j", "hash": "e7id7j", "global_hash": "900913", "new_hash": 0 } }
 
     http_version: "1.1"
