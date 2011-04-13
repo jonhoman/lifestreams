@@ -71,3 +71,18 @@ describe FacebookAccount do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: facebook_accounts
+#
+#  id           :integer         not null, primary key
+#  access_token :string(255)
+#  user_id      :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  facebook_id  :string(255)
+#  link         :string(255)
+#  name         :string(255)
+#
+

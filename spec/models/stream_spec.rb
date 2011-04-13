@@ -47,3 +47,17 @@ describe Stream do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: streams
+#
+#  id                  :integer         not null, primary key
+#  name                :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  user_id             :integer
+#  active              :boolean         default(TRUE)
+#  included_categories :string(255)
+#
+

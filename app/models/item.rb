@@ -15,3 +15,22 @@ class Item < ActiveRecord::Base
     published_date <=> other.published_date 
   end
 end
+
+# == Schema Information
+#
+# Table name: items
+#
+#  id             :integer         not null, primary key
+#  feed_id        :integer
+#  title          :string(255)
+#  body           :text
+#  shared         :boolean         default(FALSE)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  published_date :datetime
+#  link           :string(255)
+#  status_id      :string(255)
+#  bitly_url      :string(255)
+#  categories     :text
+#
+

@@ -94,3 +94,16 @@ describe EmailList do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: email_lists
+#
+#  id              :integer         not null, primary key
+#  user_id         :integer
+#  name            :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  recipients_text :text
+#
+

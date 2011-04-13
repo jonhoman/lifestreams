@@ -47,3 +47,18 @@ class Feed < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: feeds
+#
+#  id              :integer         not null, primary key
+#  url             :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  name            :string(255)
+#  last_build_date :datetime
+#  user_id         :integer
+#  title           :string(255)
+#
+
