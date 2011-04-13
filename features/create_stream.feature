@@ -4,7 +4,7 @@ Feature: Create a new stream
   I want to create a new stream
 
   Background:
-    Given I am a user with email "jon@example.com" and password "password"
+    Given I am a user
     And I sign in
     And I add two feeds
     And I configure two twitter accounts
@@ -38,7 +38,6 @@ Feature: Create a new stream
     And my stream should have a reference to the feed I chose
     And my stream should have two twitter accounts
 
-  @wip
   Scenario: Stream created with 2 feeds and a twitter account 
     Given I follow "Add new Stream"
     When I fill in "Stream Name" with "Test Stream"

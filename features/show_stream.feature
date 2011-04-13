@@ -4,7 +4,7 @@ Feature: Show stream information
   I want to view my stream's details
 
   Background:
-    Given I am a user with email "jon@example.com" and password "password"
+    Given I am a user
     And I sign in
 
   Scenario: View stream show page

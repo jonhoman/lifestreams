@@ -4,7 +4,7 @@ Feature: Create a new feed
   Wants to be able to add rss feeds
 
   Background:
-    Given I am a user with email "jon@example.com" and password "password"
+    Given I am a user
     And I sign in
 
   Scenario: New feed create 

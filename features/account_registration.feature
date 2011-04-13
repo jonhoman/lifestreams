@@ -9,36 +9,24 @@ Feature: User registers an account
 
   Scenario: User attempts to sign up
     Given I am on the new user registration page
-    And I fill in "Email" with "jon@example.com"
-    And I fill in "Password" with "password"
-    And I fill in "Password confirmation" with "password"
-    When I press "Sign up"
+    When I input my user information
     Then I should have a valid user account
 
   Scenario: User attempts to sign up with an invalid email address
     Given I am on the new user registration page
-    And I fill in "Email" with "jon@"
-    And I fill in "Password" with "password"
-    And I fill in "Password confirmation" with "password"
-    When I press "Sign up"
-    Then I should see "Email is invalid"
+    When I input my user information with an invalid email address
+    Then I should see that I submitted an invalid email
     And I should not have a valid user account with "jon@"
 
-  Scenario: User attempts to sign up with an invalid email address
+  Scenario: User attempts to sign up with a password that is too short
     Given I am on the new user registration page
-    And I fill in "Email" with "jon@example.com"
-    And I fill in "Password" with "pas"
-    And I fill in "Password confirmation" with "pas"
-    When I press "Sign up"
-    Then I should see "Password is too short"
+    When I input my user information with an invalid password
+    Then I should see that I submitted an invalid password
     And I should not have a valid user account with "jon@example.com"
 
   Scenario: User attempts to sign up with mismatched passwords
     Given I am on the new user registration page
-    And I fill in "Email" with "jon@example.com"
-    And I fill in "Password" with "password1"
-    And I fill in "Password confirmation" with "password2"
-    When I press "Sign up"
-    Then I should see "Password doesn't match confirmation"
+    When I input my user information with a mismatched password
+    Then I should see that I submitted a mismatched password
     And I should not have a valid user account with "jon@example.com"
 

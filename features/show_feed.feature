@@ -4,7 +4,7 @@ Feature: Show feed information
   I want to view my feed's details
 
   Background:
-    Given I am a user with email "jon@example.com" and password "password"
+    Given I am a user
     And I sign in
     And I add a feed that has items
     And I am on the dashboard

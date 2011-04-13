@@ -4,7 +4,7 @@ Feature: Delete a facebook account
   Wants to be able to delete a twitter account
 
   Background:
-    Given I am a user with email "jon@example.com" and password "password"
+    Given I am a user
     And I sign in
 
   Scenario: Delete an existing facebook account
