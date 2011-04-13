@@ -30,6 +30,7 @@ end
 group :development do
   gem "heroku", '1.17.16' 
   gem "jquery-rails"
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'  
 end
 
 group :test do
