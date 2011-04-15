@@ -1,3 +1,7 @@
+Given /^I am not logged in$/ do
+  click_link "Sign out"
+end
+
 Given /^I configure two twitter accounts$/ do
   @twitter_account = Factory(:twitter_account, :user_id => @user.id)
   @twitter_account2 = Factory(:twitter_account, :handle => "different_handle", :user_id => @user.id)
