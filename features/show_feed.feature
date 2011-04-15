@@ -10,15 +10,11 @@ Feature: Show feed information
     And I am on the dashboard
     
   Scenario: View show feed page
-    When I follow "example feed"
-    Then I should see "example feed"
-    And I should see "http://tanyahoman.com/feed"
-    And I should see items
+    When I view my feed
+    Then I should see the feed information
 
   Scenario: Number of clicks on an item are displayed
     Given an item has clicks
-    When I view "example feed"
-    Then I should see "example feed"
-    And I should see "http://tanyahoman.com/feed"
-    And I should see items
-    And I should see "visited 0 times"
+    When I view my feed that has clicks
+    Then I should see the feed information
+    And I should see the number of clicks

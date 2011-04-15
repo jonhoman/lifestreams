@@ -48,7 +48,9 @@ Given /^I add an email list$/ do
 end
 
 Given /^I configure my facebook account$/ do
-  @facebook_account = Factory(:facebook_account, :user_id => @user.id)
+  @facebook_account = Factory(:facebook_account, 
+                              :user_id => @user.id, 
+                              :name => "my facebook account")
 end
 
 Given /^I add my feed to my stream$/ do
@@ -106,6 +108,15 @@ end
 Given /^I remove the twitter account from the stream$/ do
   @stream.update_attributes! :twitter_accounts => []
 end
+
+When /^I view my email list$/ do
+  visit(email_list_path(EmailList.last))
+end
+
+When /^I view my stream$/ do
+  visit(stream_path(Stream.last))
+end
+
 Then /^I should see my feed$/ do
   Then 'I should see "example feed"'
 end

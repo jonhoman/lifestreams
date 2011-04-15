@@ -12,7 +12,7 @@ When /^I fill in the stream information$/ do
   check "example feed 2"
   check "test"
   check "different_handle"
-  check "Facebook Account"
+  check "my facebook account"
   check "example email list"
   click_button "Create Stream"
 end
@@ -23,7 +23,7 @@ When /^I fill in the stream information with included categories$/ do
   check "example feed 2"
   check "test"
   check "different_handle"
-  check "Facebook Account"
+  check "my facebook account"
   check "example email list"
   fill_in "Only include these categories:", :with => "tech"
   click_button "Create Stream"
@@ -73,4 +73,14 @@ end
 Then /^my stream is removed$/ do
   page.should_not have_content "example stream"
   Stream.count.should be_zero
+end
+
+Then /^my stream has a feed and a twitter account$/ do
+  stream = Stream.last
+  stream.should have(1).feed
+  stream.should have(1).twitter_accounts
+end
+
+Then /^I should see the categories I chose$/ do
+  page.should have_content "cat1, cat2"
 end

@@ -14,9 +14,13 @@ When /^I submit the form to ([^"]*) the feed$/ do |action|
   end
 end
 
-When /^I view "([^"]*)"$/ do |name|
+When /^I view my feed$/ do
+  visit(feed_path(Feed.last))
+end
+
+When /^I view my feed that has clicks$/ do
   VCR.use_cassette("bitly") do
-    When 'I follow "example feed"'
+    visit(feed_path(Feed.last))
   end
 end
 
@@ -45,4 +49,14 @@ end
 Then /^my feed is removed$/ do
   page.should_not have_content "Jon's Feed"
   Feed.count.should be_zero
+end
+
+Then /^I should see the feed information$/ do
+  page.should have_content "example feed"
+  page.should have_content "http://tanyahoman.com/feed"
+  Then 'I should see items'
+end
+
+Then /^I should see the number of clicks$/ do
+  page.should have_content "visited 0 times"
 end

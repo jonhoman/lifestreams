@@ -10,5 +10,5 @@ Feature: Show email list information
     And I am on the dashboard
     
   Scenario: View show email list page
-    When I follow "example email list"
+    When I view my email list
     Then I should see recipients
