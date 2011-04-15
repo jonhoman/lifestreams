@@ -54,7 +54,7 @@ Feature: Create a new email list
     Given I have an email list 
     And I am on the dashboard
     When I change the email list name to be blank
-    Then an error message is displayed
+    Then I should see that the name cannot be blank
   
   Scenario: Delete existing email list
     Given I have an email list

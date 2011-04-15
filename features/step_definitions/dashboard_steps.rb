@@ -137,3 +137,8 @@ end
 Then /^I should see my configured facebook account$/ do
   Then "I should see \"#{FacebookAccount.last.name}\""
 end
+
+Then /^I should see that the name cannot be blank$/ do
+  page.should have_selector "#error_explanation ul li", :text => "Name can't be blank"
+end
+

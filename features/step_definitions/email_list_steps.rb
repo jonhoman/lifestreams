@@ -97,10 +97,6 @@ Then /^the recipients should be editable$/ do
   page.should have_content "jonphoman@gmail.com"
 end
 
-Then /^an error message is displayed$/ do
-  page.should have_selector "#error_explanation ul li", :text => "Name can't be blank"
-end
-
 Then /^my email list is removed$/ do
   page.should_not have_content "Jon's Email List"
   EmailList.count.should be_zero
