@@ -8,6 +8,7 @@ class FtpClient
 
     def put(data)
       self.init
+      @client.passive = true
 
       begin
         @client.chdir "backups/lifestreams"
