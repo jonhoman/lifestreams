@@ -4,7 +4,6 @@ class FeedCreatorWorker
   class << self
     def perform(feed_id)
       feed = Feed.find(feed_id)
-      ap feed
       retries = 0
       begin
         parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
