@@ -117,7 +117,7 @@ GEM
     hoptoad_notifier (2.4.8)
       activesupport
       builder
-    hpricot (0.8.3)
+    hpricot (0.8.4)
     httparty (0.7.3)
       crack (= 0.1.8)
     i18n (0.5.0)

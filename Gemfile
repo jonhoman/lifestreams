@@ -14,6 +14,7 @@ gem 'feedbag', '0.6'
 gem 'simple_form', '1.3.1'
 gem 'oauth2', '0.1.1'
 gem 'hoptoad_notifier'
+gem "jquery-rails"
 
 group :development, :test do
   gem "rspec-rails", '2.5.0'
@@ -28,7 +29,6 @@ end
 
 group :development do
   gem "heroku", '1.17.16' 
-  gem "jquery-rails"
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'  
   gem 'annotate'
 end

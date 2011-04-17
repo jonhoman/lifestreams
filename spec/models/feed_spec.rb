@@ -37,6 +37,7 @@ describe Feed do
     feed.url = "asdf"
     feed.should_not be_valid
   end
+
   it "has a reference to a user" do
     feed.user_id.should == user.id
   end

@@ -9,7 +9,6 @@ class Feed < ActiveRecord::Base
 
   after_create :populate_items
   before_destroy :deactivate_stream
-  before_create :determine_feed_url
 
   def recent_items
     item_list = items.sort! { |x,y| y <=> x }

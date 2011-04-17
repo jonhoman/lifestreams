@@ -53,7 +53,7 @@ end
 
 Then /^I should see the feed information$/ do
   page.should have_content "example feed"
-  page.should have_content "http://tanyahoman.com/feed"
+  page.should have_content "http://tanyahoman.com"
   Then 'I should see items'
 end
 

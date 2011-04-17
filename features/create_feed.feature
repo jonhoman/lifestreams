@@ -37,13 +37,3 @@ Feature: Create a new feed
     When I delete my feed
     Then my feed is removed
     And the stream should not be active
-
-  Scenario: Autodiscover the feed url from a main url
-    Given I am on the new feed page
-    When I enter my feed information
-    And I enter blog url
-    And I submit the form to create the feed
-    Then I should be on the dashboard
-    And I should have the following fields stored for the feed:
-      |Name      | Url                            |
-      |Test Feed | http://tanyahoman.com/feed/ |
