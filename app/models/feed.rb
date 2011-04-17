@@ -13,10 +13,7 @@ class Feed < ActiveRecord::Base
   def recent_items
     item_list = items.sort! { |x,y| y <=> x }
 
-    if item_list.count > 3
-      item_list = item_list.take(3)
-    end
-    item_list
+    item_list.take(3)
   end
 
   def deactivate_stream
