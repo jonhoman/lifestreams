@@ -4,6 +4,7 @@ class FeedCreatorWorker
   class << self
     def perform(feed_id)
       feed = Feed.find(feed_id)
+      ap feed
       retries = 0
       begin
         parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
@@ -17,7 +18,8 @@ class FeedCreatorWorker
 
       title = parsed_feed.title
       feed.update_attributes! :title => title, 
-                              :last_build_date => get_updated_date(parsed_feed).to_s
+                              :last_build_date => get_updated_date(parsed_feed).to_s,
+                              :url => feed.determine_feed_url
     end
 
     private
