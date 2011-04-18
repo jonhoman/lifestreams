@@ -18,11 +18,10 @@ class TwitterController < ApplicationController
     #TODO catch unauthorized request token
     access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
 
-    @account = TwitterAccount.new(
+    @account = current_user.twitter_accounts.build(
       :access_token => access_token.token, 
       :access_token_secret => access_token.secret, 
-      :handle => access_token.params[:screen_name],
-      :user_id => current_user.id)
+      :handle => access_token.params[:screen_name])
 
     notice = @account.save ? 'You successfully authorized your Twitter account.' : 
                              'There was an issue authorizing your Twitter account. Please try again.'

@@ -6,8 +6,7 @@ class StreamsController < ApplicationController
   end
 
   def create
-    @stream = Stream.new(params[:stream])
-    @stream.user_id = current_user.id
+    @stream = current_user.streams.build(params[:stream])
 
     if @stream.save
       redirect_to(user_root_path, :notice => 'Your stream was successfully created.')

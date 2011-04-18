@@ -6,8 +6,7 @@ class EmailListsController < ApplicationController
   end
 
   def create
-    @email_list = EmailList.new(params[:email_list])
-    @email_list.user_id = current_user.id
+    @email_list = current_user.email_lists.build(params[:email_list])
     
     if @email_list.save
       redirect_to(user_root_path, :notice => 'Email list was successfully created.')
@@ -52,8 +51,7 @@ class EmailListsController < ApplicationController
   end
 
   def load_recipients
-    @email_list = EmailList.new :name => "Imported Email List"
-    @email_list.user_id = current_user.id
+    @email_list = current_user.email_lists.build(:name => "Imported Email List")
     @email_list.recipients_text = EmailList.create_recipients_from_file(params[:recipients][:file])
     
     if @email_list.save 

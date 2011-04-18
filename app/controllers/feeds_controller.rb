@@ -14,9 +14,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    #current_user.feeds.build
-    @feed = Feed.new(params[:feed])
-    @feed.user_id = current_user.id
+    @feed = current_user.feeds.build(params[:feed])
 
     if @feed.save
       redirect_to user_root_path, :notice => 'Feed was successfully created.'
