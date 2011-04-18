@@ -30,18 +30,6 @@ describe EmailList do
     email_list.should_not be_valid
   end
 
-  describe ".user" do
-    it "returns all email lists associated with a user" do
-      EmailList.user(user.id).count.should == 1
-    end
-
-    it "does not return other users' feeds" do
-      Factory(:email_list, :user_id => another_user.id) 
-
-      EmailList.user(user.id).count.should == 1
-    end
-  end
-
   describe ".create_recipients_from_file" do
     it "returns text for recipients" do
       file = File.new(Rails.root.to_s + "/features/uploaded-files/recipients.txt")

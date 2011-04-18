@@ -4,26 +4,26 @@
   <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
   <%= f.association :feeds, :label => "Choose from your Feed(s)", 
-    :collection => Feed.user(current_user), :include_blank => true,
+    :collection => current_user.feeds, :include_blank => true,
     :as => :check_boxes %>
 
   <%= f.input :included_categories, :label => "Only include these categories:" %>
 
-  <% unless TwitterAccount.user(current_user).empty? %>
+  <% unless current_user.twitter_accounts.empty? %>
     <%= f.association :twitter_accounts, :label => "Choose from your Twitter Account(s)",
-      :collection => TwitterAccount.user(current_user), :include_blank => true, 
+      :collection => current_user.twitter_accounts, :include_blank => true, 
       :as => :check_boxes %>
   <% end %>
 
-  <% unless FacebookAccount.user(current_user).empty? %>
+  <% unless current_user.facebook_accounts.empty? %>
     <%= f.association :facebook_accounts, :label => "Choose from your Facebook Account(s)",
-      :collection => FacebookAccount.user(current_user), :include_blank => true, 
+      :collection => current_user.facebook_accounts, :include_blank => true, 
       :as => :check_boxes %>
   <% end %>
 
-  <% unless EmailList.user(current_user).empty? %>
+  <% unless current_user.email_lists.empty? %>
     <%= f.association :email_lists, :label => "Choose from your Email List(s)",
-      :collection => EmailList.user(current_user), :include_blank => true,
+      :collection => current_user.email_lists, :include_blank => true,
       :as => :check_boxes %>
   <% end %>
 

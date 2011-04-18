@@ -44,13 +44,13 @@ describe Feed do
 
   describe ".user" do
     it "returns all feeds associated with a user" do
-      Feed.user(user.id).count.should == 1
+      user.feeds.count.should == 1
     end
 
     it "does not return other users' feeds" do
       feed2 = Factory(:feed, :user_id => feed.user_id + 1) 
 
-      Feed.user(user.id).count.should == 1
+      user.feeds.count.should == 1
     end
   end
 

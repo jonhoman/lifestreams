@@ -21,18 +21,6 @@ describe FacebookAccount do
     Factory(:stream, :user_id => user.id)
   end
 
-  describe ".user" do
-    it "returns all facebook accounts associated with a user" do
-      FacebookAccount.user(user.id).count.should == 1
-    end
-
-    it "does not return other users' feeds" do
-      Factory(:facebook_account, :user_id => another_user.id) 
-
-      FacebookAccount.user(user.id).count.should == 1
-    end
-  end
-
   describe "#deactivate_stream" do
     context "one facebook account" do
       before(:each) do

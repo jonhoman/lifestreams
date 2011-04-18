@@ -11,10 +11,6 @@ class Stream < ActiveRecord::Base
   end
 
   class << self
-    def user(user_id)
-      where(:user_id => user_id)
-    end
-
     def all_active
       where("active = ?", true).reject { |s| s.total_destination_count == 0 }
     end

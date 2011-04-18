@@ -5,10 +5,10 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @twitter_accounts = TwitterAccount.user(current_user)
-    @feeds = Feed.user(current_user)
-    @streams = Stream.user(current_user)
-    @email_lists = EmailList.user(current_user)
-    @facebook_accounts = FacebookAccount.user(current_user)
+    @twitter_accounts = current_user.twitter_accounts
+    @feeds = current_user.feeds
+    @streams = current_user.streams
+    @email_lists = current_user.email_lists
+    @facebook_accounts = current_user.facebook_accounts
   end
 end
