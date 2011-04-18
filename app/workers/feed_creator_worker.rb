@@ -4,9 +4,10 @@ class FeedCreatorWorker
   class << self
     def perform(feed_id)
       feed = Feed.find(feed_id)
+      feed_url = feed.determine_feed_url
       retries = 0
       begin
-        parsed_feed = Feedzirra::Feed.fetch_and_parse(feed.url)
+        parsed_feed = Feedzirra::Feed.fetch_and_parse(feed_url)
       rescue => e
         retries += 1
         retry unless retries > 1
@@ -18,7 +19,7 @@ class FeedCreatorWorker
       title = parsed_feed.title
       feed.update_attributes! :title => title, 
                               :last_build_date => get_updated_date(parsed_feed).to_s,
-                              :url => feed.determine_feed_url
+                              :url => feed_url
     end
 
     private
