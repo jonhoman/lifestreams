@@ -33,15 +33,17 @@
       code: 200
       message: OK
     headers: 
-      etag: 
-      - "\"70ee474ef7f6abefd9ed39061ae2aebee9512147\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Tue, 12 Apr 2011 03:33:14 GMT
+      - Sat, 23 Apr 2011 21:43:47 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      etag: 
+      - "\"579f81d7fb63390d72197b3f4cd920b6d9db02bd\""
+      connection: 
+      - Close
       content-length: 
       - "189"
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2398}]}, \"status_txt\": \"OK\"}"
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2399}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"
