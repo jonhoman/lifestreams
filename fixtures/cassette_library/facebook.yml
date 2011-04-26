@@ -10,14 +10,14 @@
       code: 200
       message: OK
     headers: 
-      mime-version: 
-      - "1.0"
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Tue, 12 Apr 2011 03:32:29 GMT
+      - Tue, 26 Apr 2011 23:15:25 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      mime-version: 
+      - "1.0"
       content-length: 
       - "184"
     body: |
@@ -30,38 +30,38 @@
     uri: https://graph.facebook.com:443/me/feed
     body: message=New+Blog+Post%3A+Hello%2C+World%21+http%3A%2F%2Fgoogle.com&access_token=159708614082645%7C0f0b41318da90504409c7450-100002177187657%7CL1B6C40hS_vqS9ap-bLBnQMisJU
     headers: 
-      content-type: 
-      - application/x-www-form-urlencoded
       authorization: 
       - OAuth 159708614082645|0f0b41318da90504409c7450-100002177187657|L1B6C40hS_vqS9ap-bLBnQMisJU
+      content-type: 
+      - application/x-www-form-urlencoded
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
     headers: 
+      cache-control: 
+      - private, no-cache, no-store, must-revalidate
+      content-type: 
+      - text/javascript; charset=UTF-8
       expires: 
       - Sat, 01 Jan 2000 00:00:00 GMT
       p3p: 
       - "CP=\"Facebook does not have a P3P policy. Learn why here: http://fb.me/p3p\""
-      content-type: 
-      - text/javascript; charset=UTF-8
-      date: 
-      - Tue, 12 Apr 2011 03:32:31 GMT
-      content-length: 
-      - "40"
-      set-cookie: 
-      - L=20; path=/; domain=.facebook.com; httponly
-      - W=1302579151; path=/; domain=.facebook.com
-      - cur_max_lag=20; path=/; domain=.facebook.com; httponly
-      - datr=zsejTffbbE3LQCRlhkg2TzXN; expires=Thu, 11-Apr-2013 03:32:30 GMT; path=/; domain=.facebook.com; httponly
-      - made_write_conn=1302579151; path=/; domain=.facebook.com
-      cache-control: 
-      - private, no-cache, no-store, must-revalidate
-      x-fb-server: 
-      - 10.42.11.61
-      x-fb-rev: 
-      - "364572"
       pragma: 
       - no-cache
-    body: "{\"id\":\"100002177187657_113048848777687\"}"
+      x-fb-rev: 
+      - "371127"
+      set-cookie: 
+      - L=2; path=/; domain=.facebook.com; httponly
+      - W=1303859727; path=/; domain=.facebook.com
+      - cur_max_lag=2; path=/; domain=.facebook.com; httponly
+      - datr=DlK3TbZ7mKmiF13uDutdmAHQ; expires=Thu, 25-Apr-2013 23:15:26 GMT; path=/; domain=.facebook.com; httponly
+      - made_write_conn=1303859727; path=/; domain=.facebook.com
+      x-fb-server: 
+      - 10.28.4.131
+      date: 
+      - Tue, 26 Apr 2011 23:15:27 GMT
+      content-length: 
+      - "40"
+    body: "{\"id\":\"100002177187657_116318095117429\"}"
     http_version: "1.1"

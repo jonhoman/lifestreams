@@ -10,15 +10,15 @@
       code: 200
       message: OK
     headers: 
-      etag: 
-      - "\"a6de3ca14590747919a3d6e376a75938cd1e5e93\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Tue, 12 Apr 2011 03:32:21 GMT
+      - Tue, 26 Apr 2011 23:15:15 GMT
+      content-type: 
+      - application/json; charset=utf-8
       content-length: 
       - "170"
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2398}]}, \"status_txt\": \"OK\"}"
+      etag: 
+      - "\"4f602f6b41f22b2a02d54dd1f5fe058d4eda9c12\""
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2402}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"

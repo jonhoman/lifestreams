@@ -10,14 +10,14 @@
       code: 200
       message: OK
     headers: 
-      mime-version: 
-      - "1.0"
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx
       date: 
-      - Tue, 12 Apr 2011 03:32:35 GMT
+      - Tue, 26 Apr 2011 23:15:31 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      mime-version: 
+      - "1.0"
       content-length: 
       - "184"
     body: |
