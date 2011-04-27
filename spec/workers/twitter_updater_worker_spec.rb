@@ -27,7 +27,7 @@ describe TwitterUpdaterWorker do
     Twitter.should_receive(:update).and_return { @mash }
     TwitterUpdaterWorker.perform(item.id, twitter_account.id)
 
-    item.reload.status_id.should == @mash.id_str 
+    item.reload.status_id.should eq @mash.id_str 
   end
 
   it "throws an error if the account is unauthorized" do

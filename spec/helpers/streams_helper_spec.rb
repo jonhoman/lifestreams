@@ -11,11 +11,11 @@ describe StreamsHelper do
     it "returns the number of clicks for the given bitly hash" do
       bitly_hash = "fXEv5E"
 
-      get_bitly_clicks(bitly_hash).should == 0
+      get_bitly_clicks(bitly_hash).should eq 0
     end
 
     it "returns 0 when given a nil bitly hash" do
-      get_bitly_clicks(nil).should == 0
+      get_bitly_clicks(nil).should eq 0
     end
   end
 end

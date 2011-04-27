@@ -36,7 +36,7 @@ describe StreamsController do
       account = Factory(:twitter_account)
       post :create, "stream" => {"name" => "Test1"}, "twitter_account" => [account.id]
       assigns(:stream).should_not be_nil
-      assigns(:stream).name.should == "Test1"
+      assigns(:stream).name.should eq "Test1"
     end
   end
 

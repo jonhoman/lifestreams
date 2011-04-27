@@ -43,7 +43,7 @@ describe Stream do
       stream.twitter_accounts << [twitter_account]
       stream.facebook_accounts << [facebook_account]
       stream.email_lists << [email_list]
-      stream.total_destination_count.should == 3
+      stream.total_destination_count.should eq 3
     end
   end
 end

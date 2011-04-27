@@ -39,18 +39,18 @@ describe Feed do
   end
 
   it "has a reference to a user" do
-    feed.user_id.should == user.id
+    feed.user_id.should eq user.id
   end
 
   describe ".user" do
     it "returns all feeds associated with a user" do
-      user.feeds.count.should == 1
+      user.feeds.count.should eq 1
     end
 
     it "does not return other users' feeds" do
       feed2 = Factory(:feed, :user_id => feed.user_id + 1) 
 
-      user.feeds.count.should == 1
+      user.feeds.count.should eq 1
     end
   end
 
@@ -65,14 +65,14 @@ describe Feed do
   describe "#recent_items" do
     it "returns items" do
       feed.items << item
-      feed.recent_items.first.class.should == Item
+      feed.recent_items.first.class.should eq Item
     end
 
     it "returns at most 3 items" do
       items = []
       5.times { |n| items << Factory(:item, :title => n, :published_date => DateTime.now - n.days) }
       feed.update_attributes! :items => items
-      feed.recent_items.count.should == 3
+      feed.recent_items.count.should eq 3
     end
   end
   
@@ -81,7 +81,7 @@ describe Feed do
       expected_rss_url = "http://tanyahoman.com/feed/"
       feed.url = "http://tanyahoman.com"
 
-      feed.determine_feed_url.should == expected_rss_url
+      feed.determine_feed_url.should eq expected_rss_url
     end
   end
 end

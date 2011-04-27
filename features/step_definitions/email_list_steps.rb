@@ -89,7 +89,7 @@ end
 
 Then /^the email list name should be updated$/ do
   email_list = EmailList.last
-  email_list.name.should == "Jon's Real Email List"
+  email_list.name.should eq "Jon's Real Email List"
 end
 
 Then /^the recipients should be editable$/ do

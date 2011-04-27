@@ -4,6 +4,6 @@ end
 
 Then /^my facebook account should be removed$/ do
   page.should_not have_content "my facebook account"
-  FacebookAccount.count.should == 0
+  FacebookAccount.count.should be_zero
 end
 

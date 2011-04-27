@@ -11,7 +11,7 @@ describe Recipient do
 
   describe "to_s" do
     it "returns the concatentation of the id and email address" do
-      recipient.to_s.should == "#{recipient.id}#{recipient.email_address}"
+      recipient.to_s.should eq "#{recipient.id}#{recipient.email_address}"
     end
   end
 end

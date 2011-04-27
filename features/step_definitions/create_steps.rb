@@ -2,7 +2,7 @@ When /^I should have the following fields stored for the stream:$/ do |table|
   stream = Stream.last
   table.hashes.each do |row|
     row.keys.each do |header|
-      stream.send(header.dehumanize).to_s.should == row[header]
+      stream.send(header.dehumanize).to_s.should eq row[header]
     end
   end
 end
@@ -11,7 +11,7 @@ When /^I should have the following fields stored for the feed:$/ do |table|
   feed = Feed.last
   table.hashes.each do |row|
     row.keys.each do |header|
-      feed.send(header.dehumanize).to_s.should == row[header]
+      feed.send(header.dehumanize).to_s.should eq row[header]
     end
   end
 end
@@ -20,7 +20,7 @@ When /^I should have the following fields stored for the email list:$/ do |table
   email_list = EmailList.last
   table.hashes.each do |row|
     row.keys.each do |header|
-      email_list.send(header.dehumanize).to_s.should == row[header]
+      email_list.send(header.dehumanize).to_s.should eq row[header]
     end
   end
 end
@@ -32,7 +32,7 @@ end
 
 Then /^my stream should have two feeds$/ do
   stream = Stream.last
-  stream.feeds.count.should == 2
+  stream.feeds.count.should eq 2
 end
 
 Then /^my stream should have a reference to the twitter account I chose$/ do
@@ -42,7 +42,7 @@ end
 
 Then /^my stream should have two twitter accounts$/ do
   stream = Stream.last
-  stream.twitter_accounts.count.should == 2
+  stream.twitter_accounts.count.should eq 2
 end
 
 Then /^my stream should have a reference to the email list I chose$/ do

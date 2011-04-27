@@ -16,8 +16,8 @@ describe TwitterController do
     it "should redirect to twitter authorization url" do
       get 'connect'
 
-      session[:request_token].should == 't'
-      session[:request_token_secret].should == 's'
+      session[:request_token].should eq 't'
+      session[:request_token_secret].should eq 's'
       response.location.should =~ /api.twitter.com/
     end
   end

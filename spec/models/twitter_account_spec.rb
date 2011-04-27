@@ -39,7 +39,7 @@ describe TwitterAccount do
   it "returns all accounts associated with a user" do
     account2 = Factory(:twitter_account, :user_id => account.user_id + 1) 
 
-    user.twitter_accounts.count.should == 1
+    user.twitter_accounts.count.should eq 1
   end
 
   describe "#deactivate_stream" do

@@ -24,17 +24,17 @@ describe FeedCreatorWorker do
 
   it "stores the title of the feed" do
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.title.should == "JonHoman.com"
+    feed.reload.title.should eq "JonHoman.com"
   end
 
   it "stores the build date of the feed" do
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.last_build_date.should == Time.parse("Mon, 10 Jan 2011 19:00:48 UTC +00:00")
+    feed.reload.last_build_date.should eq Time.parse("Mon, 10 Jan 2011 19:00:48 UTC +00:00")
   end
 
   it "creates items for every item in the feed" do
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.items.count.should == 5
+    feed.reload.items.count.should eq 5
   end
 
   it "adds the category(ies) of the article to the item" do
@@ -49,7 +49,7 @@ describe FeedCreatorWorker do
     Feedzirra::Feed.should_receive(:fetch_and_parse).and_return { fake_feed }
 
     FeedCreatorWorker.perform(feed.id)
-    feed.reload.title.should == "JonHoman.com"
+    feed.reload.title.should eq "JonHoman.com"
   end
 
   it "explodes if retry fails" do
