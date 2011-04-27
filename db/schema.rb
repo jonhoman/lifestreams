@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331003934) do
+ActiveRecord::Schema.define(:version => 20110426232436) do
 
   create_table "email_lists", :force => true do |t|
     t.integer  "user_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110331003934) do
   create_table "recipients", :force => true do |t|
     t.string  "email_address"
     t.integer "email_list_id"
+    t.string  "hash_value"
   end
 
   create_table "streams", :force => true do |t|

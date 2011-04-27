@@ -33,4 +33,8 @@ FactoryGirl.define do
     name "Facebook Account"
     access_token "asdf"
   end
+
+  factory :recipient do
+    email_address "me@google.com"
+  end
 end

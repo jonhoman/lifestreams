@@ -19,7 +19,7 @@ module NavigationHelpers
     when /the email list page/
       email_list_path @email_list
     when /the unsubscribe page/
-      unsubscribe_path @recipient
+      unsubscribe_path @recipient.hash_value
     when /the dashboard/
       user_root_path
     # Add more mappings here.

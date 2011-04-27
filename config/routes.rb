@@ -15,7 +15,7 @@ Lifestreams::Application.routes.draw do
   get "/facebook/connect" => "facebook#connect"
   match "/facebook/callback" => "facebook#callback"
 
-  get "/unsubscribe/:id" => "email_lists#unsubscribe", :as => "unsubscribe"
+  get "/unsubscribe/:hash" => "email_lists#unsubscribe", :as => "unsubscribe"
   get "/import" => "email_lists#import_recipients", :as => "import_email_recipients"
   post "/load_recipients" => "email_lists#load_recipients"
   

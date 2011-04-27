@@ -41,7 +41,7 @@ class EmailListsController < ApplicationController
   end
 
   def unsubscribe
-    @recipient = Recipient.find(params[:id])
+    @recipient = Recipient.find_by_hash_value(params[:hash])
     @email_list = @recipient.email_list
     
     @email_list.delete_recipient(@recipient)
