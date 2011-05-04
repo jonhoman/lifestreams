@@ -13,12 +13,12 @@
       server: 
       - nginx
       date: 
-      - Tue, 26 Apr 2011 23:15:15 GMT
+      - Wed, 04 May 2011 02:31:13 GMT
       content-type: 
       - application/json; charset=utf-8
       content-length: 
       - "170"
       etag: 
-      - "\"4f602f6b41f22b2a02d54dd1f5fe058d4eda9c12\""
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2402}]}, \"status_txt\": \"OK\"}"
+      - "\"500807211000e136dbeae49435a6871777e30eef\""
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"user_clicks\": 0, \"global_hash\": \"heezy\", \"hash\": \"fXEv5E\", \"user_hash\": \"fXEv5E\", \"global_clicks\": 2403}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"
