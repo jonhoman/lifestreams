@@ -7,16 +7,18 @@ Feature: Delete a facebook account
     Given I am a user
     And I sign in
 
+  @wip
   Scenario: Delete an existing facebook account
     Given I configure my facebook account
-    And I go to the dashboard
+    And I go to the facebook account page
     When I delete my facebook account
     Then my facebook account should be removed
 
+  @wip
   Scenario: Deleting an existing facebook account deactivates its associated stream
     Given I configure my facebook account 
     And I add a stream
     And I add my facebook account to my stream
-    And I go to the dashboard
+    And I go to the facebook account page
     When I delete my facebook account
     Then the stream should not be active

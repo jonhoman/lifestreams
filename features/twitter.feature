@@ -7,16 +7,18 @@ Feature: Delete a twitter account
     Given I am a user
     And I sign in
 
+  @wip
   Scenario: Delete an existing twitter account
     Given I have a twitter account 
-    And I go to the dashboard
+    And I go to the twitter account page
     When I delete my twitter account
     Then my twitter account should be removed
 
+  @wip
   Scenario: Deleting an existing twitter account deactivates its associated stream
     Given I have a twitter account 
     And I add a stream
     And I add my twitter account to my stream
-    And I go to the dashboard
+    And I go to the twitter account page
     When I delete my twitter account
     Then the stream should not be active

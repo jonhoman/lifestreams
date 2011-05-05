@@ -43,7 +43,8 @@ When /^I delete my feed$/ do
 end
 
 Then /^my feed's name should be changed$/ do
-  page.should have_content "Jon's Real Feed"
+  feed = Feed.last
+  feed.name.should == "Jon's Real Feed"
 end
 
 Then /^my feed is removed$/ do

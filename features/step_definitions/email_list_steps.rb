@@ -1,5 +1,5 @@
 Given /^I want to add a new email list$/ do
-  click_link "Add new Email List"
+  visit new_email_list_path
 end
 
 Given /^I have an email list$/ do

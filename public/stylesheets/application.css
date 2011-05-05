@@ -91,16 +91,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.dashboard-grouping {
-  clear: left;
-}
-
-.dashboard {
-  width: 30%;
-  margin: 0px auto;
-  margin-bottom: 15px;
-  float: left;
-  margin-left: 135px;
+.streams {
 }
 
 .destinations {
@@ -108,9 +99,12 @@ a:hover {
   margin: 0px auto;
 }
 
-.dashboard-sections {
+.dashboard-header {
   font-size: 16px;
   vertical-align: 7px;
+}
+
+.stream_container {
 }
 
 .button, .button:visited {
