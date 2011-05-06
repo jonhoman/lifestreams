@@ -4,5 +4,6 @@
 
 <%= render :partial => 'recipients', :locals => { :email_list => @email_list } %>
 
+<%= link_to 'Delete this email list', email_list_path(@email_list), :confirm => "Are you sure you want to delete #{@email_list.name}", :method => :delete %><br /> 
 <%= link_to 'Edit', edit_email_list_path(@email_list) %><br /> 
 <%= link_to 'Back to Dashboard', user_root_path %>

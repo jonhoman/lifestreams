@@ -39,7 +39,7 @@ When /^I change my feed's name$/ do
 end
 
 When /^I delete my feed$/ do
-  click_link "Delete Feed"
+  click_link "Delete this feed"
 end
 
 Then /^my feed's name should be changed$/ do

@@ -68,7 +68,7 @@ When /^I upload a text file with recipients$/ do
 end
 
 When /^I delete my email list$/ do
-  click_link "Delete Email List"
+  click_link "Delete this email list"
 end
 
 Then /^I should no longer be on the email list$/ do

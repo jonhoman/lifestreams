@@ -23,14 +23,12 @@ Feature: Create a new feed
     And I submit the form to update the feed
     Then my feed's name should be changed
 
-  @wip
   Scenario: Delete an existing feed
     Given I have a feed I want to edit
     And I go to the feed page 
     When I delete my feed
     Then my feed is removed
 
-  @wip
   Scenario: Delete an existing feed deactives its associated stream
     Given I add a feed
     And I add a stream

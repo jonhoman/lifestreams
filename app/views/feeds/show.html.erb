@@ -8,5 +8,6 @@
 
 <%= render :partial => 'streams/recent_items', :locals => { :feed => @feed } %>
 
+<%= link_to 'Delete this feed', feed_path(@feed), :confirm => "Are you sure you want to delete #{@feed.name}", :method => :delete %><br /> 
 <%= link_to 'Edit', edit_feed_path(@feed) %><br /> 
 <%= link_to 'Back to Dashboard', user_root_path %>

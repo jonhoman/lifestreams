@@ -56,7 +56,6 @@ Feature: Create a new email list
     When I change the email list name to be blank
     Then I should see that the name cannot be blank
   
-  @wip
   Scenario: Delete existing email list
     Given I have an email list
     And I go to the email list page
