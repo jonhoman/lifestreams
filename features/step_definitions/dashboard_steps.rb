@@ -154,6 +154,18 @@ Then /^I should see my configured facebook account$/ do
 end
 
 Then /^I should see that the name cannot be blank$/ do
-  page.should have_selector "#error_explanation ul li", :text => "Name can't be blank"
+  page.should have_selector("#error_explanation ul li", :text => "Name can't be blank")
 end
 
+Then /^I should what my streams connects$/ do
+  page.should have_selector(".feeds", :text => "example feed")
+  page.should have_selector(".destinations", :text => "test")
+end
+
+Then /^I should not see any information about feeds$/ do
+  page.should_not have_selector(".feeds")
+end
+
+Then /^I should not see any information about destinations/ do
+  page.should_not have_selector(".destinations")
+end

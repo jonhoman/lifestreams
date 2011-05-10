@@ -10,6 +10,18 @@ class Stream < ActiveRecord::Base
     twitter_accounts.count + facebook_accounts.count + email_lists.count
   end
 
+  def feed_names
+    feeds.map(&:name).join(", ")
+  end
+
+  def destination_names
+    names = [] 
+    names << twitter_accounts.map(&:name)
+    names << facebook_accounts.map(&:name)
+    names << email_lists.map(&:name)
+    names.flatten.join(", ")
+  end
+
   class << self
     def all_active
       where("active = ?", true).reject { |s| s.total_destination_count == 0 }

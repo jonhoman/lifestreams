@@ -52,7 +52,7 @@ When /^I edit my stream's name$/ do
 end
 
 When /^I delete my stream$/ do
-  click_link "Delete Stream"
+  click_link "Delete this stream"
 end
 
 Then /^the stream should not be active$/ do

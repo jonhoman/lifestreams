@@ -37,13 +37,33 @@ describe Stream do
   end
 
   describe "#total_destination_count" do
-    it "return the total number of destinations" do
+    it "returns the total number of destinations" do
       stream.total_destination_count.should be_zero
 
       stream.twitter_accounts << [twitter_account]
       stream.facebook_accounts << [facebook_account]
       stream.email_lists << [email_list]
       stream.total_destination_count.should eq 3
+    end
+  end
+
+  describe "#feed_names" do
+    it "returns the names of the associated feeds" do
+      stream.feeds << Factory(:feed, :name => "2nd Feed")
+      stream.feed_names.should eq "example feed, 2nd Feed"
+    end
+  end
+
+  describe "#destination_names" do
+    it "returns the names of the associated destinations" do
+      stream.twitter_accounts << twitter_account
+      stream.facebook_accounts << facebook_account
+      stream.email_lists << email_list
+      stream.destination_names.should eq "test, Facebook Account, example email list"
+    end
+
+    it "returns an empty string when no destinations" do
+      stream.destination_names.should eq ""
     end
   end
 end

@@ -67,15 +67,6 @@ img#blue-stream {
   margin-top: 20px;
 }
 
-img.icon {
-  width: 10%;
-}
-
-img.delete-icon {
-  width: 5%;
-  vertical-align: bottom;
-}
-
 a.image-border {
   text-decoration: none;
   border: 0 none;
@@ -91,20 +82,9 @@ a:hover {
   text-decoration: underline;
 }
 
-.streams {
-}
-
-.destinations {
-  width: 33%;
-  margin: 0px auto;
-}
-
 .dashboard-header {
   font-size: 16px;
   vertical-align: 7px;
-}
-
-.stream_container {
 }
 
 .button, .button:visited {
@@ -188,3 +168,36 @@ select {
   width: 65%;
   float: left;
 }
+
+.stream-container {
+  background-color: #EDEDED;
+  margin-bottom: 7px; 
+  border: 1px solid #DDD;
+  padding: 5px 10px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+}
+
+.streams { 
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.feeds {
+  margin-bottom: 10px;
+}
+
+.destinations {
+  margin-bottom: 10px;
+}
+
+.delete-stream {
+  font-size: .85em;
+}
+
+div.names {
+  color: #008099; 
+  font-size: 1.2em;
+  margin-top: 7px;
+}
+

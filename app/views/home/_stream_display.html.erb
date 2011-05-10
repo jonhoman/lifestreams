@@ -1,11 +1,25 @@
-<div class="streams">
-  <%= image_tag "/images/stream.jpg", :class => "icon", :alt => "Stream icon" %>
-  <span class="dashboard-header">Streams</span>
+<div>
+  <span class="dashboard-header">Your Streams</span>
   <% @streams.each do |stream| %>
     <div class="stream-container">
-      <%= link_to stream.name, stream_path(stream) %>
-      <%= link_to image_tag("/images/delete-button.jpg", :class => "delete-icon", :alt => "Delete Stream"), 
-        stream, :confirm => "Are you sure you want to delete #{stream.name}", :method => :delete %>
+      <div class="streams">
+        <%= link_to stream.name, stream_path(stream) %>
+      </div>
+      <% if stream.feeds.count > 0 %>
+        <div class="feeds">
+          publishes
+          <br>
+          <div class="names"><%= stream.feed_names %></div>
+        </div>
+      <% end %>
+      <% if stream.total_destination_count > 0 %>
+        <div class="destinations">
+          to
+          <br>
+          <div class="names"><%= stream.destination_names %></div>
+        </div>
+      <% end %>
+      <%= link_to "Delete this stream", stream, :confirm => "Are you sure you want to delete #{stream.name}", :class => "delete-stream", :method => :delete %>
     </div>
   <% end %>
   <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
