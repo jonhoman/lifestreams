@@ -17,7 +17,10 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(params[:feed])
 
     if @feed.save
-      redirect_to user_root_path, :notice => 'Feed was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to user_root_path, :notice => 'Feed was successfully created.' }
+        format.js
+      end
     else
       render :action => "new"
     end
@@ -38,6 +41,9 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:id])
     @feed.destroy
 
-   redirect_to user_root_path, :notice => 'Feed was successfully deleted.'
+    respond_to do |format|
+      format.html { redirect_to user_root_path, :notice => 'Feed was successfully deleted.' }
+      format.js
+    end
   end
 end

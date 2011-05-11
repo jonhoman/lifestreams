@@ -1,0 +1,15 @@
+/* Insert a notice between the last comment and the comment form */
+$("#notice").html('hello world');
+
+/* Reset the feed form */
+$("#new_feed")[0].reset();
+
+/* Hide new feed form */
+$("#new-feed").hide();
+
+/* Append new feed to list */
+var $newlabel = $('<label class="collection_check_boxes" for="stream_feed_ids_<%= @feed.id %>">'),
+    hiddeninput = $('<input name="stream[feed_ids][]" type="hidden" value="" />'),
+    input = $('<input class="check_boxes optional" id="stream_feed_ids_<%= @feed.id %>" name="stream[feed_ids][]" type="checkbox" value="<%= @feed.id %>" /><%= @feed.name %></label>');
+
+$("label[for='stream_feed_ids']").parent().append($newlabel, hiddeninput, input);

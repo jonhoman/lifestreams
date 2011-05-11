@@ -1,32 +1,43 @@
-<%= simple_form_for(@stream) do |f| %>
-  <%= render :partial => 'shared/error_messages', :locals => { :resource => @stream } %>
+<div id="new-stream">
+  <div id="notice"></div>
 
-  <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
+  <%= simple_form_for(@stream) do |f| %>
+    <%= render :partial => 'shared/error_messages', :locals => { :resource => @stream } %>
 
-  <%= f.association :feeds, :label => "Choose from your Feed(s)", 
-    :collection => current_user.feeds, :include_blank => true,
-    :as => :check_boxes %>
+    <%= f.input :name, :label => "Stream Name" , :input_html => { :autofocus => true } %>
 
-  <%= f.input :included_categories, :label => "Only include these categories:" %>
+    <%= f.association :feeds, :label => "Choose from your Feed(s)", 
+      :collection => current_user.feeds, :include_blank => true,
+      :as => :check_boxes, %>
 
-  <% unless current_user.twitter_accounts.empty? %>
-    <%= f.association :twitter_accounts, :label => "Choose from your Twitter Account(s)",
-      :collection => current_user.twitter_accounts, :include_blank => true, 
-      :as => :check_boxes %>
+    <%= link_to "Or create a new feed", new_feed_path, :id => "new-feed-link" %>
+
+    <%= f.input :included_categories, :label => "Only include these categories:" %>
+
+    <% unless current_user.twitter_accounts.empty? %>
+      <%= f.association :twitter_accounts, :label => "Choose from your Twitter Account(s)",
+        :collection => current_user.twitter_accounts, :include_blank => true, 
+        :as => :check_boxes %>
+    <% end %>
+
+    <% unless current_user.facebook_accounts.empty? %>
+      <%= f.association :facebook_accounts, :label => "Choose from your Facebook Account(s)",
+        :collection => current_user.facebook_accounts, :include_blank => true, 
+        :as => :check_boxes %>
+    <% end %>
+
+    <% unless current_user.email_lists.empty? %>
+      <%= f.association :email_lists, :label => "Choose from your Email List(s)",
+        :collection => current_user.email_lists, :include_blank => true,
+        :as => :check_boxes %>
+    <% end %>
+
+    <%= f.button :submit, :class => "button" %>
   <% end %>
+</div>
 
-  <% unless current_user.facebook_accounts.empty? %>
-    <%= f.association :facebook_accounts, :label => "Choose from your Facebook Account(s)",
-      :collection => current_user.facebook_accounts, :include_blank => true, 
-      :as => :check_boxes %>
-  <% end %>
+<div id="new-feed">
+  <h3>Create a new Feed:</h3>
 
-  <% unless current_user.email_lists.empty? %>
-    <%= f.association :email_lists, :label => "Choose from your Email List(s)",
-      :collection => current_user.email_lists, :include_blank => true,
-      :as => :check_boxes %>
-  <% end %>
-
-  <%= f.button :submit, :class => "button" %>
-<% end %>
-
+  <%= render :partial => 'new_feed.html.erb' %>
+</div>

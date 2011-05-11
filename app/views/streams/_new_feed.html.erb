@@ -1,0 +1,9 @@
+<%= simple_form_for(Feed.new, :remote => true) do |f| %>
+  <div class="field">
+    <%= f.input :name, :label => "Feed Name", :input_html => { :autofocus => true } %>
+    <%= f.input :url, :label => "URL" %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, :class => "button" %>
+  </div>
+<% end %>

@@ -201,3 +201,17 @@ div.names {
   margin-top: 7px;
 }
 
+div#new-stream {
+  width: 50%;
+  float: left;
+}
+
+div#new-feed {
+  width: 50%;
+  float: right;
+  display: none;
+}
+
+p#dashboard-link {
+  clear: left;
+}
