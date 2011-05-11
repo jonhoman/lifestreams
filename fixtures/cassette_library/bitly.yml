@@ -36,12 +36,12 @@
       server: 
       - nginx
       date: 
-      - Wed, 04 May 2011 02:31:59 GMT
+      - Wed, 11 May 2011 04:25:06 GMT
       content-type: 
       - application/json; charset=utf-8
       content-length: 
       - "189"
       etag: 
-      - "\"327474e7b0c0b59d7669deeed8ec43d620ea2f60\""
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2403}]}, \"status_txt\": \"OK\"}"
+      - "\"c16b27825e1fde08656d346f54e5dcf6fd32cac6\""
+    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2407}]}, \"status_txt\": \"OK\"}"
     http_version: "1.1"

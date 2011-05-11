@@ -13,7 +13,7 @@
       server: 
       - nginx
       date: 
-      - Wed, 04 May 2011 02:31:20 GMT
+      - Wed, 11 May 2011 04:24:27 GMT
       content-type: 
       - application/json; charset=utf-8
       mime-version: 
@@ -50,17 +50,16 @@
       pragma: 
       - no-cache
       x-fb-rev: 
-      - "374087"
+      - "376700"
       set-cookie: 
       - L=2; path=/; domain=.facebook.com; httponly
-      - W=1304476281; path=/; domain=.facebook.com
-      - datr=ebrATTmjuAOyh1vGzmRSyy6I; expires=Fri, 03-May-2013 02:31:21 GMT; path=/; domain=.facebook.com; httponly
-      - made_write_conn=1304476281; path=/; domain=.facebook.com
+      - W=1305087868; path=/; domain=.facebook.com
+      - datr=fA_KTbgYLPVVqLN8poddmqwM; expires=Fri, 10-May-2013 04:24:28 GMT; path=/; domain=.facebook.com; httponly
       x-fb-server: 
-      - 10.36.51.102
+      - 10.42.66.43
       date: 
-      - Wed, 04 May 2011 02:31:21 GMT
+      - Wed, 11 May 2011 04:24:28 GMT
       content-length: 
       - "40"
-    body: "{\"id\":\"100002177187657_117855101630395\"}"
+    body: "{\"id\":\"100002177187657_119351901480715\"}"
     http_version: "1.1"
