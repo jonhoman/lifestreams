@@ -1,7 +1,5 @@
 Given /^I have a feed I want to edit$/ do
-  VCR.use_cassette("feed") do
-    @feed = Factory(:feed, :name => "Jon's Feed", :url => "http://example.org/feed", :user_id => @user.id)
-  end
+  @feed = Factory(:feed, :name => "Jon's Feed", :url => "http://example.org/feed", :user_id => @user.id)
 end
 
 When /^change the feed name to "([^"]*)"$/ do |name|
@@ -9,9 +7,7 @@ When /^change the feed name to "([^"]*)"$/ do |name|
 end
 
 When /^I submit the form to ([^"]*) the feed$/ do |action|
-  VCR.use_cassette("feed") do
-    click_button "#{action.titleize} Feed"
-  end
+  click_button "#{action.titleize} Feed"
 end
 
 When /^I view my feed$/ do
@@ -19,9 +15,7 @@ When /^I view my feed$/ do
 end
 
 When /^I view my feed that has clicks$/ do
-  VCR.use_cassette("bitly") do
-    visit(feed_path(Feed.last))
-  end
+  visit(feed_path(Feed.last))
 end
 
 When /^I enter my feed information$/ do

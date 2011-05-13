@@ -16,16 +16,12 @@ Given /^another user configures a twitter account$/ do
 end
 
 Given /^I add a feed$/ do
-  VCR.use_cassette("feed") do
-    @feed = Factory(:feed, :user_id => @user.id)
-  end
+  @feed = Factory(:feed, :user_id => @user.id)
 end
 
 Given /^I add two feeds$/ do
-  VCR.use_cassette("feed") do
-    @feed = Factory(:feed, :user_id => @user.id)
-    @feed2 = Factory(:feed, :name => "example feed 2", :user_id => @user.id)
-  end
+  @feed = Factory(:feed, :user_id => @user.id)
+  @feed2 = Factory(:feed, :name => "example feed 2", :user_id => @user.id)
 end
 
 Given /^I add a feed that has items$/ do

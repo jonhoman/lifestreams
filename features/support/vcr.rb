@@ -7,3 +7,6 @@ VCR.config do |c|
   c.default_cassette_options = { :record => :once, :re_record_interval => 7.days }
 end
 
+VCR.cucumber_tags do |t|
+  t.tags '@feed'
+end

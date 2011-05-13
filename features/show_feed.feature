@@ -13,6 +13,7 @@ Feature: Show feed information
     When I view my feed
     Then I should see the feed information
 
+  @feed
   Scenario: Number of clicks on an item are displayed
     Given an item has clicks
     When I view my feed that has clicks
