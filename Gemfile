@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.7'
 gem 'pg', '0.10.0'
 gem 'awesome_print', '0.3.2'
 gem 'oauth', '0.4.4'
@@ -17,7 +17,7 @@ gem 'hoptoad_notifier'
 gem "jquery-rails"
 
 group :development, :test do
-  gem "rspec-rails", '2.5.0'
+  gem "rspec-rails", '2.6.0'
   gem "cucumber-rails", '0.4.0'
   gem "dehumanize", '1.0.0'
   gem "capybara", '0.4.1.2'
