@@ -41,9 +41,6 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:id])
     @feed.destroy
 
-    respond_to do |format|
-      format.html { redirect_to user_root_path, :notice => 'Feed was successfully deleted.' }
-      format.js
-    end
+    redirect_to user_root_path, :notice => 'Feed was successfully deleted.'
   end
 end

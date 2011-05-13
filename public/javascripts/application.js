@@ -3,9 +3,14 @@
 
 $(document).ready(function() {
   $('a#new-feed-link').attr('href', '#');
+  $('a#new-email-list-link').attr('href', '#');
 
   $('a#new-feed-link').click(function() {
-    $('#new-feed').show('slow');
+    $('#new-feed').toggle('slow');
+  });
+
+  $('a#new-email-list-link').click(function() {
+    $('#new-email-list').toggle('slow');
   });
   
 });

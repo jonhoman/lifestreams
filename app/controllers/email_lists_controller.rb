@@ -9,7 +9,10 @@ class EmailListsController < ApplicationController
     @email_list = current_user.email_lists.build(params[:email_list])
     
     if @email_list.save
-      redirect_to(user_root_path, :notice => 'Email list was successfully created.')
+      respond_to do |format|
+        format.html { redirect_to(user_root_path, :notice => 'Email list was successfully created.') }
+        format.js
+      end
     else
       render :action => "new"
     end

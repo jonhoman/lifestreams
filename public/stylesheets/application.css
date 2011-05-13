@@ -206,7 +206,7 @@ div#new-stream {
   float: left;
 }
 
-div#new-feed {
+div#new-feed, div#new-email-list {
   width: 50%;
   float: right;
   display: none;
@@ -215,3 +215,4 @@ div#new-feed {
 p#dashboard-link {
   clear: left;
 }
+

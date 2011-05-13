@@ -32,7 +32,11 @@
         :as => :check_boxes %>
     <% end %>
 
-    <%= f.button :submit, :class => "button" %>
+    <%= link_to "Or create a email list", new_email_list_path, :id => "new-email-list-link" %>
+    
+    <div>
+      <%= f.button :submit, :class => "button" %>
+    </div>
   <% end %>
 </div>
 
@@ -40,4 +44,10 @@
   <h3>Create a new Feed:</h3>
 
   <%= render :partial => 'new_feed.html.erb' %>
+</div>
+
+<div id="new-email-list">
+  <h3>Create a new Email List:</h3>
+
+  <%= render :partial => 'new_email_list.html.erb' %>
 </div>

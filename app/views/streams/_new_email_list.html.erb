@@ -1,0 +1,11 @@
+<%= simple_form_for(EmailList.new, :remote => true) do |f| %>
+  <div class="field">
+    <%= f.input :name, :label => "Email List Name", :input_html => { :autofocus => true } %>
+  </div>
+  <div class="field">
+    <%= f.input :recipients_text, :label => "Email Recipients (enter one email address per line)", :input_html => { :rows => 10 } %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, :class => "button" %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+/* Insert a notice between the last comment and the comment form */
+$("#notice").html('Your email list was created!');
+
+/* Reset the email list form */
+$("#new_email_list")[0].reset();
+
+/* Hide new email list form */
+$("#new-email-list").hide();
+
+/* Append new email list to list */
+var $newlabel = $('<label class="collection_check_boxes" for="stream_email_list_ids_<%= @email_list.id %>">'),
+    hiddeninput = $('<input name="stream[email_list_ids][]" type="hidden" value="" />'),
+    input = $('<input class="check_boxes optional" id="stream_email_list_ids_<%= @email_list.id %>" name="stream[email_list_ids][]" type="checkbox" value="<%= @email_list.id %>" /><%= @email_list.name %></label>');
+
+$("label[for='stream_email_list_ids']").parent().append($newlabel, hiddeninput, input);
