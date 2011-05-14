@@ -38,10 +38,6 @@ When /^I enter the email list name and multiple recipients$/ do
   click_button "Create Email list"
 end
 
-When /^I fill in "([^"]*)" with multiple recipients$/ do |field, recipients|
-  When "I fill in \"#{field}\" with \"#{recipients}\""
-end
-
 When /^I change the email list name$/ do
   visit(edit_email_list_path(EmailList.last))
   fill_in "Email List Name", :with => "Jon's Real Email List"
@@ -90,11 +86,6 @@ end
 Then /^the email list name should be updated$/ do
   email_list = EmailList.last
   email_list.name.should eq "Jon's Real Email List"
-end
-
-Then /^the recipients should be editable$/ do
-  page.should have_content "jon@jonhoman.com"
-  page.should have_content "jonphoman@gmail.com"
 end
 
 Then /^my email list is removed$/ do

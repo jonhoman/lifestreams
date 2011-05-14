@@ -35,10 +35,6 @@ When /^I leave the name blank$/ do
   click_button "Create Stream"
 end
 
-When /^I change the stream name to "([^"]*)"$/ do |name|
-  fill_in("Stream Name", :with => name)
-end
-
 When /^I edit my stream to have no destinations$/ do
   visit(edit_stream_path(Stream.last))
   uncheck "test" 

@@ -11,10 +11,6 @@ Given /^I configure my twitter account$/ do
   @twitter_account = Factory(:twitter_account, :user_id => @user.id)
 end
 
-Given /^another user configures a twitter account$/ do
-  @twitter_account2 = Factory(:twitter_account, :handle => "different_handle", :user_id => @user.id + 1)
-end
-
 Given /^I add a feed$/ do
   @feed = Factory(:feed, :user_id => @user.id)
 end
@@ -53,23 +49,8 @@ Given /^I add my feed to my stream$/ do
   @stream.update_attributes! :feeds => [@feed]
 end
 
-Given /^I add my twitter account to my stream$/ do
-  @stream.update_attributes! :twitter_accounts => [@twitter_account]
-end
-
 Given /^I add my feed and my twitter account to my stream$/ do
   @stream.update_attributes! :feeds => [@feed], :twitter_accounts => [@twitter_account]
-end
-
-Given /^I add my facebook account to my stream$/ do
-  @stream.update_attributes! :facebook_accounts => [@facebook_account]
-end
-Given /^I add my feed and my facebook account to my stream$/ do
-  @stream.update_attributes! :feeds => [@feed], :facebook_accounts => [@facebook_account]
-end
-
-Given /^I add my feed and my email list to my stream$/ do
-  @stream.update_attributes! :feeds => [@feed], :email_lists => [@email_list]
 end
 
 Given /^I create a stream with a feed and a twitter account$/ do
@@ -79,30 +60,8 @@ Given /^I create a stream with a feed and a twitter account$/ do
   And 'I add my feed and my twitter account to my stream'
 end
 
-Given /^I create a stream with a feed and an email list$/ do
-  And 'I add a feed that has items'
-  And 'I have an email list that has multiple recipients'
-  And 'I add a stream'
-  And 'I add my feed and my email list to my stream'
-end
-
-Given /^I create a stream with a feed and a facebook account$/ do
-  And 'I add a feed that has items'
-  And 'I configure my facebook account'
-  And 'I add a stream'
-  And 'I add my feed and my facebook account to my stream'
-end
-
 Given /^I add categories to the stream$/ do
   @stream.update_attributes! :included_categories => "cat1, cat2"
-end
-
-Given /^I remove the feed from the stream$/ do
-  @stream.update_attributes! :feeds => []
-end
-
-Given /^I remove the twitter account from the stream$/ do
-  @stream.update_attributes! :twitter_accounts => []
 end
 
 When /^I view my email list$/ do
@@ -113,24 +72,12 @@ When /^I view my stream$/ do
   visit(stream_path(Stream.last))
 end
 
-Then /^I should see my feed$/ do
-  Then 'I should see "example feed"'
-end
-
-Then /^I should see my configured twitter account$/ do
-  Then 'I should see "test"'
-end
-
 Then /^I should not see the other user's twitter account$/ do
   Then 'I should not see "different_handle"'
 end
 
 Then /^I should see my stream$/ do
   Then 'I should see "example stream"'
-end
-
-Then /^I should see my email list$/ do
-  Then 'I should see "example email list"'
 end
 
 Then /^I should see items$/ do 
@@ -143,10 +90,6 @@ end
 
 Then /^I should see recipients$/ do 
   page.should have_selector('ul#recipient_list li')
-end
-
-Then /^I should see my configured facebook account$/ do
-  Then "I should see \"#{FacebookAccount.last.name}\""
 end
 
 Then /^I should see that the name cannot be blank$/ do
