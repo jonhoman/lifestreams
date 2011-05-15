@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @stream.name %></h3>
-<%= render :partial => 'stream_info' %>
+<h2>Stream Detail</h2>
+<span class="header"><%= @stream.name %></span>
+
+<div class="stream-container">
+  <%= render :partial => 'stream_info' %>
+</div>
 
 <%= link_to 'Edit', edit_stream_path(@stream) %><br /> 
 <%= link_to 'Back to Dashboard', user_root_path %>

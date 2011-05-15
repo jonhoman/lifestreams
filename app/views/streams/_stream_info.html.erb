@@ -1,47 +1,41 @@
+<div>
+  <b>Feed(s):</b>
+  <% if @stream.feeds.empty? %>
+    <em>There is no feed associated with your stream. Please click edit to choose a feed you wish to track.</em>
+  <% else %>
+    <ul class="feeds">
+      <% @stream.feeds.each do |feed| %>
+        <li class="rss"><%= link_to feed.name, feed_path(feed) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <% if @stream.included_categories && !@stream.included_categories.empty? %>
   <b>Included Categories: </b><%= @stream.included_categories %>
 <% end %>
+
 <div>
-  <b>Feed:</b>
-  <% @stream.feeds.each do |feed| %>
-    <%= link_to feed.name, feed_path(feed) %>
-  <% end %>
-  <% if @stream.feeds.empty? %>
-    <em>There is no feed associated with your stream. Please click edit to choose a feed you wish track.</em>
+  <b>Destination(s):</b>
+  <% if @stream.total_destination_count == 0%>
+    <em>There are no destinations associated with your stream. Please click edit to choose destinations to publish to.<em>
+  <% else %>
+    <ul class="destinations">
+      <% @stream.twitter_accounts.each do |account| %>
+        <li class="twitter"><%= link_to account.handle, "http://twitter.com/#{account.handle}" %></li>
+      <% end %>
+
+      <% @stream.email_lists.each do |list| %>
+        <li class="email"><%= link_to list.name, email_list_path(list) %></li>
+      <% end %>
+
+      <% @stream.facebook_accounts.each do |account| %>
+        <li class="facebook"><%= link_to account.name, account.link %></li>
+      <% end %>
+    </ul>
   <% end %>
 </div>
 
-<div>
-  <b>Twitter Account(s):</b>
-  <% @stream.twitter_accounts.each do |account| %>
-    <%= link_to account.handle, "http://twitter.com/#{account.handle}" %>
-  <% end %>
-  <% if @stream.twitter_accounts.empty? %>
-    <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
-  <% end %>
-</div>
-
-<div>
-  <b>Email List(s):</b>
-  <% @stream.email_lists.each do |list| %>
-    <%= link_to list.name, email_list_path(list) %>
-  <% end %>
-  <% if @stream.email_lists.empty? %>
-    <em>There is no email list associated with your stream. Please click edit to choose a email list you wish track.</em>
-  <% end %>
-</div>
-
-<div>
-  <b>Facebook Account(s):</b>
-  <% @stream.facebook_accounts.each do |account| %>
-    <%= link_to account.name, account.link %>
-  <% end %>
-  <% if @stream.facebook_accounts.empty? %>
-    <em>There is no twitter account associated with your stream. Please click edit to choose a twitter account you wish track.</em>
-  <% end %>
-</div>
-
-<br />
 <% @stream.feeds.each do |feed| %>
   <%= render :partial => 'recent_items', :locals => { :feed => feed } %>
 <% end %>

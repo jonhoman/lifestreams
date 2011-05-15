@@ -82,7 +82,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.dashboard-header {
+.header {
   font-size: 16px;
   vertical-align: 7px;
 }
@@ -216,3 +216,42 @@ p#dashboard-link {
   clear: left;
 }
 
+ul.feeds, ul.destinations {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+}
+
+li.rss {
+  background-image: url('/images/rss.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0em;
+  padding-left: 2em;
+  padding-bottom: 15px;
+}
+
+li.twitter {
+  background-image: url('/images/twitter.gif');
+  background-repeat: no-repeat;
+  background-position: 0 0em;
+  padding-left: 2.3em;
+  padding-bottom: 13px;
+}
+
+li.email {
+  background-image: url('/images/email.png');
+  background-repeat: no-repeat;
+  background-position: 0 -0.7em;
+  padding-left: 2.5em;
+  padding-bottom: 13px;
+  margin-left: -4px;
+}
+
+li.facebook {
+  background-image: url('/images/fb_icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 0em;
+  padding-left: 2.2em;
+  padding-bottom: 13px;
+}

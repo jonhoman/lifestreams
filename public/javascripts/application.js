@@ -12,5 +12,4 @@ $(document).ready(function() {
   $('a#new-email-list-link').click(function() {
     $('#new-email-list').toggle('slow');
   });
-  
 });

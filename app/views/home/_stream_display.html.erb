@@ -1,5 +1,5 @@
 <div>
-  <span class="dashboard-header">Your Streams</span>
+  <span class="header">Your Streams</span>
   <% @streams.each do |stream| %>
     <div class="stream-container">
       <div class="streams">
@@ -24,5 +24,5 @@
   <% end %>
   <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
 
-  <%= render :partial => 'stream_help' %>
+  <div class="help">Share a feed by creating a stream.</div>
 </div>
