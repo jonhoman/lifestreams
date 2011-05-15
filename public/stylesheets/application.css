@@ -114,11 +114,13 @@ a:hover {
 
 .help {
   font-size: 13px;
-  padding-right: 20px;
 }
 
 .create-links {
   margin-top: 20px;
+  width: 33%;
+  float: left;
+  text-align: center;
 }
 
 body { background-color: #fff; color: #333; }

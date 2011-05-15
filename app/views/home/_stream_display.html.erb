@@ -22,7 +22,19 @@
       <%= link_to "Delete this stream", stream, :confirm => "Are you sure you want to delete #{stream.name}", :class => "delete-stream", :method => :delete %>
     </div>
   <% end %>
-  <div class="create-links"><%= link_to "Add new Stream", new_stream_path %></div>
 
-  <div class="help">Share a feed by creating a stream.</div>
+  <div class="create-links">
+    <%= link_to "Add new Stream", new_stream_path %>
+    <div class="help">Share a feed by creating a stream.</div>
+  </div>
+
+  <div class="create-links">
+    <%= link_to "Add new Facebook Account", facebook_connect_path %>
+    <div class="help">Publish to your Facebook account.</div>
+  </div>
+
+  <div class="create-links">
+    <%= link_to "Add new Twitter Account", twitter_connect_path %>
+    <div class="help">Publish to your Twitter account.</div>
+  </div>
 </div>

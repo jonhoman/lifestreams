@@ -15,7 +15,6 @@ class TwitterController < ApplicationController
     request_token = OAuth::RequestToken.new(TwitterController.consumer,
                                              session[:request_token],
                                              session[:request_token_secret])
-    #TODO catch unauthorized request token
     access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
 
     @account = current_user.twitter_accounts.build(
