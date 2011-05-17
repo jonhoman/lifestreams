@@ -14,7 +14,7 @@ class FeedCreatorWorker
         raise MaxRetriesError.new(e.message)
       end
 
-      create_items(feed.id, parsed_feed)
+      create_items(feed, parsed_feed)
 
       title = parsed_feed.title
       feed.update_attributes! :title => title, 
@@ -28,17 +28,9 @@ class FeedCreatorWorker
       parsed_feed.entries.first.published
     end
 
-    def create_items(feed_id, parsed_feed)
+    def create_items(feed, parsed_feed)
       parsed_feed.entries.each do |item|
-        #TODO: refactor this to use Item.create_from_rss
-        Item.create!(
-          :title => item.title, 
-          :body => item.content, 
-          :published_date => item.published,
-          :link => item.url,
-          :feed_id => feed_id, 
-          :categories => item.categories 
-        )
+        feed.items.create_from_rss(item, parsed_feed)
       end
     end
   end

@@ -27,7 +27,6 @@ class FeedUpdaterWorker
     
     def enqueue(stream, item)
       if category_matches?(stream, item)
-        # TODO: only grab active twitter accounts
         stream.twitter_accounts.each do |account|
           Resque.enqueue(TwitterUpdaterWorker, item.id, account.id)
         end

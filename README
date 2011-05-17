@@ -1,9 +1,0 @@
-app/controllers/twitter_controller.rb
-18:    #TODO catch unauthorized request token
-
-app/workers/feed_creator_worker.rb
-31:    #TODO: refactor this to use Item.create_from_rss
-
-app/workers/feed_updater_worker.rb
-30:    # TODO: only grab active twitter accounts
-
