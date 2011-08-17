@@ -7,3 +7,4 @@ config/heroku_env.rb
 webrat.log
 dump.rdb
 .redcar/
+bin/
