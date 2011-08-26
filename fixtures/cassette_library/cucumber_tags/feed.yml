@@ -1,24 +1,26 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
     uri: http://api.bit.ly:80/v3/clicks?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&shortUrl=http://bit.ly/fXEv5E
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      server:
       - nginx
-      date: 
-      - Fri, 13 May 2011 05:09:24 GMT
-      content-type: 
+      date:
+      - Fri, 26 Aug 2011 02:15:39 GMT
+      content-type:
       - application/json; charset=utf-8
-      content-length: 
-      - "189"
-      etag: 
-      - "\"c16b27825e1fde08656d346f54e5dcf6fd32cac6\""
-    body: "{\"status_code\": 200, \"data\": {\"clicks\": [{\"short_url\": \"http://bit.ly/fXEv5E\", \"global_hash\": \"heezy\", \"user_clicks\": 0, \"user_hash\": \"fXEv5E\", \"global_clicks\": 2407}]}, \"status_txt\": \"OK\"}"
-    http_version: "1.1"
+      content-length:
+      - '189'
+      etag:
+      - ! '"39d40b58faa8da45976d86408f57742014e7376b"'
+    body: ! '{"status_code": 200, "data": {"clicks": [{"short_url": "http://bit.ly/fXEv5E",
+      "global_hash": "heezy", "user_clicks": 0, "user_hash": "fXEv5E", "global_clicks":
+      2439}]}, "status_txt": "OK"}'
+    http_version: '1.1'

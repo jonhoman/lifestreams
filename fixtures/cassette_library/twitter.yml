@@ -1,26 +1,28 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
     uri: http://api.bit.ly:80/v3/shorten?apiKey=R_504029652b3e3b641ac2ad781723c96a&login=jonhoman&longUrl=http://google.com
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      server:
       - nginx
-      date: 
-      - Wed, 11 May 2011 04:24:32 GMT
-      content-type: 
+      date:
+      - Fri, 26 Aug 2011 02:15:04 GMT
+      content-type:
       - application/json; charset=utf-8
-      mime-version: 
-      - "1.0"
-      content-length: 
-      - "184"
-    body: |
-      { "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com\/", "url": "http:\/\/bit.ly\/e7id7j", "hash": "e7id7j", "global_hash": "900913", "new_hash": 0 } }
+      mime-version:
+      - '1.0'
+      content-length:
+      - '184'
+    body: ! '{ "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com\/",
+      "url": "http:\/\/bit.ly\/e7id7j", "hash": "e7id7j", "global_hash": "900913",
+      "new_hash": 0 } }
 
-    http_version: "1.1"
+'
+    http_version: '1.1'

@@ -1,817 +1,119 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://tanyahoman.com:80/feed/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      etag: 
-      - "\"9511ad5e05b1c6511ca2cd7f688efcac\""
-      last-modified: 
-      - Tue, 15 Feb 2011 15:49:31 GMT
-      content-type: 
-      - text/xml; charset=UTF-8
-      x-pingback: 
-      - http://tanyahoman.com/xmlrpc.php
-      date: 
-      - Wed, 16 Feb 2011 04:34:16 GMT
-      server: 
-      - Apache
-      vary: 
-      - Accept-Encoding
-      transfer-encoding: 
-      - chunked
-    body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
-      <rss version=\"2.0\"\n\
-      \txmlns:content=\"http://purl.org/rss/1.0/modules/content/\"\n\
-      \txmlns:wfw=\"http://wellformedweb.org/CommentAPI/\"\n\
-      \txmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n\
-      \txmlns:atom=\"http://www.w3.org/2005/Atom\"\n\
-      \txmlns:sy=\"http://purl.org/rss/1.0/modules/syndication/\"\n\
-      \txmlns:slash=\"http://purl.org/rss/1.0/modules/slash/\"\n\
-      \t>\n\n\
-      <channel>\n\
-      \t<title>Innovative Creations</title>\n\
-      \t<atom:link href=\"http://tanyahoman.com/feed/\" rel=\"self\" type=\"application/rss+xml\" />\n\
-      \t<link>http://tanyahoman.com</link>\n\
-      \t<description>live -\xE2\x99\xA5- laugh -\xE2\x99\xA5- love -\xE2\x99\xA5- CREATE!</description>\n\
-      \t<lastBuildDate>Tue, 15 Feb 2011 15:49:31 +0000</lastBuildDate>\n\
-      \t<language>en</language>\n\
-      \t<sy:updatePeriod>hourly</sy:updatePeriod>\n\
-      \t<sy:updateFrequency>1</sy:updateFrequency>\n\
-      \t<generator>http://wordpress.org/?v=3.0.5</generator>\n\
-      \t\t<item>\n\
-      \t\t<title>Tips to Eat Healthy, Save Money &amp; Get In Shape</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/02/15/tips-to-eat-healthy-save-money-get-in-shape/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/02/15/tips-to-eat-healthy-save-money-get-in-shape/#comments</comments>\n\
-      \t\t<pubDate>Tue, 15 Feb 2011 15:43:06 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[Blog Reviews]]></category>\n\
-      \t\t<category><![CDATA[In the Kitchen]]></category>\n\
-      \t\t<category><![CDATA[budget ideas]]></category>\n\
-      \t\t<category><![CDATA[getting in shape]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1324</guid>\n\
-      \t\t<description><![CDATA[I&#8217;m always looking for ways to eat healthier without spending too much money. Thanks to Lifehacker I was able to come across the following article to save money on food without cutting out the nutrients. By eating many small meals you can also speed up your metabolism to shed any pounds you are hoping to. [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p><img class=\"alignleft\" title=\"Health Foods\" src=\"http://www.csc-ut.org/wp-content/uploads/2010/04/Food-Facts.jpg\" alt=\"\" width=\"267\" height=\"267\" />I&#8217;m always looking for ways to eat healthier without spending too much money. Thanks to <a href=\"http://lifehacker.com/#!5753893/eat-healthy-and-cheap-smaller-more-frequent-meals\">Lifehacker</a> I was able to come across the following article to save money on food without cutting out the nutrients. By eating many small meals you can also speed up your metabolism to shed any pounds you are hoping to.</p>\n\
-      <p>The <a href=\"http://www.littlepeoplewealth.com/2011/02/how-to-eat-healthy-for-under-5-a-day/\">article</a> originates from <a href=\"http://www.littlepeoplewealth.com/\">Little People Wealth</a>, a website I occasionally visit for bargains and online coupon codes. Here are the tips to eat healthy, spend about $5.00 a week &amp; also get in shape:</p>\n\
-      <blockquote><p><strong>1. Eat smaller meals and increase meal frequency.</strong></p>\n\
-      <p>6  small meals a day rather than 3 large ones will increase your  metabolism, helping with weight loss. The good part about this is that  most of these small meals should include raw fruits and vegetables,  which tend to cost the least of any food group in the grocery store.  Eating raw fruits and vegetables is like giving your digestive system a  workout, which increases its functionality, also helping in weight loss.</p>\n\
-      <p><strong>2. Combine simple ingredients.</strong></p>\n\
-      <p>Celery  with peanut butter and raisins, or frogs on a log, is one of the  healthiest, easiest, and cheapest complete meals to make (not to mention  those flavors happen to go quite well together; frogs on a log is quite  tasty). Fruit smoothies are also one of the cheapest forms of healthy,  tasty eating around. Buying a fruit blender will pay for itself in  spades, not to mention saving you trips to those overpriced smoothie and  coffee joints.</p>\n\
-      <p><strong>3. Buy meats raw and fresh and combine them with cheap bases and raw vegetables to form excellent soups.</strong></p>\n\
-      <p>Complete  meals come quite cheaply in soups, if you are willing to mix the  ingredients yourself. Great bases include water, egg, and tomato puree.  Though meat is relatively expensive, if you want it, you can divvy it up  among the week so that the daily cost is quite low. Meats are quite  unhealthy in the quantity in which we eat them. Try smaller portions.</p>\n\
-      <p><strong>4. Buy in season and buy local.</strong><br />\n\
-      Often you pay for the shipping costs of certain items without even  knowing it. Regular trips to the farmer\xE2\x80\x99s market can remedy that  problem. Also, buying in season is basic economics \xE2\x80\x94 more supply equals  lower cost. If you buy out of season, there are less of that item to be  had, so people will feel justified in charging you more. Buy fruits in  season and freeze them for later.</p>\n\
-      <p><strong>5. Hunt the coupon sections.</strong></p>\n\
-      <p>This  goes without saying, but those annoying leaflets that your mailbox gets  spammed with sometimes have some great deals. Be prepared to show the  cashier, as many times they are not even aware of half the deals that  are being offered.</p></blockquote>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/02/15/tips-to-eat-healthy-save-money-get-in-shape/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Simple Photoshop Valentine</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/02/14/simple-photoshop-valentine/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/02/14/simple-photoshop-valentine/#comments</comments>\n\
-      \t\t<pubDate>Tue, 15 Feb 2011 04:17:02 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[Crafts]]></category>\n\
-      \t\t<category><![CDATA[Digital Crafts/Photography]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1316</guid>\n\
-      \t\t<description><![CDATA[Here&#8217;s the Valentine I created for my husband today using photo of us &#38; a few minutes in Photoshop. Using a blank canvas I chose different shades of pink for the backdrop. I created squares and a fun font to write &#8220;L.O.V.E&#8221;. The left hand side strip has a texture applied to it. I also [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>Here&#8217;s the Valentine I created for my husband today using photo of us &amp; a few minutes in Photoshop.</p>\n\
-      <p>Using a blank canvas I chose different shades of pink for the backdrop. I created squares and a fun font to write &#8220;L.O.V.E&#8221;. The left hand side strip has a texture applied to it. I also saturated our picture for this layout.</p>\n\
-      <p>Taking clipart from online I used a heart pattern and changed the opacity levels so it was hardly visible. Here&#8217;s the end result!</p>\n\
-      <p style=\"text-align: center;\"><a href=\"http://tanyahoman.com/wp-content/uploads/2011/02/LOVE-1024x731.jpg\"><img class=\"aligncenter size-full wp-image-1317\" title=\"LOVE-1024x731\" src=\"http://tanyahoman.com/wp-content/uploads/2011/02/LOVE-1024x731.jpg\" alt=\"\" width=\"717\" height=\"512\" /></a></p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/02/14/simple-photoshop-valentine/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Pizza Cobbler</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/29/pizza-cobbler/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/29/pizza-cobbler/#comments</comments>\n\
-      \t\t<pubDate>Sat, 29 Jan 2011 19:16:14 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[Cooking]]></category>\n\
-      \t\t<category><![CDATA[In the Kitchen]]></category>\n\
-      \t\t<category><![CDATA[Recipes]]></category>\n\
-      \t\t<category><![CDATA[buttermilk biscuits]]></category>\n\
-      \t\t<category><![CDATA[cheese]]></category>\n\
-      \t\t<category><![CDATA[mushrooms]]></category>\n\
-      \t\t<category><![CDATA[pizza]]></category>\n\
-      \t\t<category><![CDATA[pizza cobbler]]></category>\n\
-      \t\t<category><![CDATA[rachel ray pizza cobbler]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1300</guid>\n\
-      \t\t<description><![CDATA[This recipe was mentioned in a recent email for 7 Days Dinners from rachelraymag.com. I&#8217;m always looking for new ways to use buttermilk biscuits so I tried this for lunch today. The recipe is simple to prepare &#38; you can easily add whatever pizza ingredients you like. I would definitely recommend this to moms looking [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>This recipe was mentioned in a recent email for <a href=\"http://www.rachaelraymag.com/Recipes/rachael-ray-magazine-recipe-index/dinner-recipes/Pizza-Cobbler\">7 Days Dinners from rachelraymag.com</a>. I&#8217;m always looking for new ways to use buttermilk biscuits so I tried this for lunch today. The recipe is simple to prepare &amp; you can easily add whatever pizza ingredients you like. I would definitely recommend this to moms looking for a quick meal to make for lunch or dinner.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6814.jpg\"><img class=\"size-large wp-image-1301      alignnone\" title=\"DSC_6814\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6814-1024x682.jpg\" alt=\"\" width=\"645\" height=\"429\" /></a></p>\n\
-      <p>Here are the ingredients I used:</p>\n\
-      <ul>\n\
-      <li>1 tsp minced garlic</li>\n\
-      <li>2 cans sliced mushrooms</li>\n\
-      <li>2 cans (8 oz each) tomato sauce</li>\n\
-      <li>1 cup shredded mozzarella cheese</li>\n\
-      <li>1 can refrigerated biscuits, separated &amp; cut into quarters</li>\n\
-      </ul>\n\
-      <p><strong>Directions:</strong></p>\n\
-      <p>Preheat the oven to 400.</p>\n\
-      <p>In a skillet, combine oil,garlic &amp; mushrooms. Cook on medium until desired tenderness. (about 5 minutes)</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6769.jpg\"><img class=\"size-large wp-image-1303  alignnone\" title=\"DSC_6769\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6769-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p>Add sauce to skillet and heat just til starting to bubble.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6773.jpg\"><img class=\"size-large wp-image-1304  alignnone\" title=\"DSC_6773\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6773-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p style=\"text-align: left;\">Spread sauce mixture in a greased 2 quart baking dish.</p>\n\
-      <p style=\"text-align: left;\"><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6785.jpg\"><img class=\"size-large wp-image-1305  alignnone\" title=\"DSC_6785\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6785-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p style=\"text-align: left;\">Sprinkle with cheese.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6786.jpg\"><img class=\"size-large wp-image-1306  alignnone\" title=\"DSC_6786\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6786-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p>Top with biscuit pieces.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6782.jpg\"><img class=\"size-large wp-image-1307  alignnone\" title=\"DSC_6782\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6782-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a><br />\n\
-      <a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_67871.jpg\"><img class=\"size-large wp-image-1309  alignnone\" title=\"DSC_6787\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_67871-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p>Bake until cheese is bubbly and biscuits are browned, about 15 minutes.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6796.jpg\"><img class=\"size-large wp-image-1310  alignnone\" title=\"DSC_6796\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_6796-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /><br />\n\
-      </a></p>\n\
-      <p>Let stand about 5 minutes before serving. Enjoy!</p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/29/pizza-cobbler/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>1</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Barnes &amp; Noble Bargain Books</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/27/barnes-noble-bargain-books/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/27/barnes-noble-bargain-books/#comments</comments>\n\
-      \t\t<pubDate>Fri, 28 Jan 2011 02:41:31 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[In the Kitchen]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1293</guid>\n\
-      \t\t<description><![CDATA[With a membership at Barnes &#38; Noble I find it a challenge not to buy a new book every time I receive a coupon in my email or visit their stores. This past week the lady from our new bank encouraged me to purchase something with our new credit card to take advantage of &#8220;bonus [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>With a membership at Barnes &amp; Noble I find it a challenge not to buy a new book every time I receive a coupon in my email or visit their stores. This past week the lady from our new bank encouraged me to purchase something with our new credit card to take advantage of &#8220;bonus points&#8221;. Being sick and the weather freezing outside I knew exactly what I was going to do\xC2\xA0 &#8211; go online to bn.com &amp; take advantage of my free member shipping.</p>\n\
-      <p>Besides bargains in general, I have a weakness for bargain cookbooks. Here are three I purchased and already have at home. Total for all three: $11.00. I look forward to future baking &amp; blogging opportunities.</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/Cookbooks.jpg\"><img class=\"size-large wp-image-1294  alignnone\" title=\"Cookbooks\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/Cookbooks-1024x512.jpg\" alt=\"\" width=\"573\" height=\"287\" /></a></p>\n\
-      <p><strong>New Curries: India-Sri Lanka &#8211; Thailand &#8211; Malaysia &#8211; Indonesia &#8211; Vietnam</strong></p>\n\
-      <p><strong>Betty Crocker Chicken Tonight: 100 Recipes for the Way You Really Cook</strong></p>\n\
-      <p><strong>Food Lovers Soup: Delicious, simple recipes for everyday cooking</strong></p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/27/barnes-noble-bargain-books/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Bran Muffins</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/25/bran-muffins/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/25/bran-muffins/#comments</comments>\n\
-      \t\t<pubDate>Wed, 26 Jan 2011 03:51:39 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Baking]]></category>\n\
-      \t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[In the Kitchen]]></category>\n\
-      \t\t<category><![CDATA[Recipes]]></category>\n\
-      \t\t<category><![CDATA[baking]]></category>\n\
-      \t\t<category><![CDATA[muffins]]></category>\n\
-      \t\t<category><![CDATA[recipes]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1277</guid>\n\
-      \t\t<description><![CDATA[Breakfast is an important meal of the day &#8211; whether it&#8217;s cereal, toast, eggs or something else. Mornings when I&#8217;m in a rush I hardly remember to grab a granola bar and I find myself eating my other snacks during my morning coffee. I decided to make these Bran Muffins for something different in my [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p style=\"text-align: left;\">\n\
-      <p style=\"text-align: center;\"><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/Bran-Muffins-for-web.jpg\"><img class=\"size-large wp-image-1283       aligncenter\" title=\"Bran-Muffins-for-web\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/Bran-Muffins-for-web-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p style=\"text-align: left;\">Breakfast is an important meal of the day &#8211; whether it&#8217;s cereal, toast, eggs or something else. Mornings when I&#8217;m in a rush I hardly remember to grab a granola bar and I find myself eating my other snacks during my morning coffee.</p>\n\
-      <p>I decided to make these Bran Muffins for something different in my morning routine, especially as the mornings are still cold and I need the extra time to warm up the car!</p>\n\
-      <p><strong>Ingredients you will need:</strong></p>\n\
-      <ul>\n\
-      <li>3 c. Bran cereal (I used Raisin Bran)</li>\n\
-      <li>1 c. boiling water</li>\n\
-      <li>1/2 c. oil</li>\n\
-      <li>1 c. sugar</li>\n\
-      <li>2 eggs, beaten</li>\n\
-      <li>2 1/2 c. flour</li>\n\
-      <li>2 c. buttermilk*</li>\n\
-      <li>1 tsp salt</li>\n\
-      <li>2 1/2 tsp. baking soda</li>\n\
-      </ul>\n\
-      <p><strong>Directions:</strong></p>\n\
-      <ol>\n\
-      <li>Pour boiling water over 1 cup bran cereal. Let stand.</li>\n\
-      <li>Mix 2 cups remaining bran cereal, sugar, eggs, buttermilk, and oil together.</li>\n\
-      <li>Sift flour, baking soda &amp; salt.</li>\n\
-      <li>Combine all mixtures and stir.</li>\n\
-      <li>Add dates, nuts and raisins (if desired).</li>\n\
-      <li>Mix together desired amount cinnamon &amp; sugar.</li>\n\
-      <li>Place muffin mix in pans and sprinkle cinnamon &amp; sugar on top before baking.</li>\n\
-      <li>Bake at 400 degrees for 20 minutes.</li>\n\
-      </ol>\n\
-      <p>* I actually substituted the buttermilk for 1 cup milk + 1 3/4 teaspoon cream of tartar per 1 cup buttermilk called for in recipe.</p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/25/bran-muffins/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Guest Book Revamp</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/22/guest-book-revamp/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/22/guest-book-revamp/#comments</comments>\n\
-      \t\t<pubDate>Sat, 22 Jan 2011 19:52:22 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Crafts]]></category>\n\
-      \t\t<category><![CDATA[crafts]]></category>\n\
-      \t\t<category><![CDATA[guestbook]]></category>\n\
-      \t\t<category><![CDATA[sage and lilac wedding]]></category>\n\
-      \t\t<category><![CDATA[wedding crafts]]></category>\n\
-      \t\t<category><![CDATA[wedding guest book]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1271</guid>\n\
-      \t\t<description><![CDATA[My sister is getting married this May and I finally got around to working on re-vamping a guestbook my mom gave me to use. The original had the same white ribbon (but more of it) and a flower with beads in the center. Using the wedding colors I took a few items from my craft [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>My sister is getting married this May and I finally got around to working on re-vamping a guestbook my mom gave me to use. The original had the same white ribbon (but more of it) and a flower with beads in the center. Using the wedding colors I took a few items from my craft supplies, a glue gun &amp; went to work. I&#8217;m really excited about the end result!</p>\n\
-      <p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/Guest-Book.gif\"><img class=\"size-large wp-image-1272 alignleft\" title=\"Guest-Book\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/Guest-Book-1024x682.gif\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/22/guest-book-revamp/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Simple Ribbon Organizer</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/22/simple-ribbon-organizer/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/22/simple-ribbon-organizer/#comments</comments>\n\
-      \t\t<pubDate>Sat, 22 Jan 2011 17:57:21 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[Crafts]]></category>\n\
-      \t\t<category><![CDATA[budget friendly craft organizer]]></category>\n\
-      \t\t<category><![CDATA[craft ideas]]></category>\n\
-      \t\t<category><![CDATA[ribbon organizer]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1262</guid>\n\
-      \t\t<description><![CDATA[I&#8217;m always looking for new ways to organize all my craft &#38; scrapbooking supplies. Ribbon especially is hard because it tends to unroll if you place it in a box or plastic container. In recent years I&#8217;ve used either a curtain rod or dowel in between a book shelf to keep it strangle-free and organized. [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>I&#8217;m always looking for new ways to organize all my craft &amp; scrapbooking supplies. Ribbon especially is hard because it tends to unroll if you place it in a box or plastic container. In recent years I&#8217;ve used either a curtain rod or dowel in between a book shelf to keep it strangle-free and organized.</p>\n\
-      <p>This week I came across a new idea on a blog I follow (<a href=\"http://craftzine.com/\">Craft</a>). Originated from the blog <a href=\"http://spunkyjunky.blogspot.com/\">Spunky Junky</a> , you take a inexpensive tub and place your ribbon in it on spools or dowls. I especially love the functionality to remove the ribbon. Who would have thought those holes would be so useful!</p>\n\
-      <p><img class=\"alignnone\" title=\"Ribbon Organizer\" src=\"http://1.bp.blogspot.com/_8FZT-Bq2-po/TTYm9IyCU3I/AAAAAAAAAYY/5gMmmQVjwBY/s1600/ribbon+1+1.jpg\" alt=\"\" width=\"538\" height=\"384\" /></p>\n\
-      <p>Here&#8217;s the DIY instructions: <a href=\"http://spunkyjunky.blogspot.com/2011/01/tutorial-tuesday-5-dollar-ribbon.html\">http://spunkyjunky.blogspot.com/2011/01/tutorial-tuesday-5-dollar-ribbon.html </a></p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/22/simple-ribbon-organizer/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Blog Review: The Post Punk Kitchen</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/17/blog-review-the-post-punk-kitchen/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/17/blog-review-the-post-punk-kitchen/#comments</comments>\n\
-      \t\t<pubDate>Mon, 17 Jan 2011 23:00:06 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[Blog Reviews]]></category>\n\
-      \t\t<category><![CDATA[In the Kitchen]]></category>\n\
-      \t\t<category><![CDATA[onion rings]]></category>\n\
-      \t\t<category><![CDATA[orange cranberry muffins]]></category>\n\
-      \t\t<category><![CDATA[post punk kitchen]]></category>\n\
-      \t\t<category><![CDATA[pumpkin]]></category>\n\
-      \t\t<category><![CDATA[pumpkin french toast]]></category>\n\
-      \t\t<category><![CDATA[the kitchn]]></category>\n\
-      \t\t<category><![CDATA[vegan dishes]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1244</guid>\n\
-      \t\t<description><![CDATA[Reading through a post from theKitchn.com on the top 10 suggested blogs for vegan cooking I came across Post Punk Kitchen. The purpose of the blog is to provide recipes, books and advice for vegan eaters. Although I\xE2\x80\x99m not a vegan I enjoy trying new foods, especially in the last year as I try to [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>Reading through a post from <a href=\"http://www.thekitchn.com/\">theKitchn.com</a> on the <a href=\"http://www.thekitchn.com/thekitchn/roundup-food-blogs/10-inspiring-blogs-for-vegan-food-cooking-136662\">top 10 suggested blogs for vegan cooking</a> I came across <a href=\"http://www.theppk.com/\">Post Punk Kitchen.</a> The purpose of the blog is to provide recipes, books and advice for vegan eaters. Although I\xE2\x80\x99m not a vegan I enjoy trying new foods, especially in the last year as I try to figure out what foods are causing my stomach to be upset.</p>\n\
-      <p>Skimming through a few of the posts I discovered there are a variety of recipes I\xE2\x80\x99d like to suggest and try out myself. Not only do they seem simple to make they also look very tasty! Hopefully I\xE2\x80\x99ll be able to make a few of these recipes in the future, and maybe you will too.</p>\n\
-      <p>The first is for <strong><a href=\"http://www.theppk.com/2011/01/orange-cranberry-muffins/\">Orange Cranberry Muffins</a></strong>. Some of the ingredients called for include orange juice, cranberries, flour, vanilla and almond extract. Here&#8217;s a picture preview from Post Punk Kitchen.</p>\n\
-      <p><a href=\"http://farm6.static.flickr.com/5010/5330743265_44f2e5dfc2_z.jpg\"><img class=\"alignnone\" title=\"Orange Muffins\" src=\"http://farm6.static.flickr.com/5010/5330743265_44f2e5dfc2_z.jpg\" alt=\"\" width=\"640\" height=\"426\" /></a></p>\n\
-      <p>The second recipe I&#8217;m tempted to try has an ingredient you either like or dislike &#8211; pumpkin. I enjoy pumpkin pie, bars and I&#8217;ve even attempted to make pumpkin cookies a few years ago. This recipe for <strong><a href=\"http://www.theppk.com/2009/10/pumpkin-french-toast/\">Pumpkin French Toast</a></strong> includes some of my favorite spices: ginger, cloves &amp; cinnamon.</p>\n\
-      <p style=\"text-align: center;\"><img class=\"aligncenter\" title=\"Pumpkin French Toast\" src=\"http://farm4.static.flickr.com/3094/3082046472_48e0842842.jpg\" alt=\"\" width=\"405\" height=\"500\" /></p>\n\
-      <p>Lastly I found a recipe for <strong><a href=\"http://www.theppk.com/2010/10/omg-oven-baked-onion-rings/\">Baked Onion Rings.</a></strong> This past summer my husband and I once again attempted to make onion rings in our deep fryer. Not only did they fail, they were filled with oil. Thus, I&#8217;m tempted to try this recipe for a healthier, easier approach to making onion rings.</p>\n\
-      <p style=\"text-align: center;\"><img class=\"aligncenter\" title=\"Oven Baked Onion Rings\" src=\"http://farm5.static.flickr.com/4079/4873876358_53e9623727.jpg\" alt=\"\" width=\"500\" height=\"333\" /></p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/17/blog-review-the-post-punk-kitchen/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>0</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>Cutting the Cost of Cold</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/16/cutting-the-cost-of-cold/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/16/cutting-the-cost-of-cold/#comments</comments>\n\
-      \t\t<pubDate>Sun, 16 Jan 2011 19:40:09 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[budget ideas]]></category>\n\
-      \t\t<category><![CDATA[cold]]></category>\n\
-      \t\t<category><![CDATA[heating tips]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1239</guid>\n\
-      \t\t<description><![CDATA[During the winter it&#8217;s hard to be happy about the cost of the heating bill. Each year I tend to try and deny I live in Minnesota where it&#8217;s winter from November &#8211; March. Granted this past fall was beautiful and we had warm weather into the month of November, the snow came hard and [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p>During the winter it&#8217;s hard to be happy about the cost of the heating bill. Each year I tend to try and deny I live in Minnesota where it&#8217;s winter from November &#8211; March. Granted this past fall was beautiful and we had warm weather into the month of November, the snow came hard and heavy and now the cold is here to stay for awhile.</p>\n\
-      <p>Leading up to Christmas I understand it&#8217;s going to be cold. Between Christmas baking, gifts &amp; travels I know I&#8217;ll be spending money throughout the month. For some reason once the New Year hits and the weather is still cold the idea of paying a good amount to heat the house is no longer appealing.</p>\n\
-      <p>This past year I&#8217;ve really attempted to &#8220;go green&#8221; and save on energy and costs where I can. Over the past month I&#8217;ve really tried to continue with this by developing some routines to keep me warm but the thermostat down. Here are a few simple tips to stay warm during the final winter months that hopefully also result in a lower heating bill.Please keep in mind I do all of the following because otherwise I&#8217;d probably be cold if I only did one!</p>\n\
-      <p><strong>1. Turn down the heat.</strong> I&#8217;ve found that even turning down the thermostat a few degrees, whether it&#8217;s before you head out the door for work, or during the evening will cut down on cost. During the day I keep the house around 60 degrees. When I arrive home I turn it up to about 62 or 64 depending on my mood. For sure before bed I turn it up to 64.</p>\n\
-      <p><strong>2. Layers. </strong>Whether it&#8217;s layers of clothes or the number of blankets on your bed it makes a difference. In bed I have several layers, varrying from a sheet to a wool blanket. I also have a fleece blanket, an afgan and a sleeping bag. This allows me to sleep comfortably and not have to keep the heat up during the over night hours.</p>\n\
-      <p><strong>3. Rice isn&#8217;t just for cooking!</strong> Taking the tip from one of my husband&#8217;s college roomates, I filled an old sock with rice. Before heading to bed I put the sock in the microwave for about 30 seconds. I place the sock by my feet to warm up my bed and keep my feet warm as I fall asleep</p>\n\
-      <p><strong>4. Warm up a room, not a house. </strong>By turning on a space heater in the room you generally spend the most time it you allow the rest of your house to stay cooler. I generally spend time on the computer or in the living room. I close the door to allow the entire room to be heated. So, not only am I cozy on the couch I know I&#8217;m not heating rooms more than needed that I&#8217;m not in.</p>\n\
-      <p><strong>5. </strong><strong>Get out.</strong> Try to find activities or things you can do outside your house or with friends that allows you to not spend as much time at home. Whether you go away for the weekend (and turn the thermostat down during that time) or at least spend a few more hours a week working out at a gym, hanging out at Barnes &amp; Noble or check out the library, you can cut the cost of heating the house for a few more hours a week .</p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/16/cutting-the-cost-of-cold/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>1</slash:comments>\n\
-      \t\t</item>\n\
-      \t\t<item>\n\
-      \t\t<title>My New Year&#8217;s Resolutions</title>\n\
-      \t\t<link>http://tanyahoman.com/2011/01/12/my-new-years-resolutions/</link>\n\
-      \t\t<comments>http://tanyahoman.com/2011/01/12/my-new-years-resolutions/#comments</comments>\n\
-      \t\t<pubDate>Thu, 13 Jan 2011 01:15:05 +0000</pubDate>\n\
-      \t\t<dc:creator>tanya</dc:creator>\n\
-      \t\t\t\t<category><![CDATA[Blog]]></category>\n\
-      \t\t<category><![CDATA[new years resolutions]]></category>\n\n\
-      \t\t<guid isPermaLink=\"false\">http://tanyahoman.com/?p=1106</guid>\n\
-      \t\t<description><![CDATA[Many times you&#8217;ll hear about people making resolutions for the upcoming year. I tried to decide what I might want to work on, not necessarily resolve, for my new year. Many exciting things have happened with me in the past few months that really that make make going into a new year very exciting for [...]]]></description>\n\
-      \t\t\t<content:encoded><![CDATA[<p><a href=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_5760.jpg\"><img class=\"size-large wp-image-1236  alignnone\" title=\"DSC_5760\" src=\"http://tanyahoman.com/wp-content/uploads/2011/01/DSC_5760-1024x682.jpg\" alt=\"\" width=\"614\" height=\"409\" /></a></p>\n\
-      <p>Many times you&#8217;ll hear about people making resolutions for the upcoming year. I tried to decide what I might want to work on, not necessarily resolve, for my new year. Many exciting things have happened with me in the past few months that really that make make going into a new year very exciting for me. Many times a new year just means a few changes or things you are excited to do. For me, it means a new stage starting in my life and many different paths I  might be able to take.</p>\n\
-      <p>Instead of making a list I thought I&#8217;d take a song I really like from 2010 and base my new year&#8217;s resolutions or &#8220;words to live by&#8221; off of. The refrain, something many country fans are aware of, come&#8217;s from Lee Bryce song entitled &#8220;Love like crazy&#8221;.</p>\n\
-      <p>I feel this song is appropriate since I love life in so many ways and am thankful for all the opportunities I&#8217;ve had in the past years.</p>\n\
-      <p><strong>Be a best friend.</strong> I look at this phrase to mean so many things. As a wife I will try to be the most supportive, loving and caring person I can be. A best friend is someone that respects you for who you are, trusts you will make the right decisions in your relationship and in life and you are always there for that person. I think another important quality of a friend is to be\xC2\xA0 a good listener. I am going to really try hard to be a great listener in the upcoming year.</p>\n\
-      <p><strong>Tell the truth. </strong>Honesty, I&#8217;ve found, is a very key trait to have a successful life. Being truthful to yourself and to others. Don&#8217;t lie to yourself and think everything is alright with your life, your work or your relationships if it&#8217;s not. Often it&#8217;s because you aren&#8217;t being truthful and telling people how you really feel or wish things would work within your relationship. Truthfulness means communicating with others how you feel so they don&#8217;t unintentionally upset you. Without being inconsiderate or disrespectful I&#8217;m going to be truthful to my family, friends &amp; coworkers.\xC2\xA0 In the same regards I think this phrase can also encompass that not only should you be honest with others and tell the truth but not gossip. Not only does this keep you from judging others more than you think you are, it also allows you to have a positive attitude and not worry about things that aren&#8217;t your business.</p>\n\
-      <p><strong>Overuse &#8220;I Love You&#8221;.</strong> I&#8217;m not the type to say &#8220;I love you&#8221; if I don&#8217;t mean it. I think in many relationships it can be abused or overused and not have the correct meaning. I think it&#8217;s important, however, that you tell those close to you that you love them when you see them. Never do I want to regret not saying &#8220;i love you&#8221; to someone and never have the chance to do so again.</p>\n\
-      <p><strong>Go to work, do your best.</strong> I will continue to strive to do my best at work in all that I do. In the final months as I work at my current job I want to complete the tasks I have and goals I&#8217;ve set for myself. I will try my best to provide information to students as they plan for their college education.</p>\n\
-      <p><strong>Don&#8217;t outsmart your common sense.</strong> As the army slogan says, I want to &#8220;be all that I can be&#8221;. I&#8217;m not necessarily in the job field that I went to school for but I feel it&#8217;s important to do your best in any job. Keeping this in mind I want to also not forget all the things I&#8217;ve learned in my college education and continue to educate myself in my personal hobbies and areas of interest. This means getting more involved with photography, graphic design &amp; within cooking and baking in the kitchen.</p>\n\
-      <p><strong>Never let your praying knees get lazy. </strong>In the past few months I&#8217;ve really had a love/hate relationship with church. Please continue to read if that initial statement bothered you. I love going to church, having time to worship and realize all the things I have to be thankful for. The reason I say hate is because I don&#8217;t like going to church by myself and I struggle with children who misbehave in church. It really makes it hard to focus. I need figure out what service may be the best for me to attend, as well as location in the pews that I chose to sit. I need to learn patience and try harder to focus on the message being said instead of the noise behind or in front of me. My goal is to attend more regularly, at least 2 Sundays a month. I know that doesn&#8217;t seem like a lot but with the cold weather and knowing my spouse can&#8217;t join me for a few months makes it easier to stay home and drink coffee. In the same regards, I need to remember to give thanks on a daily basis instead of just on Sundays or when things are going good in life. Being thankful for frustration or troubling times also makes me stronger as a person and a Christian.</p>\n\
-      <p><strong>Love like crazy.</strong> I want to love my life, the people in it, and all I do to the fullest. I want to share the things I love on my blog &#8211; food, wine, traveling, experiences &amp; moments that make me laugh with my husband. I will work hard to make a positive impact in the lives of others, or at least make sure they know I&#8221;m very happy to be here. That might make them reevaluate their lives to take out the bad and bring more of the good into it.</p>\n\
-      ]]></content:encoded>\n\
-      \t\t\t<wfw:commentRss>http://tanyahoman.com/2011/01/12/my-new-years-resolutions/feed/</wfw:commentRss>\n\
-      \t\t<slash:comments>2</slash:comments>\n\
-      \t\t</item>\n\
-      \t</channel>\n\
-      </rss>\n"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://example.org:80/feed
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 302
-      message: Found
-    headers: 
-      location: 
-      - http://www.iana.org/domains/example/
-      server: 
-      - BigIP
-      content-length: 
-      - "0"
-    body: 
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://www.iana.org:80/domains/example/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      last-modified: 
-      - Wed, 09 Feb 2011 17:13:15 GMT
-      content-type: 
-      - text/html; charset=UTF-8
-      server: 
-      - Apache/2.2.3 (CentOS)
-      date: 
-      - Wed, 16 Feb 2011 04:47:11 GMT
-      content-length: 
-      - "2945"
-      age: 
-      - "40"
-      accept-ranges: 
-      - bytes
-    body: |
-      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-      <html xmlns="http://www.w3.org/1999/xhtml">
-      <head>
-      	<title>IANA &mdash; Example domains</title>
-      	<!-- start common-head -->
-      	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-      	<link rel="stylesheet" type="text/css" href="/_css/reset-fonts-grids.css" />
-      	<link rel="stylesheet" type="text/css" media="screen" href="/_css/screen.css" />
-      	<link rel="stylesheet" type="text/css" media="print" href="/_css/print.css" />
-      	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-      	<script type="text/javascript" src="/_js/prototype.js"></script>
-      	<script type="text/javascript" src="/_js/corners.js"></script>
-      	<script type="text/javascript" src="/_js/common.js"></script>
-      	<!-- end common-head -->
-      
-      </head>
-      <body>
-      	<!-- start common-bodyhead -->
-      	<div id="header-frame">
-      	<div id="header">
-      	<div id="header-logo"><a href="/"><img src="/_img/iana-logo-pageheader.png" alt="Homepage"/></a></div>
-      	<div id="header-nav">
-      	<ul>
-      	<li><a href="/domains/">Domains</a></li>
-      	<li><a href="/numbers/">Numbers</a></li>
-      	<li><a href="/protocols/">Protocols</a></li>
-      	<li><a href="/about/">About IANA</a></li>
-      	</ul>
-      	</div>
-      	</div>
-      	</div>
-      
-      	<div id="body-container">
-      	<div id="body">
-      	<!-- end common-bodyhead -->
-      
-      
-      	<h1>Example Domains</h1>
-      
-      	<p>As described in <a href="/go/rfc2606">RFC 2606</a>,
-      	we maintain a number of domains such as EXAMPLE.COM and EXAMPLE.ORG
-      	for documentation purposes. These domains may be used as illustrative
-      	examples in documents without prior coordination with us. They are 
-      	not available for registration.</p>
-      
-      	 <!-- start common-bodytail -->
-      	</div>
-      	</div>
-      
-      	<div id="footer-frame">
-      	<div id="footer">
-      
-      
-      	<table width=100%>
-      	<tr>
-      		<td id="iana-footer-first"><b><a href="/about/">About</a></b><br/>
-                      <a href="/about/presentations/">Presentations</a><br/>
-                      <a href="/about/performance/">Performance</a><br/>
-      		<a href="/reports/">Reports</a><br/>
-                      </td>
-      
-      		<td><b><a href="/domains/">Domains</a></b><br/>
-      		<a href="/domains/root/">Root Zone</a><br/>
-      		<a href="/domains/int/">.INT</a><br/>
-      		<a href="/domains/arpa/">.ARPA</a><br/>
-      		<a href="/domains/idn-tables/">IDN Repository</a></td>
-      
-      		<td><b><a href="/protocols/">Protocols</a></b><br/>
-      		<br/>
-      		<b><a href="/numbers/">Number Resources</a></b><br/>
-      		<a href="/abuse/">Abuse Information</a></td>
-      
-      		<td id="iana-footer-icann"><img src="/_img/icann-logo-micro.png"><br/>IANA is operated by the<br/><a href="http://www.icann.org/">Internet Corporation for Assigned Names and Numbers</a></td>
-      	</tr>
-      	</table>
-      
-      <div id="footer-beta-feedback">
-              <p>Please direct general feedback regarding IANA to <a href="mailto:iana@iana.org?subject=General%20website%20feedback">iana@iana.org</a>.</p>
-              </div>
-      
-      	</div>
-      	</div>
-      	<!-- end common-bodytail -->
-      
-      
-      </body>
-      </html>
-
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://blog.jonhoman.com:80/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      content-type: 
-      - text/html; charset=UTF-8
-      x-pingback: 
-      - http://blog.jonhoman.com/xmlrpc.php
-      date: 
-      - Wed, 16 Feb 2011 04:48:38 GMT
-      server: 
-      - Apache
-      content-length: 
-      - "13023"
-      link: 
-      - <http://wp.me/FEns>; rel=shortlink
-      vary: 
-      - Cookie,Accept-Encoding
-    body: "<!DOCTYPE html>\n\
-      <html dir=\"ltr\" lang=\"en-US\">\n\
-      <head>\n\
-      <meta charset=\"UTF-8\" />\n\
-      <title>JonHoman.com | Walking the Long Road</title>\n\
-      <link rel=\"profile\" href=\"http://gmpg.org/xfn/11\" />\n\
-      <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"http://blog.jonhoman.com/wp-content/themes/twentyten/style.css\" />\n\
-      <link rel=\"pingback\" href=\"http://blog.jonhoman.com/xmlrpc.php\" />\n\
-      <link rel=\"alternate\" type=\"application/rss+xml\" title=\"JonHoman.com &raquo; Feed\" href=\"http://blog.jonhoman.com/feed/\" />\n\
-      <link rel=\"alternate\" type=\"application/rss+xml\" title=\"JonHoman.com &raquo; Comments Feed\" href=\"http://blog.jonhoman.com/comments/feed/\" />\n\
-      <link rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"http://blog.jonhoman.com/xmlrpc.php?rsd\" />\n\
-      <link rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"http://blog.jonhoman.com/wp-includes/wlwmanifest.xml\" /> \n\
-      <link rel='index' title='JonHoman.com' href='http://blog.jonhoman.com/' />\n\
-      <meta name=\"generator\" content=\"WordPress 3.0.4\" />\n\
-      <link rel='shortlink' href='http://wp.me/FEns' />\n\
-      \t<link href=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Styles/SyntaxHighlighter.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
-      \t</head>\n\n\
-      <body class=\"home blog\">\n\
-      <div id=\"wrapper\" class=\"hfeed\">\n\
-      \t<div id=\"header\">\n\
-      \t\t<div id=\"masthead\">\n\
-      \t\t\t<div id=\"branding\" role=\"banner\">\n\
-      \t\t\t\t\t\t\t\t<h1 id=\"site-title\">\n\
-      \t\t\t\t\t<span>\n\
-      \t\t\t\t\t\t<a href=\"http://blog.jonhoman.com/\" title=\"JonHoman.com\" rel=\"home\">JonHoman.com</a>\n\
-      \t\t\t\t\t</span>\n\
-      \t\t\t\t</h1>\n\
-      \t\t\t\t<div id=\"site-description\">Walking the Long Road</div>\n\n\
-      \t\t\t\t\t\t\t\t\t\t<img src=\"http://blog.jonhoman.com/wp-content/themes/twentyten/images/headers/path.jpg\" width=\"940\" height=\"198\" alt=\"\" />\n\
-      \t\t\t\t\t\t\t\t</div><!-- #branding -->\n\n\
-      \t\t\t<div id=\"access\" role=\"navigation\">\n\
-      \t\t\t  \t\t\t\t<div class=\"skip-link screen-reader-text\"><a href=\"#content\" title=\"Skip to content\">Skip to content</a></div>\n\
-      \t\t\t\t\t\t\t\t<div class=\"menu\"><ul><li class=\"current_page_item\"><a href=\"http://blog.jonhoman.com/\" title=\"Home\">Home</a></li><li class=\"page_item page-item-4\"><a href=\"http://blog.jonhoman.com/about/\" title=\"About\">About</a></li><li class=\"page_item page-item-58\"><a href=\"http://blog.jonhoman.com/contact/\" title=\"Contact\">Contact</a></li><li class=\"page_item page-item-183\"><a href=\"http://blog.jonhoman.com/projects/\" title=\"Projects\">Projects</a></li></ul></div>\n\
-      \t\t\t</div><!-- #access -->\n\
-      \t\t</div><!-- #masthead -->\n\
-      \t</div><!-- #header -->\n\n\
-      \t<div id=\"main\">\n\n\
-      \t\t<div id=\"container\">\n\
-      \t\t\t<div id=\"content\" role=\"main\">\n\n\
-      \t\t\t\n\
-      \t<div id=\"nav-above\" class=\"navigation\">\n\
-      \t\t<div class=\"nav-previous\"><a href=\"http://blog.jonhoman.com/page/2/\" ><span class=\"meta-nav\">&larr;</span> Older posts</a></div>\n\
-      \t\t<div class=\"nav-next\"></div>\n\
-      \t</div><!-- #nav-above -->\n\n\n\n\n\
-      \t\t\t<div id=\"post-333\" class=\"post-333 post type-post hentry category-apprenticeship category-tech\">\n\
-      \t\t\t<h2 class=\"entry-title\"><a href=\"http://blog.jonhoman.com/the-secret-of-developing-software/\" title=\"Permalink to The Secret of Developing Software\" rel=\"bookmark\">The Secret of Developing Software</a></h2>\n\n\
-      \t\t\t<div class=\"entry-meta\">\n\
-      \t\t\t\t<span class=\"meta-prep meta-prep-author\">Posted on</span> <a href=\"http://blog.jonhoman.com/the-secret-of-developing-software/\" title=\"3:33 pm\" rel=\"bookmark\"><span class=\"entry-date\">January 30, 2011</span></a> <span class=\"meta-sep\">by</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"http://blog.jonhoman.com/author/jon/\" title=\"View all posts by Jon\">Jon</a></span>\t\t\t</div><!-- .entry-meta -->\n\n\
-      \t\t\t\t<div class=\"entry-content\">\n\
-      \t\t\t\t<p>For as long as I can remember I have been a big basketball fan. Some of my earliest memories include ripping open a package of basketball cards to see what new players I would learn about, shooting hoops with my brother on a Fisher-Price basketball hoop, watching MJ play on TV, and play in the YMCA basketball leagues from an early age. I even learned to read by looking at basketball cards and putting the player names to their faces.</p>\n\
-      <p>So this Christmas I was pretty excited when my brother got me Bill Simmons&#8217; <a href=\"http://www.amazon.com/Book-Basketball-NBA-According-Sports/dp/0345520106\">The Book of Basketball</a>. Simmons takes a look at the greatest players in the NBA and what made them great. One of the first topics he covers is The Secret:</p>\n\
-      <blockquote><p>The secret of basketball is that it&#8217;s not about basketball.</p></blockquote>\n\
-      <p>Simmons in an <a href=\"http://sports.espn.go.com/nba/news/story?id=4746227\">article</a> on ESPN.com describe The Secret:</p>\n\
-      <blockquote><p>The Secret, in a nutshell: Teams only win titles when their best players forget about statistics, sublimate their own games for the greater good and put their egos on hold.</p></blockquote>\n\
-      <p>In other words, basketball is more about people than it is about basketball.</p>\n\
-      <p>Early last week, a coworker said something to the effect that the most important things we do aren&#8217;t technical.\xC2\xA0Then last week while eating lunch, I put his statement together with The Secret and had a crazy thought:</p>\n\
-      <p>What if the secret of software development is that it&#8217;s not about software development? Could software development be more about people than software development?</p>\n\
-      <p>In basketball\xC2\xA0<strong>teamwork, chemistry,\xC2\xA0will to win, sacrifice</strong> are all more important than <strong>basketball skills and individual statistics</strong>. Could the same be true of software development?</p>\n\
-      <ul>\n\
-      <li><strong>Teamwork</strong>: Do your developers &#8220;play well together&#8221;? This is especially important in pairing organizations.</li>\n\
-      <li><strong>Chemistry</strong>: Similar to teamwork, but how well does your team get along in general? Do you have any &#8220;team cancers&#8221; that cause unneeded conflict rather than help the team?</li>\n\
-      <li><strong>Will to Win</strong>: Here, will to deliver. Does your team truly care about delivering software that has value to the stakeholders?</li>\n\
-      <li><strong>Sacrifice</strong>: Are your team members willing to swallow their ego and make other people better?</li>\n\
-      </ul>\n\
-      <p>Another coworker, Andy Maleh, wrote an\xC2\xA0intriguing blog post a month ago titled\xC2\xA0<a href=\"http://andymaleh.blogspot.com/2010/12/what-makes-developer-valuable-to-obtiva.html\">Valuable Traits</a>. In it, he discusses four traits a software develop should possess to be valuable: caring about client needs, strive for effective communication, eager to learn, collaborate with others.</p>\n\
-      <p>Note that none of these traits are technical skills, be a great Rails developer for example. Andy points out that &#8220;experience has taught me that soft skills trump hard technical skills&#8221;.</p>\n\
-      \t\t\t\t\t\t\t</div><!-- .entry-content -->\n\
-      \t\n\
-      \t\t\t<div class=\"entry-utility\">\n\
-      \t\t\t\t\t\t\t\t\t<span class=\"cat-links\">\n\
-      \t\t\t\t\t\t<span class=\"entry-utility-prep entry-utility-prep-cat-links\">Posted in</span> <a href=\"http://blog.jonhoman.com/category/apprenticeship/\" title=\"View all posts in apprenticeship\" rel=\"category tag\">apprenticeship</a>, <a href=\"http://blog.jonhoman.com/category/tech/\" title=\"View all posts in dev\" rel=\"category tag\">dev</a>\t\t\t\t\t</span>\n\
-      \t\t\t\t\t<span class=\"meta-sep\">|</span>\n\
-      \t\t\t\t\t\t\t\t\t\t\t\t<span class=\"comments-link\"><a href=\"http://blog.jonhoman.com/the-secret-of-developing-software/#comments\" title=\"Comment on The Secret of Developing Software\">1 Comment</a></span>\n\
-      \t\t\t\t\t\t\t</div><!-- .entry-utility -->\n\
-      \t\t</div><!-- #post-## -->\n\n\
-      \t\t\n\
-      \t\n\n\
-      \t\t\t\t<div id=\"nav-below\" class=\"navigation\">\n\
-      \t\t\t\t\t<div class=\"nav-previous\"><a href=\"http://blog.jonhoman.com/page/2/\" ><span class=\"meta-nav\">&larr;</span> Older posts</a></div>\n\
-      \t\t\t\t\t<div class=\"nav-next\"></div>\n\
-      \t\t\t\t</div><!-- #nav-below -->\n\
-      \t\t\t</div><!-- #content -->\n\
-      \t\t</div><!-- #container -->\n\n\n\
-      \t\t<div id=\"primary\" class=\"widget-area\" role=\"complementary\">\n\
-      \t\t\t<ul class=\"xoxo\">\n\n\
-      <li id=\"categories-3\" class=\"widget-container widget_categories\"><h3 class=\"widget-title\">Categories</h3>\t\t<ul>\n\
-      \t<li class=\"cat-item cat-item-42\"><a href=\"http://blog.jonhoman.com/category/apprenticeship/\" title=\"View all posts filed under apprenticeship\">apprenticeship</a> (6)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-38\"><a href=\"http://blog.jonhoman.com/category/code-complete/\" title=\"View all posts filed under code complete\">code complete</a> (3)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-11\"><a href=\"http://blog.jonhoman.com/category/tech/\" title=\"View all posts filed under dev\">dev</a> (58)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-4\"><a href=\"http://blog.jonhoman.com/category/flock/\" title=\"View all posts filed under flock\">flock</a> (11)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-6\"><a href=\"http://blog.jonhoman.com/category/linux/\" title=\"View all posts filed under linux\">linux</a> (13)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-7\"><a href=\"http://blog.jonhoman.com/category/metal/\" title=\"View all posts filed under metal\">metal</a> (3)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-8\"><a href=\"http://blog.jonhoman.com/category/personal/\" title=\"View all posts filed under personal\">personal</a> (39)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-10\"><a href=\"http://blog.jonhoman.com/category/simply-tech/\" title=\"View all posts filed under Simply Tech\">Simply Tech</a> (14)\n\
-      </li>\n\
-      \t<li class=\"cat-item cat-item-12\"><a href=\"http://blog.jonhoman.com/category/wedding/\" title=\"View all posts filed under wedding\">wedding</a> (5)\n\
-      </li>\n\
-      \t\t</ul>\n\
-      </li><li id=\"meta-2\" class=\"widget-container widget_meta\"><h3 class=\"widget-title\">Meta</h3>\t\t\t<ul>\n\
-      \t\t\t\t\t\t<li><a href=\"http://blog.jonhoman.com/wp-login.php\">Log in</a></li>\n\
-      \t\t\t<li><a href=\"http://blog.jonhoman.com/feed/\" title=\"Syndicate this site using RSS 2.0\">Entries <abbr title=\"Really Simple Syndication\">RSS</abbr></a></li>\n\
-      \t\t\t<li><a href=\"http://blog.jonhoman.com/comments/feed/\" title=\"The latest comments to all posts in RSS\">Comments <abbr title=\"Really Simple Syndication\">RSS</abbr></a></li>\n\
-      \t\t\t<li><a href=\"http://wordpress.org/\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform.\">WordPress.org</a></li>\n\
-      \t\t\t\t\t\t</ul>\n\
-      </li>\t\t\t</ul>\n\
-      \t\t</div><!-- #primary .widget-area -->\n\n\
-      \t</div><!-- #main -->\n\n\
-      \t<div id=\"footer\" role=\"contentinfo\">\n\
-      \t\t<div id=\"colophon\">\n\n\n\n\
-      \t\t\t<div id=\"site-info\">\n\
-      \t\t\t\t<a href=\"http://blog.jonhoman.com/\" title=\"JonHoman.com\" rel=\"home\">\n\
-      \t\t\t\t\tJonHoman.com\t\t\t\t</a>\n\
-      \t\t\t</div><!-- #site-info -->\n\n\
-      \t\t\t<div id=\"site-generator\">\n\
-      \t\t\t\t\t\t\t\t<a href=\"http://wordpress.org/\"\n\
-      \t\t\t\t\t\ttitle=\"Semantic Personal Publishing Platform\" rel=\"generator\">\n\
-      \t\t\t\t\tProudly powered by WordPress.\t\t\t\t</a>\n\
-      \t\t\t</div><!-- #site-generator -->\n\n\
-      \t\t</div><!-- #colophon -->\n\
-      \t</div><!-- #footer -->\n\n\
-      </div><!-- #wrapper -->\n\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shCore.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCSharp.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPhp.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJScript.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJava.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushVb.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushSql.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushXml.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushDelphi.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPython.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushRuby.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCss.js\"></script>\n\
-      <script class=\"javascript\" src=\"http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCpp.js\"></script>\n\
-      <script class=\"javascript\">\n\
-      dp.SyntaxHighlighter.ClipboardSwf = 'http://blog.jonhoman.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';\n\
-      dp.SyntaxHighlighter.HighlightAll('code');\n\
-      </script>\n\
-      <!--stats_footer_test--><script src=\"http://stats.wordpress.com/e-201107.js\" type=\"text/javascript\"></script>\n\
-      <script type=\"text/javascript\">\n\
-      st_go({blog:'9926662',v:'ext',post:'0'});\n\
-      var load_cmc = function(){linktracker_init(9926662,0,2);};\n\
-      if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);\n\
-      else load_cmc();\n\
-      </script>\n\
-      </body>\n\
-      </html>\n\n\
-      <!-- Dynamic page generated in 0.202 seconds. -->\n\
-      <!-- Cached page generated by WP-Super-Cache on 2011-02-15 23:48:38 -->\n"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
     uri: http://tanyahoman.com:80/
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      date: 
-      - Wed, 11 May 2011 04:24:22 GMT
-      server: 
+    headers:
+      date:
+      - Fri, 26 Aug 2011 02:14:50 GMT
+      server:
       - Apache
-      x-pingback: 
+      x-pingback:
       - http://tanyahoman.com/xmlrpc.php
-      link: 
+      link:
       - <http://wp.me/P1e3Mj-nc>; rel=shortlink
-      vary: 
+      vary:
       - Accept-Encoding
-      content-length: 
-      - "8376"
-      content-type: 
+      content-length:
+      - '8354'
+      content-type:
       - text/html; charset=UTF-8
-    body: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\
-      <html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"en-US\">\n\n\
-      <head profile=\"http://gmpg.org/xfn/11\">\n\
-      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\n\
-      <title> Tanya Homan</title>\n\n\
-      <link rel=\"stylesheet\" href=\"http://tanyahoman.com/wp-content/themes/aggiornare/style.css\" type=\"text/css\" media=\"screen\" />\n\
-      <link rel=\"stylesheet\" href=\"http://tanyahoman.com/wp-content/themes/aggiornare/style.php\" type=\"text/css\" media=\"screen\" />\n\
-      <link rel=\"pingback\" href=\"http://tanyahoman.com/xmlrpc.php\" />\n\n\
-      <!--[if lte IE 8]>\n\
-      <link rel=\"stylesheet\" href=\"http://tanyahoman.com/wp-content/themes/aggiornare/iestyle.css\" type=\"text/css\" media=\"screen\" />\n\
-      <![endif]-->\n\n\
-      <style type=\"text/css\">\n\
-      img, div { behavior: url(http://tanyahoman.com/wp-content/themes/aggiornare/images/iepngfix.htc) }\n\
-      </style> \n\n\n\
-      <link rel=\"alternate\" type=\"application/rss+xml\" title=\"Tanya Homan &raquo; Feed\" href=\"http://tanyahoman.com/feed/\" />\n\
-      <link rel=\"alternate\" type=\"application/rss+xml\" title=\"Tanya Homan &raquo; Comments Feed\" href=\"http://tanyahoman.com/comments/feed/\" />\n\
-      <link rel='stylesheet' id='contact-form-7-css'  href='http://tanyahoman.com/wp-content/plugins/contact-form-7/styles.css?ver=2.4.4' type='text/css' media='all' />\n\
-      <link rel='stylesheet' id='wp-stats-css'  href='http://tanyahoman.com/wp-content/plugins/wp-stats/stats-css.css?ver=2.50' type='text/css' media='all' />\n\
-      <script type='text/javascript' src='http://tanyahoman.com/wp-includes/js/l10n.js?ver=20101110'></script>\n\
-      <script type='text/javascript' src='http://tanyahoman.com/wp-includes/js/comment-reply.js?ver=20090102'></script>\n\
-      <script type='text/javascript' src='http://tanyahoman.com/wp-includes/js/jquery/jquery.js?ver=1.4.4'></script>\n\
-      <link rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"http://tanyahoman.com/xmlrpc.php?rsd\" />\n\
-      <link rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"http://tanyahoman.com/wp-includes/wlwmanifest.xml\" /> \n\
-      <link rel='index' title='Tanya Homan' href='http://tanyahoman.com/' />\n\
-      <link rel='prev' title='About' href='http://tanyahoman.com/about/' />\n\
-      <link rel='next' title='Blog' href='http://tanyahoman.com/blog/' />\n\
-      <meta name=\"generator\" content=\"WordPress 3.1.2\" />\n\
-      <link rel='canonical' href='http://tanyahoman.com/' />\n\
-      <link rel='shortlink' href='http://wp.me/P1e3Mj-nc' />\n\
-      </head>\n\
-      <body class=\"home page page-id-1438 page-template page-template-default\">\n\
-      <div id=\"preloaded-images\">\n   <img src=\"http://tanyahoman.com/wp-content/themes/aggiornare/images/logoHover.jpg\" width=\"1\" height=\"1\" alt=\"Image 01\" />\n\
-      </div>\n\
-      <div id=\"color\">\n\n\
-      \t<div id=\"wrapper\">\n\
-      \t\n\
-      \t\t<div id=\"top\">\n\
-      \t\n\
-      \t\t\t<div id=\"siteIdentification\">\n\
-      \t\t\t\t\t\t\t<h1><a href=\"http://tanyahoman.com\">Tanya Homan</a></h1>\n\
-      \t\t\t\t\t\t\t</div>\n\
-      \t\t\t\n\
-      \t\t\t<div id=\"main\">\n\
-      \t\t\t\n\
-      \t\t\t\t<div id=\"navigation\">\n\
-      \t\t\t\t\t<ul>\n\
-      \t\t\t\t\t\t<li class=\"page_item page-item-1415\"><a href=\"http://tanyahoman.com/about/\" title=\"About\">About</a></li>\n\
-      <li class=\"page_item page-item-1440\"><a href=\"http://tanyahoman.com/blog/\" title=\"Blog\">Blog</a></li>\n\
-      <li class=\"page_item page-item-853\"><a href=\"http://tanyahoman.com/contact/\" title=\"Contact\">Contact</a></li>\n\
-      <li class=\"page_item page-item-1412\"><a href=\"http://tanyahoman.com/portfolio/\" title=\"Portfolio\">Portfolio</a></li>\n\
-      <li class=\"page_item page-item-1438 current_page_item\"><a href=\"http://tanyahoman.com/\" title=\"Home\">Home</a></li>\n\
-      \t\t\t\t\t</ul>\n\
-      \t\t\t\t</div>\r\n\
-      \t<div class=\"content\">\r\n\
-      \t\t\t\t\t\r\n\
-      \t\t\t\t<div class=\"post\" id=\"post-1438\">\r\n\
-      \t\t\r\n\
-      \t\t\t<div class=\"entry\">\r\n\
-      \t\t\t\t<blockquote><p>&nbsp;</p>\n\
-      <p>&nbsp;</p>\n\
-      <p>&nbsp;</p>\n\
-      <p><em><span style=\"color: #000000;\">\xE2\x80\x9C</span>Creative people have an abiding curiosity and an insatiable desire  to   learn how and why things work. They take nothing for granted. They  are   interested in things around them and tend to stow away bits and  pieces   of information in their minds for the future use. And, they  have a  great  ability to mobilize their thinking and experiences for  use in  solving a  new problem<span style=\"color: #000000;\">\xE2\x80\x9D</span>.</em></p></blockquote>\n\
-      \r\n\
-      \t\t\t\t\r\n\
-      \t\t\t</div>\r\n\
-      \t\t</div>\r\n\
-      \t\t\t\t\r\n\
-      \t\r\n\
-      \t\r\n\
-      \t</div>\r\n\
-      </div>\r\n\
-      \r\n\
-      <div id=\"sidebar\">\n\n\n\
-      \t\n\
-      \t<ul id=\"sidebarWidgets\">\n\
-      \t\n\
-      \t\t\t\t<li id=\"recent-posts-2\" class=\"sidebarItem widget widget_recent_entries\">\t\t<h2 class=\"widgettitle\">Recent Posts</h2>\t\t<ul>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/04/14/roasted-red-pepper-hummus/\" title=\"Roasted Red Pepper Hummus\">Roasted Red Pepper Hummus</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/04/12/blog-review-sweet-shoppe-designs/\" title=\"Blog Review: Sweet Shoppe Designs\">Blog Review: Sweet Shoppe Designs</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/04/05/black-white-simple-decor/\" title=\"Black &amp; White Simple Decor\">Black &#038; White Simple Decor</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/04/03/cranberry-scones/\" title=\"Cranberry Scones\">Cranberry Scones</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/03/20/simple-decorations-flowers/\" title=\"Simple Decorations: Flowers!\">Simple Decorations: Flowers!</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/02/20/cupcake-stands/\" title=\"Cupcake Stands\">Cupcake Stands</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/02/18/wild-blue-blueberry-lager/\" title=\"Wild Blue: Blueberry Lager\">Wild Blue: Blueberry Lager</a></li>\n\
-      \t\t\t\t<li><a href=\"http://tanyahoman.com/2011/02/17/cheesy-broccoli-slow-cooker-casserole/\" title=\"Cheesy Broccoli Slow Cooker Casserole\">Cheesy Broccoli Slow Cooker Casserole</a></li>\n\
-      \t\t\t\t</ul>\n\
-      \t\t</li>\t\t\t\n\
-      \t\t\t\n\
-      \t\n\
-      </div>\r\n\n\
-      </div>\n\
-      \t\t\n\
-      \t</div>\n\
-      \t\n\
-      </div>\n\n\
-      <div id=\"footerWrapper\">\n\
-      \t\t\n\
-      \t\t<div id=\"footer\">\n\
-      \t\t<div class=\"footerWidget\">\n\
-      \t\t<h3>Meta</h3>\t\t\t<ul>\n\
-      \t\t\t\t\t\t<li><a href=\"http://tanyahoman.com/wp-login.php\">Log in</a></li>\n\
-      \t\t\t<li><a href=\"http://tanyahoman.com/feed/\" title=\"Syndicate this site using RSS 2.0\">Entries <abbr title=\"Really Simple Syndication\">RSS</abbr></a></li>\n\
-      \t\t\t<li><a href=\"http://tanyahoman.com/comments/feed/\" title=\"The latest comments to all posts in RSS\">Comments <abbr title=\"Really Simple Syndication\">RSS</abbr></a></li>\n\
-      \t\t\t<li><a href=\"http://wordpress.org/\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform.\">WordPress.org</a></li>\n\
-      \t\t\t\t\t\t</ul>\n\
-      \t\t</div>\n\
-      \t\t<div class=\"footerWidget\"><h3>Blogroll</h3>\n\
-      \t<ul class='xoxo blogroll'>\n\
-      <li><a href=\"http://betterhensandgardens.com\" rel=\"friend\" title=\"A great resource for gardening, cooking &amp; much more\" target=\"_blank\">Better Hens &amp; Gardens</a></li>\n\
-      <li><a href=\"http://chicagorubies.com\" rel=\"me\" target=\"_blank\">Chicago Rubies</a></li>\n\
-      <li><a href=\"http://elisephotographymn.com\" rel=\"friend colleague\" title=\"Photography in the Twin Cities Area\" target=\"_blank\">Elise Photography</a></li>\n\
-      <li><a href=\"http://www.jontanyahoman.com\" rel=\"me\" title=\"My family blog\" target=\"_blank\">Family Blog</a></li>\n\
-      <li><a href=\"http://www.jonhoman.com\" rel=\"spouse\" title=\"My husband Jon&#8217;s blog\" target=\"_blank\">Jon Homan Blog</a></li>\n\
-      <li><a href=\"http://www.mzsbakery.com\" rel=\"friend\" title=\"Z&#8221;s is located in Waupaca, WI and is a bakery &amp; coffee shop.\">Mama Z&#039;s Bakery &amp; Java Hut</a></li>\n\n\
-      \t</ul>\n\
-      </div>\n\
-      \t\t\t\n\
-      \t\t\t\n\
-      \t\t\t<div id=\"explanation\">\n\
-      \t\t\t\t\t\t\t<h3>Tanya Homan</h3>\n\
-      \t\t\t\t\t\t\t\t\t\t<p>innovative creations</p>\n\
-      \t\t\t\t\t\t</div>\n\
-      \t\t\t\t\t\n\
-      \t\t</div>\n\
-      \t\t\n\
-      \t\t<p class=\"copyright\">Copyright &copy; 2011 by Tanya Homan.  All Rights Reserved.  <a href=\"http://tanyahoman.com/feed/\">Subscribe to Tanya Homan's feed</a>.<br /><a href=\"http://geekdesigngirl.com/\" title=\"GeekDesignGirl\">Aggiornare Theme by GeekDesignGirl</a></p>\n\
-      \t<!-- It's completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom. -->\n\
-      \t\n\
-      \t<script type='text/javascript' src='http://tanyahoman.com/wp-content/plugins/contact-form-7/jquery.form.js?ver=2.52'></script>\n\
-      <script type='text/javascript' src='http://tanyahoman.com/wp-content/plugins/contact-form-7/scripts.js?ver=2.4.4'></script>\n\
-      <!--stats_footer_test--><script src=\"http://stats.wordpress.com/e-201119.js\" type=\"text/javascript\"></script>\n\
-      <script type=\"text/javascript\">\n\
-      st_go({blog:'18127455',v:'ext',post:'1438'});\n\
-      var load_cmc = function(){linktracker_init(18127455,1438,2);};\n\
-      if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);\n\
-      else load_cmc();\n\
-      </script>\n\n\
-      \t</div>\n\
-      \t\n\
-      </body>\n\
-      </html>\n"
-    http_version: "1.1"
+    body: ! "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html
+      xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"en-US\">\n\n<head
+      profile=\"http://gmpg.org/xfn/11\">\n<meta http-equiv=\"Content-Type\" content=\"text/html;
+      charset=UTF-8\" />\n\n<title> Tanya Homan</title>\n\n<link rel=\"stylesheet\"
+      href=\"http://tanyahoman.com/wp-content/themes/aggiornare/style.css\" type=\"text/css\"
+      media=\"screen\" />\n<link rel=\"stylesheet\" href=\"http://tanyahoman.com/wp-content/themes/aggiornare/style.php\"
+      type=\"text/css\" media=\"screen\" />\n<link rel=\"pingback\" href=\"http://tanyahoman.com/xmlrpc.php\"
+      />\n\n<!--[if lte IE 8]>\n<link rel=\"stylesheet\" href=\"http://tanyahoman.com/wp-content/themes/aggiornare/iestyle.css\"
+      type=\"text/css\" media=\"screen\" />\n<![endif]-->\n\n<style type=\"text/css\">\nimg,
+      div { behavior: url(http://tanyahoman.com/wp-content/themes/aggiornare/images/iepngfix.htc)
+      }\n</style> \n\n\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Tanya
+      Homan &raquo; Feed\" href=\"http://tanyahoman.com/feed/\" />\n<link rel=\"alternate\"
+      type=\"application/rss+xml\" title=\"Tanya Homan &raquo; Comments Feed\" href=\"http://tanyahoman.com/comments/feed/\"
+      />\n<link rel='stylesheet' id='contact-form-7-css'  href='http://tanyahoman.com/wp-content/plugins/contact-form-7/styles.css?ver=2.4.6'
+      type='text/css' media='all' />\n<link rel='stylesheet' id='wp-stats-css'  href='http://tanyahoman.com/wp-content/plugins/wp-stats/stats-css.css?ver=2.50'
+      type='text/css' media='all' />\n<script type='text/javascript' src='http://tanyahoman.com/wp-includes/js/l10n.js?ver=20101110'></script>\n<script
+      type='text/javascript' src='http://tanyahoman.com/wp-includes/js/comment-reply.js?ver=20090102'></script>\n<script
+      type='text/javascript' src='http://tanyahoman.com/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>\n<link
+      rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"http://tanyahoman.com/xmlrpc.php?rsd\"
+      />\n<link rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"http://tanyahoman.com/wp-includes/wlwmanifest.xml\"
+      /> \n<link rel='index' title='Tanya Homan' href='http://tanyahoman.com/' />\n<link
+      rel='prev' title='About' href='http://tanyahoman.com/about/' />\n<link rel='next'
+      title='Blog' href='http://tanyahoman.com/blog/' />\n<meta name=\"generator\"
+      content=\"WordPress 3.2.1\" />\n<link rel='canonical' href='http://tanyahoman.com/'
+      />\n<link rel='shortlink' href='http://wp.me/P1e3Mj-nc' />\n</head>\n<body class=\"home
+      page page-id-1438 page-template-default\">\n<div id=\"preloaded-images\">\n
+      \  <img src=\"http://tanyahoman.com/wp-content/themes/aggiornare/images/logoHover.jpg\"
+      width=\"1\" height=\"1\" alt=\"Image 01\" />\n</div>\n<div id=\"color\">\n\n\t<div
+      id=\"wrapper\">\n\t\n\t\t<div id=\"top\">\n\t\n\t\t\t<div id=\"siteIdentification\">\n\t\t\t\t\t\t\t<h1><a
+      href=\"http://tanyahoman.com\">Tanya Homan</a></h1>\n\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t<div
+      id=\"main\">\n\t\t\t\n\t\t\t\t<div id=\"navigation\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li
+      class=\"page_item page-item-1415\"><a href=\"http://tanyahoman.com/about/\"
+      title=\"About\">About</a></li>\n<li class=\"page_item page-item-1440\"><a href=\"http://tanyahoman.com/blog/\"
+      title=\"Blog\">Blog</a></li>\n<li class=\"page_item page-item-853\"><a href=\"http://tanyahoman.com/contact/\"
+      title=\"Contact\">Contact</a></li>\n<li class=\"page_item page-item-1412\"><a
+      href=\"http://tanyahoman.com/portfolio/\" title=\"Portfolio\">Portfolio</a></li>\n<li
+      class=\"page_item page-item-1577\"><a href=\"http://tanyahoman.com/resume/\"
+      title=\"Resume\">Resume</a></li>\n<li class=\"page_item page-item-1438 current_page_item\"><a
+      href=\"http://tanyahoman.com/\" title=\"Home\">Home</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\r\n\t<div
+      class=\"content\">\r\n\t\t\t\t\t\r\n\t\t\t\t<div class=\"post\" id=\"post-1438\">\r\n\t\t\r\n\t\t\t<div
+      class=\"entry\">\r\n\t\t\t\t<blockquote><p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><em><span
+      style=\"color: #000000;\">“</span>Creative people have an abiding curiosity
+      and an insatiable desire  to   learn how and why things work. They take nothing
+      for granted. They  are   interested in things around them and tend to stow away
+      bits and  pieces   of information in their minds for the future use. And, they
+      \ have a  great  ability to mobilize their thinking and experiences for  use
+      in  solving a  new problem<span style=\"color: #000000;\">”</span>.</em></p></blockquote>\n\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t\t\t\r\n\t\r\n\t\r\n\t</div>\r\n</div>\r\n\r\n<div
+      id=\"sidebar\">\n\n\n\t\n\t<ul id=\"sidebarWidgets\">\n\t\n\t\t\t\t<li id=\"recent-posts-2\"
+      class=\"sidebarItem widget widget_recent_entries\">\t\t<h2 class=\"widgettitle\">Recent
+      Posts</h2>\t\t<ul>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/08/17/city-lights/\"
+      title=\"City Lights\">City Lights</a></li>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/08/16/simple-stationery/\"
+      title=\"Simple Stationery\">Simple Stationery</a></li>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/08/13/anniversary-scrapbook/\"
+      title=\"Anniversary Scrapbook\">Anniversary Scrapbook</a></li>\n\t\t\t\t<li><a
+      href=\"http://tanyahoman.com/2011/08/10/contrast/\" title=\"Contrast\">Contrast</a></li>\n\t\t\t\t<li><a
+      href=\"http://tanyahoman.com/2011/07/25/gasow-homan-wedding/\" title=\"{Gasow
+      Homan Wedding}\">{Gasow Homan Wedding}</a></li>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/07/15/the-eyes-to-my-soul/\"
+      title=\"The Eyes to My Soul\">The Eyes to My Soul</a></li>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/07/13/creative-way-to-store-cookbooks-in-small-kitchens/\"
+      title=\"Creative way to store cookbooks in small kitchens\">Creative way to
+      store cookbooks in small kitchens</a></li>\n\t\t\t\t<li><a href=\"http://tanyahoman.com/2011/07/08/kitchen-pantry-coverup/\"
+      title=\"Kitchen Pantry Coverup\">Kitchen Pantry Coverup</a></li>\n\t\t\t\t</ul>\n\t\t</li>\t\t\t\n\t\t\t\n\t\n</div>\r\n\n</div>\n\t\t\n\t</div>\n\t\n</div>\n\n<div
+      id=\"footerWrapper\">\n\t\t\n\t\t<div id=\"footer\">\n\t\t<div class=\"footerWidget\">\n\t\t<h3>Meta</h3>\t\t\t<ul>\n\t\t\t\t\t\t<li><a
+      href=\"http://tanyahoman.com/wp-login.php\">Log in</a></li>\n\t\t\t<li><a href=\"http://tanyahoman.com/feed/\"
+      title=\"Syndicate this site using RSS 2.0\">Entries <abbr title=\"Really Simple
+      Syndication\">RSS</abbr></a></li>\n\t\t\t<li><a href=\"http://tanyahoman.com/comments/feed/\"
+      title=\"The latest comments to all posts in RSS\">Comments <abbr title=\"Really
+      Simple Syndication\">RSS</abbr></a></li>\n\t\t\t<li><a href=\"http://wordpress.org/\"
+      title=\"Powered by WordPress, state-of-the-art semantic personal publishing
+      platform.\">WordPress.org</a></li>\n\t\t\t\t\t\t</ul>\n\t\t</div>\n\t\t<div
+      class=\"footerWidget\"><h3>Blogroll</h3>\n\t<ul class='xoxo blogroll'>\n<li><a
+      href=\"http://betterhensandgardens.com\" rel=\"friend\" title=\"A great resource
+      for gardening, cooking &amp; much more\" target=\"_blank\">Better Hens &amp;
+      Gardens</a></li>\n<li><a href=\"http://chicagorubies.com\" rel=\"me\" target=\"_blank\">Chicago
+      Rubies</a></li>\n<li><a href=\"http://elisephotographymn.com\" rel=\"friend
+      colleague\" title=\"Photography in the Twin Cities Area\" target=\"_blank\">Elise
+      Photography</a></li>\n<li><a href=\"http://www.jontanyahoman.com\" rel=\"me\"
+      title=\"My family blog\" target=\"_blank\">Family Blog</a></li>\n<li><a href=\"http://www.jonhoman.com\"
+      rel=\"spouse\" title=\"My husband Jon&#8217;s blog\" target=\"_blank\">Jon Homan
+      Blog</a></li>\n<li><a href=\"http://www.mzsbakery.com\" rel=\"friend\" title=\"Z&#8221;s
+      is located in Waupaca, WI and is a bakery &amp; coffee shop.\">Mama Z&#039;s
+      Bakery &amp; Java Hut</a></li>\n\n\t</ul>\n</div>\n\t\t\t\n\t\t\t\n\t\t\t<div
+      id=\"explanation\">\n\t\t\t\t\t\t\t<h3>Tanya Homan</h3>\n\t\t\t\t\t\t\t\t\t\t<p>innovative
+      creations</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t</div>\n\t\t\n\t\t<p class=\"copyright\">Copyright
+      &copy; 2011 by Tanya Homan.  All Rights Reserved.  <a href=\"http://tanyahoman.com/feed/\">Subscribe
+      to Tanya Homan's feed</a>.<br /><a href=\"http://geekdesigngirl.com/\" title=\"GeekDesignGirl\">Aggiornare
+      Theme by GeekDesignGirl</a></p>\n\t<!-- It's completely optional, but if you
+      like the theme I would appreciate it if you keep the credit link at the bottom.
+      -->\n\t\n\t<script type='text/javascript' src='http://tanyahoman.com/wp-content/plugins/contact-form-7/jquery.form.js?ver=2.52'></script>\n<script
+      type='text/javascript' src='http://tanyahoman.com/wp-content/plugins/contact-form-7/scripts.js?ver=2.4.6'></script>\n<!--stats_footer_test--><script
+      src=\"http://stats.wordpress.com/e-201134.js\" type=\"text/javascript\"></script>\n<script
+      type=\"text/javascript\">\nst_go({blog:'18127455',v:'ext',post:'1438'});\nvar
+      load_cmc = function(){linktracker_init(18127455,1438,2);};\nif ( typeof addLoadEvent
+      != 'undefined' ) addLoadEvent(load_cmc);\nelse load_cmc();\n</script>\n\n\t</div>\n\t\n</body>\n</html>\n"
+    http_version: '1.1'

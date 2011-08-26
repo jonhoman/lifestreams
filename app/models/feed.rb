@@ -20,7 +20,7 @@ class Feed < ActiveRecord::Base
   
   def determine_feed_url
     # stupid testing hack
-    if url == "file:///Users/obtiva/dev/personal/lifestreams/spec/data/feed.rss" || url == "file:///Users/obtiva/dev/personal/lifestreams/spec/data/feed-small.rss"
+    if url == "file:///Users/jon/dev/lifestreams/spec/data/feed.rss" || url == "file:///Users/jon/dev/lifestreams/spec/data/feed-small.rss"
       return url 
     end
 
