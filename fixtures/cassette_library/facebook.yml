@@ -13,7 +13,7 @@
       server:
       - nginx
       date:
-      - Fri, 26 Aug 2011 02:14:54 GMT
+      - Sat, 08 Oct 2011 20:38:20 GMT
       content-type:
       - application/json; charset=utf-8
       mime-version:
@@ -47,22 +47,15 @@
       - text/javascript; charset=UTF-8
       expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
-      p3p:
-      - ! 'CP="Facebook does not have a P3P policy. Learn why here: http://fb.me/p3p"'
       pragma:
       - no-cache
       x-fb-rev:
-      - '429980'
-      set-cookie:
-      - L=2; path=/; domain=.facebook.com; httponly
-      - W=1314324896; path=/; domain=.facebook.com
-      - datr=nwFXTkiAXDRBKeFws9Ob7HL9; expires=Sun, 25-Aug-2013 02:14:55 GMT; path=/;
-        domain=.facebook.com; httponly
+      - '455039'
       x-fb-server:
-      - 10.36.3.114
+      - 10.62.86.40
       date:
-      - Fri, 26 Aug 2011 02:14:56 GMT
+      - Sat, 08 Oct 2011 20:38:23 GMT
       content-length:
       - '40'
-    body: ! '{"id":"100002177187657_156776487738256"}'
+    body: ! '{"id":"100002177187657_175452152537356"}'
     http_version: '1.1'

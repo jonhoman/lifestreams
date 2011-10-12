@@ -13,14 +13,14 @@
       server:
       - nginx
       date:
-      - Fri, 26 Aug 2011 02:15:39 GMT
+      - Sat, 08 Oct 2011 20:41:41 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
       - '189'
       etag:
-      - ! '"39d40b58faa8da45976d86408f57742014e7376b"'
+      - ! '"3a236a9c9f928781bc401e3a89baa9d8dbbce151"'
     body: ! '{"status_code": 200, "data": {"clicks": [{"short_url": "http://bit.ly/fXEv5E",
       "global_hash": "heezy", "user_clicks": 0, "user_hash": "fXEv5E", "global_clicks":
-      2439}]}, "status_txt": "OK"}'
+      2454}]}, "status_txt": "OK"}'
     http_version: '1.1'
