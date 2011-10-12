@@ -1,0 +1,4 @@
+Getting Started:
+
+* Create database.yml
+* Create heroku_env.rb with API info
