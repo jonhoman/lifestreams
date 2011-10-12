@@ -8,3 +8,4 @@ webrat.log
 dump.rdb
 .redcar/
 bin/
+logfile
